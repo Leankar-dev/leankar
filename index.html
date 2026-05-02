@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="leankar.dev — Desenvolvedor Mobile Flutter. Aplicativos modernos e intuitivos para Android." />
+  <title>leankar.dev — Mobile Developer</title>
+  <link rel="icon" type="image/png" href="assets/logos/leankar_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── CANVAS DE PARTÍCULAS ── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/logos/leankar_logo.png" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#apps">Aplicativos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#sobre" class="mobile-link">Sobre</a>
+      <a href="#apps" class="mobile-link">Aplicativos</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="badge-dot"></span>Flutter Developer
+        </div>
+        <h1 class="hero-title reveal">
+          Criando apps que<br />
+          <span class="gradient-text">fazem a diferença</span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Desenvolvedor mobile especializado em Flutter &amp; Dart.<br />
+          Aplicativos modernos, intuitivos e disponíveis no Google Play.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#apps" class="btn btn-primary">Ver Aplicativos</a>
+          <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+        </div>
+        <div class="hero-tech reveal">
+          <span class="tech-tag">Flutter</span>
+          <span class="tech-tag">Dart</span>
+          <span class="tech-tag">Firebase</span>
+          <span class="tech-tag">Android</span>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-logo-grid">
+              <img src="assets/logos/calculator_logo.png"          alt="Calculadora Leankar"      class="phone-app-icon" />
+              <img src="assets/logos/buscacep_logo.png"            alt="BuscaCep"                 class="phone-app-icon" />
+              <img src="assets/logos/listadacasa_logo.png"          alt="Lista da Casa"            class="phone-app-icon" />
+              <img src="assets/logos/campominadoevolution_logo.png" alt="Campo Minado Evolution"   class="phone-app-icon" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SOBRE ── -->
+    <section class="sobre" id="sobre">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Quem sou eu</span>
+          <h2>Sobre <span class="gradient-text">mim</span></h2>
+        </div>
+        <div class="sobre-grid">
+          <div class="sobre-text reveal">
+            <p>
+              Sou desenvolvedor mobile apaixonado por criar experiências digitais que resolvem problemas reais
+              do dia a dia. Com foco em <strong>Flutter e Dart</strong>, construo aplicativos performáticos,
+              elegantes e funcionais para a plataforma Android.
+            </p>
+            <p>
+              Minha missão é transformar ideias em produtos que as pessoas realmente amam usar —
+              com interfaces limpas, código bem estruturado e atenção aos detalhes.
+            </p>
+            <div class="stats-row">
+              <div class="stat">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Apps criados</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Flutter</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Dedicação</span>
+              </div>
+            </div>
+          </div>
+          <div class="skills-grid reveal">
+            <div class="skill-card">
+              <div class="skill-icon">📱</div>
+              <h3>Mobile First</h3>
+              <p>UI/UX pensada para telas móveis desde o início</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">⚡</div>
+              <h3>Alta Performance</h3>
+              <p>Apps fluidos com 60fps e carregamento rápido</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🎨</div>
+              <h3>Design Moderno</h3>
+              <p>Material Design 3 e interfaces personalizadas</p>
+            </div>
+            <div class="skill-card">
+              <div class="skill-icon">🔒</div>
+              <h3>Código Limpo</h3>
+              <p>Arquitetura sólida e boas práticas de desenvolvimento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APPS ── -->
+    <section class="apps" id="apps">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Google Play Store</span>
+          <h2>Meus <span class="gradient-text">Aplicativos</span></h2>
+          <p class="section-desc">Apps desenvolvidos com Flutter — 2 publicados no Google Play, 2 em breve</p>
+        </div>
+        <div class="apps-grid">
+
+          <!-- CALCULADORA -->
+          <article class="app-card reveal" style="--delay: 0ms">
+            <div class="app-card-glow"></div>
+            <div class="app-card-inner">
+              <div class="app-logo-wrapper">
+                <img src="assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-logo" />
+              </div>
+              <div class="app-info">
+                <span class="app-category">Produtividade</span>
+                <h3 class="app-name">Calculadora Leankar</h3>
+                <p class="app-desc">
+                  Calculadora elegante e funcional com interface limpa, operações básicas e avançadas,
+                  histórico de cálculos e tema escuro. Simples de usar, poderosa nos resultados.
+                </p>
+                <div class="app-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">Material 3</span>
+                  <span class="tag">Gratuito</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
+                   class="play-btn" target="_blank" rel="noopener noreferrer">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                       alt="Disponível no Google Play" class="play-badge" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BUSCACEP -->
+          <article class="app-card reveal" style="--delay: 150ms">
+            <div class="app-card-glow"></div>
+            <div class="app-card-inner">
+              <div class="app-logo-wrapper">
+                <img src="assets/logos/buscacep_logo.png" alt="BuscaCep_las" class="app-logo" />
+              </div>
+              <div class="app-info">
+                <span class="app-category">Utilidades</span>
+                <h3 class="app-name">BuscaCep_las</h3>
+                <p class="app-desc">
+                  Consulte qualquer CEP brasileiro de forma instantânea. Obtenha endereço completo,
+                  cidade, estado e bairro com um toque. Essencial para quem precisa validar endereços.
+                </p>
+                <div class="app-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">API REST</span>
+                  <span class="tag">Gratuito</span>
+                </div>
+                <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
+                   class="play-btn" target="_blank" rel="noopener noreferrer">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                       alt="Disponível no Google Play" class="play-badge" />
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- LISTA DA CASA -->
+          <article class="app-card app-card--wip reveal" style="--delay: 300ms">
+            <div class="app-card-glow"></div>
+            <div class="app-card-inner">
+              <div class="app-logo-wrapper">
+                <img src="assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-logo" />
+                <span class="coming-soon-badge">Em breve</span>
+              </div>
+              <div class="app-info">
+                <span class="app-category">Organização</span>
+                <h3 class="app-name">Lista da Casa</h3>
+                <p class="app-desc">
+                  Organize suas compras do mercado com facilidade. Adicione itens, marque os concluídos,
+                  organize por categoria e nunca mais esqueça nada na prateleira. Simples e eficiente.
+                </p>
+                <div class="app-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">SQLite</span>
+                  <span class="tag tag--wip">Em desenvolvimento</span>
+                </div>
+                <div class="wip-bar">
+                  <div class="wip-bar-fill"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CAMPO MINADO EVOLUTION -->
+          <article class="app-card app-card--wip reveal" style="--delay: 450ms">
+            <div class="app-card-glow"></div>
+            <div class="app-card-inner">
+              <div class="app-logo-wrapper">
+                <img src="assets/logos/campominadoevolution_logo.png" alt="Campo Minado Evolution" class="app-logo" />
+                <span class="coming-soon-badge">Em breve</span>
+              </div>
+              <div class="app-info">
+                <span class="app-category">Jogos</span>
+                <h3 class="app-name">Campo Minado Evolution</h3>
+                <p class="app-desc">
+                  O clássico Campo Minado reinventado com visuais modernos, múltiplos níveis de dificuldade,
+                  ranking de pontuação e experiência de jogo fluida. Diversão para todos os níveis.
+                </p>
+                <div class="app-tags">
+                  <span class="tag">Flutter</span>
+                  <span class="tag">Game</span>
+                  <span class="tag tag--wip">Em desenvolvimento</span>
+                </div>
+                <div class="wip-bar">
+                  <div class="wip-bar-fill"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTATO ── -->
+    <section class="contato" id="contato">
+      <div class="container">
+        <div class="contato-box reveal">
+          <div class="contato-content">
+            <span class="section-label">Vamos conversar</span>
+            <h2>Tem um projeto<br /><span class="gradient-text">em mente?</span></h2>
+            <p>Entre em contato e vamos transformar sua ideia em um app incrível.</p>
+            <div class="social-links">
+              <a href="https://github.com/Leankar-dev" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                GitHub
+              </a>
+              <a href="mailto:leankar.dev@gmail.com" class="social-btn" aria-label="E-mail">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                leankar.dev@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="contato-deco">
+            <div class="deco-circle deco-1"></div>
+            <div class="deco-circle deco-2"></div>
+            <div class="deco-circle deco-3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logos/leankar_logo.png" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

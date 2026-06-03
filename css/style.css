@@ -593,6 +593,14 @@ body {
   color: #f59e0b !important;
 }
 
+/* ── Web project card (span full grid, centrado) ── */
+.app-card--web {
+  grid-column: 1 / -1;
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* ── Web badge ── */
 .web-badge {
   position: absolute;

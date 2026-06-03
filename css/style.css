@@ -593,6 +593,46 @@ body {
   color: #f59e0b !important;
 }
 
+/* ── Web badge ── */
+.web-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0,198,255,0.35);
+}
+
+/* ── Visitar Site button ── */
+.site-visit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 100px;
+  background: var(--gradient);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0,198,255,0.25);
+  width: fit-content;
+}
+.site-visit-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.site-visit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,198,255,0.45);
+  filter: brightness(1.1);
+}
+
 .wip-bar {
   height: 4px;
   background: rgba(255,255,255,0.06);

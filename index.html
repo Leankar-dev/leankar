@@ -2,6 +2,9 @@
 <html lang="pt-BR">
 
 <head>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811045286351257"
+     crossorigin="anonymous"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
   <script>
@@ -17,9 +20,10 @@
     content="default-src 'self';
              style-src 'self' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src 'self' https://upload.wikimedia.org data: https://www.googletagmanager.com;
-             script-src 'self' https://www.googletagmanager.com 'unsafe-inline';
-             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+             img-src * data:;
+             script-src 'self' https://www.googletagmanager.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net https://adservice.google.com 'unsafe-inline' 'unsafe-eval';
+             frame-src https://*.googlesyndication.com https://*.doubleclick.net;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.googlesyndication.com https://*.doubleclick.net;" />
   <meta name="description"
     content="leankar.dev — Desenvolvedor Mobile Flutter. Aplicativos modernos e intuitivos para Android." />
   <title>leankar.dev — Mobile Developer</title>

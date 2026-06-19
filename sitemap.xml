@@ -10,4 +10,19 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://leankar.dev/blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/blog/app-lista-compras-offline-first-flutter-drift-sqlite.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

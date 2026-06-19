@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leankar.dev/sitemap.xml

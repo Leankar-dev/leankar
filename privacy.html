@@ -105,6 +105,28 @@
       transition: opacity var(--transition);
     }
     .back-link:hover { opacity: 0.75; }
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.88rem;
+    }
+    .privacy-table th,
+    .privacy-table td {
+      text-align: left;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      color: rgba(240, 244, 255, 0.80);
+      vertical-align: top;
+    }
+    .privacy-table th {
+      color: var(--cyan);
+      font-weight: 600;
+      background: rgba(0, 198, 255, 0.05);
+    }
+    .privacy-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
   </style>
 
   <!-- Canonical -->
@@ -113,7 +135,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Política de Privacidade — leankar.dev" />
-  <meta property="og:description" content="Política de Privacidade do site leankar.dev: dados coletados, uso de cookies (Google Analytics e AdSense) e direitos do usuário pela LGPD." />
+  <meta property="og:description" content="Política de Privacidade do site leankar.dev: dados coletados, uso de cookies (Google Analytics e AdSense), formulário de contato (Formspree) e direitos do usuário pela LGPD." />
   <meta property="og:url" content="https://leankar.dev/privacy.html" />
   <meta property="og:site_name" content="leankar.dev" />
 
@@ -160,7 +182,7 @@
   <main>
     <div class="privacy-hero">
       <h1>Política de <span class="gradient-text">Privacidade</span></h1>
-      <p>Última atualização: junho de 2026</p>
+      <p>Última atualização: 20 de junho de 2026</p>
     </div>
 
     <div class="privacy-content">
@@ -174,8 +196,9 @@
 
       <p>
         Esta Política de Privacidade descreve como o site <strong>leankar.dev</strong> ("nós", "nosso") coleta,
-        usa e protege as informações dos visitantes. Ao navegar neste site, você concorda com os termos
-        descritos abaixo.
+        usa e protege as informações dos visitantes, em conformidade com a
+        <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>. Ao navegar neste site,
+        você declara estar ciente dos termos descritos abaixo.
       </p>
 
       <hr class="privacy-divider" />
@@ -183,44 +206,92 @@
       <h2>1. Quem somos</h2>
       <p>
         O site <strong>leankar.dev</strong> é um portfólio pessoal de Leandro, desenvolvedor mobile especializado
-        em Flutter e Dart, com aplicativos publicados no Google Play. O site apresenta projetos, habilidades
-        técnicas e informações de contato profissional.
+        em Flutter e Dart, com aplicativos publicados no Google Play. O site apresenta projetos, artigos técnicos,
+        stack de desenvolvimento e um canal de contato profissional.
       </p>
       <p>
-        Contato: <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>
+        <strong>Controlador dos dados:</strong> Leandro (leankar.dev)<br />
+        <strong>E-mail:</strong> <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a><br />
+        <strong>Site:</strong> <a href="https://leankar.dev">leankar.dev</a>
       </p>
 
       <hr class="privacy-divider" />
 
       <h2>2. Dados coletados automaticamente</h2>
       <p>
-        Não coletamos dados pessoais diretamente. No entanto, serviços de terceiros integrados ao site
-        podem coletar informações automaticamente ao acessar as páginas:
+        Ao acessar qualquer página deste site, serviços de terceiros integrados podem coletar
+        automaticamente as informações abaixo. Não coletamos dados pessoais diretamente por conta própria.
       </p>
       <ul>
-        <li><strong>Google Analytics (GA4):</strong> coleta dados de navegação anônimos, como páginas visitadas,
-          tempo de sessão, país de origem, tipo de dispositivo e navegador. Esses dados são usados exclusivamente
-          para análise de tráfego e melhoria do site.</li>
-        <li><strong>Google AdSense:</strong> exibe anúncios personalizados com base nos interesses do usuário.
-          O Google pode usar cookies para personalizar os anúncios exibidos neste site.</li>
+        <li>
+          <strong>Google Analytics 4 (GA4) — ID: G-8V438JPJTN:</strong> coleta dados de navegação de forma
+          pseudonimizada, incluindo páginas visitadas, duração da sessão, país de origem, tipo de dispositivo
+          e navegador. Esses dados são usados exclusivamente para análise de tráfego e melhoria do site.
+          O endereço IP é anonimizado pelo Google antes do armazenamento.
+        </li>
+        <li>
+          <strong>Google AdSense — Publisher: ca-pub-7811045286351257:</strong> exibe anúncios no site.
+          O Google pode usar cookies e identificadores de dispositivo para personalizar os anúncios com base
+          nos interesses do usuário e no histórico de navegação em outros sites.
+        </li>
+        <li>
+          <strong>Google Fonts:</strong> as fontes Inter e Space Grotesk são carregadas diretamente dos
+          servidores do Google (fonts.googleapis.com / fonts.gstatic.com). Essa requisição pode registrar
+          o endereço IP do visitante nos servidores do Google conforme a
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            política de privacidade do Google</a>.
+        </li>
       </ul>
 
       <hr class="privacy-divider" />
 
-      <h2>3. Uso de cookies</h2>
+      <h2>3. Formulário de contato</h2>
       <p>
-        Este site utiliza cookies de terceiros para fins de análise e publicidade:
+        O site disponibiliza um formulário de contato processado pelo serviço
+        <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>).
+        Ao enviar o formulário, as seguintes informações são coletadas:
       </p>
       <ul>
-        <li><strong>Cookies do Google Analytics:</strong> identificam sessões únicas e rastreiam o comportamento
-          de navegação de forma agregada e anônima.</li>
-        <li><strong>Cookies do Google AdSense / DoubleClick:</strong> usados pelo Google para exibir anúncios
-          relevantes. O Google pode combinar informações desses cookies com dados de outras fontes para personalizar
-          a experiência publicitária.</li>
+        <li><strong>Nome</strong> (campo obrigatório)</li>
+        <li><strong>Endereço de e-mail</strong> (campo obrigatório, usado para resposta)</li>
+        <li><strong>Mensagem</strong> (campo obrigatório)</li>
       </ul>
       <p>
-        Você pode gerenciar ou desativar cookies nas configurações do seu navegador. Para optar por não participar
-        da publicidade personalizada do Google, acesse:
+        Esses dados são transmitidos de forma segura (HTTPS) para os servidores do Formspree e encaminhados
+        ao endereço <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>. Não são armazenados
+        em banco de dados próprio e não são compartilhados com terceiros além do Formspree, que atua como
+        operador de dados. Para detalhes sobre como o Formspree trata seus dados, consulte a
+        <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+          Política de Privacidade do Formspree</a>.
+      </p>
+      <p>
+        <strong>Finalidade:</strong> responder solicitações de contato profissional.<br />
+        <strong>Base legal (LGPD):</strong> legítimo interesse (Art. 7º, IX) e execução de contrato a pedido
+        do titular (Art. 7º, V), conforme aplicável.
+      </p>
+
+      <hr class="privacy-divider" />
+
+      <h2>4. Uso de cookies</h2>
+      <p>
+        Este site utiliza cookies de terceiros para análise de audiência e publicidade. Não utilizamos
+        cookies próprios. Os cookies de terceiros presentes são:
+      </p>
+      <ul>
+        <li>
+          <strong>Cookies do Google Analytics (_ga, _gid, _ga_*):</strong> identificam sessões únicas e
+          rastreiam comportamento de navegação de forma agregada. Expiram em até 2 anos (_ga) ou 24 horas
+          (_gid).
+        </li>
+        <li>
+          <strong>Cookies do Google AdSense / DoubleClick (IDE, NID, DSID e similares):</strong> usados
+          pelo Google para exibir anúncios relevantes e medir sua eficácia. O Google pode combinar esses
+          dados com informações de outras fontes para personalizar a experiência publicitária.
+        </li>
+      </ul>
+      <p>
+        Você pode gerenciar ou bloquear cookies nas configurações do seu navegador. Para desativar a
+        publicidade personalizada do Google, acesse:
         <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
           google.com/settings/ads
         </a>.
@@ -228,87 +299,183 @@
 
       <hr class="privacy-divider" />
 
-      <h2>4. Dados inseridos voluntariamente</h2>
+      <h2>5. Aplicativos Android publicados</h2>
       <p>
-        Este site não possui formulários de cadastro ou login. Ao utilizar o link de e-mail
-        (<a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>) para entrar em contato,
-        as informações enviadas (nome, e-mail, mensagem) são recebidas diretamente pelo responsável do site
-        e não são armazenadas em banco de dados ou compartilhadas com terceiros.
+        O site divulga quatro aplicativos Android disponíveis no Google Play, todos desenvolvidos por
+        Leandro. A tabela abaixo descreve a política de privacidade de cada app:
       </p>
-
-      <hr class="privacy-divider" />
-
-      <h2>5. Compartilhamento de dados</h2>
-      <p>
-        Não vendemos, trocamos ou transferimos suas informações pessoais a terceiros. As únicas exceções
-        são os provedores de serviço listados nesta política (Google Analytics e Google AdSense), que operam
-        sob suas próprias políticas de privacidade.
-      </p>
-      <ul>
-        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-          Política de Privacidade do Google
-        </a></li>
-        <li><a href="https://support.google.com/adsense/answer/1348695" target="_blank" rel="noopener noreferrer">
-          Política de privacidade do Google AdSense
-        </a></li>
-      </ul>
-
-      <hr class="privacy-divider" />
-
-      <h2>6. Seus direitos (LGPD)</h2>
-      <p>
-        De acordo com a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD)</strong>, você tem
-        os seguintes direitos em relação aos seus dados pessoais:
-      </p>
-      <ul>
-        <li><strong>Acesso:</strong> solicitar informações sobre quais dados seus estão sendo tratados.</li>
-        <li><strong>Correção:</strong> solicitar a correção de dados incompletos, inexatos ou desatualizados.</li>
-        <li><strong>Eliminação:</strong> solicitar a exclusão de dados tratados com base no seu consentimento.</li>
-        <li><strong>Oposição:</strong> opor-se ao tratamento de dados realizado com base em interesse legítimo.</li>
-        <li><strong>Portabilidade:</strong> solicitar a portabilidade dos seus dados para outro fornecedor.</li>
-        <li><strong>Revogação do consentimento:</strong> retirar o consentimento a qualquer momento.</li>
-      </ul>
-      <p>
-        Para exercer qualquer um desses direitos, entre em contato pelo e-mail:
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>Aplicativo</th>
+            <th>Dados coletados pelo app</th>
+            <th>Conexão externa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Calculadora Leankar</strong></td>
+            <td>Nenhum. Histórico de cálculos armazenado apenas localmente (SharedPreferences).</td>
+            <td>Não requer internet.</td>
+          </tr>
+          <tr>
+            <td><strong>BuscaCep_las</strong></td>
+            <td>Nenhum dado pessoal coletado ou armazenado. Os CEPs consultados trafegam para a API pública
+              ViaCEP (<a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">viacep.com.br</a>)
+              apenas para retornar o endereço correspondente e não são registrados pelo app.</td>
+            <td>API pública ViaCEP (consulta pontual, sem autenticação ou armazenamento).</td>
+          </tr>
+          <tr>
+            <td><strong>Lista da Casa</strong></td>
+            <td>Nenhum. Todas as listas e itens são salvos exclusivamente no dispositivo do usuário via SQLite.
+              Sem cadastro, sem sincronização na nuvem, sem coleta de dados.</td>
+            <td>Não requer internet.</td>
+          </tr>
+          <tr>
+            <td><strong>Campo Minado Evolution</strong></td>
+            <td>Nenhum. Estatísticas (melhor tempo, taxa de vitória) salvas localmente via SharedPreferences.
+              Sem conta de usuário, sem coleta de dados.</td>
+            <td>Não requer internet.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 12px;">
+        Nenhum dos aplicativos listados coleta, transmite ou armazena dados pessoais em servidores externos.
+        Perguntas específicas sobre um app podem ser enviadas para
         <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>.
       </p>
 
       <hr class="privacy-divider" />
 
-      <h2>7. Links externos</h2>
+      <h2>6. Bases legais para o tratamento de dados (LGPD)</h2>
       <p>
-        Este site contém links para o Google Play Store e outros serviços externos. Não somos responsáveis
-        pelas práticas de privacidade desses sites e recomendamos que você leia as políticas de privacidade
-        de cada site que visitar.
+        Conforme exigido pela LGPD (Art. 7º), abaixo estão as bases legais que fundamentam cada atividade
+        de tratamento de dados neste site:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Analytics:</strong> legítimo interesse do controlador na análise de audiência e
+          melhoria do site (Art. 7º, IX), com dados pseudonimizados e anonimização de IP ativa.
+        </li>
+        <li>
+          <strong>Google AdSense:</strong> consentimento do titular (Art. 7º, I), expressado pelo uso
+          continuado do site após ciência desta política. O usuário pode revogar via configurações de
+          anúncio do Google.
+        </li>
+        <li>
+          <strong>Google Fonts:</strong> legítimo interesse do controlador na exibição adequada do site
+          (Art. 7º, IX). O carregamento de fontes externas é necessário para a renderização correta da
+          interface.
+        </li>
+        <li>
+          <strong>Formulário de contato (Formspree):</strong> execução de procedimentos preliminares a
+          pedido do titular (Art. 7º, V) e legítimo interesse no atendimento de solicitações profissionais
+          (Art. 7º, IX).
+        </li>
+      </ul>
+
+      <hr class="privacy-divider" />
+
+      <h2>7. Compartilhamento de dados</h2>
+      <p>
+        Não vendemos, trocamos ou transferimos dados pessoais a terceiros para fins comerciais. Os únicos
+        terceiros que recebem dados são os operadores de serviço descritos nesta política, cada um operando
+        sob suas próprias políticas de privacidade:
+      </p>
+      <ul>
+        <li>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+            Política de Privacidade do Google
+          </a> (Analytics, AdSense, Fonts)
+        </li>
+        <li>
+          <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+            Política de Privacidade do Formspree
+          </a> (formulário de contato)
+        </li>
+        <li>
+          <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">
+            ViaCEP
+          </a> (consultas de CEP pelo app BuscaCep_las — API pública, sem registro de dados pessoais)
+        </li>
+      </ul>
+
+      <hr class="privacy-divider" />
+
+      <h2>8. Seus direitos (LGPD — Art. 18)</h2>
+      <p>
+        Conforme a <strong>Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</strong>, você tem os
+        seguintes direitos em relação aos seus dados pessoais:
+      </p>
+      <ul>
+        <li><strong>Acesso:</strong> confirmar a existência do tratamento e obter acesso aos dados tratados.</li>
+        <li><strong>Correção:</strong> solicitar a atualização de dados incompletos, inexatos ou desatualizados.</li>
+        <li><strong>Anonimização, bloqueio ou eliminação:</strong> de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD.</li>
+        <li><strong>Portabilidade:</strong> solicitar a transferência dos seus dados a outro fornecedor de serviço.</li>
+        <li><strong>Eliminação:</strong> dos dados tratados com base no seu consentimento, quando você revogá-lo.</li>
+        <li><strong>Informação:</strong> sobre os terceiros com quem os dados foram compartilhados.</li>
+        <li><strong>Oposição:</strong> ao tratamento realizado com base em legítimo interesse, caso entenda que há violação à LGPD.</li>
+        <li><strong>Revogação do consentimento:</strong> a qualquer momento e sem ônus, para tratamentos baseados no consentimento.</li>
+        <li><strong>Reclamação à ANPD:</strong> você pode registrar reclamações à Autoridade Nacional de Proteção de Dados pelo site
+          <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer">gov.br/anpd</a>.
+        </li>
+      </ul>
+      <p>
+        Para exercer qualquer um desses direitos, entre em contato pelo e-mail:
+        <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>.
+        Responderemos dentro do prazo previsto na LGPD.
       </p>
 
       <hr class="privacy-divider" />
 
-      <h2>8. Segurança</h2>
+      <h2>9. Links externos</h2>
       <p>
-        Este site é servido via HTTPS e não armazena dados pessoais em servidores próprios. Adotamos boas
-        práticas de desenvolvimento web, incluindo Content Security Policy (CSP) para mitigar riscos de
-        injeção de conteúdo malicioso.
+        Este site contém links para serviços externos, incluindo Google Play Store, GitHub e
+        memoryplaysmental.com. Não somos responsáveis pelas práticas de privacidade desses sites.
+        Recomendamos que você leia as políticas de privacidade de cada serviço que visitar.
       </p>
 
       <hr class="privacy-divider" />
 
-      <h2>9. Alterações nesta política</h2>
+      <h2>10. Segurança</h2>
       <p>
-        Esta Política de Privacidade pode ser atualizada periodicamente. Alterações significativas serão
-        comunicadas por meio da data de "última atualização" no topo desta página. O uso continuado do site
-        após alterações implica na aceitação da política atualizada.
+        Este site é servido exclusivamente via <strong>HTTPS</strong> e não armazena dados pessoais em
+        servidores próprios. Todas as páginas implementam <strong>Content Security Policy (CSP)</strong>
+        para mitigar riscos de injeção de conteúdo malicioso (XSS). A transmissão de dados do formulário
+        de contato é criptografada de ponta a ponta via TLS.
       </p>
 
       <hr class="privacy-divider" />
 
-      <h2>10. Contato</h2>
+      <h2>11. Retenção de dados</h2>
+      <p>
+        Os dados coletados por serviços de terceiros são retidos conforme suas próprias políticas:
+      </p>
+      <ul>
+        <li><strong>Google Analytics:</strong> os dados de eventos são retidos por 14 meses por padrão (configuração do GA4).</li>
+        <li><strong>Google AdSense / DoubleClick:</strong> cookies expiram conforme definido pelo Google, geralmente entre 30 dias e 2 anos.</li>
+        <li><strong>Formspree:</strong> os dados do formulário são retidos nos servidores do Formspree conforme sua política; o responsável pelo site retém os e-mails de contato apenas pelo tempo necessário para responder a cada solicitação.</li>
+      </ul>
+
+      <hr class="privacy-divider" />
+
+      <h2>12. Alterações nesta política</h2>
+      <p>
+        Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças nos serviços
+        utilizados ou na legislação aplicável. A data de "última atualização" no topo desta página indica
+        quando ocorreu a revisão mais recente. O uso continuado do site após alterações implica na aceitação
+        da política atualizada.
+      </p>
+
+      <hr class="privacy-divider" />
+
+      <h2>13. Contato</h2>
       <p>
         Dúvidas, solicitações ou reclamações relacionadas a esta Política de Privacidade devem ser
         encaminhadas para:
       </p>
       <p>
-        <strong>Responsável:</strong> Leandro<br />
+        <strong>Responsável (Controlador):</strong> Leandro<br />
         <strong>E-mail:</strong> <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a><br />
         <strong>Site:</strong> <a href="https://leankar.dev">leankar.dev</a>
       </p>

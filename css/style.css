@@ -1054,3 +1054,206 @@ body {
   .phone-mockup { width: 180px; height: 340px; }
   .phone-app-icon { width: 52px; height: 52px; }
 }
+
+/* ─────────────────────────────────────────
+   APP PAGE (páginas individuais de apps)
+───────────────────────────────────────── */
+.app-page-hero {
+  padding: 120px 24px 64px;
+  position: relative;
+  z-index: 1;
+}
+.app-page-hero-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  margin-top: 32px;
+}
+.app-page-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 32px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  flex-shrink: 0;
+  box-shadow: var(--glow-cyan);
+}
+.app-page-meta { flex: 1; min-width: 0; }
+.app-page-meta .app-category { display: block; margin-bottom: 10px; }
+.app-page-meta h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+.app-tagline {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+.app-page-meta .app-tags { margin-bottom: 24px; }
+.app-page-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+
+/* ── Features list ── */
+.app-features-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+  margin-bottom: 8px;
+}
+.app-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: rgba(240,244,255,0.82);
+  line-height: 1.55;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.feature-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0,198,255,0.12);
+  border: 1px solid rgba(0,198,255,0.3);
+  color: var(--cyan);
+  font-size: 0.6rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── FAQ Accordion ── */
+.faq-list { margin: 0; padding: 0; list-style: none; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: left;
+  transition: color var(--transition);
+}
+.faq-question:hover { color: var(--cyan); }
+.faq-icon {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform var(--transition), background var(--transition);
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(0,198,255,0.1); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer-inner {
+  padding-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ── Contact form (contato section revamp) ── */
+.contato-box { gap: 56px; align-items: flex-start; }
+.contato-content { max-width: none; flex: 1; min-width: 220px; }
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 14px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition), background var(--transition);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(240,244,255,0.3); }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--cyan);
+  background: rgba(0,198,255,0.04);
+}
+.contact-form textarea { min-height: 120px; }
+.contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form .btn { width: 100%; justify-content: center; }
+.form-msg {
+  font-size: 0.88rem;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  text-align: center;
+  display: none;
+}
+.form-msg--ok  { background: rgba(0,198,255,0.08); border: 1px solid rgba(0,198,255,0.25); color: var(--cyan); }
+.form-msg--err { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);  color: #ef4444; }
+
+/* ── App card detail link ── */
+.app-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+.app-detail-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity var(--transition), letter-spacing var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.app-detail-link:hover { opacity: 1; letter-spacing: 0.01em; }
+
+/* ── Responsive app page ── */
+@media (max-width: 860px) {
+  .app-page-hero-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .app-features-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .contato-box { flex-direction: column; gap: 36px; }
+  .contact-form-row { grid-template-columns: 1fr; }
+}

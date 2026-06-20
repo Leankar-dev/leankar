@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811045286351257"
+    crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8V438JPJTN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src * data:;
+             script-src 'self' https://www.googletagmanager.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net https://adservice.google.com 'unsafe-inline' 'unsafe-eval';
+             frame-src https://*.googlesyndication.com https://*.doubleclick.net;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.googlesyndication.com https://*.doubleclick.net;" />
+  <meta name="description"
+    content="Lista da Casa — app de lista de compras para Android. Offline com SQLite, múltiplas listas, gráficos de gastos e interface neumórfica. Gratuito." />
+  <meta name="robots" content="index, follow" />
+  <title>Lista da Casa — App de Lista de Compras Android | leankar.dev</title>
+  <link rel="icon" type="image/png" href="../assets/logos/leankar_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/lista-da-casa.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Lista da Casa — App de Lista de Compras Android" />
+  <meta property="og:description" content="App de lista de compras 100% offline com SQLite. Múltiplas listas, categorias, gráficos de gastos e interface neumórfica. Gratuito." />
+  <meta property="og:url" content="https://leankar.dev/apps/lista-da-casa.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/listadacasa_logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lista da Casa — App de Lista de Compras Android" />
+  <meta name="twitter:description" content="Lista de compras offline com SQLite, categorias, gráficos de gastos e design neumórfico. Gratuito para Android." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/listadacasa_logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lista da Casa",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "url": "https://play.google.com/store/apps/details?id=dev.leankar.listadacasa",
+    "description": "App de lista de compras para Android. 100% offline com Drift (SQLite), múltiplas listas simultâneas, categorias, preços, histórico e gráficos de gastos mensais.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "inLanguage": ["pt", "en", "es"],
+    "featureList": [
+      "Múltiplas listas simultâneas",
+      "Itens com categoria, quantidade e preço",
+      "Marcação de itens no carrinho",
+      "Histórico de compras finalizadas",
+      "Gráficos de gastos mensais por categoria",
+      "100% offline com Drift (SQLite)",
+      "3 idiomas: português, inglês e espanhol"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre">Sobre</a>
+        <a href="/#apps">Aplicativos</a>
+        <a href="/#contato">Contato</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link">Sobre</a>
+      <a href="/#apps" class="mobile-link">Aplicativos</a>
+      <a href="/#contato" class="mobile-link">Contato</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category">Organização</span>
+            <h1>Lista da <span class="gradient-text">Casa</span></h1>
+            <p class="app-tagline">
+              Esquecer o papel de compras ficou no passado. Organize suas compras por categoria,
+              acompanhe o progresso no corredor do mercado e controle o orçamento mensal com gráficos.
+              Sem internet, sem cadastro, sem complicação.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">Drift</span>
+              <span class="tag">Offline</span>
+              <span class="tag">Gratuito</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
+                class="play-btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Disponível no Google Play" class="play-badge" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal" style="max-width: 900px;">
+
+      <h2>Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span>Múltiplas listas simultâneas por estabelecimento</li>
+        <li><span class="feature-check">✓</span>Itens com categoria, quantidade e preço estimado</li>
+        <li><span class="feature-check">✓</span>Marcação de itens já pegos no carrinho</li>
+        <li><span class="feature-check">✓</span>Progresso da lista em tempo real (X de Y itens)</li>
+        <li><span class="feature-check">✓</span>Histórico completo de compras finalizadas</li>
+        <li><span class="feature-check">✓</span>Gráficos de gastos mensais por categoria</li>
+        <li><span class="feature-check">✓</span>100% offline com Drift (SQLite) — sem internet</li>
+        <li><span class="feature-check">✓</span>Interface para uso com uma mão — 3 idiomas</li>
+      </ul>
+
+      <h2>Sobre o aplicativo</h2>
+      <p>
+        A Lista da Casa nasceu de um problema genuíno: listas de compras em papel se perdem, listas em
+        aplicativos genéricos de notas são inflexíveis, e apps específicos de compras costumam ser
+        pesados, cheios de anúncios ou exigem cadastro na nuvem. A proposta foi construir algo focado,
+        leve e que funcione sem depender de internet.
+      </p>
+      <p>
+        Toda a persistência é feita com <strong>Drift</strong>, um ORM type-safe para SQLite no Flutter.
+        Drift permite definir tabelas como classes Dart, escrever queries com verificação em tempo de
+        compilação e receber streams reativos automaticamente — cada alteração em um item reflete
+        instantaneamente em toda a interface sem `setState` manual.
+      </p>
+      <p>
+        O sistema de categorias é o diferencial central: cada item pertence a uma categoria (hortifruti,
+        laticínios, limpeza, etc.), o que permite agrupar itens visualmente e gerar gráficos de gastos
+        mensais por categoria. Ao longo do tempo, o usuário consegue ver em quais categorias está
+        gastando mais e ajustar o orçamento doméstico com dados concretos.
+      </p>
+      <p>
+        A interface foi projetada para uso com uma mão no corredor do supermercado: área de toque generosa,
+        deslize para marcar itens, design neumórfico com alto contraste. Nenhuma ação crítica está a mais
+        de dois toques de distância. Disponível em português, inglês e espanhol.
+      </p>
+      <p>
+        Sem propaganda, sem cadastro, sem dados enviados a servidores. O banco de dados fica inteiramente
+        no dispositivo. Gratuito de verdade.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2>Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app precisa de internet para funcionar?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Não. O app é 100% offline. Todos os dados ficam armazenados localmente com SQLite
+              (via Drift). Funciona normalmente em modo avião, sem Wi-Fi e sem dados móveis.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Posso ter listas para diferentes estabelecimentos?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. É possível criar múltiplas listas simultâneas, cada uma com nome próprio —
+              por exemplo, "Mercado", "Farmácia" e "Feira". As listas ficam salvas e podem ser
+              retomadas a qualquer momento.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Como funciona o histórico e os gráficos de gastos?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Ao finalizar uma compra, ela é movida para o histórico com a data e o total gasto.
+              Na tela de gastos, gráficos mostram o valor mensal por categoria ao longo do tempo,
+              permitindo identificar onde o orçamento doméstico está sendo mais consumido.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Posso compartilhar a lista com outra pessoa?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Atualmente não há sincronização entre dispositivos nem compartilhamento direto. O app
+              é focado em uso individual offline. Sincronização colaborativa é um recurso que
+              pode ser adicionado em versões futuras.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app coleta ou envia meus dados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Não. Nenhum dado é coletado, transmitido ou compartilhado. Todas as listas, itens e
+              histórico ficam exclusivamente no banco de dados local do seu dispositivo Android.
+              Não há cadastro, não há conta, não há servidor.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app é gratuito?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim, completamente gratuito. Sem anúncios, sem compras dentro do app, sem assinatura
+              e sem funcionalidades pagas. Todas as features estão disponíveis de imediato, para
+              sempre, sem nenhuma condição.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p>Organize suas compras de forma simples e offline. Gratuito para Android.</p>
+        <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Baixar no Google Play
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter</p>
+      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
+        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
+          onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811045286351257"
+    crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8V438JPJTN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src * data:;
+             script-src 'self' https://www.googletagmanager.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net https://adservice.google.com 'unsafe-inline' 'unsafe-eval';
+             frame-src https://*.googlesyndication.com https://*.doubleclick.net;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.googlesyndication.com https://*.doubleclick.net;" />
+  <meta name="description"
+    content="Campo Minado Evolution — app Flutter Android com Material Design 3, efeitos sonoros, vibração tátil, 3 dificuldades e estatísticas. Gratuito, sem anúncios." />
+  <meta name="robots" content="index, follow" />
+  <title>Campo Minado Evolution — App Flutter Android | leankar.dev</title>
+  <link rel="icon" type="image/png" href="../assets/logos/leankar_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/campo-minado-evolution.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Campo Minado Evolution — App Flutter Android" />
+  <meta property="og:description" content="Campo Minado clássico reimaginado para mobile com Material Design 3, efeitos sonoros, vibração tátil e estatísticas salvas. Gratuito." />
+  <meta property="og:url" content="https://leankar.dev/apps/campo-minado-evolution.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Campo Minado Evolution — App Flutter Android" />
+  <meta name="twitter:description" content="Campo Minado clássico com Material Design 3, efeitos sonoros, vibração tátil e estatísticas. Flutter, gratuito, sem anúncios." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Campo Minado Evolution",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "url": "https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution",
+    "description": "Campo Minado clássico reimaginado para mobile em Flutter com Material Design 3, efeitos sonoros, vibração tátil, tabuleiros adaptativos e estatísticas salvas localmente.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "featureList": [
+      "Mecânica fiel ao Campo Minado original",
+      "3 dificuldades: Fácil (9x9), Médio (16x16), Difícil (16x30)",
+      "Tabuleiros adaptativos ao tamanho da tela",
+      "Efeitos sonoros e vibração tátil",
+      "Tutorial interativo",
+      "Estatísticas por dificuldade",
+      "Material Design 3, 5 idiomas"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre">Sobre</a>
+        <a href="/#apps">Aplicativos</a>
+        <a href="/#contato">Contato</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link">Sobre</a>
+      <a href="/#apps" class="mobile-link">Aplicativos</a>
+      <a href="/#contato" class="mobile-link">Contato</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/campominadoevolution_logo.png" alt="Campo Minado Evolution" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category">Jogos</span>
+            <h1>Campo Minado <span class="gradient-text">Evolution</span></h1>
+            <p class="app-tagline">
+              A mecânica que você já conhece — revelar células, marcar minas, raciocinar cada toque
+              — com visuais em Material Design 3, efeitos sonoros, vibração tátil e estatísticas
+              salvas por dificuldade.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Material 3</span>
+              <span class="tag">Jogos</span>
+              <span class="tag">Gratuito</span>
+              <span class="tag">Offline</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share"
+                class="play-btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Disponível no Google Play" class="play-badge" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal" style="max-width: 900px;">
+
+      <h2>Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span>Mecânica 100% fiel ao Campo Minado original</li>
+        <li><span class="feature-check">✓</span>3 dificuldades: Fácil (9×9), Médio (16×16) e Difícil (16×30)</li>
+        <li><span class="feature-check">✓</span>Tabuleiros adaptativos — se ajustam ao tamanho da tela</li>
+        <li><span class="feature-check">✓</span>Efeitos sonoros e vibração tátil configuráveis</li>
+        <li><span class="feature-check">✓</span>Animações de célula reveal e explosão</li>
+        <li><span class="feature-check">✓</span>Tutorial interativo integrado para novatos</li>
+        <li><span class="feature-check">✓</span>Estatísticas por dificuldade: melhor tempo e taxa de vitória</li>
+        <li><span class="feature-check">✓</span>Material Design 3, 5 idiomas, gratuito e offline</li>
+      </ul>
+
+      <h2>Sobre o aplicativo</h2>
+      <p>
+        Campo Minado Evolution é uma reescrita completa do Campo Minado clássico do Windows, construída
+        em Flutter do zero para mobile. A premissa era simples: manter a mecânica intacta e elevar tudo
+        ao redor — visual, som, tato e fluxo de jogo.
+      </p>
+      <p>
+        O tabuleiro é gerado algoritmicamente: as minas são distribuídas aleatoriamente após o primeiro
+        clique do usuário, garantindo que a primeira célula revelada nunca seja uma mina. O cálculo de
+        adjacentes percorre as 8 células vizinhas de cada posição, e o algoritmo de flood fill recursivo
+        revela automaticamente as regiões seguras quando uma célula vazia é tocada.
+      </p>
+      <p>
+        Os tabuleiros são adaptativos ao tamanho da tela: em dispositivos menores, as células se
+        redimensionam automaticamente para que o tabuleiro inteiro caiba na tela sem scroll. Em
+        dificuldade Difícil (16×30), o layout é otimizado para orientação paisagem com células
+        menores mas ainda tocáveis.
+      </p>
+      <p>
+        O sistema de estatísticas persiste localmente com <strong>SharedPreferences</strong>: melhor
+        tempo e taxa de vitória são mantidos por dificuldade entre sessões. O timer da partida é preciso
+        ao centésimo de segundo, e a tela de vitória exibe se o novo recorde foi batido.
+      </p>
+      <p>
+        Efeitos sonoros e vibração tátil podem ser ativados ou desativados nas configurações. Desenvolvido
+        com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, disponível em 5 idiomas,
+        sem anúncios e 100% offline.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2>Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            As regras são iguais ao Campo Minado do Windows?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. A mecânica é idêntica: toque para revelar uma célula, toque longo para marcar
+              uma mina suspeita com bandeira. Se revelar uma mina, o jogo termina. Para vencer,
+              é preciso revelar todas as células seguras sem acionar nenhuma mina.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O primeiro clique sempre é seguro?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. O tabuleiro é gerado após o primeiro toque, garantindo que a primeira célula
+              revelada nunca seja uma mina. Esse comportamento é idêntico ao implementado nas
+              versões originais do Windows XP e Vista.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Posso desativar os sons e a vibração?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. Na tela de configurações é possível ativar ou desativar os efeitos sonoros e
+              a vibração tátil de forma independente. As preferências são salvas entre sessões.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app salva meu melhor tempo e histórico de vitórias?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. O melhor tempo e a taxa de vitória (partidas ganhas / total de partidas) são
+              registrados por dificuldade e persistem entre sessões. Na tela de estatísticas você
+              pode ver o histórico de desempenho por nível.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app é gratuito e sem anúncios?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim, 100% gratuito e sem nenhum anúncio. Não há compras dentro do app, não há versão
+              paga e não há funcionalidades bloqueadas. Jogue à vontade sem interrupções.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Funciona offline?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim, completamente offline. O jogo não requer internet em nenhum momento. Funciona
+              normalmente em modo avião, no metrô, em viagens ou em qualquer situação sem conexão.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p>Redescubra o clássico que cresceu com você, agora com qualidade moderna no Android.</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share"
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Baixar no Google Play
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter</p>
+      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
+        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
+          onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

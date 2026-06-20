@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811045286351257"
+    crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-8V438JPJTN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src * data:;
+             script-src 'self' https://www.googletagmanager.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net https://adservice.google.com 'unsafe-inline' 'unsafe-eval';
+             frame-src https://*.googlesyndication.com https://*.doubleclick.net;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.googlesyndication.com https://*.doubleclick.net;" />
+  <meta name="description"
+    content="Calculadora Leankar — app Flutter para Android com design neumórfico, histórico de cálculos, IMC e múltiplos temas. Gratuito e sem anúncios." />
+  <meta name="robots" content="index, follow" />
+  <title>Calculadora Leankar — App Flutter Android | leankar.dev</title>
+  <link rel="icon" type="image/png" href="../assets/logos/leankar_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/calculadora-leankar.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Calculadora Leankar — App Flutter Android" />
+  <meta property="og:description" content="Calculadora limpa e sem anúncios para Android. Design neumórfico, histórico de cálculos, IMC e 5 idiomas. Gratuito." />
+  <meta property="og:url" content="https://leankar.dev/apps/calculadora-leankar.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/calculator_logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Calculadora Leankar — App Flutter Android" />
+  <meta name="twitter:description" content="Calculadora Flutter sem anúncios para Android. IMC, histórico e design neumórfico." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/calculator_logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Calculadora Leankar",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "url": "https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025",
+    "description": "Calculadora limpa para Android com design neumórfico, histórico persistente de cálculos, calculadora de IMC, múltiplos temas e 5 idiomas. Gratuito, sem anúncios, 100% offline.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "inLanguage": ["pt", "en", "es", "fr", "de"],
+    "featureList": [
+      "Quatro operações básicas e porcentagem",
+      "Cálculo de IMC com classificação OMS",
+      "Histórico persistente de 50 cálculos",
+      "Temas claro, escuro e automático",
+      "Design Neumórfico",
+      "5 idiomas suportados",
+      "Zero permissões, 100% offline"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre">Sobre</a>
+        <a href="/#apps">Aplicativos</a>
+        <a href="/#contato">Contato</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link">Sobre</a>
+      <a href="/#apps" class="mobile-link">Aplicativos</a>
+      <a href="/#contato" class="mobile-link">Contato</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category">Produtividade</span>
+            <h1>Calculadora <span class="gradient-text">Leankar</span></h1>
+            <p class="app-tagline">
+              A calculadora que simplesmente funciona — sem anúncios, sem bloatware, sem distrações.
+              Design neumórfico, histórico persistente de cálculos e calculadora de IMC integrada.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Material 3</span>
+              <span class="tag">Neumórfico</span>
+              <span class="tag">Gratuito</span>
+              <span class="tag">Offline</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
+                class="play-btn" target="_blank" rel="noopener noreferrer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Disponível no Google Play" class="play-badge" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal" style="max-width: 900px;">
+
+      <h2>Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span>Quatro operações básicas: soma, subtração, multiplicação e divisão</li>
+        <li><span class="feature-check">✓</span>Cálculo de porcentagem integrado</li>
+        <li><span class="feature-check">✓</span>Calculadora de IMC com classificação OMS (6 faixas)</li>
+        <li><span class="feature-check">✓</span>Histórico persistente dos últimos 50 cálculos</li>
+        <li><span class="feature-check">✓</span>Temas claro, escuro e automático (segue o sistema Android)</li>
+        <li><span class="feature-check">✓</span>Design Neumórfico com alto contraste e tipografia legível</li>
+        <li><span class="feature-check">✓</span>5 idiomas: português, inglês, espanhol, francês e alemão</li>
+        <li><span class="feature-check">✓</span>Zero permissões, zero rastreamento, 100% offline</li>
+      </ul>
+
+      <h2>Sobre o aplicativo</h2>
+      <p>
+        A Calculadora Leankar nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções
+        que ninguém usa. O objetivo foi construir algo simples, funcional e esteticamente honesto: uma ferramenta
+        que ocupa o mínimo de espaço, funciona sem internet e entrega o resultado sem distrações.
+      </p>
+      <p>
+        O design segue a linguagem neumórfica — elementos que parecem levemente pressionados na superfície,
+        com sombras suaves e bordas arredondadas. Cada botão foi dimensionado com área de toque generosa
+        para facilitar o uso em situações onde a atenção está dividida: cozinhando, fazendo compras ou
+        convertendo valores em movimento.
+      </p>
+      <p>
+        O histórico persistente é implementado com <strong>SharedPreferences</strong>: os últimos 50 cálculos
+        são salvos automaticamente entre sessões, sem sincronização em nuvem, sem conta, sem nenhum dado
+        enviado para servidores externos. Ao fechar e reabrir o app, o histórico está intacto.
+      </p>
+      <p>
+        A função de IMC calcula o Índice de Massa Corporal a partir de altura e peso, exibe o resultado
+        numérico e enquadra nas 6 faixas da tabela da OMS — de "abaixo do peso" a "obesidade grau III".
+        Uma feature prática para quem acompanha saúde sem querer instalar um app específico só para isso.
+      </p>
+      <p>
+        Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, compatível com
+        Android 6.0 (API 23) e superiores. Nenhuma permissão do sistema é solicitada. O app não coleta,
+        transmite ou vende nenhum dado do usuário.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2>Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app é totalmente gratuito?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim, 100% gratuito. Não há anúncios, compras dentro do app, assinatura ou versão premium.
+              Todas as funcionalidades estão disponíveis para todos desde o primeiro uso, sem nenhuma trava.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Funciona sem conexão com a internet?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim, 100% offline. O app não realiza nenhuma requisição de rede em nenhum momento. Funciona
+              normalmente em modo avião, em áreas sem sinal e em qualquer situação sem internet.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Posso apagar o histórico de cálculos?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim. Na tela de histórico há um botão para limpar todos os registros de uma só vez.
+              O histórico também é apagado ao limpar os dados do app nas configurações do Android.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Está disponível para iOS ou como app web?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Atualmente apenas para Android. A publicação na Apple App Store está nos planos, mas ainda
+              sem data definida. Não há versão web por enquanto.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            O app coleta ou envia meus dados?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Não. Nenhum dado pessoal é coletado, armazenado remotamente ou transmitido. O histórico
+              de cálculos fica exclusivamente no armazenamento local do seu dispositivo. O app não solicita
+              nenhuma permissão do sistema operacional.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            Como funciona o cálculo de IMC?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Informe peso (em kg) e altura (em metros ou centímetros). O app aplica a fórmula padrão
+              da OMS — IMC = peso / altura² — e exibe o resultado com a classificação correspondente:
+              abaixo do peso, peso normal, sobrepeso, obesidade grau I, II ou III.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p>Disponível gratuitamente no Google Play. Sem anúncios, sem cadastro, sem surpresas.</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Baixar no Google Play
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/leankar_logo.png" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter</p>
+      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
+        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
+          onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

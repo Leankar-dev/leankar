@@ -1,1 +1,333 @@
-google.com, pub-3684300183165888, DIRECT, f08c47fec0942fa0
+adagio.io, 1522, REVENDEDOR
+
+adform.com, 3400, REVENDEDOR, 9f5210a2f0999e32
+
+admanmedia.com, 2242, REVENDEDOR
+
+adyoulike.com, f78b24039641337f06634ab9a3da4b48, REVENDEDOR
+
+algorix.co, 54616, REVENDEDOR, 5b394c12fea27a1d
+
+anzu.io, 691e95644e633a6eee2567ee, REVENDEDOR, 1c1b7acf4992136c
+
+app-stock.com, 256917, REVENDEDOR
+
+app-stock.com, 358747, REVENDEDOR
+
+appads.in, 106246, REVENDEDOR
+
+appnexus.com, 11826, REVENDEDOR, f5ab79cb980f11d1
+
+appnexus.com, 12061, REVENDEDOR, f5ab79cb980f11d1
+
+appnexus.com, 14230, REVENDEDOR, f5ab79cb980f11d1
+
+appnexus.com, 15980, REVENDEDOR, f5ab79cb980f11d1
+
+appnexus.com, 17779, REVENDEDOR
+
+appnexus.com, 6849, REVENDEDOR
+
+betweendigital.com, 45827, REVENDEDOR
+
+bidmachine.io, 1371, REVENDEDOR
+
+blueseasx.com, 203625, REVENDEDOR
+
+bluexad.ai, 1996418805747683328, REVENDEDOR
+
+bold-win.com, 165, REVENDEDOR, 71746737d0bab951
+
+brightcom.com, 23120, REVENDEDOR
+
+contextweb.com, 558622, REVENDEDOR, 89ff185a4c4e857c
+
+conversantmedia.com, 41024, REVENDEDOR, 03113cd04947736d
+
+criteo.com, b-062019, REVENDEDOR, 9fac4a4a87c2a44f
+
+e-planning.net, 6a7f877127485fdb, REVENDEDOR, c1ba615865ed87b2
+
+google.com, pub-1682595508078257, REVENDEDOR, f08c47fec0942fa0
+
+google.com, pub-2923085774557613, REVENDEDOR, f08c47fec0942fa0
+
+google.com, pub-3990748024667386, REVENDEDOR, f08c47fec0942fa0
+
+google.com, pub-5060663379040713, REVENDEDOR, f08c47fec0942fa0
+
+ignitemediatech.com, pub_11115, REVENDEDOR
+
+improvedigital.com, 2297, REVENDEDOR
+
+improvedigital.com, 2464, REVENDEDOR
+
+indexexchange.com, 214183, REVENDEDOR, 50b1c356f2c5c8fc
+
+inmobi.com, 23d316d3d980453d8ea0dcf9caec4078, REVENDEDOR, 83e75a7ae333ca9d
+
+insticator.com, cadff748-965f-4393-a76e-a8f902512bad, REVENDEDOR, b3511ffcafb23a32
+
+jcprog.com, pub-4518750432, REVENDEDOR
+
+kidoz.net, 14260, REVENDEDOR, a109366414b7335e
+
+kidoz.net, 15467, REVENDEDOR, a109366414b7335e
+
+lacunads.com, lcb555b3bc8667a09a, REVENDEDOR
+
+lijit.com, 528770, REVENDEDOR, fafdf38b16bf6b2b
+
+loopme.com, 11463, REVENDEDOR, 6c8d5f95897a5a3b
+
+loopme.com, 9621, REVENDEDOR, 6c8d5f95897a5a3b
+
+lunamedia.io, 2fdb16a1-5025-4c41-9b17-e01e47ebc8b4, REVENDEDOR, 524ecb396915caaf
+
+mars.media, 1010442, REVENDEDOR
+
+media.net, 8cu12aq1y, REVENDEDOR
+
+media.net, 8cu355vs4, REVENDEDOR
+
+media.net, 8cu5l226o, REVENDEDOR
+
+Media.net, 8CU675N41, REVENDEDOR
+
+media.net, 8cu9b72o6, REVENDEDOR
+
+Media.net, 8CUH46N56, REVENDEDOR
+
+odeeo.io, 118848844, REVENDEDOR, 36cfd73091d5c3fc
+
+ogury.com, 065d4ff5-a269-44be-9634-9d4d7af2dfc3, REVENDEDOR
+
+onlinemediasolutions.com, 23120, REVENDEDOR, b3868b187e4b6402
+
+openx.com, 537153564, REVENDEDOR, 6a698e2ec38604c6
+
+openx.com, 559912325, REVENDEDOR, 6a698e2ec38604c6
+
+openx.com, 561446248, REVENDEDOR, 6a698e2ec38604c6
+
+openx.com, 561470659, REVENDEDOR, 6a698e2ec38604c6
+
+openx.com, 562174952, REVENDEDOR, 6a698e2ec38604c6
+
+openx.com, 563905670, REVENDEDOR, 6a698e2ec38604c6
+
+opera.com, pub6148735850944, REVENDEDOR, 55a0c5fd61378de3
+
+outbrain.com, 0073fa86cff719c752763d2c3ee52c8f00, REVENDEDOR
+
+pokkt.com, 6246, REVENDEDOR, c45702d9311e25fd
+
+prado.co, 14260, REVENDEDOR
+
+programmaticx.ai, 84448, REVENDEDOR, b42d42eb28400efa
+
+pubmatic.com, 137711, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 156177, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 156520, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 159501, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 159906, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 160318, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 160456, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 161151, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 162588, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 163117, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 165329, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 165438, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 165854, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 166335, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 167130, REVENDEDOR, 5d62403b186f2ace
+
+pubmatic.com, 167188, REVENDEDOR, 5d62403b186f2ace
+
+pubnative.net, 1009458, REVENDEDOR, d641df8625486a7b
+
+pubnative.net, 1009966, REVENDEDOR, d641df8625486a7b
+
+pubnative.net, 1017792, REVENDEDOR, d641df8625486a7b
+
+risecodes.com, 68d54e2fe125150001dd91e2, REVENDEDOR
+
+rubiconproject.com, 13380, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 15268, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 15854, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 17062, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 17328, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 17476, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 17608, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 17960, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 20014, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 20744, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 22134, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 22412, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 24084, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 24400, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 24600, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 25064, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 25336, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 25978, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 26132, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 26292, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 26958, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 27538, REVENDEDOR, 0bfd66d529a55807
+
+rubiconproject.com, 28169, REVENDEDOR, 0bfd66d529a55807
+
+sharethrough.com, 3713, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, 5294, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, 5828-OB, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, 5828, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, bc6d1whs, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, bxzzb1br, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, ftvct81v, REVENDEDOR
+
+sharethrough.com, ibazay96, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, r9b1mg7e, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, sniqcomc, REVENDEDOR, d53b998a7bd4ecd2
+
+sharethrough.com, UvcAx8IL, REVENDEDOR, d53b998a7bd4ecd2
+
+smaato.com, 1100040398, REVENDEDOR, 07bcf65f187117b4
+
+smaato.com, 1100047589, REVENDEDOR, 07bcf65f187117b4
+
+smaato.com, 1100055750, REVENDEDOR, 07bcf65f187117b4
+
+smaato.com, 1100059282, REVENDEDOR, 07bcf65f187117b4
+
+smaato.com, 1100059375, REVENDEDOR, 07bcf65f187117b4
+
+smaato.com, 1100059563, REVENDEDOR, 07bcf65f187117b4
+
+smartadserver.com, 4456, REVENDEDOR
+
+smartadserver.com, 4525, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 4568, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 4578, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 4610, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 4972, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 5294, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 5828-OB, REVENDEDOR, 060d053dcf45cbf3
+
+smartadserver.com, 5828, REVENDEDOR, 060d053dcf45cbf3
+
+smartclip.net, 13564, REVENDEDOR
+
+start.io, 168507669, REVENDEDOR
+
+start.io, 197760873, REVENDEDOR
+
+targetbetter.com, 82228, REVENDEDOR
+
+taurusx.com, 70079, REVENDEDOR
+
+thebrave.io, 1234634, REVENDEDOR, c25b2154543746ac
+
+themediagrid.com, FALINO, REVENDEDOR, 9fac4a4a87c2a44f
+
+thunder-monetize.com, 4818959194, REVENDEDOR
+
+toponad.com, 165535463cfb70, REVENDEDOR, 1d49fe424a1a456d
+
+tredio.io, 357a6fdf7642bf815a88822c447d9dc436891, REVENDEDOR
+
+triplelift.com, 12908, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 13042, REVENDEDOR
+
+triplelift.com, 13883, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 14127, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 14594, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 14716, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 14798, REVENDEDOR, 6c33edb13117fd86
+
+triplelift.com, 95054, REVENDEDOR, 6c33edb13117fd86
+
+undertone.com, 4108, REVENDEDOR
+
+unity.com, 132371420, DIRETO, 96cabb5fbdde37a7
+
+ushareit.com, lcb555b3bc8667a09a, REVENDEDOR
+
+video.unrulymedia.com, 144138083, REVENDEDOR
+
+video.unrulymedia.com, 290726769, REVENDEDOR
+
+video.unrulymedia.com, 389957698, REVENDEDOR
+
+video.unrulymedia.com, 657436911, REVENDEDOR
+
+video.unrulymedia.com, 703273072, REVENDEDOR
+
+video.unrulymedia.com, 905340553, REVENDEDOR
+
+videoheroes.tv, 212428, REVENDEDOR, 064bc410192443d8
+
+voisetech.com, 1066, REVENDEDOR
+
+xandr.com, 13799, REVENDEDOR
+
+xandr.com, 15840, REVENDEDOR
+
+xandr.com, 17779, REVENDEDOR
+
+zetaglobal.net, 630, REVENDEDOR
+
+zmaticoo.com, 5135195, REVENDEDOR

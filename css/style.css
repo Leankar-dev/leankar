@@ -92,7 +92,7 @@ body {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 68px;
+  height: 112px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -109,8 +109,8 @@ body {
   letter-spacing: -0.03em;
 }
 .nav-logo img {
-  width: 34px;
-  height: 34px;
+  width: 96px;
+  height: 96px;
   border-radius: 8px;
   object-fit: contain;
 }
@@ -1016,7 +1016,7 @@ body {
   font-weight: 700;
 }
 .footer-logo {
-  width: 28px; height: 28px;
+  width: 80px; height: 80px;
   border-radius: 6px;
   object-fit: contain;
 }

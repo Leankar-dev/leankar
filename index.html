@@ -4,20 +4,14 @@
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-8V438JPJTN');
-  </script>
+  <script src="js/gtag-init.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';
              style-src 'self' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src * data:;
-             script-src 'self' https://www.googletagmanager.com 'unsafe-inline' 'unsafe-eval';
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://formspree.io;
              form-action 'self' https://formspree.io;" />
   <meta name="description"
@@ -33,6 +27,12 @@
 
   <!-- Canonical -->
   <link rel="canonical" href="https://leankar.dev/" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -137,18 +137,32 @@
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
-        <a href="#sobre">Sobre</a>
-        <a href="#apps">Aplicativos</a>
-        <a href="#contato">Contato</a>
+        <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="#contato" data-i18n="nav.contato">Contato</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#sobre" class="mobile-link">Sobre</a>
-      <a href="#apps" class="mobile-link">Aplicativos</a>
-      <a href="#contato" class="mobile-link">Contato</a>
+      <a href="#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
     </div>
   </header>
 
@@ -158,19 +172,19 @@
     <section class="hero" id="hero">
       <div class="hero-content">
         <div class="hero-badge reveal">
-          <span class="badge-dot"></span>Flutter Developer
+          <span class="badge-dot"></span><span data-i18n="hero.badge">Flutter Developer</span>
         </div>
-        <h1 class="hero-title reveal">
+        <h1 class="hero-title reveal" data-i18n="hero.title">
           Criando apps que<br />
           <span class="gradient-text">fazem a diferença</span>
         </h1>
-        <p class="hero-subtitle reveal">
+        <p class="hero-subtitle reveal" data-i18n="hero.subtitle">
           Desenvolvedor mobile especializado em Flutter &amp; Dart.<br />
           Aplicativos modernos, intuitivos e disponíveis no Google Play.
         </p>
         <div class="hero-actions reveal">
-          <a href="#apps" class="btn btn-primary">Ver Aplicativos</a>
-          <a href="#contato" class="btn btn-outline">Entrar em Contato</a>
+          <a href="#apps" class="btn btn-primary" data-i18n="hero.cta-apps">Ver Aplicativos</a>
+          <a href="#contato" class="btn btn-outline" data-i18n="hero.cta-contato">Entrar em Contato</a>
         </div>
         <div class="hero-tech reveal">
           <span class="tech-tag">Flutter</span>
@@ -198,32 +212,32 @@
     <section class="sobre" id="sobre">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Quem sou eu</span>
-          <h2>Sobre <span class="gradient-text">mim</span></h2>
+          <span class="section-label" data-i18n="sobre.label">Quem sou eu</span>
+          <h2 data-i18n="sobre.title">Sobre <span class="gradient-text">mim</span></h2>
         </div>
         <div class="sobre-grid">
           <div class="sobre-text reveal">
-            <p>
+            <p data-i18n="sobre.p1">
               O que começou como curiosidade — entender como os aplicativos que uso diariamente são
               construídos — se transformou em uma paixão pelo desenvolvimento de Apps mobile. Sou desenvolvedor
               <strong>autodidata</strong>: aprendi Flutter na prática, transformando cada projeto publicado
               em um laboratório de evolução técnica e pessoal.
             </p>
-            <p>
+            <p data-i18n="sobre.p2">
               Em pouco mais de dois anos com <strong>Flutter e Dart</strong>, construí seis projetos —
               quatro apps Android no Google Play, um jogo web e dois apps em desenvolvimento ativo. Cada um
               nasceu de uma necessidade concreta: uma calculadora estilo neumórfico, um buscador de CEP ágil,
               um organizador de compras intuitivo, um campo minado reinventado. Problemas simples,
               resolvidos com capricho e atenção ao detalhe.
             </p>
-            <p>
+            <p data-i18n="sobre.p3">
               Tecnicamente, trabalho com arquitetura <strong>MVVM</strong>, gerenciamento de estado com
               <strong>Riverpod</strong>, persistência local com <strong>Drift (SQLite)</strong> e integração
               com <strong>Firebase</strong> quando a nuvem agrega valor real à experiência. A preocupação
               com código limpo e separação de responsabilidades guia cada decisão — da estrutura de pastas
               ao design da interface.
             </p>
-            <p>
+            <p data-i18n="sobre.p4">
               Minha missão é criar produtos que as pessoas realmente queiram usar: sem bloatware,
               sem atrito desnecessário, sem interfaces confusas. Se um app precisa de tutorial para ser
               usado, ele ainda não está pronto. Esse compromisso com a simplicidade define cada linha
@@ -232,38 +246,38 @@
             <div class="stats-row">
               <div class="stat">
                 <span class="stat-number">6</span>
-                <span class="stat-label">Projetos</span>
+                <span class="stat-label" data-i18n="sobre.stat-projetos">Projetos</span>
               </div>
               <div class="stat">
                 <span class="stat-number">100%</span>
-                <span class="stat-label">Flutter</span>
+                <span class="stat-label" data-i18n="sobre.stat-flutter">Flutter</span>
               </div>
               <div class="stat">
                 <span class="stat-number">∞</span>
-                <span class="stat-label">Dedicação</span>
+                <span class="stat-label" data-i18n="sobre.stat-dedicacao">Dedicação</span>
               </div>
             </div>
           </div>
           <div class="skills-grid reveal">
             <div class="skill-card">
               <div class="skill-icon">📱</div>
-              <h3>Mobile First</h3>
-              <p>UI/UX pensada para telas móveis desde o início</p>
+              <h3 data-i18n="sobre.skill1-title">Mobile First</h3>
+              <p data-i18n="sobre.skill1-desc">UI/UX pensada para telas móveis desde o início</p>
             </div>
             <div class="skill-card">
               <div class="skill-icon">⚡</div>
-              <h3>Alta Performance</h3>
-              <p>Apps fluidos com 60fps e carregamento rápido</p>
+              <h3 data-i18n="sobre.skill2-title">Alta Performance</h3>
+              <p data-i18n="sobre.skill2-desc">Apps fluidos com 60fps e carregamento rápido</p>
             </div>
             <div class="skill-card">
               <div class="skill-icon">🎨</div>
-              <h3>Design Moderno</h3>
-              <p>Material Design 3 e interfaces personalizadas</p>
+              <h3 data-i18n="sobre.skill3-title">Design Moderno</h3>
+              <p data-i18n="sobre.skill3-desc">Material Design 3 e interfaces personalizadas</p>
             </div>
             <div class="skill-card">
               <div class="skill-icon">🔒</div>
-              <h3>Código Limpo</h3>
-              <p>Arquitetura sólida e boas práticas de desenvolvimento</p>
+              <h3 data-i18n="sobre.skill4-title">Código Limpo</h3>
+              <p data-i18n="sobre.skill4-desc">Arquitetura sólida e boas práticas de desenvolvimento</p>
             </div>
           </div>
         </div>
@@ -274,16 +288,16 @@
     <section class="stack" id="stack">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Como construo</span>
-          <h2>Stack <span class="gradient-text">Técnica</span></h2>
-          <p class="section-desc">Ferramentas, padrões e práticas que uso em cada projeto</p>
+          <span class="section-label" data-i18n="stack.label">Como construo</span>
+          <h2 data-i18n="stack.title">Stack <span class="gradient-text">Técnica</span></h2>
+          <p class="section-desc" data-i18n="stack.desc">Ferramentas, padrões e práticas que uso em cada projeto</p>
         </div>
         <div class="stack-grid">
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">💙</div>
-            <h3>Flutter & Dart</h3>
-            <p>
+            <h3 data-i18n="stack.card1-title">Flutter & Dart</h3>
+            <p data-i18n="stack.card1-desc">
               Framework principal de todos os projetos. Escolhi Flutter pela capacidade de entregar
               interfaces nativas de alta qualidade com uma única base de código, ciclo de desenvolvimento
               ágil com hot reload e um ecossistema de packages maduro. Dart compila direto para código
@@ -299,8 +313,8 @@
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">🏗️</div>
-            <h3>MVVM & Riverpod</h3>
-            <p>
+            <h3 data-i18n="stack.card2-title">MVVM & Riverpod</h3>
+            <p data-i18n="stack.card2-desc">
               Arquitetura MVVM para separar lógica de negócio da camada de apresentação. O Riverpod
               gerencia o estado de forma reativa e testável, eliminando dependências implícitas entre
               componentes. Essa combinação mantém o código organizado conforme o app cresce, sem
@@ -316,8 +330,8 @@
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">🗄️</div>
-            <h3>Drift & SQLite</h3>
-            <p>
+            <h3 data-i18n="stack.card3-title">Drift & SQLite</h3>
+            <p data-i18n="stack.card3-desc">
               Para persistência local, uso o Drift — uma camada segura e tipada sobre SQLite.
               Permite definir tabelas como classes Dart, escrever queries com verificação em tempo
               de compilação e receber streams reativos automaticamente. Ideal para apps que precisam
@@ -333,8 +347,8 @@
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">🔥</div>
-            <h3>Firebase</h3>
-            <p>
+            <h3 data-i18n="stack.card4-title">Firebase</h3>
+            <p data-i18n="stack.card4-desc">
               Integro Firebase quando a nuvem agrega valor real: Analytics para entender como os
               usuários interagem com os apps, Firestore para dados sincronizados em tempo real e
               Auth para autenticação sem servidor próprio. A integração via FlutterFire é madura
@@ -350,8 +364,8 @@
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">✅</div>
-            <h3>Testes & Qualidade</h3>
-            <p>
+            <h3 data-i18n="stack.card5-title">Testes & Qualidade</h3>
+            <p data-i18n="stack.card5-desc">
               Cobertura com testes unitários para lógica de negócio e testes de widget para
               componentes de interface. Uso flutter_test e mockito para isolar dependências e
               garantir que refatorações não quebrem comportamentos existentes. Checagem estática
@@ -367,8 +381,8 @@
 
           <div class="stack-card reveal">
             <div class="stack-card-icon">🚀</div>
-            <h3>Play Store & ASO</h3>
-            <p>
+            <h3 data-i18n="stack.card6-title">Play Store & ASO</h3>
+            <p data-i18n="stack.card6-desc">
               Processo completo de publicação: geração de AAB assinado, configuração de ProGuard,
               criação de assets da loja (ícones, screenshots, banner), descrições otimizadas para
               ASO (App Store Optimization) e monitoramento de avaliações via Google Play Console
@@ -390,23 +404,24 @@
     <section class="apps" id="apps">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Apps & Web</span>
-          <h2>Meus <span class="gradient-text">Projetos</span></h2>
-          <p class="section-desc">4 apps Flutter no Google Play · 2 em breve · 1 site web</p>
+          <span class="section-label" data-i18n="apps.label">Apps & Web</span>
+          <h2 data-i18n="apps.title">Meus <span class="gradient-text">Projetos</span></h2>
+          <p class="section-desc" data-i18n="apps.section-desc">4 apps Flutter no Google Play · 2 em breve · 1 site web
+          </p>
         </div>
         <div class="apps-grid">
 
           <!-- CALCULADORA -->
-          <article class="app-card reveal" style="--delay: 0ms">
+          <article class="app-card reveal app-card--d0">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-logo" />
               </div>
               <div class="app-info">
-                <span class="app-category">Produtividade</span>
+                <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
                 <h3 class="app-name">Calculadora Leankar</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.calc-desc">
                   Desenvolvida com Flutter e design Neumórfico, nasceu da insatisfação com calculadoras sobrecarregadas
                   de anúncios e funções que ninguém usa. Suporta as quatro operações básicas, porcentagem, IMC com faixa
                   de peso ideal e histórico persistente de cálculos para consulta rápida. Temas claro, escuro e
@@ -418,31 +433,32 @@
                 <div class="app-tags">
                   <span class="tag">Flutter</span>
                   <span class="tag">Material 3</span>
-                  <span class="tag">Gratuito</span>
+                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
                 </div>
                 <div class="app-card-actions">
                   <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
                       alt="Disponível no Google Play" class="play-badge" />
                   </a>
-                  <a href="/apps/calculadora-leankar.html" class="app-detail-link">Ver detalhes →</a>
+                  <a href="/apps/calculadora-leankar.html" class="app-detail-link" data-i18n="apps.link-details">Ver
+                    detalhes →</a>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- BUSCACEP -->
-          <article class="app-card reveal" style="--delay: 150ms">
+          <article class="app-card reveal app-card--d1">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/buscacep_logo.png" alt="BuscaCep_las" class="app-logo" />
               </div>
               <div class="app-info">
-                <span class="app-category">Utilidades</span>
+                <span class="app-category" data-i18n="apps.cat-utilidades">Utilidades</span>
                 <h3 class="app-name">BuscaCep_las</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.cep-desc">
                   Consultar um CEP brasileiro não deveria ser complicado. O BuscaCep integra a API
                   pública ViaCEP para retornar logradouro, bairro, cidade, estado, DDD e complemento
                   em segundos. Ideal para validar endereços em compras online, preencher formulários
@@ -455,31 +471,31 @@
                 <div class="app-tags">
                   <span class="tag">Flutter</span>
                   <span class="tag">API REST</span>
-                  <span class="tag">Gratuito</span>
+                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
                 </div>
                 <div class="app-card-actions">
                   <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
                       alt="Disponível no Google Play" class="play-badge" />
                   </a>
-                  <a href="/apps/buscacep.html" class="app-detail-link">Ver detalhes →</a>
+                  <a href="/apps/buscacep.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes →</a>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- LISTA DA CASA -->
-          <article class="app-card reveal" style="--delay: 300ms">
+          <article class="app-card reveal app-card--d2">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-logo" />
               </div>
               <div class="app-info">
-                <span class="app-category">Organização</span>
+                <span class="app-category" data-i18n="apps.cat-organizacao">Organização</span>
                 <h3 class="app-name">Lista da Casa</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.lista-desc">
                   Esquecer o papel de compras ficou no passado. A Lista da Casa é um app minimalista para gerenciar
                   listas de compras diretamente no Telefone. Adicione itens com categoria, quantidade e preço, marque o
                   que já foi pego e acompanhe o progresso em tempo real. Suporta múltiplas listas simultâneas para
@@ -492,31 +508,32 @@
                 <div class="app-tags">
                   <span class="tag">Flutter</span>
                   <span class="tag">SQLite</span>
-                  <span class="tag">Gratuito</span>
+                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
                 </div>
                 <div class="app-card-actions">
                   <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
                       alt="Disponível no Google Play" class="play-badge" />
                   </a>
-                  <a href="/apps/lista-da-casa.html" class="app-detail-link">Ver detalhes →</a>
+                  <a href="/apps/lista-da-casa.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes
+                    →</a>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- CAMPO MINADO EVOLUTION -->
-          <article class="app-card reveal" style="--delay: 450ms">
+          <article class="app-card reveal app-card--d3">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/campominadoevolution_logo.png" alt="Campo Minado Evolution" class="app-logo" />
               </div>
               <div class="app-info">
-                <span class="app-category">Jogos</span>
+                <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
                 <h3 class="app-name">Campo Minado Evolution</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.campo-desc">
                   O Campo Minado clássico, reescrito do zero para mobile com Flutter. A mecânica que você já conhece —
                   revelar células, marcar minas, raciocinar cada toque — ganhou visuais em Material Design, efeitos
                   sonoros, vibração tátil e animações que elevam a experiência sem trair a essência do original. Três
@@ -529,32 +546,33 @@
                 <div class="app-tags">
                   <span class="tag">Flutter</span>
                   <span class="tag">Game</span>
-                  <span class="tag">Gratuito</span>
+                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
                 </div>
                 <div class="app-card-actions">
                   <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
                       alt="Disponível no Google Play" class="play-badge" />
                   </a>
-                  <a href="/apps/campo-minado-evolution.html" class="app-detail-link">Ver detalhes →</a>
+                  <a href="/apps/campo-minado-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
+                    detalhes →</a>
                 </div>
               </div>
             </div>
           </article>
 
           <!-- DAMAS ARENA MOBILE -->
-          <article class="app-card app-card--wip reveal" style="--delay: 600ms">
+          <article class="app-card app-card--wip reveal app-card--d4">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/damas_arena_mobile_logo.png" alt="Damas Arena Mobile" class="app-logo" />
-                <span class="coming-soon-badge">Em breve</span>
+                <span class="coming-soon-badge" data-i18n="apps.badge-wip">Em breve</span>
               </div>
               <div class="app-info">
-                <span class="app-category">Jogos</span>
+                <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
                 <h3 class="app-name">Damas Arena Mobile</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.damas-desc">
                   DAMAS Arena é o jogo de Damas brasileiro em versão mobile, construído para quem leva a estratégia a
                   sério. Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — e sinta a diferença
                   de cada um: do aprendizado tranquilo até o desafio real contra um adversário que pensa de verdade.
@@ -565,7 +583,7 @@
                 <div class="app-tags">
                   <span class="tag">Flutter</span>
                   <span class="tag">Game</span>
-                  <span class="tag tag--wip">Em desenvolvimento</span>
+                  <span class="tag tag--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
                 </div>
                 <div class="wip-bar">
                   <div class="wip-bar-fill"></div>
@@ -575,17 +593,17 @@
           </article>
 
           <!-- MEMORY PLAY MENTAL -->
-          <article class="app-card app-card--web reveal" style="--delay: 750ms">
+          <article class="app-card app-card--web reveal app-card--d5">
             <div class="app-card-glow"></div>
             <div class="app-card-inner">
               <div class="app-logo-wrapper">
                 <img src="assets/logos/logo_memory_play_mental.png" alt="Memory Play Mental" class="app-logo" />
-                <span class="web-badge">Web</span>
+                <span class="web-badge" data-i18n="apps.badge-web">Web</span>
               </div>
               <div class="app-info">
-                <span class="app-category">Jogos Mentais</span>
+                <span class="app-category" data-i18n="apps.cat-jogos-mentais">Jogos Mentais</span>
                 <h3 class="app-name">Memory Play Mental</h3>
-                <p class="app-desc">
+                <p class="app-desc" data-i18n="apps.memory-desc">
                   Plataforma web de jogos cognitivos para exercitar memória, atenção e raciocínio de forma
                   lúdica. Sem instalação: acesse direto pelo navegador e comece a jogar. Os desafios testam
                   a capacidade de memorizar padrões, sequências e posições em partidas rápidas e progressivas
@@ -595,8 +613,8 @@
                 </p>
                 <div class="app-tags">
                   <span class="tag">Web</span>
-                  <span class="tag">Jogos</span>
-                  <span class="tag">Gratuito</span>
+                  <span class="tag" data-i18n="apps.cat-jogos">Jogos</span>
+                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
                 </div>
                 <a href="https://www.memoryplaysmental.com" class="site-visit-btn" target="_blank"
                   rel="noopener noreferrer">
@@ -604,7 +622,7 @@
                     <path
                       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                   </svg>
-                  Visitar Site
+                  <span data-i18n="apps.link-site">Visitar Site</span>
                 </a>
               </div>
             </div>
@@ -618,9 +636,9 @@
     <section class="artigos" id="artigos">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Blog</span>
-          <h2>Artigos <span class="gradient-text">Técnicos</span></h2>
-          <p class="section-desc">Experiências reais de desenvolvimento Flutter</p>
+          <span class="section-label" data-i18n="blog.label">Blog</span>
+          <h2 data-i18n="blog.title">Artigos <span class="gradient-text">Técnicos</span></h2>
+          <p class="section-desc" data-i18n="blog.desc">Experiências reais de desenvolvimento Flutter</p>
         </div>
         <div class="artigos-grid">
 
@@ -631,7 +649,7 @@
               primeira publicação.</p>
             <div class="artigo-card-meta">
               <span>Jun 2026</span>
-              <span>6 min de leitura</span>
+              <span>6 <span data-i18n="blog.read-min">min de leitura</span></span>
             </div>
           </a>
 
@@ -641,7 +659,7 @@
             <p>Como usei Drift para criar persistência local type-safe com streams reativos, integrado ao Riverpod.</p>
             <div class="artigo-card-meta">
               <span>Jun 2026</span>
-              <span>7 min de leitura</span>
+              <span>7 <span data-i18n="blog.read-min">min de leitura</span></span>
             </div>
           </a>
 
@@ -651,7 +669,7 @@
             <p>Distribuição de minas com proteção do primeiro clique, cálculo de adjacentes e flood fill recursivo.</p>
             <div class="artigo-card-meta">
               <span>Jun 2026</span>
-              <span>8 min de leitura</span>
+              <span>8 <span data-i18n="blog.read-min">min de leitura</span></span>
             </div>
           </a>
 
@@ -664,10 +682,10 @@
       <div class="container">
         <div class="contato-box reveal">
           <div class="contato-content">
-            <span class="section-label">Vamos conversar</span>
-            <h2>Tem um projeto<br /><span class="gradient-text">em mente?</span></h2>
-            <p>Preencha o formulário e responderei brevemente.</p>
-            <div class="social-links" style="margin-top: 8px;">
+            <span class="section-label" data-i18n="contato.label">Vamos conversar</span>
+            <h2 data-i18n="contato.title">Tem um projeto<br /><span class="gradient-text">em mente?</span></h2>
+            <p data-i18n="contato.desc">Preencha o formulário e responderei brevemente.</p>
+            <div class="social-links">
               <a href="https://github.com/Leankar-dev" class="social-btn" target="_blank" rel="noopener noreferrer"
                 aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -683,13 +701,19 @@
           <form class="contact-form" id="contact-form" action="https://formspree.io/f/xbdenpgy" method="POST"
             novalidate>
             <div class="contact-form-row">
-              <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name" />
-              <input type="email" name="_replyto" placeholder="Seu e-mail" required autocomplete="email" />
+              <input type="text" name="nome" data-i18n-placeholder="contato.placeholder-nome" placeholder="Seu nome"
+                required autocomplete="name" />
+              <input type="email" name="_replyto" data-i18n-placeholder="contato.placeholder-email"
+                placeholder="Seu e-mail" required autocomplete="email" />
             </div>
-            <textarea name="mensagem" placeholder="Descreva seu projeto ou tire sua dúvida…" required></textarea>
-            <button type="submit" class="btn btn-primary" id="contact-submit">Enviar mensagem</button>
-            <p class="form-msg form-msg--ok" id="form-ok">✓ Mensagem enviada! Responderei em breve.</p>
-            <p class="form-msg form-msg--err" id="form-err">Erro ao enviar. Tente novamente em instantes.</p>
+            <textarea name="mensagem" data-i18n-placeholder="contato.placeholder-msg"
+              placeholder="Descreva seu projeto ou tire sua dúvida…" required></textarea>
+            <button type="submit" class="btn btn-primary" id="contact-submit" data-i18n="contato.btn-submit">Enviar
+              mensagem</button>
+            <p class="form-msg form-msg--ok" id="form-ok" data-i18n="contato.success">✓ Mensagem enviada! Responderei em
+              breve.</p>
+            <p class="form-msg form-msg--err" id="form-err" data-i18n="contato.error">Erro ao enviar. Tente novamente em
+              instantes.</p>
           </form>
 
           <div class="contato-deco">
@@ -711,51 +735,21 @@
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">
-        &copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter
+        &copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span
+            class="heart">♥</span> e Flutter</span>
       </p>
-      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
-        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
-          onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link" data-i18n="footer.privacy">
           Política de Privacidade
         </a>
       </p>
     </div>
   </footer>
 
+  <script src="js/particles.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    (function () {
-      const form = document.getElementById('contact-form');
-      const btn = document.getElementById('contact-submit');
-      const ok = document.getElementById('form-ok');
-      const err = document.getElementById('form-err');
-      if (!form) return;
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.textContent = 'Enviando…';
-        ok.style.display = err.style.display = 'none';
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { Accept: 'application/json' },
-          });
-          if (res.ok) {
-            form.reset();
-            ok.style.display = 'block';
-            btn.textContent = 'Enviado!';
-          } else {
-            throw new Error();
-          }
-        } catch {
-          err.style.display = 'block';
-          btn.disabled = false;
-          btn.textContent = 'Enviar mensagem';
-        }
-      });
-    })();
-  </script>
+  <script src="js/contact-form.js"></script>
 </body>
 
 </html>

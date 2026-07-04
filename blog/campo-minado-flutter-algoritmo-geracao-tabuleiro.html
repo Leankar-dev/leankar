@@ -3,20 +3,15 @@
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-8V438JPJTN');
-  </script>
+  <script src="../js/gtag-init.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
              style-src 'self' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src * data:;
-             script-src 'self' https://www.googletagmanager.com 'unsafe-inline' 'unsafe-eval';
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
   <meta name="description"
     content="Como implementei o Campo Minado Evolution em Flutter: estrutura de dados do tabuleiro, distribuição de minas, cálculo de adjacentes e algoritmo de reveal recursivo." />
@@ -79,20 +74,38 @@
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
-        <a href="/#sobre">Sobre</a>
-        <a href="/#apps">Aplicativos</a>
-        <a href="/#contato">Contato</a>
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="/#sobre" class="mobile-link">Sobre</a>
-      <a href="/#apps" class="mobile-link">Aplicativos</a>
-      <a href="/#contato" class="mobile-link">Contato</a>
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
     </div>
   </header>
+
+  <div id="blog-lang-notice" class="blog-lang-notice">
+    <span data-i18n="lang.blog-only-pt">This article is only available in Portuguese.</span>
+  </div>
 
   <main>
     <div class="article-hero">
@@ -321,17 +334,19 @@ bool verificarVitoria() {
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">
-        &copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e Flutter
+        &copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e Flutter</span>
       </p>
-      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
-        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
-           onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+           data-i18n="footer.privacy">
           Política de Privacidade
         </a>
       </p>
     </div>
   </footer>
 
+  <script src="../js/particles.js"></script>
+  <script src="../js/i18n.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

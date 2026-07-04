@@ -527,6 +527,12 @@ body {
   transition-delay: var(--delay, 0ms);
 }
 .app-card:hover { transform: translateY(-6px); box-shadow: var(--glow-card); }
+.app-card--d0 { --delay: 0ms; }
+.app-card--d1 { --delay: 150ms; }
+.app-card--d2 { --delay: 300ms; }
+.app-card--d3 { --delay: 450ms; }
+.app-card--d4 { --delay: 600ms; }
+.app-card--d5 { --delay: 750ms; }
 
 .app-card-glow {
   position: absolute;
@@ -760,6 +766,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-top: 8px;
 }
 .social-btn {
   display: inline-flex;
@@ -904,6 +911,7 @@ body {
   position: relative;
   z-index: 1;
 }
+.article-body--app { max-width: 900px; }
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -1257,3 +1265,88 @@ body {
   .contato-box { flex-direction: column; gap: 36px; }
   .contact-form-row { grid-template-columns: 1fr; }
 }
+
+/* ── LANG SELECTOR ──────────────────────────────────────── */
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 16px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lang-btn.active {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.lang-sep {
+  color: var(--border);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
+/* Mobile */
+.lang-selector--mobile {
+  margin: 8px 24px 16px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lang-selector--mobile .lang-btn {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+}
+
+/* Ocultar seletor desktop em mobile */
+@media (max-width: 768px) {
+  .nav-links + .lang-selector:not(.lang-selector--mobile) {
+    display: none;
+  }
+}
+
+/* ── AVISO DE CONTEÚDO SOMENTE EM PT (blog e política de privacidade) ── */
+.blog-lang-notice,
+.legal-lang-notice {
+  display: none;
+  background: rgba(0, 198, 255, 0.12);
+  border-left: 3px solid var(--cyan);
+  color: var(--muted);
+  font-size: 0.875rem;
+  padding: 10px 16px;
+  margin: 0;
+}
+
+/* ── FOOTER (link de privacidade + parágrafo secundário) ──
+   Substituem style="" inline que a CSP (style-src sem 'unsafe-inline'
+   nestas páginas) bloqueia silenciosamente. ── */
+.footer-privacy-link {
+  color: rgba(240,244,255,0.45);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-privacy-link:hover { color: var(--cyan); }
+.footer-copy--sub { margin-top: 8px; font-size: 0.8rem; }
+
+/* ── PRIVACY: notas após tabelas/listas ── */
+.privacy-note { margin-top: 14px; }
+.privacy-note--lg { margin-top: 18px; }

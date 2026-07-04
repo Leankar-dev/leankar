@@ -3,20 +3,15 @@
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-8V438JPJTN');
-  </script>
+  <script src="../js/gtag-init.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
              style-src 'self' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src * data:;
-             script-src 'self' https://www.googletagmanager.com 'unsafe-inline' 'unsafe-eval';
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
   <meta name="description"
     content="Calculadora Leankar — app Flutter para Android com design neumórfico, histórico de cálculos, IMC e múltiplos temas. Gratuito e sem anúncios." />
@@ -31,6 +26,12 @@
   <link rel="stylesheet" href="../css/style.css" />
 
   <link rel="canonical" href="https://leankar.dev/apps/calculadora-leankar.html" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/calculadora-leankar.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/apps/calculadora-leankar.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/apps/calculadora-leankar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/calculadora-leankar.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Calculadora Leankar — App Flutter Android" />
@@ -82,18 +83,32 @@
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
-        <a href="/#sobre">Sobre</a>
-        <a href="/#apps">Aplicativos</a>
-        <a href="/#contato">Contato</a>
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="/#sobre" class="mobile-link">Sobre</a>
-      <a href="/#apps" class="mobile-link">Aplicativos</a>
-      <a href="/#contato" class="mobile-link">Contato</a>
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
     </div>
   </header>
 
@@ -101,13 +116,13 @@
 
     <div class="app-page-hero">
       <div class="container">
-        <a href="/#apps" class="back-link">← Todos os aplicativos</a>
+        <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
         <div class="app-page-hero-inner reveal">
           <img src="../assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-page-logo" />
           <div class="app-page-meta">
-            <span class="app-category">Produtividade</span>
+            <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
             <h1>Calculadora <span class="gradient-text">Leankar</span></h1>
-            <p class="app-tagline">
+            <p class="app-tagline" data-i18n="calc.tagline">
               A calculadora que simplesmente funciona — sem anúncios, sem bloatware, sem distrações.
               Design neumórfico, histórico persistente de cálculos e calculadora de IMC integrada.
             </p>
@@ -115,14 +130,14 @@
               <span class="tag">Flutter</span>
               <span class="tag">Material 3</span>
               <span class="tag">Neumórfico</span>
-              <span class="tag">Gratuito</span>
-              <span class="tag">Offline</span>
+              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+              <span class="tag" data-i18n="app.badge-offline">Offline</span>
             </div>
             <div class="app-page-actions">
               <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
                 class="play-btn" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                  alt="Disponível no Google Play" class="play-badge" />
+                <img src="../assets/logos/google-play-badge.svg"
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
               </a>
             </div>
           </div>
@@ -130,43 +145,43 @@
       </div>
     </div>
 
-    <div class="article-body reveal" style="max-width: 900px;">
+    <div class="article-body reveal article-body--app">
 
-      <h2>Funcionalidades</h2>
+      <h2 data-i18n="app.features-title">Funcionalidades</h2>
       <ul class="app-features-list">
-        <li><span class="feature-check">✓</span>Quatro operações básicas: soma, subtração, multiplicação e divisão</li>
-        <li><span class="feature-check">✓</span>Cálculo de porcentagem integrado</li>
-        <li><span class="feature-check">✓</span>Calculadora de IMC com classificação OMS (6 faixas)</li>
-        <li><span class="feature-check">✓</span>Histórico persistente dos últimos 50 cálculos</li>
-        <li><span class="feature-check">✓</span>Temas claro, escuro e automático (segue o sistema Android)</li>
-        <li><span class="feature-check">✓</span>Design Neumórfico com alto contraste e tipografia legível</li>
-        <li><span class="feature-check">✓</span>5 idiomas: português, inglês, espanhol, francês e alemão</li>
-        <li><span class="feature-check">✓</span>Zero permissões, zero rastreamento, 100% offline</li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature1">Quatro operações básicas: soma, subtração, multiplicação e divisão</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature2">Cálculo de porcentagem integrado</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature3">Calculadora de IMC com classificação OMS (6 faixas)</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature4">Histórico persistente dos últimos 50 cálculos</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature5">Temas claro, escuro e automático (segue o sistema Android)</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature6">Design Neumórfico com alto contraste e tipografia legível</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature7">5 idiomas: português, inglês, espanhol, francês e alemão</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="calc.feature8">Zero permissões, zero rastreamento, 100% offline</span></li>
       </ul>
 
-      <h2>Sobre o aplicativo</h2>
-      <p>
+      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="calc.about-p1">
         A Calculadora Leankar nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções
         que ninguém usa. O objetivo foi construir algo simples, funcional e esteticamente honesto: uma ferramenta
         que ocupa o mínimo de espaço, funciona sem internet e entrega o resultado sem distrações.
       </p>
-      <p>
+      <p data-i18n="calc.about-p2">
         O design segue a linguagem neumórfica — elementos que parecem levemente pressionados na superfície,
         com sombras suaves e bordas arredondadas. Cada botão foi dimensionado com área de toque generosa
         para facilitar o uso em situações onde a atenção está dividida: cozinhando, fazendo compras ou
         convertendo valores em movimento.
       </p>
-      <p>
+      <p data-i18n="calc.about-p3">
         O histórico persistente é implementado com <strong>SharedPreferences</strong>: os últimos 50 cálculos
         são salvos automaticamente entre sessões, sem sincronização em nuvem, sem conta, sem nenhum dado
         enviado para servidores externos. Ao fechar e reabrir o app, o histórico está intacto.
       </p>
-      <p>
+      <p data-i18n="calc.about-p4">
         A função de IMC calcula o Índice de Massa Corporal a partir de altura e peso, exibe o resultado
         numérico e enquadra nas 6 faixas da tabela da OMS — de "abaixo do peso" a "obesidade grau III".
         Uma feature prática para quem acompanha saúde sem querer instalar um app específico só para isso.
       </p>
-      <p>
+      <p data-i18n="calc.about-p5">
         Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, compatível com
         Android 6.0 (API 23) e superiores. Nenhuma permissão do sistema é solicitada. O app não coleta,
         transmite ou vende nenhum dado do usuário.
@@ -174,16 +189,16 @@
 
       <hr class="article-divider" />
 
-      <h2>Perguntas frequentes</h2>
+      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
       <ul class="faq-list">
 
         <li class="faq-item">
           <button class="faq-question">
-            O app é totalmente gratuito?
+            <span data-i18n="calc.faq1-q">O app é totalmente gratuito?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq1-a">
               Sim, 100% gratuito. Não há compras dentro do app, assinatura ou versão premium.
               Todas as funcionalidades estão disponíveis para todos desde o primeiro uso, sem nenhuma trava.
             </div>
@@ -192,11 +207,11 @@
 
         <li class="faq-item">
           <button class="faq-question">
-            Funciona sem conexão com a internet?
+            <span data-i18n="calc.faq2-q">Funciona sem conexão com a internet?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq2-a">
               Sim, 100% offline. O app não realiza nenhuma requisição de rede em nenhum momento. Funciona
               normalmente em modo avião, em áreas sem sinal e em qualquer situação sem internet.
             </div>
@@ -205,11 +220,11 @@
 
         <li class="faq-item">
           <button class="faq-question">
-            Posso apagar o histórico de cálculos?
+            <span data-i18n="calc.faq3-q">Posso apagar o histórico de cálculos?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq3-a">
               Sim. Na tela de histórico há um botão para limpar todos os registros de uma só vez.
               O histórico também é apagado ao limpar os dados do app nas configurações do Android.
             </div>
@@ -218,11 +233,11 @@
 
         <li class="faq-item">
           <button class="faq-question">
-            Está disponível para iOS ou como app web?
+            <span data-i18n="calc.faq4-q">Está disponível para iOS ou como app web?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq4-a">
               Atualmente apenas para Android. A publicação na Apple App Store está nos planos, mas ainda
               sem data definida. Não há versão web por enquanto.
             </div>
@@ -231,11 +246,11 @@
 
         <li class="faq-item">
           <button class="faq-question">
-            O app coleta ou envia meus dados?
+            <span data-i18n="calc.faq5-q">O app coleta ou envia meus dados?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq5-a">
               Não. Nenhum dado pessoal é coletado, armazenado remotamente ou transmitido. O histórico
               de cálculos fica exclusivamente no armazenamento local do seu dispositivo. O app não solicita
               nenhuma permissão do sistema operacional.
@@ -245,11 +260,11 @@
 
         <li class="faq-item">
           <button class="faq-question">
-            Como funciona o cálculo de IMC?
+            <span data-i18n="calc.faq6-q">Como funciona o cálculo de IMC?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">
+            <div class="faq-answer-inner" data-i18n="calc.faq6-a">
               Informe peso (em kg) e altura (em metros ou centímetros). O app aplica a fórmula padrão
               da OMS — IMC = peso / altura² — e exibe o resultado com a classificação correspondente:
               abaixo do peso, peso normal, sobrepeso, obesidade grau I, II ou III.
@@ -262,9 +277,9 @@
       <hr class="article-divider" />
 
       <div class="article-cta">
-        <p>Disponível gratuitamente no Google Play. Sem anúncios, sem cadastro, sem surpresas.</p>
+        <p data-i18n="calc.cta-text">Disponível gratuitamente no Google Play. Sem anúncios, sem cadastro, sem surpresas.</p>
         <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
-          class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">
           Baixar no Google Play
         </a>
       </div>
@@ -279,17 +294,19 @@
         <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
-      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — Feito com <span class="heart">♥</span> e
-        Flutter</p>
-      <p class="footer-copy" style="margin-top: 8px; font-size: 0.8rem;">
-        <a href="/privacy.html" style="color: rgba(240,244,255,0.45); text-decoration: none;"
-          onmouseover="this.style.color='#00c6ff'" onmouseout="this.style.color='rgba(240,244,255,0.45)'">
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e
+        Flutter</span></p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+          data-i18n="footer.privacy">
           Política de Privacidade
         </a>
       </p>
     </div>
   </footer>
 
+  <script src="../js/particles.js"></script>
+  <script src="../js/i18n.js"></script>
   <script src="../js/app-page.js"></script>
 </body>
 

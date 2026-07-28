@@ -164,7 +164,8 @@ xandr.com, 13799, REVENDEDOR
 xandr.com, 15840, REVENDEDOR
 xandr.com, 17779, REVENDEDOR
 zetaglobal.net, 630, REVENDEDOR
-zmaticoo.com, 5135195, REVENDEDORstart.io, 146538910, DIRETO
+zmaticoo.com, 5135195, REVENDEDOR
+start.io, 146538910, DIRETO
 pubnative.net, 1007349, REVENDEDOR, d641df8625486a7b
 pubmatic.com, 161162, REVENDEDOR, 5d62403b186f2ace
 conversantmedia.com, 100339, REVENDEDOR, 03113cd04947736d

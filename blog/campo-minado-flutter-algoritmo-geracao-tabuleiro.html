@@ -103,12 +103,8 @@
     </div>
   </header>
 
-  <div id="blog-lang-notice" class="blog-lang-notice">
-    <span data-i18n="lang.blog-only-pt">This article is only available in Portuguese.</span>
-  </div>
-
   <main>
-    <div class="article-hero">
+    <div class="article-hero" data-lang-block="pt">
       <h1>Campo Minado em Flutter:<br /><span class="gradient-text">algoritmo de geração de tabuleiro</span> e lógica do jogo</h1>
       <div class="article-meta">
         <span>19 de junho de 2026</span>
@@ -124,8 +120,40 @@
         <span class="article-tag">Game Dev</span>
       </div>
     </div>
+    <div class="article-hero" data-lang-block="en" hidden>
+      <h1>Minesweeper in Flutter:<br /><span class="gradient-text">board generation algorithm</span> and game logic</h1>
+      <div class="article-meta">
+        <span>June 19, 2026</span>
+        <span>·</span>
+        <span>8 min read</span>
+        <span>·</span>
+        <span>by Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Dart</span>
+        <span class="article-tag">Algorithms</span>
+        <span class="article-tag">Game Dev</span>
+      </div>
+    </div>
+    <div class="article-hero" data-lang-block="es" hidden>
+      <h1>Buscaminas en Flutter:<br /><span class="gradient-text">algoritmo de generación de tablero</span> y lógica del juego</h1>
+      <div class="article-meta">
+        <span>19 de junio de 2026</span>
+        <span>·</span>
+        <span>8 min de lectura</span>
+        <span>·</span>
+        <span>por Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Dart</span>
+        <span class="article-tag">Algoritmos</span>
+        <span class="article-tag">Game Dev</span>
+      </div>
+    </div>
 
-    <div class="article-body">
+    <div class="article-body" data-lang-block="pt">
 
       <a href="/" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
@@ -322,6 +350,410 @@ bool verificarVitoria() {
       <div class="article-cta">
         <p>Experimente o Campo Minado Evolution gratuitamente no Google Play:</p>
         <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Baixar Campo Minado Evolution</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="en" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to homepage
+      </a>
+
+      <p>
+        Minesweeper looks simple at first glance — it's a grid of numbers and mines. But implementing
+        it from scratch reveals several interesting technical decisions: how do you distribute mines
+        in a truly random way? How do you guarantee the first click is never a mine? How do you
+        implement the cascading reveal of empty cells without freezing the UI? In this article I show
+        how I solved each of these questions in <strong>Campo Minado Evolution</strong>.
+      </p>
+
+      <h2>The data structure: modeling a cell</h2>
+      <p>
+        Each board position is represented by a <code>Celula</code> object holding all the state
+        needed for rendering and game logic:
+      </p>
+      <pre><code>class Celula {
+  final int linha;
+  final int coluna;
+  bool temMina;
+  bool revelada;
+  bool marcada;      // player's flag
+  int minasAdjacentes;
+
+  Celula({required this.linha, required this.coluna})
+      : temMina = false,
+        revelada = false,
+        marcada = false,
+        minasAdjacentes = 0;
+}</code></pre>
+      <p>
+        The entire board is a two-dimensional list initialized with clean cells. No mine is placed
+        at creation time — that's intentional, as we'll see next.
+      </p>
+      <pre><code>List&lt;List&lt;Celula&gt;&gt; tabuleiro = List.generate(
+  linhas,
+  (l) => List.generate(colunas, (c) => Celula(linha: l, coluna: c)),
+);</code></pre>
+
+      <h2>Distributing the mines: the first-click problem</h2>
+      <p>
+        A classic Minesweeper rule: <strong>the first click can never explode a mine</strong>. That
+        means mines need to be distributed <em>after</em> the first click, excluding the clicked cell
+        and all of its neighbors from the draw.
+      </p>
+      <pre><code>void distribuirMinas(int linhaSegura, int colunaSegura) {
+  final rand = Random();
+  int minasColocadas = 0;
+
+  while (minasColocadas &lt; totalMinas) {
+    int l = rand.nextInt(linhas);
+    int c = rand.nextInt(colunas);
+
+    // Excludes the clicked cell and its 8 surrounding neighbors
+    bool ehZonaSegura =
+        (l - linhaSegura).abs() &lt;= 1 && (c - colunaSegura).abs() &lt;= 1;
+
+    if (!ehZonaSegura && !tabuleiro[l][c].temMina) {
+      tabuleiro[l][c].temMina = true;
+      minasColocadas++;
+    }
+  }
+}</code></pre>
+      <p>
+        This loop keeps drawing positions until every mine has been placed. The 3×3 exclusion zone
+        around the first click guarantees the player always starts with some room to reason — no
+        instant explosion on the first move.
+      </p>
+
+      <h2>Calculating the adjacent numbers</h2>
+      <p>
+        After distributing the mines, we walk the entire board and calculate how many mines exist
+        among the 8 neighbors of every non-mine cell:
+      </p>
+      <pre><code>void calcularAdjacentes() {
+  for (int l = 0; l &lt; linhas; l++) {
+    for (int c = 0; c &lt; colunas; c++) {
+      if (!tabuleiro[l][c].temMina) {
+        tabuleiro[l][c].minasAdjacentes = _contarVizinhos(l, c);
+      }
+    }
+  }
+}
+
+int _contarVizinhos(int l, int c) {
+  int count = 0;
+  for (int dl = -1; dl &lt;= 1; dl++) {
+    for (int dc = -1; dc &lt;= 1; dc++) {
+      if (dl == 0 && dc == 0) continue; // skip the cell itself
+      int nl = l + dl;
+      int nc = c + dc;
+      if (nl &gt;= 0 && nl &lt; linhas && nc &gt;= 0 && nc &lt; colunas) {
+        if (tabuleiro[nl][nc].temMina) count++;
+      }
+    }
+  }
+  return count;
+}</code></pre>
+
+      <h2>The cascading reveal: recursive flood fill</h2>
+      <p>
+        When the player clicks a cell with <code>minasAdjacentes == 0</code>, every connected empty
+        cell must be revealed automatically — along with the numbers at the edges of that region.
+        This is a <strong>flood fill</strong> algorithm, the same technique used by bucket-fill tools
+        in paint programs.
+      </p>
+      <pre><code>void revelar(int l, int c) {
+  // Board bounds
+  if (l &lt; 0 || l &gt;= linhas || c &lt; 0 || c &gt;= colunas) return;
+
+  final celula = tabuleiro[l][c];
+
+  // Don't reveal cells that are already revealed or flagged
+  if (celula.revelada || celula.marcada) return;
+
+  celula.revelada = true;
+
+  // If the cell has no mines around it, recursively reveal its 8 neighbors
+  if (!celula.temMina && celula.minasAdjacentes == 0) {
+    for (int dl = -1; dl &lt;= 1; dl++) {
+      for (int dc = -1; dc &lt;= 1; dc++) {
+        if (dl == 0 && dc == 0) continue;
+        revelar(l + dl, c + dc);
+      }
+    }
+  }
+}</code></pre>
+      <p>
+        The recursion naturally stops when it hits cells that are already revealed, flagged, or cells
+        with a number greater than zero (the edges of the empty region). On large boards, the call
+        stack can grow substantially. For very large boards, it's worth converting this to an
+        iterative approach using a queue (<code>Queue</code>).
+      </p>
+
+      <h2>Rendering the board with Flutter</h2>
+      <p>
+        The board is rendered with <code>GridView.builder</code> using a fixed cross-axis-count
+        delegate. Each cell is a <code>GestureDetector</code> that responds to a simple tap (reveal)
+        and a long press (place a flag):
+      </p>
+      <pre><code>GridView.builder(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: colunas,
+    childAspectRatio: 1.0,
+  ),
+  itemCount: linhas * colunas,
+  itemBuilder: (context, index) {
+    final l = index ~/ colunas;
+    final c = index % colunas;
+    final celula = tabuleiro[l][c];
+
+    return GestureDetector(
+      onTap: () => controller.revelar(l, c),
+      onLongPress: () => controller.alternarBandeira(l, c),
+      child: CelulaWidget(celula: celula),
+    );
+  },
+)</code></pre>
+      <p>
+        The <code>CelulaWidget</code> receives the cell and decides what to display: a covered cell,
+        a flag, a colored number, or an explosion. The number colors follow the classic Minesweeper
+        convention: 1 blue, 2 green, 3 red, and so on.
+      </p>
+
+      <h2>Win and loss conditions</h2>
+      <p>Both conditions are checked after every move:</p>
+      <pre><code>// Loss: the player revealed a mine
+bool verificarDerrota(int l, int c) => tabuleiro[l][c].temMina;
+
+// Win: every cell WITHOUT a mine has been revealed
+bool verificarVitoria() {
+  return tabuleiro
+      .expand((row) => row)
+      .where((c) => !c.temMina)
+      .every((c) => c.revelada);
+}</code></pre>
+      <p>
+        On a win, every remaining mine is automatically flagged and the timer stops. On a loss, every
+        mine is revealed with an animation and the session ends.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Implementing Minesweeper in Flutter is an excellent exercise because it combines classic
+        algorithms (flood fill, constrained random generation) with reactive UI. The result is a game
+        that runs smoothly at 60fps because all the logic lives outside the widget tree — the board
+        state is managed in the controller, and the UI only re-renders what actually changed.
+      </p>
+
+      <div class="article-cta">
+        <p>Try Campo Minado Evolution for free on Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Campo Minado Evolution</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="es" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Volver a la página de inicio
+      </a>
+
+      <p>
+        El Buscaminas parece simple a primera vista — es una cuadrícula con números y minas. Pero
+        implementarlo desde cero revela varias decisiones técnicas interesantes: ¿cómo distribuir las
+        minas de forma verdaderamente aleatoria? ¿Cómo garantizar que el primer clic nunca sea una
+        mina? ¿Cómo implementar el revelado en cascada de celdas vacías sin bloquear la UI? En este
+        artículo muestro cómo resolví cada una de estas cuestiones en <strong>Campo Minado Evolution</strong>.
+      </p>
+
+      <h2>La estructura de datos: modelando una celda</h2>
+      <p>
+        Cada posición del tablero está representada por un objeto <code>Celula</code> con todo el
+        estado necesario para el renderizado y la lógica del juego:
+      </p>
+      <pre><code>class Celula {
+  final int linha;
+  final int coluna;
+  bool temMina;
+  bool revelada;
+  bool marcada;      // bandera del jugador
+  int minasAdjacentes;
+
+  Celula({required this.linha, required this.coluna})
+      : temMina = false,
+        revelada = false,
+        marcada = false,
+        minasAdjacentes = 0;
+}</code></pre>
+      <p>
+        Todo el tablero es una lista bidimensional inicializada con celdas limpias. No se coloca
+        ninguna mina en la creación — esto es intencional, como veremos a continuación.
+      </p>
+      <pre><code>List&lt;List&lt;Celula&gt;&gt; tabuleiro = List.generate(
+  linhas,
+  (l) => List.generate(colunas, (c) => Celula(linha: l, coluna: c)),
+);</code></pre>
+
+      <h2>Distribuyendo las minas: el problema del primer clic</h2>
+      <p>
+        Una regla clásica del Buscaminas: <strong>el primer clic nunca puede detonar una mina</strong>.
+        Esto significa que las minas deben distribuirse <em>después</em> del primer clic, excluyendo
+        la celda pulsada y todas sus vecinas del sorteo.
+      </p>
+      <pre><code>void distribuirMinas(int linhaSegura, int colunaSegura) {
+  final rand = Random();
+  int minasColocadas = 0;
+
+  while (minasColocadas &lt; totalMinas) {
+    int l = rand.nextInt(linhas);
+    int c = rand.nextInt(colunas);
+
+    // Excluye la celda pulsada y sus 8 vecinas alrededor
+    bool ehZonaSegura =
+        (l - linhaSegura).abs() &lt;= 1 && (c - colunaSegura).abs() &lt;= 1;
+
+    if (!ehZonaSegura && !tabuleiro[l][c].temMina) {
+      tabuleiro[l][c].temMina = true;
+      minasColocadas++;
+    }
+  }
+}</code></pre>
+      <p>
+        Este bucle sigue sorteando posiciones hasta colocar todas las minas. La zona de exclusión de
+        3×3 alrededor del primer clic garantiza que el jugador siempre empiece con algo de espacio
+        para razonar — sin explosión inmediata en la primera jugada.
+      </p>
+
+      <h2>Calculando los números adyacentes</h2>
+      <p>
+        Después de distribuir las minas, recorremos todo el tablero y calculamos cuántas minas
+        existen entre las 8 vecinas de cada celda que no es mina:
+      </p>
+      <pre><code>void calcularAdjacentes() {
+  for (int l = 0; l &lt; linhas; l++) {
+    for (int c = 0; c &lt; colunas; c++) {
+      if (!tabuleiro[l][c].temMina) {
+        tabuleiro[l][c].minasAdjacentes = _contarVizinhos(l, c);
+      }
+    }
+  }
+}
+
+int _contarVizinhos(int l, int c) {
+  int count = 0;
+  for (int dl = -1; dl &lt;= 1; dl++) {
+    for (int dc = -1; dc &lt;= 1; dc++) {
+      if (dl == 0 && dc == 0) continue; // ignora la propia celda
+      int nl = l + dl;
+      int nc = c + dc;
+      if (nl &gt;= 0 && nl &lt; linhas && nc &gt;= 0 && nc &lt; colunas) {
+        if (tabuleiro[nl][nc].temMina) count++;
+      }
+    }
+  }
+  return count;
+}</code></pre>
+
+      <h2>El revelado en cascada: flood fill recursivo</h2>
+      <p>
+        Cuando el jugador hace clic en una celda con <code>minasAdjacentes == 0</code>, todas las
+        celdas vacías conectadas deben revelarse automáticamente — junto con los números en los
+        bordes de esa región. Este es un algoritmo de <strong>flood fill</strong> (relleno por
+        inundación), el mismo que usan las herramientas de relleno tipo balde en programas de pintura.
+      </p>
+      <pre><code>void revelar(int l, int c) {
+  // Límites del tablero
+  if (l &lt; 0 || l &gt;= linhas || c &lt; 0 || c &gt;= colunas) return;
+
+  final celula = tabuleiro[l][c];
+
+  // No revela celdas ya reveladas o marcadas con bandera
+  if (celula.revelada || celula.marcada) return;
+
+  celula.revelada = true;
+
+  // Si la celda no tiene minas alrededor, revela las 8 vecinas recursivamente
+  if (!celula.temMina && celula.minasAdjacentes == 0) {
+    for (int dl = -1; dl &lt;= 1; dl++) {
+      for (int dc = -1; dc &lt;= 1; dc++) {
+        if (dl == 0 && dc == 0) continue;
+        revelar(l + dl, c + dc);
+      }
+    }
+  }
+}</code></pre>
+      <p>
+        La recursión se detiene de forma natural al encontrar celdas ya reveladas, marcadas con
+        bandera, o celdas con un número mayor que cero (los bordes de la región vacía). En tableros
+        grandes, la pila de llamadas puede crecer bastante. Para tableros muy grandes, conviene
+        convertirlo a un enfoque iterativo con una cola (<code>Queue</code>).
+      </p>
+
+      <h2>Renderizando el tablero con Flutter</h2>
+      <p>
+        El tablero se renderiza con <code>GridView.builder</code> usando un delegate de conteo fijo
+        de columnas. Cada celda es un <code>GestureDetector</code> que responde al toque simple
+        (revelar) y a la pulsación larga (colocar bandera):
+      </p>
+      <pre><code>GridView.builder(
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: colunas,
+    childAspectRatio: 1.0,
+  ),
+  itemCount: linhas * colunas,
+  itemBuilder: (context, index) {
+    final l = index ~/ colunas;
+    final c = index % colunas;
+    final celula = tabuleiro[l][c];
+
+    return GestureDetector(
+      onTap: () => controller.revelar(l, c),
+      onLongPress: () => controller.alternarBandeira(l, c),
+      child: CelulaWidget(celula: celula),
+    );
+  },
+)</code></pre>
+      <p>
+        El <code>CelulaWidget</code> recibe la celda y decide qué mostrar: celda cubierta, bandera,
+        número coloreado o explosión. Los colores de los números siguen la convención clásica del
+        Buscaminas: 1 azul, 2 verde, 3 rojo, etc.
+      </p>
+
+      <h2>Condiciones de victoria y derrota</h2>
+      <p>Ambas condiciones se verifican después de cada jugada:</p>
+      <pre><code>// Derrota: el jugador reveló una mina
+bool verificarDerrota(int l, int c) => tabuleiro[l][c].temMina;
+
+// Victoria: todas las celdas SIN mina fueron reveladas
+bool verificarVitoria() {
+  return tabuleiro
+      .expand((row) => row)
+      .where((c) => !c.temMina)
+      .every((c) => c.revelada);
+}</code></pre>
+      <p>
+        En la victoria, todas las minas restantes se marcan automáticamente con bandera y el
+        cronómetro se detiene. En la derrota, todas las minas se revelan con una animación y la
+        sesión termina.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Implementar el Buscaminas en Flutter es un ejercicio excelente porque combina algoritmos
+        clásicos (flood fill, generación aleatoria con restricciones) con UI reactiva. El resultado
+        es un juego que corre con fluidez a 60fps porque toda la lógica vive fuera del árbol de
+        widgets — el estado del tablero se gestiona en el controller y la UI solo renderiza lo que
+        realmente cambió.
+      </p>
+
+      <div class="article-cta">
+        <p>Prueba Campo Minado Evolution gratis en Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar Campo Minado Evolution</a>
       </div>
 
     </div>

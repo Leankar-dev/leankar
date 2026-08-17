@@ -1324,18 +1324,6 @@ body {
   }
 }
 
-/* ── AVISO DE CONTEÚDO SOMENTE EM PT (blog e política de privacidade) ── */
-.blog-lang-notice,
-.legal-lang-notice {
-  display: none;
-  background: rgba(0, 198, 255, 0.12);
-  border-left: 3px solid var(--cyan);
-  color: var(--muted);
-  font-size: 0.875rem;
-  padding: 10px 16px;
-  margin: 0;
-}
-
 /* ── FOOTER (link de privacidade + parágrafo secundário) ──
    Substituem style="" inline que a CSP (style-src sem 'unsafe-inline'
    nestas páginas) bloqueia silenciosamente. ── */

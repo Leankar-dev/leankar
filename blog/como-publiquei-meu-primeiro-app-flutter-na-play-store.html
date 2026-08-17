@@ -103,12 +103,8 @@
     </div>
   </header>
 
-  <div id="blog-lang-notice" class="blog-lang-notice">
-    <span data-i18n="lang.blog-only-pt">This article is only available in Portuguese.</span>
-  </div>
-
   <main>
-    <div class="article-hero">
+    <div class="article-hero" data-lang-block="pt">
       <h1>Como publiquei meu primeiro app Flutter<br />na <span class="gradient-text">Play Store</span>: passo a passo</h1>
       <div class="article-meta">
         <span>19 de junho de 2026</span>
@@ -124,8 +120,40 @@
         <span class="article-tag">Publicação</span>
       </div>
     </div>
+    <div class="article-hero" data-lang-block="en" hidden>
+      <h1>How I published my first Flutter app<br />on the <span class="gradient-text">Play Store</span>: a step-by-step guide</h1>
+      <div class="article-meta">
+        <span>June 19, 2026</span>
+        <span>·</span>
+        <span>6 min read</span>
+        <span>·</span>
+        <span>by Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Play Store</span>
+        <span class="article-tag">Android</span>
+        <span class="article-tag">Publishing</span>
+      </div>
+    </div>
+    <div class="article-hero" data-lang-block="es" hidden>
+      <h1>Cómo publiqué mi primera app Flutter<br />en la <span class="gradient-text">Play Store</span>: paso a paso</h1>
+      <div class="article-meta">
+        <span>19 de junio de 2026</span>
+        <span>·</span>
+        <span>6 min de lectura</span>
+        <span>·</span>
+        <span>por Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Play Store</span>
+        <span class="article-tag">Android</span>
+        <span class="article-tag">Publicación</span>
+      </div>
+    </div>
 
-    <div class="article-body">
+    <div class="article-body" data-lang-block="pt">
 
       <a href="/" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
@@ -247,6 +275,260 @@ android/key.properties</code></pre>
       <div class="article-cta">
         <p>Veja os apps que publiquei na Play Store:</p>
         <a href="/#apps" class="btn btn-primary">Ver meus aplicativos</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="en" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to homepage
+      </a>
+
+      <p>
+        Publishing your first app on the Play Store sounds simple until you actually try it. The
+        official docs cover the basics, but there are details that only surface once your project is
+        open and you're trying to generate a release build. In this article I share the exact process
+        I followed to publish the <strong>Calculadora Leankar</strong> — my first Flutter app
+        available for download on Google Play.
+      </p>
+
+      <h2>What you need before you start</h2>
+      <p>Before running any command in the terminal, make sure you have:</p>
+      <ul>
+        <li><strong>The app working in release mode</strong> — test it with <code>flutter run --release</code> on a physical device. Not on an emulator.</li>
+        <li><strong>A Google developer account</strong> — a one-time $25 fee at <a href="https://play.google.com/console" target="_blank" rel="noopener noreferrer">play.google.com/console</a>.</li>
+        <li><strong>An upload keystore</strong> — the cryptographic key that identifies you as the app's owner. You only create it once; losing it means you won't be able to publish updates.</li>
+        <li><strong>A Privacy Policy</strong> — required if the app uses the internet, collects any data, or integrates third-party SDKs.</li>
+      </ul>
+
+      <h2>Step 1: Create the keystore</h2>
+      <p>
+        The keystore is generated with <code>keytool</code>, which ships with the JDK. Run this in
+        the terminal:
+      </p>
+      <pre><code>keytool -genkey -v \
+  -keystore ~/upload-keystore.jks \
+  -keyalg RSA -keysize 2048 \
+  -validity 10000 \
+  -alias upload</code></pre>
+      <p>
+        You'll be asked questions about name, organization, and country. The 10,000-day validity
+        (~27 years) is Google's recommended default. <strong>Save the <code>.jks</code> file and the
+        passwords somewhere safe</strong> — a password manager, a vault, an offline backup. Losing
+        the keystore is irreversible.
+      </p>
+
+      <h2>Step 2: Configure signing in the Flutter project</h2>
+      <p>Create the <code>android/key.properties</code> file (never commit this file to git):</p>
+      <pre><code>storePassword=sua_senha_do_keystore
+keyPassword=sua_senha_da_chave
+keyAlias=upload
+storeFile=../../upload-keystore.jks</code></pre>
+      <p>Add the correct path to your <code>.gitignore</code>:</p>
+      <pre><code># android/local.properties and key.properties never get committed to the repository
+android/key.properties</code></pre>
+      <p>
+        Next, edit <code>android/app/build.gradle</code> to load the properties and automatically
+        sign the release build. The official Flutter documentation at
+        <a href="https://docs.flutter.dev/deployment/android" target="_blank" rel="noopener noreferrer">docs.flutter.dev/deployment/android</a>
+        has the exact <code>signingConfigs</code> configuration snippet.
+      </p>
+
+      <h2>Step 3: Generate the App Bundle (AAB)</h2>
+      <p>
+        Prefer the <strong>AAB</strong> over the conventional APK. The Android App Bundle lets the
+        Play Store generate device-optimized APKs, cutting the user's download size by up to 35%.
+      </p>
+      <pre><code>flutter build appbundle --release</code></pre>
+      <p>
+        The generated file is located at <code>build/app/outputs/bundle/release/app-release.aab</code>.
+        That's the file you'll upload to the Play Console.
+      </p>
+
+      <h2>Step 4: Prepare the store assets</h2>
+      <p>The Play Store requires and recommends the following visual assets:</p>
+      <ul>
+        <li><strong>App icon:</strong> 512×512 px, PNG, non-transparent background. The store applies the shape mask automatically — don't round the corners yourself.</li>
+        <li><strong>Screenshots:</strong> minimum 2, maximum 8 per device type. Minimum resolution of 320px on the shorter side. Show the app in real use, not blank screens.</li>
+        <li><strong>Feature Graphic:</strong> 1024×500 px, shown as a banner at the top of the app's page. Important for featured apps.</li>
+        <li><strong>Short description:</strong> up to 80 characters — appears in search results.</li>
+        <li><strong>Long description:</strong> up to 4,000 characters — naturally include relevant keywords for ASO.</li>
+      </ul>
+
+      <h2>Step 5: Create the app in the Play Console and upload it</h2>
+      <p>
+        In the Play Console, click <strong>Create app</strong>, set the name, default language, and
+        category. Then go to <strong>Production → Create new release</strong>, upload the AAB, and
+        fill in the release notes.
+      </p>
+      <p>
+        Before submitting for review, the Play Console will ask you to fill in all the required
+        declarations: age rating (IARC), privacy policy, ads declaration, and permissions used. Set
+        aside 30 to 60 minutes for this step the first time.
+      </p>
+
+      <h2>The review process: how long does it take?</h2>
+      <p>
+        The first publication of a new app usually takes <strong>3 to 7 business days</strong>. New
+        accounts or apps with sensitive permissions can take longer. After approval, the app appears
+        in the store within a few hours. Future version updates, for established accounts, are
+        usually approved in under 24 hours.
+      </p>
+      <p>
+        Google automatically scans the binary (malware, vulnerabilities) and manually reviews the
+        store metadata, screenshots, and policy compliance. If something is rejected, you receive an
+        email detailing the reason.
+      </p>
+
+      <h2>After publishing: what to monitor</h2>
+      <ul>
+        <li><strong>Reviews and comments</strong> — reply to all of them, especially the negative ones. It affects how the app is perceived and shows you provide active support.</li>
+        <li><strong>Android Vitals</strong> — monitor the ANR (App Not Responding) rate and crashes. Values above Google's thresholds hurt your ranking.</li>
+        <li><strong>Firebase Crashlytics</strong> — integrate it to get detailed stack traces of production crashes before users complain.</li>
+        <li><strong>Retention</strong> — track how many users come back after day one, day seven, and day thirty. It's the most honest quality metric.</li>
+      </ul>
+
+      <hr class="article-divider" />
+
+      <p>
+        Publishing your first app is a lot of work the first time, but the process becomes second
+        nature from the second one on. The $25 investment gives you permanent access to the largest
+        Android app store in the world — no per-download fee, no commission on free apps. Worth every
+        cent.
+      </p>
+
+      <div class="article-cta">
+        <p>Check out the apps I've published on the Play Store:</p>
+        <a href="/#apps" class="btn btn-primary">View my apps</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="es" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Volver a la página de inicio
+      </a>
+
+      <p>
+        Publicar la primera app en la Play Store parece simple hasta que lo intentas. La
+        documentación oficial cubre lo básico, pero hay detalles que solo aparecen cuando tienes el
+        proyecto abierto e intentas generar el build de release. En este artículo comparto el proceso
+        exacto que seguí para publicar la <strong>Calculadora Leankar</strong> — mi primera app
+        Flutter disponible para descargar en Google Play.
+      </p>
+
+      <h2>Qué necesitas antes de empezar</h2>
+      <p>Antes de cualquier comando en la terminal, confirma que tienes:</p>
+      <ul>
+        <li><strong>La app funcionando en modo release</strong> — pruébala con <code>flutter run --release</code> en un dispositivo físico. No en un emulador.</li>
+        <li><strong>Cuenta de desarrollador de Google</strong> — tarifa única de US$ 25 en <a href="https://play.google.com/console" target="_blank" rel="noopener noreferrer">play.google.com/console</a>.</li>
+        <li><strong>Keystore de subida</strong> — la clave criptográfica que te identifica como propietario de la app. Solo la creas una vez; perderla significa no poder publicar actualizaciones.</li>
+        <li><strong>Política de Privacidad</strong> — obligatoria si la app usa internet, recopila algún dato o integra SDKs de terceros.</li>
+      </ul>
+
+      <h2>Paso 1: Crear el keystore</h2>
+      <p>
+        El keystore se genera con <code>keytool</code>, que ya viene con el JDK. Ejecuta en la
+        terminal:
+      </p>
+      <pre><code>keytool -genkey -v \
+  -keystore ~/upload-keystore.jks \
+  -keyalg RSA -keysize 2048 \
+  -validity 10000 \
+  -alias upload</code></pre>
+      <p>
+        Responderás preguntas sobre nombre, organización y país. La validez de 10.000 días (~27 años)
+        es el estándar recomendado por Google. <strong>Guarda el archivo <code>.jks</code> y las
+        contraseñas en un lugar seguro</strong> — gestor de contraseñas, bóveda, copia de seguridad
+        offline. Perder el keystore es irreversible.
+      </p>
+
+      <h2>Paso 2: Configurar la firma en el proyecto Flutter</h2>
+      <p>Crea el archivo <code>android/key.properties</code> (nunca lo subas a git):</p>
+      <pre><code>storePassword=sua_senha_do_keystore
+keyPassword=sua_senha_da_chave
+keyAlias=upload
+storeFile=../../upload-keystore.jks</code></pre>
+      <p>Agrega la ruta correcta a tu <code>.gitignore</code>:</p>
+      <pre><code># android/local.properties y key.properties nunca se suben al repositorio
+android/key.properties</code></pre>
+      <p>
+        A continuación, edita <code>android/app/build.gradle</code> para cargar las propiedades y
+        firmar el build de release automáticamente. La documentación oficial de Flutter en
+        <a href="https://docs.flutter.dev/deployment/android" target="_blank" rel="noopener noreferrer">docs.flutter.dev/deployment/android</a>
+        trae el fragmento exacto de configuración de <code>signingConfigs</code>.
+      </p>
+
+      <h2>Paso 3: Generar el App Bundle (AAB)</h2>
+      <p>
+        Prefiere el <strong>AAB</strong> frente al APK convencional. El Android App Bundle permite
+        que la Play Store genere APKs optimizados por dispositivo, reduciendo el tamaño de descarga
+        del usuario hasta en un 35%.
+      </p>
+      <pre><code>flutter build appbundle --release</code></pre>
+      <p>
+        El archivo generado se ubica en <code>build/app/outputs/bundle/release/app-release.aab</code>.
+        Ese es el archivo que subirás a Play Console.
+      </p>
+
+      <h2>Paso 4: Preparar los assets de la tienda</h2>
+      <p>La Play Store exige y recomienda los siguientes assets visuales:</p>
+      <ul>
+        <li><strong>Ícono de la app:</strong> 512×512 px, PNG, fondo no transparente. La tienda aplica la máscara de forma automáticamente — no la redondees tú mismo.</li>
+        <li><strong>Capturas de pantalla:</strong> mínimo 2, máximo 8 por tipo de dispositivo. Resolución mínima de 320px en el lado más corto. Muestra la app en uso real, no pantallas en blanco.</li>
+        <li><strong>Feature Graphic:</strong> 1024×500 px, se muestra como banner en la parte superior de la página de la app. Importante para apps destacadas.</li>
+        <li><strong>Descripción corta:</strong> hasta 80 caracteres — aparece en los resultados de búsqueda.</li>
+        <li><strong>Descripción larga:</strong> hasta 4.000 caracteres — usa palabras clave relevantes de forma natural para ASO.</li>
+      </ul>
+
+      <h2>Paso 5: Crear la app en Play Console y subir el archivo</h2>
+      <p>
+        En Play Console, haz clic en <strong>Crear app</strong>, define el nombre, idioma
+        predeterminado y categoría. Luego ve a <strong>Producción → Crear nueva versión</strong>,
+        sube el AAB y completa las notas de la versión.
+      </p>
+      <p>
+        Antes de enviar a revisión, Play Console te pedirá que completes todas las declaraciones
+        obligatorias: clasificación por edad (IARC), política de privacidad, declaración de anuncios
+        y permisos usados. Reserva de 30 a 60 minutos para este paso la primera vez.
+      </p>
+
+      <h2>El proceso de revisión: ¿cuánto tarda?</h2>
+      <p>
+        La primera publicación de una app nueva suele tardar de <strong>3 a 7 días hábiles</strong>.
+        Las cuentas nuevas o las apps con permisos sensibles pueden tardar más. Tras la aprobación, la
+        app aparece en la tienda en unas horas. Las actualizaciones de futuras versiones, para cuentas
+        ya establecidas, suelen aprobarse en menos de 24 horas.
+      </p>
+      <p>
+        Google verifica automáticamente el binario (malware, vulnerabilidades) y revisa manualmente
+        los metadatos de la tienda, las capturas de pantalla y el cumplimiento de las políticas. Si
+        algo es rechazado, recibes un correo detallando el motivo.
+      </p>
+
+      <h2>Después de publicar: qué monitorear</h2>
+      <ul>
+        <li><strong>Reseñas y comentarios</strong> — responde a todos, especialmente a los negativos. Esto impacta la percepción de la app y demuestra que ofreces soporte activo.</li>
+        <li><strong>Android Vitals</strong> — monitorea la tasa de ANR (App Not Responding) y los crashes. Los valores por encima de los umbrales de Google afectan el ranking.</li>
+        <li><strong>Firebase Crashlytics</strong> — intégralo para recibir stack traces detallados de los crashes en producción antes de que los usuarios se quejen.</li>
+        <li><strong>Retención</strong> — sigue cuántos usuarios vuelven después del primer día, siete días y treinta días. Es la métrica más honesta de calidad.</li>
+      </ul>
+
+      <hr class="article-divider" />
+
+      <p>
+        Publicar la primera app da trabajo la primera vez, pero el proceso se vuelve natural a partir
+        de la segunda. La inversión de US$ 25 da acceso permanente a la tienda de apps Android más
+        grande del mundo — sin tarifa por descarga, sin comisión en apps gratuitas. Vale cada centavo.
+      </p>
+
+      <div class="article-cta">
+        <p>Mira las apps que publiqué en la Play Store:</p>
+        <a href="/#apps" class="btn btn-primary">Ver mis apps</a>
       </div>
 
     </div>

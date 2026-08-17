@@ -77,6 +77,8 @@ const TRANSLATIONS = {
     en: 'The main framework behind every project. I chose Flutter for its ability to deliver high-quality native interfaces from a single codebase, an agile development cycle with hot reload, and a mature package ecosystem. Dart compiles straight to native code, delivering real — not interpreted — performance.',
     es: 'El framework principal de todos los proyectos. Elegí Flutter por su capacidad de entregar interfaces nativas de alta calidad con una única base de código, un ciclo de desarrollo ágil con hot reload y un ecosistema de paquetes maduro. Dart compila directo a código nativo, garantizando un rendimiento real — no interpretado.',
   },
+  'stack.tag-separacao': { pt: 'Separação de responsabilidades', en: 'Separation of concerns', es: 'Separación de responsabilidades' },
+  'stack.tag-streams':   { pt: 'Streams reativos', en: 'Reactive streams', es: 'Streams reactivos' },
   'stack.card2-title': { pt: 'MVVM & Riverpod', en: 'MVVM & Riverpod', es: 'MVVM & Riverpod' },
   'stack.card2-desc': {
     pt: 'Arquitetura MVVM para separar lógica de negócio da camada de apresentação. O Riverpod gerencia o estado de forma reativa e testável, eliminando dependências implícitas entre componentes. Essa combinação mantém o código organizado conforme o app cresce, sem acumular dívida técnica.',
@@ -176,6 +178,39 @@ const TRANSLATIONS = {
     es: 'Experiencias reales de desarrollo con Flutter',
   },
   'blog.read-min': { pt: 'min de leitura', en: 'min read', es: 'min de lectura' },
+  'blog.card1-label': { pt: 'Flutter · Play Store', en: 'Flutter · Play Store', es: 'Flutter · Play Store' },
+  'blog.card1-title': {
+    pt: 'Como publiquei meu primeiro app Flutter na Play Store: passo a passo',
+    en: 'How I published my first Flutter app on the Play Store: a step-by-step guide',
+    es: 'Cómo publiqué mi primera app Flutter en la Play Store: paso a paso',
+  },
+  'blog.card1-desc': {
+    pt: 'Keystore, App Bundle, assets da loja e o processo de revisão — tudo que ninguém te conta antes da primeira publicação.',
+    en: "Keystore, App Bundle, store assets, and the review process — everything nobody tells you before your first release.",
+    es: 'Keystore, App Bundle, assets de la tienda y el proceso de revisión — todo lo que nadie te cuenta antes de la primera publicación.',
+  },
+  'blog.card2-label': { pt: 'Flutter · Drift · SQLite', en: 'Flutter · Drift · SQLite', es: 'Flutter · Drift · SQLite' },
+  'blog.card2-title': {
+    pt: 'App de lista de compras offline-first com Flutter e Drift (SQLite)',
+    en: 'Offline-first shopping list app with Flutter and Drift (SQLite)',
+    es: 'App de lista de compras offline-first con Flutter y Drift (SQLite)',
+  },
+  'blog.card2-desc': {
+    pt: 'Como usei Drift para criar persistência local type-safe com streams reativos, integrado ao Riverpod.',
+    en: 'How I used Drift to build type-safe local persistence with reactive streams, integrated with Riverpod.',
+    es: 'Cómo usé Drift para crear persistencia local type-safe con streams reactivos, integrado con Riverpod.',
+  },
+  'blog.card3-label': { pt: 'Flutter · Algoritmos', en: 'Flutter · Algorithms', es: 'Flutter · Algoritmos' },
+  'blog.card3-title': {
+    pt: 'Campo Minado em Flutter: algoritmo de geração de tabuleiro e lógica do jogo',
+    en: 'Minesweeper in Flutter: board generation algorithm and game logic',
+    es: 'Buscaminas en Flutter: algoritmo de generación de tablero y lógica del juego',
+  },
+  'blog.card3-desc': {
+    pt: 'Distribuição de minas com proteção do primeiro clique, cálculo de adjacentes e flood fill recursivo.',
+    en: 'Mine distribution with first-click protection, adjacent-cell calculation, and recursive flood fill.',
+    es: 'Distribución de minas con protección del primer clic, cálculo de adyacentes y flood fill recursivo.',
+  },
 
   // ── CONTATO ───────────────────────────────────────────────
   'contato.label': { pt: 'Vamos conversar',    en: "Let's talk",         es: 'Hablemos' },
@@ -223,6 +258,7 @@ const TRANSLATIONS = {
   'calc.feature4': { pt: 'Histórico persistente dos últimos 50 cálculos', en: 'Persistent history of the last 50 calculations', es: 'Historial persistente de los últimos 50 cálculos' },
   'calc.feature5': { pt: 'Temas claro, escuro e automático (segue o sistema Android)', en: 'Light, dark, and automatic themes (follows the Android system)', es: 'Temas claro, oscuro y automático (sigue el sistema Android)' },
   'calc.feature6': { pt: 'Design Neumórfico com alto contraste e tipografia legível', en: 'Neumorphic design with high contrast and legible typography', es: 'Diseño neumórfico con alto contraste y tipografía legible' },
+  'calc.tag-neumorfico': { pt: 'Neumórfico', en: 'Neumorphic', es: 'Neumórfico' },
   'calc.feature7': { pt: '5 idiomas: português, inglês, espanhol, francês e alemão', en: '5 languages: Portuguese, English, Spanish, French, and German', es: '5 idiomas: portugués, inglés, español, francés y alemán' },
   'calc.feature8': { pt: 'Zero permissões, zero rastreamento, 100% offline', en: 'Zero permissions, zero tracking, 100% offline', es: 'Cero permisos, cero rastreo, 100% offline' },
   'calc.about-p1': {
@@ -540,16 +576,6 @@ const TRANSLATIONS = {
   'lang.pt':      { pt: 'Português', en: 'Portuguese', es: 'Portugués' },
   'lang.en':      { pt: 'Inglês',    en: 'English',    es: 'Inglés' },
   'lang.es':      { pt: 'Espanhol',  en: 'Spanish',    es: 'Español' },
-  'lang.blog-only-pt': {
-    pt: 'Este artigo está disponível apenas em português.',
-    en: 'This article is only available in Portuguese.',
-    es: 'Este artículo solo está disponible en portugués.',
-  },
-  'lang.legal-only-pt': {
-    pt: 'Este conteúdo legal está disponível apenas em português.',
-    en: 'This legal content is only available in Portuguese.',
-    es: 'Este contenido legal solo está disponible en portugués.',
-  },
 };
 
 // ── ENGINE ────────────────────────────────────────────────────────────────────
@@ -614,12 +640,10 @@ function applyLang(lang) {
     btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
   });
 
-  // Aviso de conteúdo apenas em PT (artigos do blog e política de privacidade)
-  const blogNotice = document.getElementById('blog-lang-notice');
-  if (blogNotice) blogNotice.style.display = lang !== 'pt' ? 'block' : 'none';
-
-  const legalNotice = document.getElementById('legal-lang-notice');
-  if (legalNotice) legalNotice.style.display = lang !== 'pt' ? 'block' : 'none';
+  // Blocos de conteúdo com versão própria por idioma (ex.: corpo dos artigos do blog, privacy.html)
+  document.querySelectorAll('[data-lang-block]').forEach(el => {
+    el.hidden = el.dataset.langBlock !== lang;
+  });
 }
 
 function initI18n() {

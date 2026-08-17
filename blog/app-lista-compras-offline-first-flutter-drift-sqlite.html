@@ -103,12 +103,8 @@
     </div>
   </header>
 
-  <div id="blog-lang-notice" class="blog-lang-notice">
-    <span data-i18n="lang.blog-only-pt">This article is only available in Portuguese.</span>
-  </div>
-
   <main>
-    <div class="article-hero">
+    <div class="article-hero" data-lang-block="pt">
       <h1>Como criei um app de lista de compras<br /><span class="gradient-text">offline-first</span> com Flutter e Drift (SQLite)</h1>
       <div class="article-meta">
         <span>19 de junho de 2026</span>
@@ -125,8 +121,42 @@
         <span class="article-tag">Offline</span>
       </div>
     </div>
+    <div class="article-hero" data-lang-block="en" hidden>
+      <h1>How I built an offline-first<br /><span class="gradient-text">shopping list app</span> with Flutter and Drift (SQLite)</h1>
+      <div class="article-meta">
+        <span>June 19, 2026</span>
+        <span>·</span>
+        <span>7 min read</span>
+        <span>·</span>
+        <span>by Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Drift</span>
+        <span class="article-tag">SQLite</span>
+        <span class="article-tag">Riverpod</span>
+        <span class="article-tag">Offline</span>
+      </div>
+    </div>
+    <div class="article-hero" data-lang-block="es" hidden>
+      <h1>Cómo creé una app de lista de compras<br /><span class="gradient-text">offline-first</span> con Flutter y Drift (SQLite)</h1>
+      <div class="article-meta">
+        <span>19 de junio de 2026</span>
+        <span>·</span>
+        <span>7 min de lectura</span>
+        <span>·</span>
+        <span>por Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Drift</span>
+        <span class="article-tag">SQLite</span>
+        <span class="article-tag">Riverpod</span>
+        <span class="article-tag">Offline</span>
+      </div>
+    </div>
 
-    <div class="article-body">
+    <div class="article-body" data-lang-block="pt">
 
       <a href="/" class="back-link">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
@@ -305,6 +335,371 @@ final itensProvider = StreamProvider&lt;List&lt;ItemCompra&gt;&gt;(
       <div class="article-cta">
         <p>Veja a Lista da Casa disponível gratuitamente no Google Play:</p>
         <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Baixar Lista da Casa</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="en" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to homepage
+      </a>
+
+      <p>
+        A shopping list app sounds trivial until you picture the user standing in the supermarket
+        aisle, no signal, with the app stuck on an endless spinner. <strong>Offline-first</strong>
+        isn't a feature — it's an architectural decision that has to be made before writing the first
+        line of code. In this article I explain how I implemented this approach in
+        <strong>Lista da Casa</strong> using Flutter and Drift.
+      </p>
+
+      <h2>Why Drift instead of SharedPreferences or Hive?</h2>
+      <p>
+        For simple data (app theme, last screen visited, preferences), <strong>SharedPreferences</strong>
+        gets the job done. For serialized objects with no relations, <strong>Hive</strong> is fast and
+        easy. But when you need to:
+      </p>
+      <ul>
+        <li>Filter items by category</li>
+        <li>Sort by name or date added</li>
+        <li>Count how many items are still unchecked</li>
+        <li>Handle multiple lists with related items</li>
+      </ul>
+      <p>
+        ...you need SQL. <strong>Drift</strong> (formerly known as Moor) is a type-safe layer on top
+        of SQLite that runs natively on Android and iOS. You define tables as Dart classes, write
+        queries with compile-time verification, and get reactive <code>Stream</code>s automatically.
+        No SQL in strings, no runtime errors from a typo in a column name.
+      </p>
+
+      <h2>Setting up Drift in the project</h2>
+      <p>Add the dependencies to <code>pubspec.yaml</code>:</p>
+      <pre><code>dependencies:
+  flutter:
+    sdk: flutter
+  drift: ^2.16.0
+  sqlite3_flutter_libs: ^0.5.24
+  path_provider: ^2.1.3
+  path: ^1.9.0
+
+dev_dependencies:
+  drift_dev: ^2.16.0
+  build_runner: ^2.4.9</code></pre>
+      <p>
+        <code>sqlite3_flutter_libs</code> includes the SQLite binary compiled for Android and iOS.
+        <code>build_runner</code> together with <code>drift_dev</code> is used to generate the
+        boilerplate code from the table definitions.
+      </p>
+
+      <h2>Defining the items table</h2>
+      <pre><code>// lib/data/database/tables/itens_compra.dart
+import 'package:drift/drift.dart';
+
+class ItensCompra extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get nome => text().withLength(min: 1, max: 100)();
+  TextColumn get categoria => text().nullable()();
+  BoolColumn get comprado =>
+      boolean().withDefault(const Constant(false))();
+  DateTimeColumn get criadoEm =>
+      dateTime().withDefault(currentDateAndTime)();
+}</code></pre>
+      <p>
+        Each field is a typed column. <code>autoIncrement()</code> creates the primary key
+        automatically. <code>nullable()</code> indicates the category is optional. Drift generates
+        strongly typed getters and setters from this definition.
+      </p>
+
+      <h2>Creating the database</h2>
+      <pre><code>// lib/data/database/app_database.dart
+import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as p;
+
+part 'app_database.g.dart'; // generated by build_runner
+
+@DriftDatabase(tables: [ItensCompra])
+class AppDatabase extends _$AppDatabase {
+  AppDatabase() : super(_openConnection());
+
+  @override
+  int get schemaVersion => 1;
+
+  // Returns a Stream that re-emits whenever the table changes
+  Stream&lt;List&lt;ItemCompra&gt;&gt; watchItens() =>
+      select(itensCompra).watch();
+
+  Future&lt;int&gt; inserirItem(ItensCompraCompanion item) =>
+      into(itensCompra).insert(item);
+
+  Future&lt;void&gt; marcarComprado(int id, bool comprado) =>
+      (update(itensCompra)..where((t) => t.id.equals(id)))
+          .write(ItensCompraCompanion(comprado: Value(comprado)));
+
+  Future&lt;int&gt; deletarItem(int id) =>
+      (delete(itensCompra)..where((t) => t.id.equals(id))).go();
+}
+
+LazyDatabase _openConnection() {
+  return LazyDatabase(() async {
+    final dir = await getApplicationDocumentsDirectory();
+    final file = File(p.join(dir.path, 'lista_da_casa.sqlite'));
+    return NativeDatabase(file);
+  });
+}</code></pre>
+      <p>
+        After creating the file, run <code>dart run build_runner build</code> to generate
+        <code>app_database.g.dart</code> with all the SQL code under the hood.
+      </p>
+
+      <h2>Integrating with Riverpod</h2>
+      <p>
+        The database is instantiated once via a Provider and shared across the whole app:
+      </p>
+      <pre><code>// lib/providers/database_provider.dart
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final dbProvider = Provider&lt;AppDatabase&gt;(
+  (ref) => AppDatabase(),
+  // Closes the connection when the provider is disposed
+  onDispose: (db) => db.close(),
+);
+
+// Stream of all items — updates the UI automatically
+final itensProvider = StreamProvider&lt;List&lt;ItemCompra&gt;&gt;(
+  (ref) => ref.watch(dbProvider).watchItens(),
+);</code></pre>
+      <p>On the main screen, <code>StreamProvider</code> handles all the reactivity:</p>
+      <pre><code>class ListaScreen extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final itensAsync = ref.watch(itensProvider);
+
+    return itensAsync.when(
+      data: (itens) => ListView.builder(
+        itemCount: itens.length,
+        itemBuilder: (_, i) => ItemTile(item: itens[i]),
+      ),
+      loading: () => const CircularProgressIndicator(),
+      error: (e, _) => Text('Erro: $e'),
+    );
+  }
+}</code></pre>
+      <p>
+        When the user marks an item as purchased, Drift updates the database, the <code>Stream</code>
+        emits the new data, and Riverpod rebuilds the widget automatically. No
+        <code>setState</code>, no <code>notifyListeners</code>, no manual state management.
+      </p>
+
+      <h2>The result: truly offline UX</h2>
+      <p>
+        The app opens instantly — no splash screen waiting on a connection, no data lost between
+        sessions, no "no internet" message. The local SQLite database is the source of truth. If the
+        user stays offline for days, the data is still there, intact.
+      </p>
+      <p>
+        For apps that need to sync with the cloud in the future, the same SQLite database can serve
+        as the local cache layer while Firestore acts as the remote backend — a pattern known as
+        <em>local-first sync</em>.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Drift has an initial learning curve because of <code>build_runner</code> and code generation.
+        But once the project is set up, writing queries and migrations is safe, predictable, and far
+        more pleasant than concatenating SQL strings. It's worth the investment.
+      </p>
+
+      <div class="article-cta">
+        <p>Check out Lista da Casa, available for free on Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Lista da Casa</a>
+      </div>
+
+    </div>
+
+    <div class="article-body" data-lang-block="es" hidden>
+
+      <a href="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Volver a la página de inicio
+      </a>
+
+      <p>
+        Una app de lista de compras parece trivial hasta que piensas en el usuario parado en el
+        pasillo del supermercado, sin señal de internet, con la app atascada en un spinner infinito.
+        <strong>Offline-first</strong> no es una funcionalidad — es una decisión arquitectónica que
+        debe tomarse antes de escribir la primera línea de código. En este artículo explico cómo
+        implementé este enfoque en <strong>Lista da Casa</strong> usando Flutter y Drift.
+      </p>
+
+      <h2>¿Por qué Drift y no SharedPreferences o Hive?</h2>
+      <p>
+        Para datos simples (tema de la app, última pantalla visitada, preferencias),
+        <strong>SharedPreferences</strong> resuelve. Para objetos serializados sin relaciones,
+        <strong>Hive</strong> es rápido y fácil. Pero cuando necesitas:
+      </p>
+      <ul>
+        <li>Filtrar ítems por categoría</li>
+        <li>Ordenar por nombre o fecha de creación</li>
+        <li>Contar cuántos ítems faltan marcar</li>
+        <li>Manejar múltiples listas con ítems relacionados</li>
+      </ul>
+      <p>
+        ...necesitas SQL. <strong>Drift</strong> (antes llamado Moor) es una capa type-safe sobre
+        SQLite que corre nativamente en Android e iOS. Defines las tablas como clases Dart, escribes
+        queries con verificación en tiempo de compilación y recibes <code>Stream</code>s reactivos
+        automáticamente. Sin SQL en strings, sin errores en tiempo de ejecución por un typo en el
+        nombre de una columna.
+      </p>
+
+      <h2>Configurando Drift en el proyecto</h2>
+      <p>Agrega las dependencias en <code>pubspec.yaml</code>:</p>
+      <pre><code>dependencies:
+  flutter:
+    sdk: flutter
+  drift: ^2.16.0
+  sqlite3_flutter_libs: ^0.5.24
+  path_provider: ^2.1.3
+  path: ^1.9.0
+
+dev_dependencies:
+  drift_dev: ^2.16.0
+  build_runner: ^2.4.9</code></pre>
+      <p>
+        <code>sqlite3_flutter_libs</code> incluye el binario de SQLite compilado para Android e iOS.
+        <code>build_runner</code> junto con <code>drift_dev</code> se usa para generar el código
+        boilerplate a partir de las definiciones de las tablas.
+      </p>
+
+      <h2>Definiendo la tabla de ítems</h2>
+      <pre><code>// lib/data/database/tables/itens_compra.dart
+import 'package:drift/drift.dart';
+
+class ItensCompra extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get nome => text().withLength(min: 1, max: 100)();
+  TextColumn get categoria => text().nullable()();
+  BoolColumn get comprado =>
+      boolean().withDefault(const Constant(false))();
+  DateTimeColumn get criadoEm =>
+      dateTime().withDefault(currentDateAndTime)();
+}</code></pre>
+      <p>
+        Cada campo es una columna tipada. <code>autoIncrement()</code> crea la clave primaria
+        automáticamente. <code>nullable()</code> indica que la categoría es opcional. Drift genera
+        getters y setters fuertemente tipados a partir de esta definición.
+      </p>
+
+      <h2>Creando la base de datos</h2>
+      <pre><code>// lib/data/database/app_database.dart
+import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:path/path.dart' as p;
+
+part 'app_database.g.dart'; // generado por build_runner
+
+@DriftDatabase(tables: [ItensCompra])
+class AppDatabase extends _$AppDatabase {
+  AppDatabase() : super(_openConnection());
+
+  @override
+  int get schemaVersion => 1;
+
+  // Devuelve un Stream que se re-emite cada vez que la tabla cambia
+  Stream&lt;List&lt;ItemCompra&gt;&gt; watchItens() =>
+      select(itensCompra).watch();
+
+  Future&lt;int&gt; inserirItem(ItensCompraCompanion item) =>
+      into(itensCompra).insert(item);
+
+  Future&lt;void&gt; marcarComprado(int id, bool comprado) =>
+      (update(itensCompra)..where((t) => t.id.equals(id)))
+          .write(ItensCompraCompanion(comprado: Value(comprado)));
+
+  Future&lt;int&gt; deletarItem(int id) =>
+      (delete(itensCompra)..where((t) => t.id.equals(id))).go();
+}
+
+LazyDatabase _openConnection() {
+  return LazyDatabase(() async {
+    final dir = await getApplicationDocumentsDirectory();
+    final file = File(p.join(dir.path, 'lista_da_casa.sqlite'));
+    return NativeDatabase(file);
+  });
+}</code></pre>
+      <p>
+        Después de crear el archivo, ejecuta <code>dart run build_runner build</code> para generar
+        <code>app_database.g.dart</code> con todo el código SQL por debajo.
+      </p>
+
+      <h2>Integrando con Riverpod</h2>
+      <p>
+        La base de datos se instancia una vez mediante un Provider y se comparte con toda la
+        aplicación:
+      </p>
+      <pre><code>// lib/providers/database_provider.dart
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final dbProvider = Provider&lt;AppDatabase&gt;(
+  (ref) => AppDatabase(),
+  // Cierra la conexión cuando se descarta el provider
+  onDispose: (db) => db.close(),
+);
+
+// Stream de todos los ítems — actualiza la UI automáticamente
+final itensProvider = StreamProvider&lt;List&lt;ItemCompra&gt;&gt;(
+  (ref) => ref.watch(dbProvider).watchItens(),
+);</code></pre>
+      <p>En la pantalla principal, <code>StreamProvider</code> se encarga de toda la reactividad:</p>
+      <pre><code>class ListaScreen extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final itensAsync = ref.watch(itensProvider);
+
+    return itensAsync.when(
+      data: (itens) => ListView.builder(
+        itemCount: itens.length,
+        itemBuilder: (_, i) => ItemTile(item: itens[i]),
+      ),
+      loading: () => const CircularProgressIndicator(),
+      error: (e, _) => Text('Erro: $e'),
+    );
+  }
+}</code></pre>
+      <p>
+        Cuando el usuario marca un ítem como comprado, Drift actualiza la base de datos, el
+        <code>Stream</code> emite los nuevos datos y Riverpod reconstruye el widget automáticamente.
+        Sin <code>setState</code>, sin <code>notifyListeners</code>, sin gestión manual de estado.
+      </p>
+
+      <h2>El resultado: una UX verdaderamente offline</h2>
+      <p>
+        La app se abre al instante — sin splash screen esperando conexión, sin datos perdidos entre
+        sesiones, sin mensaje de "sin internet". El SQLite local es la fuente de la verdad. Si el
+        usuario permanece offline durante días, los datos siguen ahí, intactos.
+      </p>
+      <p>
+        Para apps que necesiten sincronizar con la nube en el futuro, la misma base de datos SQLite
+        puede servir como capa de caché local mientras Firestore funciona como backend remoto — un
+        patrón conocido como <em>local-first sync</em>.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Drift tiene una curva de aprendizaje inicial por causa de <code>build_runner</code> y la
+        generación de código. Pero una vez que el proyecto está configurado, escribir queries y
+        migraciones es seguro, predecible y mucho más agradable que concatenar strings SQL. Vale la
+        inversión.
+      </p>
+
+      <div class="article-cta">
+        <p>Descubre Lista da Casa, disponible gratis en Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar Lista da Casa</a>
       </div>
 
     </div>

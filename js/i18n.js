@@ -571,6 +571,76 @@ const TRANSLATIONS = {
     es: 'Redescubre el clásico con el que creciste, ahora con calidad moderna en Android.',
   },
 
+  // ── WORD EVOLUTION ─────────────────────────────────────────
+  'apps.word-desc': {
+    pt: 'Word Evolution reinventa o caça-palavras clássico: cada tabuleiro é gerado proceduralmente no momento em que você joga, garantindo partidas sempre novas e desafios que nunca se repetem. Escolha entre 10 categorias de palavras e 4 níveis de dificuldade para ajustar o ritmo ao seu gosto. Ficou sem saber uma palavra? Use uma dica. Complete partidas, ganhe moedas e acompanhe sua evolução com estatísticas detalhadas de desempenho. Disponível em português, inglês e espanhol, com temas claro e escuro para jogar a qualquer hora do dia.',
+    en: 'Word Evolution reinvents the classic word search: every board is procedurally generated the moment you play, guaranteeing matches that are always new and challenges that never repeat. Choose from 10 word categories and 4 difficulty levels to match the pace to your taste. Stuck on a word? Use a hint. Complete matches, earn coins, and track your progress with detailed performance statistics. Available in Portuguese, English, and Spanish, with light and dark themes to play any time of day.',
+    es: 'Word Evolution reinventa el clásico sopa de letras: cada tablero se genera proceduralmente en el momento en que juegas, garantizando partidas siempre nuevas y desafíos que nunca se repiten. Elige entre 10 categorías de palabras y 4 niveles de dificultad para ajustar el ritmo a tu gusto. ¿Te quedaste sin saber una palabra? Usa una pista. Completa partidas, gana monedas y sigue tu evolución con estadísticas detalladas de rendimiento. Disponible en portugués, inglés y español, con temas claro y oscuro para jugar a cualquier hora del día.',
+  },
+  'word.tagline': {
+    pt: 'Tabuleiros gerados na hora, sempre diferentes: escolha entre 10 categorias e 4 níveis de dificuldade, ganhe moedas jogando e use dicas quando precisar, acompanhando sua evolução em estatísticas detalhadas.',
+    en: 'Boards generated on the fly, always different: choose from 10 categories and 4 difficulty levels, earn coins as you play, and use hints when you need them — while tracking your progress with detailed stats.',
+    es: 'Tableros generados al instante, siempre distintos: elige entre 10 categorías y 4 niveles de dificultad, gana monedas jugando y usa pistas cuando lo necesites, mientras sigues tu evolución con estadísticas detalladas.',
+  },
+  'word.feature1': { pt: 'Tabuleiros 100% procedurais — nenhuma partida é igual à outra', en: '100% procedural boards — no two matches are ever alike', es: 'Tableros 100% procedurales — ninguna partida es igual a otra' },
+  'word.feature2': { pt: '10 categorias de palavras para escolher', en: '10 word categories to choose from', es: '10 categorías de palabras para elegir' },
+  'word.feature3': { pt: '4 níveis de dificuldade, do iniciante ao avançado', en: '4 difficulty levels, from beginner to advanced', es: '4 niveles de dificultad, de principiante a avanzado' },
+  'word.feature4': { pt: 'Sistema de moedas ganhas jogando', en: 'Coin system earned by playing', es: 'Sistema de monedas ganadas jugando' },
+  'word.feature5': { pt: 'Dicas disponíveis quando você travar em uma palavra', en: 'Hints available whenever you get stuck on a word', es: 'Pistas disponibles cuando te atascas con una palabra' },
+  'word.feature6': { pt: 'Estatísticas detalhadas de desempenho e evolução', en: 'Detailed performance and progress statistics', es: 'Estadísticas detalladas de rendimiento y evolución' },
+  'word.feature7': { pt: 'Temas claro e escuro', en: 'Light and dark themes', es: 'Temas claro y oscuro' },
+  'word.feature8': { pt: 'Disponível em português, inglês e espanhol', en: 'Available in Portuguese, English, and Spanish', es: 'Disponible en portugués, inglés y español' },
+  'word.about-p1': {
+    pt: 'Word Evolution reinventa o clássico caça-palavras: em vez de níveis fixos e pré-desenhados, cada tabuleiro é gerado proceduralmente no momento em que você joga. Isso garante que nenhuma partida se repete e que o desafio permanece sempre fresco, partida após partida.',
+    en: 'Word Evolution reinvents the classic word search: instead of fixed, pre-designed levels, every board is procedurally generated the moment you play. That guarantees no match ever repeats and the challenge stays fresh, game after game.',
+    es: 'Word Evolution reinventa el clásico sopa de letras: en lugar de niveles fijos y prediseñados, cada tablero se genera proceduralmente en el momento en que juegas. Esto garantiza que ninguna partida se repita y que el desafío se mantenga siempre fresco, partida tras partida.',
+  },
+  'word.about-p2': {
+    pt: 'Escolha entre 10 categorias de palavras e 4 níveis de dificuldade para ajustar o ritmo do desafio. Travou em uma palavra? Use uma dica. Complete partidas para ganhar moedas e acompanhe sua evolução com estatísticas detalhadas de desempenho.',
+    en: 'Choose from 10 word categories and 4 difficulty levels to match the challenge to your pace. Stuck on a word? Use a hint. Complete matches to earn coins and track your progress with detailed performance statistics.',
+    es: 'Elige entre 10 categorías de palabras y 4 niveles de dificultad para ajustar el desafío a tu ritmo. ¿Te atascaste con una palabra? Usa una pista. Completa partidas para ganar monedas y sigue tu evolución con estadísticas detalladas de rendimiento.',
+  },
+  'word.about-p3': {
+    pt: 'Disponível em português, inglês e espanhol, com temas claro e escuro para jogar do jeito que preferir, a qualquer hora do dia.',
+    en: 'Available in Portuguese, English, and Spanish, with light and dark themes so you can play however you like, any time of day.',
+    es: 'Disponible en portugués, inglés y español, con temas claro y oscuro para jugar como prefieras, a cualquier hora del día.',
+  },
+  'word.faq1-q': { pt: 'Os tabuleiros se repetem entre as partidas?', en: 'Do the boards repeat between matches?', es: '¿Los tableros se repiten entre partidas?' },
+  'word.faq1-a': {
+    pt: 'Não. Cada tabuleiro é gerado proceduralmente no momento em que você inicia uma partida, então o layout das palavras nunca é o mesmo duas vezes.',
+    en: 'No. Each board is procedurally generated the moment you start a match, so the word layout is never the same twice.',
+    es: 'No. Cada tablero se genera proceduralmente en el momento en que inicias una partida, por lo que la disposición de las palabras nunca es la misma dos veces.',
+  },
+  'word.faq2-q': { pt: 'Quantas categorias de palavras existem?', en: 'How many word categories are there?', es: '¿Cuántas categorías de palabras hay?' },
+  'word.faq2-a': {
+    pt: 'São 10 categorias diferentes para escolher, cada uma com seu próprio conjunto de palavras, permitindo variar o tema das partidas.',
+    en: 'There are 10 different categories to choose from, each with its own set of words, letting you vary the theme of your matches.',
+    es: 'Hay 10 categorías diferentes para elegir, cada una con su propio conjunto de palabras, lo que te permite variar el tema de las partidas.',
+  },
+  'word.faq3-q': { pt: 'Como funcionam as dicas?', en: 'How do hints work?', es: '¿Cómo funcionan las pistas?' },
+  'word.faq3-a': {
+    pt: 'Se você travar em uma palavra, pode usar uma dica para receber ajuda a localizá-la no tabuleiro. As dicas são obtidas com as moedas ganhas jogando.',
+    en: 'If you get stuck on a word, you can use a hint to get help locating it on the board. Hints are unlocked with coins earned by playing.',
+    es: 'Si te atascas con una palabra, puedes usar una pista para que te ayude a localizarla en el tablero. Las pistas se obtienen con las monedas ganadas jugando.',
+  },
+  'word.faq4-q': { pt: 'O app salva minhas estatísticas de desempenho?', en: 'Does the app save my performance stats?', es: '¿La app guarda mis estadísticas de rendimiento?' },
+  'word.faq4-a': {
+    pt: 'Sim. O app acompanha sua evolução com estatísticas detalhadas de desempenho, permitindo ver seu progresso ao longo do tempo.',
+    en: 'Yes. The app tracks your progress with detailed performance statistics, letting you see how you improve over time.',
+    es: 'Sí. La app sigue tu evolución con estadísticas detalladas de rendimiento, permitiéndote ver tu progreso a lo largo del tiempo.',
+  },
+  'word.faq5-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
+  'word.faq5-a': {
+    pt: 'Sim, é gratuito para baixar e jogar.',
+    en: 'Yes, it\'s free to download and play.',
+    es: 'Sí, es gratuita para descargar y jugar.',
+  },
+  'word.cta-text': {
+    pt: 'Baixe grátis e desafie-se com tabuleiros que nunca se repetem.',
+    en: 'Download for free and challenge yourself with boards that never repeat.',
+    es: 'Descárgala gratis y desafíate con tableros que nunca se repiten.',
+  },
+
   // ── SELETOR DE IDIOMA (UI) ────────────────────────────────
   'lang.label':   { pt: 'Idioma', en: 'Language', es: 'Idioma' },
   'lang.pt':      { pt: 'Português', en: 'Portuguese', es: 'Portugués' },

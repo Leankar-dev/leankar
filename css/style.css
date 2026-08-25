@@ -338,7 +338,7 @@ body {
   transition: transform var(--transition);
 }
 .phone-app-icon:hover { transform: scale(1.08); }
-/* 4 ícones: grade 2×2 natural — sem regra especial */
+/* 6 ícones: grade 2×3 natural — sem regra especial */
 
 /* ─────────────────────────────────────────
    SECTION HEADER
@@ -533,6 +533,7 @@ body {
 .app-card--d3 { --delay: 450ms; }
 .app-card--d4 { --delay: 600ms; }
 .app-card--d5 { --delay: 750ms; }
+.app-card--d6 { --delay: 900ms; }
 
 .app-card-glow {
   position: absolute;

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="../js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="Word Evolution — caça-palavras Flutter Android com tabuleiros 100% procedurais, 10 categorias, 4 níveis de dificuldade, sistema de moedas, dicas e estatísticas detalhadas. Gratuito." />
+  <meta name="robots" content="index, follow" />
+  <title>Word Evolution — App Flutter Android | leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/word-evolution.html" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/word-evolution.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/apps/word-evolution.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/apps/word-evolution.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/word-evolution.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Word Evolution — App Flutter Android" />
+  <meta property="og:description"
+    content="Caça-palavras com tabuleiros 100% procedurais: nenhuma partida é igual à outra. 10 categorias, 4 dificuldades, moedas, dicas e estatísticas detalhadas. Gratuito." />
+  <meta property="og:url" content="https://leankar.dev/apps/word-evolution.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/wordevolution_logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Word Evolution — App Flutter Android" />
+  <meta name="twitter:description"
+    content="Caça-palavras com tabuleiros 100% procedurais, 10 categorias e 4 dificuldades. Flutter, gratuito, em português, inglês e espanhol." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/wordevolution_logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Word Evolution",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "url": "https://play.google.com/store/apps/details?id=leankar.dev.word_evolution",
+    "description": "Caça-palavras com tabuleiros 100% procedurais gerados em Flutter: 10 categorias, 4 níveis de dificuldade, sistema de moedas, dicas e estatísticas detalhadas de desempenho.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "featureList": [
+      "Tabuleiros 100% procedurais",
+      "10 categorias de palavras",
+      "4 níveis de dificuldade",
+      "Sistema de moedas e dicas",
+      "Estatísticas detalhadas de progresso",
+      "Temas claro e escuro",
+      "Português, inglês e espanhol"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/wordevolution_logo.png" alt="Word Evolution" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
+            <h1>Word <span class="gradient-text">Evolution</span></h1>
+            <p class="app-tagline" data-i18n="word.tagline">
+              Tabuleiros gerados na hora, sempre diferentes: escolha entre 10 categorias e 4 níveis de
+              dificuldade, ganhe moedas jogando e use dicas quando precisar, acompanhando sua evolução
+              em estatísticas detalhadas.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag" data-i18n="apps.cat-jogos">Jogos</span>
+              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="https://play.google.com/store/apps/details?id=leankar.dev.word_evolution&pcampaignid=web_share"
+                class="play-btn" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/logos/google-play-badge.svg"
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal article-body--app">
+
+      <h2 data-i18n="app.features-title">Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature1">Tabuleiros 100% procedurais — nenhuma partida é igual à outra</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature2">10 categorias de palavras para escolher</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature3">4 níveis de dificuldade, do iniciante ao avançado</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature4">Sistema de moedas ganhas jogando</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature5">Dicas disponíveis quando você travar em uma palavra</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature6">Estatísticas detalhadas de desempenho e evolução</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature7">Temas claro e escuro</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="word.feature8">Disponível em português, inglês e espanhol</span></li>
+      </ul>
+
+      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="word.about-p1">
+        Word Evolution reinventa o clássico caça-palavras: em vez de níveis fixos e pré-desenhados,
+        cada tabuleiro é gerado proceduralmente no momento em que você joga. Isso garante que nenhuma
+        partida se repete e que o desafio permanece sempre fresco, partida após partida.
+      </p>
+      <p data-i18n="word.about-p2">
+        Escolha entre 10 categorias de palavras e 4 níveis de dificuldade para ajustar o ritmo do
+        desafio. Travou em uma palavra? Use uma dica. Complete partidas para ganhar moedas e acompanhe
+        sua evolução com estatísticas detalhadas de desempenho.
+      </p>
+      <p data-i18n="word.about-p3">
+        Disponível em português, inglês e espanhol, com temas claro e escuro para jogar do jeito que
+        preferir, a qualquer hora do dia.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="word.faq1-q">Os tabuleiros se repetem entre as partidas?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="word.faq1-a">
+              Não. Cada tabuleiro é gerado proceduralmente no momento em que você inicia uma partida,
+              então o layout das palavras nunca é o mesmo duas vezes.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="word.faq2-q">Quantas categorias de palavras existem?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="word.faq2-a">
+              São 10 categorias diferentes para escolher, cada uma com seu próprio conjunto de
+              palavras, permitindo variar o tema das partidas.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="word.faq3-q">Como funcionam as dicas?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="word.faq3-a">
+              Se você travar em uma palavra, pode usar uma dica para receber ajuda a localizá-la no
+              tabuleiro. As dicas são obtidas com as moedas ganhas jogando.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="word.faq4-q">O app salva minhas estatísticas de desempenho?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="word.faq4-a">
+              Sim. O app acompanha sua evolução com estatísticas detalhadas de desempenho, permitindo
+              ver seu progresso ao longo do tempo.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="word.faq5-q">O app é gratuito?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="word.faq5-a">
+              Sim, é gratuito para baixar e jogar.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p data-i18n="word.cta-text">Baixe grátis e desafie-se com tabuleiros que nunca se repetem.</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.word_evolution&pcampaignid=web_share"
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">
+          Baixar no Google Play
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e
+        Flutter</span></p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+          data-i18n="footer.privacy">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/particles.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

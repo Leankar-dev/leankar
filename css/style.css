@@ -577,6 +577,21 @@ body {
 }
 .app-card:hover .app-logo { transform: scale(1.06) rotate(-2deg); }
 
+.app-video {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+.app-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.app-video--page { margin-top: 32px; }
+
 .app-info { display: flex; flex-direction: column; flex: 1; }
 .app-category {
   font-size: 0.72rem;

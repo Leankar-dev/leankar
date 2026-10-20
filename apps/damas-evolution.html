@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="../js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="Damas Evolution — jogo de damas brasileiras em Flutter para Android, com IA em 3 níveis, modo dois jogadores, tabuleiro 2D ou 3D, histórico de partidas e estatísticas. Gratuito e offline." />
+  <meta name="robots" content="index, follow" />
+  <title>Damas Evolution — App Flutter Android | leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/damas-evolution.html" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/damas-evolution.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/apps/damas-evolution.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/apps/damas-evolution.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/damas-evolution.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Damas Evolution — App Flutter Android" />
+  <meta property="og:description"
+    content="Damas brasileiras com captura obrigatória, lei da maioria e damas voadoras. IA em 3 níveis, dois jogadores no mesmo aparelho, tabuleiro 2D ou 3D e estatísticas. Gratuito." />
+  <meta property="og:url" content="https://leankar.dev/apps/damas-evolution.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/damas_evolution_logo.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Damas Evolution — App Flutter Android" />
+  <meta name="twitter:description"
+    content="Damas brasileiras com IA em 3 níveis, modo dois jogadores e tabuleiro 2D ou 3D. Flutter, gratuito, em 5 idiomas." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/damas_evolution_logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Damas Evolution",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Android",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "url": "https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution",
+    "description": "Jogo de damas brasileiras em Flutter: captura obrigatória pela lei da maioria, damas voadoras, IA em 3 níveis, modo dois jogadores, tabuleiro 2D ou 3D e estatísticas de partidas.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "featureList": [
+      "Jogue contra a IA em três níveis: Fácil, Médio e Difícil",
+      "Modo dois jogadores no mesmo aparelho",
+      "Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras",
+      "Tabuleiro 2D ou 3D com efeitos sonoros",
+      "Histórico de partidas e estatísticas",
+      "Funciona offline",
+      "Português, inglês, espanhol, francês e italiano"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/damas_evolution_logo.png" alt="Damas Evolution" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
+            <h1>Damas <span class="gradient-text">Evolution</span></h1>
+            <p class="app-tagline" data-i18n="damas.tagline">
+              Damas brasileiras para quem leva a estratégia a sério: enfrente uma IA em três níveis ou jogue com
+              um amigo, alterne entre tabuleiro 2D e 3D e acompanhe sua evolução no histórico e nas estatísticas.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag" data-i18n="apps.cat-jogos">Jogos</span>
+              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
+                class="play-btn" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/logos/google-play-badge.svg"
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal article-body--app">
+
+      <h2 data-i18n="app.features-title">Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature1">Jogue contra a IA em três níveis: Fácil, Médio e Difícil</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature2">Modo Jogador vs Jogador no mesmo aparelho</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature3">Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature4">Tabuleiro 2D ou 3D, com animações e efeitos sonoros</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature5">Histórico de partidas e estatísticas salvos no aparelho</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature6">Funciona 100% offline</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature7">Leitores de tela, fonte ampliável e layouts para celulares e tablets</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="damas.feature8">Disponível em português, inglês, espanhol, francês e italiano</span></li>
+      </ul>
+
+      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="damas.about-p1">
+        Damas Evolution é o jogo de damas brasileiras para celular, feito em Flutter. As regras são as oficiais:
+        captura obrigatória pela lei da maioria, captura para trás, damas voadoras e empate após 40 jogadas sem
+        progresso.
+      </p>
+      <p data-i18n="damas.about-p2">
+        Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — ou use o modo Jogador vs Jogador
+        para disputar partidas locais com um amigo. Escolha entre o tabuleiro 2D e o 3D, com animações e efeitos
+        sonoros, e acompanhe seu progresso no histórico de partidas e nas estatísticas.
+      </p>
+      <p data-i18n="damas.about-p3">
+        Disponível em português, inglês, espanhol, francês e italiano, com recursos de acessibilidade e layouts
+        que se adaptam de celulares pequenos a tablets, em retrato e paisagem.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq1-q">Quais são as regras usadas no jogo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq1-a">
+              São as regras das damas brasileiras: a captura é obrigatória e vale a lei da maioria (você deve escolher a sequência que captura mais peças), peças podem capturar para trás, as damas são voadoras e a partida termina empatada após 40 jogadas sem progresso.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq2-q">Quais são os níveis de dificuldade da IA?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq2-a">
+              São três: Fácil, Médio e Difícil. Do aprendizado tranquilo até um adversário que calcula várias jogadas à frente, você escolhe o desafio que prefere.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq3-q">Posso jogar contra um amigo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq3-a">
+              Sim. O modo Jogador vs Jogador permite disputar partidas locais, no mesmo aparelho, sem complicação.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq4-q">O app precisa de internet?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq4-a">
+              Não. O jogo funciona totalmente offline, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq5-q">Existe tabuleiro em 3D?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq5-a">
+              Sim. Você pode alternar entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="damas.faq6-q">O app é gratuito?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="damas.faq6-a">
+              Sim, é gratuito para baixar e jogar.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p data-i18n="damas.cta-text">Baixe grátis e vença no tabuleiro: capture peças, promova suas damas e evolua partida a partida.</p>
+        <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
+          class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">
+          Baixar no Google Play
+        </a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e
+        Flutter</span></p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+          data-i18n="footer.privacy">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/particles.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

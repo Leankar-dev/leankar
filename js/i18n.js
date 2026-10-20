@@ -644,6 +644,77 @@ const TRANSLATIONS = {
     es: 'Descárgala gratis y desafíate con tableros que nunca se repiten.',
   },
 
+  // ── DAMAS EVOLUTION ────────────────────────────────────────
+  'damas.tagline': {
+    pt: 'Damas brasileiras para quem leva a estratégia a sério: enfrente uma IA em três níveis ou jogue com um amigo, alterne entre tabuleiro 2D e 3D e acompanhe sua evolução no histórico e nas estatísticas.',
+    en: 'Brazilian checkers for those who take strategy seriously: face an AI on three levels or play with a friend, switch between a 2D and a 3D board, and track your progress in the match history and stats.',
+    es: 'Damas brasileñas para quienes se toman en serio la estrategia: enfréntate a una IA en tres niveles o juega con un amigo, alterna entre tablero 2D y 3D y sigue tu evolución en el historial y las estadísticas.',
+  },
+  'damas.feature1': { pt: 'Jogue contra a IA em três níveis: Fácil, Médio e Difícil', en: 'Play against the AI on three levels: Easy, Medium, and Hard', es: 'Juega contra la IA en tres niveles: Fácil, Medio y Difícil' },
+  'damas.feature2': { pt: 'Modo Jogador vs Jogador no mesmo aparelho', en: 'Player vs Player mode on the same device', es: 'Modo Jugador vs Jugador en el mismo dispositivo' },
+  'damas.feature3': { pt: 'Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras', en: 'Brazilian rules: mandatory capture, majority rule, and flying kings', es: 'Reglas brasileñas: captura obligatoria, ley de la mayoría y damas voladoras' },
+  'damas.feature4': { pt: 'Tabuleiro 2D ou 3D, com animações e efeitos sonoros', en: '2D or 3D board, with animations and sound effects', es: 'Tablero 2D o 3D, con animaciones y efectos de sonido' },
+  'damas.feature5': { pt: 'Histórico de partidas e estatísticas salvos no aparelho', en: 'Match history and statistics saved on the device', es: 'Historial de partidas y estadísticas guardados en el dispositivo' },
+  'damas.feature6': { pt: 'Funciona 100% offline', en: 'Works 100% offline', es: 'Funciona 100% sin conexión' },
+  'damas.feature7': { pt: 'Leitores de tela, fonte ampliável e layouts para celulares e tablets', en: 'Screen readers, scalable fonts, and layouts for phones and tablets', es: 'Lectores de pantalla, fuente ampliable y diseños para móviles y tablets' },
+  'damas.feature8': { pt: 'Disponível em português, inglês, espanhol, francês e italiano', en: 'Available in Portuguese, English, Spanish, French, and Italian', es: 'Disponible en portugués, inglés, español, francés e italiano' },
+  'damas.about-p1': {
+    pt: 'Damas Evolution é o jogo de damas brasileiras para celular, feito em Flutter. As regras são as oficiais: captura obrigatória pela lei da maioria, captura para trás, damas voadoras e empate após 40 jogadas sem progresso.',
+    en: 'Damas Evolution is the Brazilian checkers game for mobile, built with Flutter. The rules are the official ones: mandatory capture under the majority rule, backward capture, flying kings, and a draw after 40 moves without progress.',
+    es: 'Damas Evolution es el juego de damas brasileñas para móvil, hecho con Flutter. Las reglas son las oficiales: captura obligatoria por la ley de la mayoría, captura hacia atrás, damas voladoras y empate tras 40 jugadas sin progreso.',
+  },
+  'damas.about-p2': {
+    pt: 'Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — ou use o modo Jogador vs Jogador para disputar partidas locais com um amigo. Escolha entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros, e acompanhe seu progresso no histórico de partidas e nas estatísticas.',
+    en: 'Face an AI with three difficulty levels — Easy, Medium, and Hard — or use Player vs Player mode for local matches with a friend. Choose between the 2D and 3D board, with animations and sound effects, and track your progress in the match history and statistics.',
+    es: 'Enfréntate a una IA con tres niveles de dificultad — Fácil, Medio y Difícil — o usa el modo Jugador vs Jugador para disputar partidas locales con un amigo. Elige entre el tablero 2D y el 3D, con animaciones y efectos de sonido, y sigue tu progreso en el historial de partidas y las estadísticas.',
+  },
+  'damas.about-p3': {
+    pt: 'Disponível em português, inglês, espanhol, francês e italiano, com recursos de acessibilidade e layouts que se adaptam de celulares pequenos a tablets, em retrato e paisagem.',
+    en: 'Available in Portuguese, English, Spanish, French, and Italian, with accessibility features and layouts that adapt from small phones to tablets, in portrait and landscape.',
+    es: 'Disponible en portugués, inglés, español, francés e italiano, con funciones de accesibilidad y diseños que se adaptan desde móviles pequeños hasta tablets, en vertical y horizontal.',
+  },
+  'damas.faq1-q': { pt: 'Quais são as regras usadas no jogo?', en: 'Which rules does the game use?', es: '¿Qué reglas usa el juego?' },
+  'damas.faq1-a': {
+    pt: 'São as regras das damas brasileiras: a captura é obrigatória e vale a lei da maioria (você deve escolher a sequência que captura mais peças), peças podem capturar para trás, as damas são voadoras e a partida termina empatada após 40 jogadas sem progresso.',
+    en: 'They are the Brazilian checkers rules: capture is mandatory and the majority rule applies (you must choose the sequence that captures the most pieces), pieces can capture backward, kings are flying, and the match ends in a draw after 40 moves without progress.',
+    es: 'Son las reglas de las damas brasileñas: la captura es obligatoria y rige la ley de la mayoría (debes elegir la secuencia que captura más piezas), las piezas pueden capturar hacia atrás, las damas son voladoras y la partida termina en empate tras 40 jugadas sin progreso.',
+  },
+  'damas.faq2-q': { pt: 'Quais são os níveis de dificuldade da IA?', en: 'What are the AI difficulty levels?', es: '¿Cuáles son los niveles de dificultad de la IA?' },
+  'damas.faq2-a': {
+    pt: 'São três: Fácil, Médio e Difícil. Do aprendizado tranquilo até um adversário que calcula várias jogadas à frente, você escolhe o desafio que prefere.',
+    en: 'There are three: Easy, Medium, and Hard. From relaxed learning to an opponent that calculates several moves ahead, you choose the challenge you prefer.',
+    es: 'Son tres: Fácil, Medio y Difícil. Desde un aprendizaje tranquilo hasta un rival que calcula varias jugadas por adelantado, tú eliges el desafío que prefieras.',
+  },
+  'damas.faq3-q': { pt: 'Posso jogar contra um amigo?', en: 'Can I play against a friend?', es: '¿Puedo jugar contra un amigo?' },
+  'damas.faq3-a': {
+    pt: 'Sim. O modo Jogador vs Jogador permite disputar partidas locais, no mesmo aparelho, sem complicação.',
+    en: 'Yes. Player vs Player mode lets you play local matches on the same device, with no hassle.',
+    es: 'Sí. El modo Jugador vs Jugador permite disputar partidas locales, en el mismo dispositivo, sin complicaciones.',
+  },
+  'damas.faq4-q': { pt: 'O app precisa de internet?', en: 'Does the app need internet?', es: '¿La app necesita internet?' },
+  'damas.faq4-a': {
+    pt: 'Não. O jogo funciona totalmente offline, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho.',
+    en: 'No. The game works fully offline, and the match history and statistics are saved only on your device.',
+    es: 'No. El juego funciona totalmente sin conexión, y el historial y las estadísticas de las partidas se guardan solo en tu dispositivo.',
+  },
+  'damas.faq5-q': { pt: 'Existe tabuleiro em 3D?', en: 'Is there a 3D board?', es: '¿Hay tablero en 3D?' },
+  'damas.faq5-a': {
+    pt: 'Sim. Você pode alternar entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros.',
+    en: 'Yes. You can switch between the 2D and 3D board, with animations and sound effects.',
+    es: 'Sí. Puedes alternar entre el tablero 2D y el 3D, con animaciones y efectos de sonido.',
+  },
+  'damas.faq6-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
+  'damas.faq6-a': {
+    pt: 'Sim, é gratuito para baixar e jogar.',
+    en: 'Yes, it\'s free to download and play.',
+    es: 'Sí, es gratuita para descargar y jugar.',
+  },
+  'damas.cta-text': {
+    pt: 'Baixe grátis e vença no tabuleiro: capture peças, promova suas damas e evolua partida a partida.',
+    en: 'Download for free and win on the board: capture pieces, promote your kings, and improve match after match.',
+    es: 'Descárgala gratis y vence en el tablero: captura piezas, corona tus damas y evoluciona partida a partida.',
+  },
+
   // ── SELETOR DE IDIOMA (UI) ────────────────────────────────
   'lang.label':   { pt: 'Idioma', en: 'Language', es: 'Idioma' },
   'lang.pt':      { pt: 'Português', en: 'Portuguese', es: 'Portugués' },

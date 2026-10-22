@@ -143,6 +143,8 @@ const TRANSLATIONS = {
   'apps.play-badge-alt': { pt: 'Disponível no Google Play', en: 'Available on Google Play', es: 'Disponible en Google Play' },
   'apps.campo-video-label': { pt: 'Vídeo de apresentação do Campo Minado Evolution', en: 'Campo Minado Evolution trailer', es: 'Video de presentación de Campo Minado Evolution' },
   'apps.campo-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
+  'apps.damas-video-label': { pt: 'Vídeo de apresentação do Damas Evolution', en: 'Damas Evolution trailer', es: 'Video de presentación de Damas Evolution' },
+  'apps.damas-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.calc-desc': {
     pt: 'Desenvolvida com Flutter e design Neumórfico, nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. Suporta as quatro operações básicas, porcentagem, IMC com faixa de peso ideal e histórico persistente de cálculos para consulta rápida. Temas claro, escuro e automático se adaptam ao ambiente, enquanto os botões foram dimensionados com área de toque generosa e tipografia de alto contraste para máxima legibilidade em qualquer tela. Disponível em cinco idiomas, sem permissões desnecessárias, compatível com Android 6.0+. Para quem quer uma calculadora que simplesmente funciona, sem surpresas.',
     en: 'Built with Flutter and a neumorphic design, it was born out of frustration with calculators bloated with ads and features nobody uses. It supports the four basic operations, percentages, BMI with ideal weight range, and a persistent calculation history for quick reference. Light, dark, and automatic themes adapt to your environment, while buttons are sized with generous tap areas and high-contrast typography for maximum legibility on any screen. Available in five languages, with no unnecessary permissions, compatible with Android 6.0+. For anyone who wants a calculator that just works, no surprises.',
@@ -723,9 +725,9 @@ const TRANSLATIONS = {
   },
   'damas.faq6-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
   'damas.faq6-a': {
-    pt: 'Sim, é gratuito para baixar e jogar.',
-    en: 'Yes, it\'s free to download and play.',
-    es: 'Sí, es gratuita para descargar y jugar.',
+    pt: 'Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios e você escolhe, nas configurações, se eles serão personalizados.',
+    en: 'Yes, it\'s free to download and play, with no in-app purchases. The app is supported by ads, and you choose in the settings whether they are personalized.',
+    es: 'Sí, es gratuita para descargar y jugar, sin compras dentro de la app. La app se mantiene con anuncios y tú eliges, en los ajustes, si serán personalizados.',
   },
   'damas.cta-text': {
     pt: 'Baixe grátis e vença no tabuleiro: capture peças, promova suas damas e evolua partida a partida.',

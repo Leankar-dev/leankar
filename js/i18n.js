@@ -118,9 +118,15 @@ const TRANSLATIONS = {
     es: 'Mis <span class="gradient-text">Proyectos</span>',
   },
   'apps.section-desc': {
-    pt: '4 apps Flutter no Google Play · 2 em breve · 1 site web',
-    en: '4 Flutter apps on Google Play · 2 coming soon · 1 web site',
-    es: '4 apps Flutter en Google Play · 2 próximamente · 1 sitio web',
+    pt: '6 apps Flutter no Google Play · 1 em desenvolvimento · 1 site web',
+    en: '6 Flutter apps on Google Play · 1 in development · 1 web site',
+    es: '6 apps Flutter en Google Play · 1 en desarrollo · 1 sitio web',
+  },
+  'apps.link-article': { pt: 'Ler o artigo →', en: 'Read the article →', es: 'Leer el artículo →' },
+  'apps.reportgo-desc': {
+    pt: "ReportGoApp é o app de relatórios fotográficos técnicos para quem trabalha em campo: vistoriadores, peritos, engenheiros e corretores. Fotografe com a câmera ou importe da galeria e o app registra GPS, data e hora, aplica marca d'água e organiza tudo em relatórios numerados automaticamente. Descreva cada foto com texto rico, colete a assinatura manuscrita na tela, acompanhe os locais no mapa e exporte o PDF direto do celular. Funciona offline, com seus dados guardados no próprio aparelho, em português, inglês e espanhol. Em desenvolvimento ativo — ainda não disponível nas lojas.",
+    en: "ReportGoApp is the technical photo-report app for people who work in the field: property inspectors, surveyors, engineers and real-estate agents. Shoot with the camera or import from the gallery and the app records GPS, date and time, applies a watermark and organizes everything into automatically numbered reports. Describe each photo with rich text, collect a handwritten signature on screen, follow the locations on the map and export the PDF straight from your phone. Works offline, with your data kept on the device itself, in Portuguese, English and Spanish. Under active development — not yet available in the stores.",
+    es: "ReportGoApp es la app de informes fotográficos técnicos para quienes trabajan en campo: inspectores, peritos, ingenieros y agentes inmobiliarios. Fotografía con la cámara o importa desde la galería y la app registra GPS, fecha y hora, aplica marca de agua y organiza todo en informes numerados automáticamente. Describe cada foto con texto enriquecido, recoge la firma manuscrita en la pantalla, sigue los lugares en el mapa y exporta el PDF directo desde el celular. Funciona sin conexión, con tus datos guardados en el propio dispositivo, en portugués, inglés y español. En desarrollo activo — aún no disponible en las tiendas.",
   },
   'apps.cat-produtividade':  { pt: 'Produtividade', en: 'Productivity', es: 'Productividad' },
   'apps.cat-utilidades':     { pt: 'Utilidades',     en: 'Utilities',    es: 'Utilidades' },
@@ -181,6 +187,18 @@ const TRANSLATIONS = {
     es: 'Experiencias reales de desarrollo con Flutter',
   },
   'blog.read-min': { pt: 'min de leitura', en: 'min read', es: 'min de lectura' },
+  'blog.new': { pt: 'Novo', en: 'New', es: 'Nuevo' },
+  'blog.card4-label': { pt: 'ReportGoApp · Produto · Flutter', en: 'ReportGoApp · Product · Flutter', es: 'ReportGoApp · Producto · Flutter' },
+  'blog.card4-title': {
+    pt: 'ReportGoApp: o app que transforma fotos de campo em laudos profissionais',
+    en: 'ReportGoApp: the app that turns field photos into professional reports',
+    es: 'ReportGoApp: la app que convierte fotos de campo en informes profesionales',
+  },
+  'blog.card4-desc': {
+    pt: "Fotos com GPS e marca d'água, assinatura na tela e PDF — tudo offline. Veja o produto, a engenharia por trás e a oportunidade para usuários e investidores.",
+    en: 'Photos with GPS and watermark, on-screen signature and PDF — all offline. See the product, the engineering behind it and the opportunity for users and investors.',
+    es: 'Fotos con GPS y marca de agua, firma en pantalla y PDF — todo sin conexión. Conoce el producto, la ingeniería detrás y la oportunidad para usuarios e inversores.',
+  },
   'blog.card1-label': { pt: 'Flutter · Play Store', en: 'Flutter · Play Store', es: 'Flutter · Play Store' },
   'blog.card1-title': {
     pt: 'Como publiquei meu primeiro app Flutter na Play Store: passo a passo',
@@ -714,6 +732,85 @@ const TRANSLATIONS = {
     en: 'Download for free and win on the board: capture pieces, promote your kings, and improve match after match.',
     es: 'Descárgala gratis y vence en el tablero: captura piezas, corona tus damas y evoluciona partida a partida.',
   },
+
+  // ── REPORTGO (página de detalhes · em desenvolvimento) ─────
+  'reportgo.tagline': {
+    pt: 'Relatórios fotográficos técnicos para quem trabalha em campo: fotografe, descreva, assine e exporte em PDF — tudo no celular, mesmo sem internet.',
+    en: 'Technical photo reports for people who work in the field: shoot, describe, sign and export to PDF — all on your phone, even without internet.',
+    es: 'Informes fotográficos técnicos para quienes trabajan en campo: fotografía, describe, firma y exporta a PDF — todo en el celular, incluso sin internet.',
+  },
+  'reportgo.status': { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
+  'reportgo.notice': {
+    pt: 'O ReportGoApp ainda <strong>não está disponível</strong> no Google Play nem na App Store. As funcionalidades abaixo já existem na versão de desenvolvimento e passam por testes em aparelhos reais; não há data de lançamento definida. Quer testar antes? Fale comigo.',
+    en: 'ReportGoApp is <strong>not yet available</strong> on Google Play or the App Store. The features below already exist in the development version and are being tested on real devices; there is no release date yet. Want to try it early? Get in touch.',
+    es: 'ReportGoApp <strong>aún no está disponible</strong> en Google Play ni en la App Store. Las funciones de abajo ya existen en la versión de desarrollo y se prueban en dispositivos reales; no hay fecha de lanzamiento definida. ¿Quieres probarlo antes? Escríbeme.',
+  },
+  'reportgo.feature1': { pt: 'Relatórios numerados automaticamente (Rel.0001-26), sem duplicidade', en: 'Automatically numbered reports (Rel.0001-26), with no duplicates', es: 'Informes numerados automáticamente (Rel.0001-26), sin duplicados' },
+  'reportgo.feature2': { pt: 'Fotos pela câmera ou galeria, com GPS e data/hora gravados no arquivo', en: 'Photos from the camera or gallery, with GPS and date/time stored in the file', es: 'Fotos desde la cámara o la galería, con GPS y fecha/hora guardados en el archivo' },
+  'reportgo.feature3': { pt: 'Marca d\'água com data, hora e coordenadas em cada foto', en: 'Watermark with date, time and coordinates on every photo', es: 'Marca de agua con fecha, hora y coordenadas en cada foto' },
+  'reportgo.feature4': { pt: 'Texto rico para o relatório e legenda para cada foto', en: 'Rich text for the report and a caption for each photo', es: 'Texto enriquecido para el informe y leyenda para cada foto' },
+  'reportgo.feature5': { pt: 'Assinatura manuscrita na tela; relatório assinado fica protegido contra alterações', en: 'Handwritten on-screen signature; a signed report is protected against changes', es: 'Firma manuscrita en la pantalla; el informe firmado queda protegido contra cambios' },
+  'reportgo.feature6': { pt: 'Mapa dos relatórios com filtros, galeria unificada e calendário', en: 'Report map with filters, unified gallery and calendar', es: 'Mapa de informes con filtros, galería unificada y calendario' },
+  'reportgo.feature7': { pt: 'Exportação e compartilhamento em PDF direto do celular', en: 'PDF export and sharing straight from your phone', es: 'Exportación y uso compartido en PDF directo desde el celular' },
+  'reportgo.feature8': { pt: 'Offline-first, em português, inglês e espanhol, com seus dados no aparelho', en: 'Offline-first, in Portuguese, English and Spanish, with your data on the device', es: 'Offline-first, en portugués, inglés y español, con tus datos en el dispositivo' },
+  'reportgo.about-p1': {
+    pt: 'ReportGoApp é um aplicativo Flutter para criar relatórios fotográficos técnicos — vistorias, laudos, inspeções de obra e perícias — direto do local de trabalho. O slogan resume a proposta: "Registre. Nós fazemos o resto."',
+    en: 'ReportGoApp is a Flutter app for creating technical photo reports — inspections, appraisals, site surveys and expert reports — right from the work site. The tagline sums up the idea: "Register. We do the rest."',
+    es: 'ReportGoApp es una app Flutter para crear informes fotográficos técnicos — inspecciones, dictámenes, revisiones de obra y peritajes — directamente desde el lugar de trabajo. El eslogan resume la propuesta: "Registra. Nosotros hacemos el resto."',
+  },
+  'reportgo.about-p2': {
+    pt: 'Você cria o relatório, fotografa ou importa as imagens, descreve cada uma, coleta a assinatura e exporta o PDF. O app cuida da numeração, dos metadados, da organização e da proteção do relatório depois de assinado.',
+    en: 'You create the report, shoot or import the images, describe each one, collect the signature and export the PDF. The app takes care of numbering, metadata, organization and protecting the report once it is signed.',
+    es: 'Creas el informe, fotografías o importas las imágenes, describes cada una, recoges la firma y exportas el PDF. La app se encarga de la numeración, los metadatos, la organización y la protección del informe una vez firmado.',
+  },
+  'reportgo.about-p3': {
+    pt: 'Tudo funciona offline e os dados ficam no seu aparelho. A única exceção é o mapa, que precisa baixar as imagens do mapa quando há conexão. Uma versão com nuvem (backup e sincronização) está nos planos, como recurso opcional futuro.',
+    en: 'Everything works offline and your data stays on your device. The only exception is the map, which needs to download map imagery when a connection is available. A cloud version (backup and sync) is planned as a future optional feature.',
+    es: 'Todo funciona sin conexión y tus datos permanecen en tu dispositivo. La única excepción es el mapa, que necesita descargar las imágenes del mapa cuando hay conexión. Una versión con nube (respaldo y sincronización) está en los planes, como función opcional futura.',
+  },
+  'reportgo.faq1-q': { pt: 'Quando o ReportGoApp será lançado?', en: 'When will ReportGoApp be released?', es: '¿Cuándo se lanzará ReportGoApp?' },
+  'reportgo.faq1-a': {
+    pt: 'Ainda não há data definida. O app está em desenvolvimento ativo, em fase de auditoria e testes em aparelhos reais. A primeira publicação deve ser na Google Play; quando houver novidades, elas aparecem aqui.',
+    en: 'There is no set date yet. The app is under active development, in the audit and real-device testing phase. The first release is expected on Google Play; any news will show up here.',
+    es: 'Aún no hay fecha definida. La app está en desarrollo activo, en fase de auditoría y pruebas en dispositivos reales. La primera publicación será en Google Play; cuando haya novedades, aparecerán aquí.',
+  },
+  'reportgo.faq2-q': { pt: 'Como posso testar antes do lançamento?', en: 'How can I try it before release?', es: '¿Cómo puedo probarlo antes del lanzamiento?' },
+  'reportgo.faq2-a': {
+    pt: 'Envie uma mensagem pelo formulário de contato do site contando como você trabalha com relatórios fotográficos. Estou buscando profissionais de campo para pilotos gratuitos e feedback.',
+    en: 'Send a message through the site contact form telling me how you work with photo reports. I am looking for field professionals for free pilots and feedback.',
+    es: 'Envía un mensaje por el formulario de contacto del sitio contándome cómo trabajas con informes fotográficos. Busco profesionales de campo para pilotos gratuitos y comentarios.',
+  },
+  'reportgo.faq3-q': { pt: 'O app precisa de internet?', en: 'Does the app need internet?', es: '¿La app necesita internet?' },
+  'reportgo.faq3-a': {
+    pt: 'Não para o uso principal: relatórios, fotos, assinatura e PDF funcionam offline. Somente o mapa depende de conexão para exibir as imagens do mapa.',
+    en: 'Not for core use: reports, photos, signature and PDF work offline. Only the map depends on a connection to display map imagery.',
+    es: 'No para el uso principal: informes, fotos, firma y PDF funcionan sin conexión. Solo el mapa depende de conexión para mostrar las imágenes del mapa.',
+  },
+  'reportgo.faq4-q': { pt: 'Onde ficam meus dados?', en: 'Where is my data stored?', es: '¿Dónde se guardan mis datos?' },
+  'reportgo.faq4-a': {
+    pt: 'No seu próprio aparelho. Nesta fase o app não tem servidor: contas, relatórios e fotos ficam armazenados localmente, e cada usuário só enxerga os seus.',
+    en: 'On your own device. At this stage the app has no server: accounts, reports and photos are stored locally, and each user only sees their own.',
+    es: 'En tu propio dispositivo. En esta etapa la app no tiene servidor: cuentas, informes y fotos se almacenan localmente, y cada usuario solo ve los suyos.',
+  },
+  'reportgo.faq5-q': { pt: 'O app será gratuito?', en: 'Will the app be free?', es: '¿La app será gratuita?' },
+  'reportgo.faq5-a': {
+    pt: 'A ideia é que o app funcione gratuitamente offline, com recursos de nuvem como possível versão paga no futuro. Preços e planos ainda não foram definidos.',
+    en: 'The idea is for the app to work offline for free, with cloud features as a possible paid tier in the future. Prices and plans have not been defined yet.',
+    es: 'La idea es que la app funcione gratis sin conexión, con funciones de nube como posible versión de pago en el futuro. Los precios y planes aún no están definidos.',
+  },
+  'reportgo.faq6-q': { pt: 'Haverá versão para iPhone?', en: 'Will there be an iPhone version?', es: '¿Habrá versión para iPhone?' },
+  'reportgo.faq6-a': {
+    pt: 'É um passo planejado. Hoje o app é validado em aparelhos Android; a validação e a publicação para iOS vêm em seguida.',
+    en: 'It is a planned step. Today the app is validated on Android devices; iOS validation and release come next.',
+    es: 'Es un paso planificado. Hoy la app se valida en dispositivos Android; la validación y publicación para iOS vienen después.',
+  },
+  'reportgo.cta-text': {
+    pt: 'Trabalha com vistorias, laudos ou inspeções? Quer testar o ReportGoApp antes do lançamento ou conversar sobre o projeto?',
+    en: 'Do you work with inspections, appraisals or surveys? Want to try ReportGoApp before launch or talk about the project?',
+    es: '¿Trabajas con inspecciones, dictámenes o revisiones? ¿Quieres probar ReportGoApp antes del lanzamiento o conversar sobre el proyecto?',
+  },
+  'reportgo.cta-btn': { pt: 'Entrar em contato', en: 'Get in touch', es: 'Ponerse en contacto' },
+  'reportgo.cta-article': { pt: 'Ler o artigo sobre o app', en: 'Read the article about the app', es: 'Leer el artículo sobre la app' },
 
   // ── SELETOR DE IDIOMA (UI) ────────────────────────────────
   'lang.label':   { pt: 'Idioma', en: 'Language', es: 'Idioma' },

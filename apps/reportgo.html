@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="../js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="ReportGoApp — app Flutter em desenvolvimento para relatórios fotográficos técnicos: fotos com GPS e marca d'água, assinatura na tela e PDF, tudo offline. Ainda não disponível nas lojas." />
+  <meta name="robots" content="index, follow" />
+  <title>ReportGoApp — App Flutter em desenvolvimento | leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/reportgo.html" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/reportgo.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/apps/reportgo.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/apps/reportgo.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/reportgo.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ReportGoApp — App Flutter em desenvolvimento" />
+  <meta property="og:description"
+    content="Relatórios fotográficos técnicos com GPS, marca d'água, assinatura na tela e PDF — offline. Em desenvolvimento, ainda não disponível nas lojas." />
+  <meta property="og:url" content="https://leankar.dev/apps/reportgo.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/reportgo_og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ReportGoApp — App Flutter em desenvolvimento" />
+  <meta name="twitter:description"
+    content="Relatórios fotográficos técnicos com GPS, marca d'água, assinatura e PDF — offline. Em desenvolvimento." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/reportgo_og.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ReportGoApp",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Android",
+    "url": "https://leankar.dev/apps/reportgo.html",
+    "image": "https://leankar.dev/assets/logos/reportgo_og.png",
+    "description": "App Flutter em desenvolvimento para relatórios fotográficos técnicos: fotos com GPS e marca d'água, texto rico, assinatura manuscrita na tela, mapa e exportação em PDF. Funciona offline.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "featureList": [
+      "Relatórios numerados automaticamente",
+      "Fotos com GPS e data/hora gravados no arquivo e marca d'água",
+      "Texto rico para o relatório e legenda por foto",
+      "Assinatura manuscrita na tela com proteção do relatório assinado",
+      "Mapa, galeria unificada e calendário",
+      "Exportação e compartilhamento em PDF",
+      "Funciona offline, em português, inglês e espanhol"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/reportgo_logo.png" alt="ReportGoApp" class="app-page-logo app-page-logo--light" />
+          <div class="app-page-meta">
+            <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
+            <h1>Report<span class="gradient-text">Go</span>App</h1>
+            <p class="app-tagline" data-i18n="reportgo.tagline">
+              Relatórios fotográficos técnicos para quem trabalha em campo: fotografe, descreva, assine e exporte em
+              PDF — tudo no celular, mesmo sem internet.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Offline-first</span>
+              <span class="tag tag--wip" data-i18n="reportgo.status">Em desenvolvimento</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="/#contato" class="btn btn-primary" data-i18n="reportgo.cta-btn">Entrar em contato</a>
+              <a href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" class="btn btn-outline"
+                data-i18n="reportgo.cta-article">Ler o artigo sobre o app</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal article-body--app">
+
+      <div class="app-dev-notice">
+        <span class="app-dev-notice-ico" aria-hidden="true">🚧</span>
+        <p data-i18n="reportgo.notice">
+          O ReportGoApp ainda <strong>não está disponível</strong> no Google Play nem na App Store. As funcionalidades
+          abaixo já existem na versão de desenvolvimento e passam por testes em aparelhos reais; não há data de
+          lançamento definida. Quer testar antes? Fale comigo.
+        </p>
+      </div>
+
+      <h2 data-i18n="app.features-title">Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature1">Relatórios numerados automaticamente (Rel.0001-26), sem duplicidade</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature2">Fotos pela câmera ou galeria, com GPS e data/hora gravados no arquivo</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature3">Marca d'água com data, hora e coordenadas em cada foto</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature4">Texto rico para o relatório e legenda para cada foto</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature5">Assinatura manuscrita na tela; relatório assinado fica protegido contra alterações</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature6">Mapa dos relatórios com filtros, galeria unificada e calendário</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature7">Exportação e compartilhamento em PDF direto do celular</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="reportgo.feature8">Offline-first, em português, inglês e espanhol, com seus dados no aparelho</span></li>
+      </ul>
+
+      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="reportgo.about-p1">
+        ReportGoApp é um aplicativo Flutter para criar relatórios fotográficos técnicos — vistorias, laudos, inspeções de
+        obra e perícias — direto do local de trabalho. O slogan resume a proposta: "Registre. Nós fazemos o resto."
+      </p>
+      <p data-i18n="reportgo.about-p2">
+        Você cria o relatório, fotografa ou importa as imagens, descreve cada uma, coleta a assinatura e exporta o PDF.
+        O app cuida da numeração, dos metadados, da organização e da proteção do relatório depois de assinado.
+      </p>
+      <p data-i18n="reportgo.about-p3">
+        Tudo funciona offline e os dados ficam no seu aparelho. A única exceção é o mapa, que precisa baixar as imagens
+        do mapa quando há conexão. Uma versão com nuvem (backup e sincronização) está nos planos, como recurso opcional
+        futuro.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq1-q">Quando o ReportGoApp será lançado?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq1-a">
+              Ainda não há data definida. O app está em desenvolvimento ativo, em fase de auditoria e testes em aparelhos reais. A primeira publicação deve ser na Google Play; quando houver novidades, elas aparecem aqui.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq2-q">Como posso testar antes do lançamento?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq2-a">
+              Envie uma mensagem pelo formulário de contato do site contando como você trabalha com relatórios fotográficos. Estou buscando profissionais de campo para pilotos gratuitos e feedback.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq3-q">O app precisa de internet?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq3-a">
+              Não para o uso principal: relatórios, fotos, assinatura e PDF funcionam offline. Somente o mapa depende de conexão para exibir as imagens do mapa.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq4-q">Onde ficam meus dados?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq4-a">
+              No seu próprio aparelho. Nesta fase o app não tem servidor: contas, relatórios e fotos ficam armazenados localmente, e cada usuário só enxerga os seus.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq5-q">O app será gratuito?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq5-a">
+              A ideia é que o app funcione gratuitamente offline, com recursos de nuvem como possível versão paga no futuro. Preços e planos ainda não foram definidos.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="reportgo.faq6-q">Haverá versão para iPhone?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="reportgo.faq6-a">
+              É um passo planejado. Hoje o app é validado em aparelhos Android; a validação e a publicação para iOS vêm em seguida.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p data-i18n="reportgo.cta-text">Trabalha com vistorias, laudos ou inspeções? Quer testar o ReportGoApp antes do lançamento ou conversar sobre o projeto?</p>
+        <a href="/#contato" class="btn btn-primary" data-i18n="reportgo.cta-btn">Entrar em contato</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e
+        Flutter</span></p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+          data-i18n="footer.privacy">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/particles.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

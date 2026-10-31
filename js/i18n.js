@@ -6,17 +6,20 @@ const TRANSLATIONS = {
   'nav.menu-label':   { pt: 'Abrir menu',   en: 'Open menu', es: 'Abrir menú' },
 
   // ── HERO ──────────────────────────────────────────────────
-  'hero.badge': { pt: 'Flutter Developer', en: 'Flutter Developer', es: 'Flutter Developer' },
+  'hero.badge': { pt: 'LEANKAR.DEV', en: 'LEANKAR.DEV', es: 'LEANKAR.DEV' },
   'hero.title': {
-    pt: 'Criando apps que<br /><span class="gradient-text">fazem a diferença</span>',
-    en: 'Building apps that<br /><span class="gradient-text">make a difference</span>',
-    es: 'Creando apps que<br /><span class="gradient-text">marcan la diferencia</span>',
+    pt: 'Software que<br /><span class="gradient-text">transforma ideias em soluções.</span>',
+    en: 'Software that<br /><span class="gradient-text">turns ideas into solutions.</span>',
+    es: 'Software que<br /><span class="gradient-text">transforma ideas en soluciones.</span>',
   },
   'hero.subtitle': {
-    pt: 'Desenvolvedor mobile especializado em Flutter &amp; Dart.<br />Aplicativos modernos, intuitivos e disponíveis no Google Play.',
-    en: 'Mobile developer specialized in Flutter &amp; Dart.<br />Modern, intuitive apps available on Google Play.',
-    es: 'Desarrollador mobile especializado en Flutter &amp; Dart.<br />Apps modernas e intuitivas disponibles en Google Play.',
+    pt: 'Desenvolvemos aplicativos, jogos e soluções digitais que simplificam tarefas, resolvem problemas reais e criam novas oportunidades.',
+    en: 'We build apps, games and digital solutions that simplify tasks, solve real problems and create new opportunities.',
+    es: 'Desarrollamos aplicaciones, juegos y soluciones digitales que simplifican tareas, resuelven problemas reales y crean nuevas oportunidades.',
   },
+  'hero.tag1': { pt: 'Desenvolvimento Mobile',  en: 'Mobile Development',   es: 'Desarrollo Mobile' },
+  'hero.tag2': { pt: 'Produtos Digitais',       en: 'Digital Products',     es: 'Productos Digitales' },
+  'hero.tag3': { pt: 'Soluções Personalizadas', en: 'Custom Solutions',     es: 'Soluciones Personalizadas' },
   'hero.cta-apps':    { pt: 'Ver Aplicativos',     en: 'View Apps',        es: 'Ver Apps' },
   'hero.cta-contato': { pt: 'Entrar em Contato',   en: 'Get in Touch',     es: 'Contactar' },
 
@@ -144,6 +147,8 @@ const TRANSLATIONS = {
   'apps.campo-video-label': { pt: 'Vídeo de apresentação do Campo Minado Evolution', en: 'Campo Minado Evolution trailer', es: 'Video de presentación de Campo Minado Evolution' },
   'apps.campo-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.damas-video-label': { pt: 'Vídeo de apresentação do Damas Evolution', en: 'Damas Evolution trailer', es: 'Video de presentación de Damas Evolution' },
+  'apps.lista-video-label': { pt: 'Vídeo de apresentação da Lista da Casa', en: 'Lista da Casa trailer', es: 'Video de presentación de Lista da Casa' },
+  'apps.lista-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.damas-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.calc-desc': {
     pt: 'Desenvolvida com Flutter e design Neumórfico, nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. Suporta as quatro operações básicas, porcentagem, IMC com faixa de peso ideal e histórico persistente de cálculos para consulta rápida. Temas claro, escuro e automático se adaptam ao ambiente, enquanto os botões foram dimensionados com área de toque generosa e tipografia de alto contraste para máxima legibilidade em qualquer tela. Disponível em cinco idiomas, sem permissões desnecessárias, compatível com Android 6.0+. Para quem quer uma calculadora que simplesmente funciona, sem surpresas.',

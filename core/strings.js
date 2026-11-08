@@ -160,6 +160,8 @@ const TRANSLATIONS = {
   'apps.damas-video-label': { pt: 'Vídeo de apresentação do Damas Evolution', en: 'Damas Evolution trailer', es: 'Video de presentación de Damas Evolution' },
   'apps.lista-video-label': { pt: 'Vídeo de apresentação da Lista da Casa', en: 'Lista da Casa trailer', es: 'Video de presentación de Lista da Casa' },
   'apps.lista-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
+  'apps.calc-video-label': { pt: 'Vídeo de apresentação da Calculadora Leankar', en: 'Calculadora Leankar trailer', es: 'Video de presentación de Calculadora Leankar' },
+  'apps.calc-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.cep-video-label': { pt: 'Vídeo de apresentação do BuscaCep_las', en: 'BuscaCep_las trailer', es: 'Video de presentación de BuscaCep_las' },
   'apps.cep-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.damas-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },

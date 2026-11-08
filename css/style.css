@@ -534,6 +534,7 @@ body {
 .app-card--d4 { --delay: 600ms; }
 .app-card--d5 { --delay: 750ms; }
 .app-card--d6 { --delay: 900ms; }
+.app-card--d7 { --delay: 1050ms; }
 
 .app-card-glow {
   position: absolute;

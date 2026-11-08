@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="../js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="MY CAR LAS — app Flutter em desenvolvimento para controlar abastecimentos, despesas, manutenção, quilometragem e lembretes do seu veículo, tudo offline e sem anúncios. Ainda não disponível nas lojas." />
+  <meta name="robots" content="index, follow" />
+  <title>MY CAR LAS — App Flutter em desenvolvimento | leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <link rel="canonical" href="https://leankar.dev/apps/my-car-las.html" />
+
+  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/my-car-las.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/apps/my-car-las.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/apps/my-car-las.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/my-car-las.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MY CAR LAS — App Flutter em desenvolvimento" />
+  <meta property="og:description"
+    content="Abastecimentos, despesas, manutenção, quilometragem e lembretes do seu veículo — offline e sem anúncios. Em desenvolvimento, ainda não disponível nas lojas." />
+  <meta property="og:url" content="https://leankar.dev/apps/my-car-las.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/mycarlas.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="MY CAR LAS — App Flutter em desenvolvimento" />
+  <meta name="twitter:description"
+    content="Gestão de veículos, despesas, manutenção e lembretes — offline e sem anúncios. Em desenvolvimento." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/mycarlas.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MY CAR LAS",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Android, Windows",
+    "url": "https://leankar.dev/apps/my-car-las.html",
+    "image": "https://leankar.dev/assets/logos/mycarlas.png",
+    "description": "App Flutter em desenvolvimento para gestão de veículos: abastecimentos com consumo médio, despesas, manutenções, quilometragem, lembretes por data ou quilometragem e relatório mensal. Funciona offline, sem conta e sem anúncios.",
+    "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
+    "inLanguage": ["pt-BR", "pt-PT", "en", "es", "it", "fr"],
+    "featureList": [
+      "Até 2 veículos ativos: carro, moto, scooter, van, caminhão e outros",
+      "Quilometragem com validação de leituras incoerentes",
+      "Abastecimentos com consumo médio calculado entre tanques cheios",
+      "Despesas por categoria e manutenções por tipo",
+      "Lembretes por data e/ou quilometragem, com repetição e notificações locais",
+      "Histórico unificado com filtros",
+      "Relatório mensal com comparação com o mês anterior",
+      "Offline, sem conta e sem anúncios, em seis idiomas"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
+        <a href="/#contato" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="lang-selector" aria-label="Language selector">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
+      <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
+      <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <div class="lang-selector lang-selector--mobile">
+        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="app-page-hero">
+      <div class="container">
+        <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
+        <div class="app-page-hero-inner reveal">
+          <img src="../assets/logos/mycarlas.png" alt="MY CAR LAS" class="app-page-logo" />
+          <div class="app-page-meta">
+            <span class="app-category" data-i18n="apps.cat-veiculos">Veículos</span>
+            <h1>MY CAR <span class="gradient-text">LAS</span></h1>
+            <p class="app-tagline" data-i18n="mycarlas.tagline">
+              Abastecimentos, despesas, manutenção, quilometragem e lembretes do seu carro ou moto em um só lugar —
+              offline, sem conta e sem anúncios.
+            </p>
+            <div class="app-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Offline-first</span>
+              <span class="tag" data-i18n="mycarlas.tag-platforms">Android e Windows</span>
+              <span class="tag tag--wip" data-i18n="mycarlas.status">Em desenvolvimento</span>
+            </div>
+            <div class="app-page-actions">
+              <a href="/#contato" class="btn btn-primary" data-i18n="mycarlas.cta-btn">Entrar em contato</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body reveal article-body--app">
+
+      <div class="app-dev-notice">
+        <span class="app-dev-notice-ico" aria-hidden="true">🚧</span>
+        <p data-i18n="mycarlas.notice">
+          O MY CAR LAS ainda <strong>não está disponível</strong> no Google Play nem na App Store. As funcionalidades
+          abaixo já existem na versão de desenvolvimento, que passa por testes e auditoria antes da publicação; não há
+          data de lançamento definida. Quer acompanhar ou testar antes? Fale comigo.
+        </p>
+      </div>
+
+      <h2 data-i18n="app.features-title">Funcionalidades</h2>
+      <ul class="app-features-list">
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature1">Até 2 veículos ativos: carro, moto, scooter, van, caminhão ou outro, com motor a gasolina, diesel, etanol, flex, GNV, GLP, híbrido ou elétrico</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature2">Quilometragem com validação: o app avisa quando uma leitura parece incoerente com as anteriores</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature3">Abastecimentos com consumo médio (L/100 km ou km/L) calculado entre tanques cheios</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature4">Despesas por categoria: reparos, pneus, seguro, vistoria, impostos e taxas, estacionamento e pedágio, limpeza e outras</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature5">Manutenções por tipo (óleo e filtro, freios, correia, bateria, pneus e mais), com próxima intervenção por data ou quilometragem</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature6">Lembretes por data e/ou quilometragem, com repetição, adiamento e notificações no aparelho</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature7">Histórico unificado com filtros por período, veículo e tipo de registro</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature8">Relatório mensal com total, comparação com o mês anterior e divisão por tipo e por categoria</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature9">Tema claro, escuro ou do sistema, e seis idiomas: português (Brasil e Portugal), inglês, espanhol, italiano e francês</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="mycarlas.feature10">Sem conta, sem servidor e sem anúncios: seus dados ficam no aparelho</span></li>
+      </ul>
+
+      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="mycarlas.about-p1">
+        MY CAR LAS é um aplicativo Flutter para quem quer saber, de verdade, quanto o carro ou a moto custa e o que ele
+        precisa — sem planilha e sem depender de internet. Você registra abastecimentos, despesas, manutenções e
+        quilometragem, e o app transforma esses registros em consumo médio, histórico e um relatório mensal.
+      </p>
+      <p data-i18n="mycarlas.about-p2">
+        Os lembretes são o coração do app: troca de óleo, seguro, vistoria, impostos e taxas ou uma atualização da
+        quilometragem. Eles podem vencer por data, por quilometragem ou pelo que vier primeiro, repetir-se sozinhos e
+        avisar com antecedência por notificação local, sem nenhum servidor envolvido.
+      </p>
+      <p data-i18n="mycarlas.about-p3">
+        Os dados ficam em um banco SQLite no próprio aparelho, e o app não pede conta nem envia nada para a internet.
+        Por dentro, usa Clean Architecture com MVVM, Riverpod, Drift e testes automatizados com exigência de cobertura.
+        O projeto está em desenvolvimento ativo, para Android e Windows; o iOS fica para depois.
+      </p>
+
+      <hr class="article-divider" />
+
+      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
+      <ul class="faq-list">
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq1-q">Quando o MY CAR LAS será lançado?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq1-a">
+              Ainda não há data definida. O app está em desenvolvimento ativo, com as telas principais prontas e em fase de testes e auditoria. A primeira publicação deve ser no Google Play; quando houver novidades, elas aparecem aqui.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq2-q">Como posso testar antes do lançamento?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq2-a">
+              Envie uma mensagem pelo formulário de contato do site contando como você controla os gastos e a manutenção do seu veículo hoje. Estou buscando pessoas para testar a versão de desenvolvimento e dar feedback.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq3-q">O app precisa de internet?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq3-a">
+              Não. Todos os registros, o consumo, o histórico, o relatório e os lembretes funcionam offline. O app não tem servidor.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq4-q">Onde ficam meus dados?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq4-a">
+              No seu próprio aparelho, em um banco de dados local. Não é preciso criar conta. Nas configurações há a opção de apagar todos os dados, com confirmação, e o app avisa antes de qualquer exclusão de veículo ou registro.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq5-q">Quantos veículos posso cadastrar?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq5-a">
+              A versão gratuita permite até 2 veículos ativos ao mesmo tempo. Veículos arquivados não contam para o limite e mantêm todo o histórico, então você pode arquivar um para cadastrar outro.
+            </div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="mycarlas.faq6-q">Em quais plataformas o app funciona?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="mycarlas.faq6-a">
+              O projeto é feito para Android e Windows. Uma versão para iPhone é um passo planejado, ainda sem data.
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+      <hr class="article-divider" />
+
+      <div class="article-cta">
+        <p data-i18n="mycarlas.cta-text">Quer acompanhar o MY CAR LAS, testar a versão de desenvolvimento ou conversar sobre o projeto?</p>
+        <a href="/#contato" class="btn btn-primary" data-i18n="mycarlas.cta-btn">Entrar em contato</a>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e
+        Flutter</span></p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/privacy.html" class="footer-privacy-link"
+          data-i18n="footer.privacy">
+          Política de Privacidade
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/particles.js"></script>
+  <script src="../core/strings.js"></script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/app-page.js"></script>
+</body>
+
+</html>

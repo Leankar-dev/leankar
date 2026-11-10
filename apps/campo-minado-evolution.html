@@ -70,7 +70,7 @@
     },
     "featureList": [
       "Mecânica fiel ao Campo Minado original",
-      "3 dificuldades: Fácil (9x9), Médio (16x16), Difícil (16x30)",
+      "3 dificuldades com grade adaptada à tela (referência clássica: 9x9, 16x16 e 16x30)",
       "Tabuleiros adaptativos ao tamanho da tela",
       "Efeitos sonoros e vibração tátil",
       "Tutorial interativo",
@@ -168,7 +168,7 @@
       <h2 data-i18n="app.features-title">Funcionalidades</h2>
       <ul class="app-features-list">
         <li><span class="feature-check">✓</span><span data-i18n="campo.feature1">Mecânica 100% fiel ao Campo Minado original</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="campo.feature2">3 dificuldades: Fácil (9×9), Médio (16×16) e Difícil (16×30)</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="campo.feature2">3 dificuldades (Fácil, Médio e Difícil) com grade adaptada à tela; referência clássica: 9×9, 16×16 e 16×30</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="campo.feature3">Tabuleiros adaptativos — se ajustam ao tamanho da tela</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="campo.feature4">Efeitos sonoros e vibração tátil configuráveis</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="campo.feature5">Animações de célula reveal e explosão</span></li>
@@ -189,12 +189,7 @@
         adjacentes percorre as 8 células vizinhas de cada posição, e o algoritmo de flood fill iterativo
         revela automaticamente as regiões seguras quando uma célula vazia é tocada.
       </p>
-      <p data-i18n="campo.about-p3">
-        Os tabuleiros são adaptativos ao tamanho da tela: em dispositivos menores, as células se
-        redimensionam automaticamente para que o tabuleiro inteiro caiba na tela sem scroll. Em
-        dificuldade Difícil (16×30), o layout é otimizado para orientação paisagem com células
-        menores mas ainda tocáveis.
-      </p>
+      <p data-i18n="campo.about-p3">Os tabuleiros são adaptativos ao tamanho da tela: em dispositivos menores, as células se redimensionam automaticamente para que o tabuleiro inteiro caiba na tela sem scroll. Em dificuldade Difícil (referência clássica: 16×30), o layout é otimizado para orientação paisagem com células menores mas ainda tocáveis.</p>
       <p data-i18n="campo.about-p4">
         O sistema de estatísticas persiste localmente com <strong>SharedPreferences</strong>: melhor
         tempo e taxa de vitória são mantidos por dificuldade entre sessões. O timer da partida é preciso

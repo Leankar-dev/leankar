@@ -1630,3 +1630,19 @@ body {
 /* ── PRIVACY: notas após tabelas/listas ── */
 .privacy-note { margin-top: 14px; }
 .privacy-note--lg { margin-top: 18px; }
+
+/* ─────────────────────────────────────────
+   ACESSIBILIDADE — movimento reduzido
+   Quem pede "reduzir movimento" no sistema não vê animações nem rolagem suave.
+   O conteúdo de .reveal continua visível (só sem a animação de entrada).
+───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

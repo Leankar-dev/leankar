@@ -157,7 +157,7 @@ const TRANSLATIONS = {
   'apps.badge-wip':   { pt: 'Em breve',   en: 'Coming soon',  es: 'Próximamente' },
   'apps.badge-web':   { pt: 'Web',        en: 'Web',          es: 'Web' },
   'apps.tag-wip':     { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
-  'apps.link-site': { pt: 'Visitar site do jogo →', en: 'Visit the game website →', es: 'Visitar el sitio del juego →' },
+  'apps.link-site-game': { pt: 'Visitar site do jogo →', en: 'Visit the game website →', es: 'Visitar el sitio del juego →' },
   'apps.link-details': { pt: 'Ver detalhes →', en: 'See details →', es: 'Ver detalles →' },
   'apps.link-site':   { pt: 'Visitar Site',   en: 'Visit Site',    es: 'Visitar Sitio' },
   'apps.play-badge-alt': { pt: 'Disponível no Google Play', en: 'Available on Google Play', es: 'Disponible en Google Play' },

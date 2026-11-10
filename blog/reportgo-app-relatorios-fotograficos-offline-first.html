@@ -74,12 +74,12 @@
 </head>
 
 <body>
-  <canvas id="particles-canvas"></canvas>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
@@ -94,7 +94,7 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -730,7 +730,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">

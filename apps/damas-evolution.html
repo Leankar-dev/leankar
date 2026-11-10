@@ -82,12 +82,12 @@
 </head>
 
 <body>
-  <canvas id="particles-canvas"></canvas>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
@@ -102,7 +102,7 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -126,7 +126,7 @@
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
         <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/damas_evolution_logo.png" alt="Damas Evolution" class="app-page-logo" />
+          <img src="../assets/logos/damas_evolution_logo.png" alt="Damas Evolution" class="app-page-logo" width="140" height="140" />
           <div class="app-page-meta">
             <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
             <h1>Damas <span class="gradient-text">Evolution</span></h1>
@@ -144,7 +144,7 @@
               <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
                 class="play-btn" target="_blank" rel="noopener noreferrer">
                 <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
               </a>
             </div>
           </div>
@@ -165,14 +165,14 @@
 
       <h2 data-i18n="app.features-title">Funcionalidades</h2>
       <ul class="app-features-list">
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature1">Jogue contra a IA em três níveis: Fácil, Médio e Difícil</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature2">Modo Jogador vs Jogador no mesmo aparelho</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature3">Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature4">Tabuleiro 2D ou 3D, com animações e efeitos sonoros</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature5">Histórico de partidas e estatísticas salvos no aparelho</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature6">Funciona sem internet</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature7">Leitores de tela, fonte ampliável e layouts para celulares e tablets</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="damas.feature8">Disponível em português, inglês, espanhol, francês e italiano</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature1">Jogue contra a IA em três níveis: Fácil, Médio e Difícil</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature2">Modo Jogador vs Jogador no mesmo aparelho</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature3">Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature4">Tabuleiro 2D ou 3D, com animações e efeitos sonoros</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature5">Histórico de partidas e estatísticas salvos no aparelho</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature6">Funciona sem internet</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature7">Leitores de tela, fonte ampliável e layouts para celulares e tablets</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature8">Disponível em português, inglês, espanhol, francês e italiano</span></li>
       </ul>
 
       <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
@@ -199,7 +199,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq1-q">Quais são as regras usadas no jogo?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq1-a">
@@ -211,7 +211,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq2-q">Quais são os níveis de dificuldade da IA?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq2-a">
@@ -223,7 +223,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq3-q">Posso jogar contra um amigo?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq3-a">
@@ -235,7 +235,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq4-q">O app precisa de internet?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq4-a">Não para jogar. O jogo funciona totalmente sem conexão, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho. Só os anúncios usam internet, quando ela existe.</div>
@@ -245,7 +245,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq5-q">Existe tabuleiro em 3D?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq5-a">
@@ -257,7 +257,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="damas.faq6-q">O app é gratuito?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="damas.faq6-a">Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode alterar nas configurações.</div>
@@ -283,7 +283,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e

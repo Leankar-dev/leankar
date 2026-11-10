@@ -83,12 +83,12 @@
 </head>
 
 <body>
-  <canvas id="particles-canvas"></canvas>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
@@ -103,7 +103,7 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -127,7 +127,7 @@
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
         <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-page-logo" />
+          <img src="../assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-page-logo" width="140" height="140" />
           <div class="app-page-meta">
             <span class="app-category" data-i18n="apps.cat-organizacao">Organização</span>
             <h1>Lista da <span class="gradient-text">Casa</span></h1>
@@ -147,7 +147,7 @@
               <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
                 class="play-btn" target="_blank" rel="noopener noreferrer">
                 <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
               </a>
             </div>
           </div>
@@ -168,14 +168,14 @@
 
       <h2 data-i18n="app.features-title">Funcionalidades</h2>
       <ul class="app-features-list">
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature1">Múltiplas listas simultâneas por estabelecimento</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature2">Itens com categoria, quantidade e preço estimado</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature3">Marcação de itens já pegos no carrinho</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature4">Progresso da lista em tempo real (X de Y itens)</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature5">Histórico completo de compras finalizadas</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature6">Gráficos de gastos mensais por categoria</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature7">Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature8">Interface para uso com uma mão — 3 idiomas</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature1">Múltiplas listas simultâneas por estabelecimento</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature2">Itens com categoria, quantidade e preço estimado</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature3">Marcação de itens já pegos no carrinho</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature4">Progresso da lista em tempo real (X de Y itens)</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature5">Histórico completo de compras finalizadas</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature6">Gráficos de gastos mensais por categoria</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature7">Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature8">Interface para uso com uma mão — 3 idiomas</span></li>
       </ul>
 
       <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
@@ -212,7 +212,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq1-q">O app precisa de internet para funcionar?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq1-a">Não para usar. Todos os dados ficam armazenados localmente com SQLite (via Drift) e o app funciona em modo avião, sem Wi-Fi e sem dados móveis. A única parte que usa conexão são os anúncios, quando há internet.</div>
@@ -222,7 +222,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq2-q">Posso ter listas para diferentes estabelecimentos?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq2-a">
@@ -236,7 +236,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq3-q">Como funciona o histórico e os gráficos de gastos?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq3-a">
@@ -250,7 +250,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq4-q">Posso compartilhar a lista com outra pessoa?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq4-a">
@@ -264,7 +264,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq5-q">O app coleta ou envia meus dados?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq5-a">Suas listas, itens e histórico ficam exclusivamente no banco de dados local do seu dispositivo Android e não são enviados a nenhum servidor; não há cadastro nem conta. Os anúncios são a exceção: se você aceitar, o SDK Unity LevelPlay e seus parceiros podem coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Você pode rever a escolha nas configurações, e os detalhes estão na política de privacidade do app.</div>
@@ -274,7 +274,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="lista.faq6-q">O app é gratuito?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="lista.faq6-a">Sim, é gratuito: sem compras dentro do app, sem assinatura e sem funcionalidades pagas, com todas as funcionalidades disponíveis desde o primeiro uso. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode rever nas configurações.</div>
@@ -300,7 +300,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e

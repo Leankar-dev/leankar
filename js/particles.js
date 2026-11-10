@@ -64,11 +64,32 @@
     }
   }
 
-  function loop() {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frameId = null;
+
+  function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
+    particles.forEach(p => p.draw());
     drawConnections();
-    requestAnimationFrame(loop);
   }
-  loop();
+
+  function loop() {
+    particles.forEach(p => p.update());
+    render();
+    frameId = requestAnimationFrame(loop);
+  }
+
+  /* Com "reduzir movimento": desenha um quadro estático e não anima. */
+  function applyMotionPreference() {
+    if (reducedMotion.matches) {
+      if (frameId !== null) { cancelAnimationFrame(frameId); frameId = null; }
+      render();
+    } else if (frameId === null) {
+      loop();
+    }
+  }
+
+  reducedMotion.addEventListener('change', applyMotionPreference);
+  window.addEventListener('resize', () => { if (reducedMotion.matches) render(); }, { passive: true });
+  applyMotionPreference();
 })();

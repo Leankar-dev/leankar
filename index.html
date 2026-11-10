@@ -127,13 +127,13 @@
 <body>
 
   <!-- ── CANVAS DE PARTÍCULAS ── -->
-  <canvas id="particles-canvas"></canvas>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <!-- ── NAVBAR ── -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">
-        <img src="assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <img src="assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
@@ -148,7 +148,7 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -442,7 +442,7 @@
                   <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/calculadora-leankar.html" class="app-detail-link" data-i18n="apps.link-details">Ver
                     detalhes →</a>
@@ -479,7 +479,7 @@
                   <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/buscacep.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes →</a>
                 </div>
@@ -515,7 +515,7 @@
                   <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/lista-da-casa.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes
                     →</a>
@@ -552,7 +552,7 @@
                   <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/campo-minado-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
                     detalhes →</a>
@@ -589,7 +589,7 @@
                   <a href="https://play.google.com/store/apps/details?id=leankar.dev.word_evolution&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/word-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
                     detalhes →</a>
@@ -634,12 +634,12 @@
                   <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
                     class="play-btn" target="_blank" rel="noopener noreferrer">
                     <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" />
+                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
                   </a>
                   <a href="/apps/damas-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
                     detalhes →</a>
                   <a href="https://leankar-dev.github.io/damas_evolution_site/" class="app-detail-link" target="_blank"
-                    rel="noopener noreferrer" data-i18n="apps.link-site">Visitar site do jogo →</a>
+                    rel="noopener noreferrer" data-i18n="apps.link-site-game">Visitar site do jogo →</a>
                 </div>
               </div>
             </div>
@@ -873,7 +873,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <img src="assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">

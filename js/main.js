@@ -34,6 +34,7 @@ const observer  = new IntersectionObserver(
 revealEls.forEach(el => observer.observe(el));
 
 /* ── SMOOTH SCROLL para links internos ── */
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
@@ -41,6 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     const offset = 80;
     const top    = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top, behavior: 'smooth' });
+    window.scrollTo({ top, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
   });
 });

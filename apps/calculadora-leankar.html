@@ -84,12 +84,12 @@
 </head>
 
 <body>
-  <canvas id="particles-canvas"></canvas>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
       <nav class="nav-links">
@@ -104,7 +104,7 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </div>
-      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu">
+      <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -128,7 +128,7 @@
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
         <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-page-logo" />
+          <img src="../assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-page-logo" width="140" height="140" />
           <div class="app-page-meta">
             <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
             <h1>Calculadora <span class="gradient-text">Leankar</span></h1>
@@ -144,7 +144,7 @@
               <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
                 class="play-btn" target="_blank" rel="noopener noreferrer">
                 <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" />
+                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
               </a>
             </div>
           </div>
@@ -165,15 +165,15 @@
 
       <h2 data-i18n="app.features-title">Funcionalidades</h2>
       <ul class="app-features-list">
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature1">Quatro operações básicas: soma, subtração, multiplicação e divisão</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature2">Cálculo de porcentagem integrado</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature9">Modo científico: trigonometria, logaritmos, potências, raízes, fatorial, memória e graus/radianos</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature3">Calculadora de IMC com classificação OMS (6 faixas)</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature4">Histórico persistente dos últimos 50 cálculos</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature5">Temas claro, escuro e automático (segue o sistema Android)</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature6">Design Neumórfico com alto contraste e tipografia legível</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature7">5 idiomas: português, inglês, espanhol, francês e italiano</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="calc.feature8">Funciona sem internet; anúncios opcionais, que você aceita ou recusa</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature1">Quatro operações básicas: soma, subtração, multiplicação e divisão</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature2">Cálculo de porcentagem integrado</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature9">Modo científico: trigonometria, logaritmos, potências, raízes, fatorial, memória e graus/radianos</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature3">Calculadora de IMC com classificação OMS (6 faixas)</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature4">Histórico persistente dos últimos 50 cálculos</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature5">Temas claro, escuro e automático (segue o sistema Android)</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature6">Design Neumórfico com alto contraste e tipografia legível</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature7">5 idiomas: português, inglês, espanhol, francês e italiano</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature8">Funciona sem internet; anúncios opcionais, que você aceita ou recusa</span></li>
       </ul>
 
       <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
@@ -205,7 +205,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq1-q">O app é totalmente gratuito?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq1-a">Sim, é gratuito. Não há compras dentro do app, assinatura ou versão premium, e todas as funcionalidades estão disponíveis desde o primeiro uso. O app é mantido por um banner de anúncios na versão Android, que você aceita ou recusa.</div>
@@ -215,7 +215,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq2-q">Funciona sem conexão com a internet?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq2-a">Sim. Os cálculos, o histórico e o IMC funcionam sem internet, inclusive em modo avião. A única parte que usa conexão é o banner de anúncios da versão Android, e só se você aceitar os anúncios.</div>
@@ -225,7 +225,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq3-q">Posso apagar o histórico de cálculos?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq3-a">
@@ -238,7 +238,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq4-q">Está disponível para iOS ou como app web?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq4-a">
@@ -251,7 +251,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq5-q">O app coleta ou envia meus dados?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq5-a">O histórico de cálculos fica exclusivamente no armazenamento local do seu dispositivo e não é enviado a nenhum servidor; o app não tem conta nem cadastro. Se você aceitar os anúncios (somente na versão Android), o SDK Unity LevelPlay pode coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Os detalhes estão na política de privacidade do app.</div>
@@ -261,7 +261,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq6-q">Como funciona o cálculo de IMC?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq6-a">
@@ -275,7 +275,7 @@
         <li class="faq-item">
           <button class="faq-question">
             <span data-i18n="calc.faq7-q">Existe calculadora científica?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="calc.faq7-a">
@@ -303,7 +303,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" />
+        <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
         <span>leankar<span class="accent">.dev</span></span>
       </div>
       <p class="footer-copy">&copy; <span id="year"></span> leankar.dev — <span data-i18n="footer.copy">Feito com <span class="heart">♥</span> e

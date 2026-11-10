@@ -1471,13 +1471,208 @@ body {
   transition: transform var(--transition), background var(--transition);
 }
 .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(0,198,255,0.1); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.faq-item.open .faq-answer { max-height: 400px; }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 0.4s ease, visibility 0s linear 0.4s;
+}
+.faq-item.open .faq-answer { max-height: 1000px; visibility: visible; transition-delay: 0s; }
 .faq-answer-inner {
   padding-bottom: 20px;
   color: var(--muted);
   font-size: 0.95rem;
   line-height: 1.75;
+}
+
+/* ─────────────────────────────────────────
+   APP PAGE — LANDING (hero visual, benefícios, galeria, requisitos)
+   Regra de ouro: dentro de .article-body todo seletor que toque ul/li/h2/h3/p/a/figure leva o prefixo
+   ".article-body" — senão perde para ".article-body ul/li/h3/p" (especificidade 0,1,1).
+   O hero fica FORA do corpo e usa seletores simples. Template: assets/docs/melhorias/telas_detalhes/.
+───────────────────────────────────────── */
+
+/* Hero visual: SEM .reveal (conteúdo acima da dobra e candidato a LCP não espera JS) */
+.app-page-hero--visual { padding-left: 0; padding-right: 0; }
+.app-page-hero--visual .app-page-hero-inner {
+  align-items: center;
+  gap: 48px;
+}
+.app-page-hero--visual .app-page-logo { display: block; margin-bottom: 16px; }
+.app-page-hero--visual .app-page-meta .app-tags { margin-bottom: 14px; }
+
+/* chips de fatos para o usuário (não repetem as .app-tags de tecnologia) */
+.app-trust {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0 0 22px;
+  padding: 0;
+}
+.app-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+.app-trust li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  flex-shrink: 0;
+}
+
+/* link secundário ao lado do badge Play (alvo >= 44 px) */
+.app-link-sec {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 6px;
+  color: var(--cyan);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.app-link-sec:hover { text-decoration: underline; }
+
+/* aparelho: moldura em CSS para capturas cruas (.app-phone) ou sem moldura para artes já emolduradas (--bare) */
+.app-hero-visual { flex: 0 0 auto; margin: 0; }
+.app-phone {
+  height: 560px;
+  aspect-ratio: 9 / 16;
+  border-radius: 32px;
+  border: 1px solid var(--border);
+  box-shadow: var(--glow-cyan), 0 24px 60px rgba(0,0,0,0.45);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+.app-phone img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.app-phone--bare {
+  border: 0;
+  border-radius: 16px;
+  background: none;
+  box-shadow: var(--glow-cyan);
+}
+.app-phone--bare img { object-fit: contain; }
+
+/* seções do corpo: espaçamento padrão e âncoras abaixo da navbar fixa (112 px) */
+.article-body .app-section { margin-top: 56px; }
+.article-body .app-section:first-child { margin-top: 0; }
+.article-body .app-section > h2 { margin-top: 0; }
+.article-body .app-section .app-video--page { margin-top: 14px; }
+.app-section[id] { scroll-margin-top: 132px; }
+
+/* benefícios */
+.article-body .app-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.article-body .app-benefit {
+  margin: 0;
+  padding: 22px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+.article-body .app-benefit:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+.article-body .app-benefit-ico { display: block; width: 24px; height: 24px; margin-bottom: 12px; color: var(--cyan); }
+.article-body .app-benefit h3 { margin: 0 0 6px; font-size: 1rem; color: var(--white); }
+.article-body .app-benefit p { margin: 0; font-size: 0.9rem; line-height: 1.6; color: var(--muted); }
+
+/* galeria de telas */
+.article-body .app-gallery-nav { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 12px; }
+.article-body .app-gallery-nav[hidden] { display: none; }
+.app-gallery-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--white);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+.app-gallery-btn:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+.app-gallery-btn[aria-disabled="true"] { opacity: 0.35; cursor: default; }
+.article-body .app-gallery-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  padding: 4px 0 16px;
+  scrollbar-width: thin;
+}
+.article-body .app-shot { flex: 0 0 auto; width: 200px; margin: 0; scroll-snap-align: start; }
+.article-body .app-shot img { display: block; width: 100%; height: auto; }
+.article-body .app-shot--raw img {
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+.article-body .app-shot--bare img { border-radius: 12px; }
+.article-body .app-shot figcaption { margin-top: 10px; font-size: 0.8rem; line-height: 1.4; color: var(--muted); }
+
+/* requisitos e compatibilidade */
+.article-body .app-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 0; }
+.article-body .app-spec {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.article-body .app-spec dt {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.article-body .app-spec dd { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--white); }
+
+/* B10: ".article-body ul { padding-left: 24px }" vencia ".app-features-list { padding: 0 }" */
+.article-body .app-features-list { padding: 0; }
+
+/* foco visível (teclado) */
+.faq-question:focus-visible,
+.app-link-sec:focus-visible,
+.app-gallery-btn:focus-visible,
+.app-gallery-track:focus-visible,
+.play-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+.faq-question:focus-visible { border-radius: 4px; }
+
+@media (max-width: 860px) {
+  .app-page-hero--visual .app-page-hero-inner { align-items: stretch; gap: 24px; }
+  .app-hero-visual { align-self: center; }
+  .app-phone { height: 420px; }
+  .article-body .app-benefits { grid-template-columns: 1fr; }
+}
+@media (min-width: 861px) {
+  .article-body .app-shot { width: 240px; }
+}
+@media (max-width: 640px) {
+  .app-page-hero--visual { padding-top: 112px; padding-bottom: 40px; }
+  .app-page-hero--visual .back-link { margin-bottom: 16px; }
+  .app-page-hero--visual .app-page-hero-inner { margin-top: 8px; }
+  .app-page-hero--visual .app-page-logo { width: 88px; height: 88px; border-radius: 22px; margin-bottom: 12px; }
+  .article-body .app-specs { grid-template-columns: 1fr; }
 }
 
 /* ── Contact form (contato section revamp) ── */

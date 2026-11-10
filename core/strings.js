@@ -297,6 +297,31 @@ const TRANSLATIONS = {
   'app.badge-free':     { pt: 'Gratuito', en: 'Free', es: 'Gratis' },
   'app.badge-offline':  { pt: 'Offline',  en: 'Offline', es: 'Sin conexión' },
 
+  // ── PÁGINA DE APP: seções e requisitos genéricos (landing) ──
+  'app.benefits-title': { pt: 'Por que usar', en: 'Why use it', es: 'Por qué usarla' },
+  'app.gallery-title': { pt: 'Telas do app', en: 'App screenshots', es: 'Capturas de la app' },
+  'app.gallery-label': { pt: 'Galeria de telas', en: 'Screenshot gallery', es: 'Galería de capturas' },
+  'app.gallery-prev': { pt: 'Tela anterior', en: 'Previous screenshot', es: 'Captura anterior' },
+  'app.gallery-next': { pt: 'Próxima tela', en: 'Next screenshot', es: 'Siguiente captura' },
+  'app.video-title': { pt: 'Veja em ação', en: 'See it in action', es: 'Míralo en acción' },
+  'app.see-video': { pt: 'Ver vídeo', en: 'Watch video', es: 'Ver video' },
+  'app.req-title': { pt: 'Requisitos e compatibilidade', en: 'Requirements and compatibility', es: 'Requisitos y compatibilidad' },
+  'app.spec-platform': { pt: 'Plataforma', en: 'Platform', es: 'Plataforma' },
+  'app.spec-android': { pt: 'Android mínimo', en: 'Minimum Android', es: 'Android mínimo' },
+  'app.spec-langs': { pt: 'Idiomas', en: 'Languages', es: 'Idiomas' },
+  'app.spec-price': { pt: 'Preço', en: 'Price', es: 'Precio' },
+  'app.spec-ads': { pt: 'Anúncios', en: 'Ads', es: 'Anuncios' },
+  'app.spec-net': { pt: 'Conexão', en: 'Connection', es: 'Conexión' },
+  'app.spec-perms': { pt: 'Permissões', en: 'Permissions', es: 'Permisos' },
+  'app.spec-privacy': { pt: 'Política de privacidade', en: 'Privacy policy', es: 'Política de privacidad' },
+  'app.privacy-link': { pt: 'Ver política do app', en: 'View the app policy', es: 'Ver la política de la app' },
+  'app.status-dev': { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
+  'app.val-android': { pt: 'Android', en: 'Android', es: 'Android' },
+  'app.val-net-none': { pt: 'Funciona sem internet', en: 'Works without internet', es: 'Funciona sin internet' },
+  'app.val-net-required': { pt: 'Requer internet', en: 'Requires internet', es: 'Requiere internet' },
+  'app.val-ads-none': { pt: 'Sem anúncios', en: 'No ads', es: 'Sin anuncios' },
+  'app.val-perms-internet': { pt: 'Somente acesso à internet', en: 'Internet access only', es: 'Solo acceso a internet' },
+
   // ── CALCULADORA LEANKAR ───────────────────────────────────
   'calc.tagline': {
     pt: 'A calculadora que simplesmente funciona: básica e científica, com IMC e histórico persistente. Sem bloatware e sem distrações, só com um banner de anúncio (Android) que você aceita ou recusa. Design neumórfico.',

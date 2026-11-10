@@ -14,7 +14,7 @@
              script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
   <meta name="description"
-    content="Lista da Casa — app de lista de compras para Android. Offline com SQLite, múltiplas listas, gráficos de gastos e interface neumórfica. Gratuito." />
+    content="Lista da Casa — app de lista de compras para Android. Funciona sem internet (SQLite local), múltiplas listas, gráficos de gastos e interface neumórfica. Gratuito, com anúncios." />
   <meta name="robots" content="index, follow" />
   <title>Lista da Casa — App de Lista de Compras Android | leankar.dev</title>
   <link rel="icon" type="image/jpeg" href="../assets/logos/logo_leankar.jpeg" />
@@ -36,7 +36,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Lista da Casa — App de Lista de Compras Android" />
   <meta property="og:description"
-    content="App de lista de compras 100% offline com SQLite. Múltiplas listas, categorias, gráficos de gastos e interface neumórfica. Gratuito." />
+    content="App de lista de compras que funciona sem internet, com SQLite. Múltiplas listas, categorias, gráficos de gastos e interface neumórfica. Gratuito, com anúncios." />
   <meta property="og:url" content="https://leankar.dev/apps/lista-da-casa.html" />
   <meta property="og:image" content="https://leankar.dev/assets/logos/listadacasa_logo.png" />
   <meta property="og:locale" content="pt_BR" />
@@ -45,7 +45,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lista da Casa — App de Lista de Compras Android" />
   <meta name="twitter:description"
-    content="Lista de compras offline com SQLite, categorias, gráficos de gastos e design neumórfico. Gratuito para Android." />
+    content="Lista de compras que funciona sem internet, com SQLite, categorias, gráficos de gastos e design neumórfico. Gratuito para Android, com anúncios." />
   <meta name="twitter:image" content="https://leankar.dev/assets/logos/listadacasa_logo.png" />
 
   <script type="application/ld+json">
@@ -57,7 +57,7 @@
     "operatingSystem": "Android",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
     "url": "https://play.google.com/store/apps/details?id=dev.leankar.listadacasa",
-    "description": "App de lista de compras para Android. 100% offline com Drift (SQLite), múltiplas listas simultâneas, categorias, preços, histórico e gráficos de gastos mensais.",
+    "description": "App de lista de compras para Android. Funciona sem internet, com Drift (SQLite), múltiplas listas simultâneas, categorias, preços, histórico e gráficos de gastos mensais.",
     "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" },
     "inLanguage": ["pt", "en", "es"],
     "video": {
@@ -75,7 +75,7 @@
       "Marcação de itens no carrinho",
       "Histórico de compras finalizadas",
       "Gráficos de gastos mensais por categoria",
-      "100% offline com Drift (SQLite)",
+      "Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)",
       "3 idiomas: português, inglês e espanhol"
     ]
   }
@@ -174,7 +174,7 @@
         <li><span class="feature-check">✓</span><span data-i18n="lista.feature4">Progresso da lista em tempo real (X de Y itens)</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="lista.feature5">Histórico completo de compras finalizadas</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="lista.feature6">Gráficos de gastos mensais por categoria</span></li>
-        <li><span class="feature-check">✓</span><span data-i18n="lista.feature7">100% offline com Drift (SQLite) — sem internet</span></li>
+        <li><span class="feature-check">✓</span><span data-i18n="lista.feature7">Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)</span></li>
         <li><span class="feature-check">✓</span><span data-i18n="lista.feature8">Interface para uso com uma mão — 3 idiomas</span></li>
       </ul>
 
@@ -202,10 +202,7 @@
         deslize para marcar itens, design neumórfico com alto contraste. Nenhuma ação crítica está a mais
         de dois toques de distância. Disponível em português, inglês e espanhol.
       </p>
-      <p data-i18n="lista.about-p5">
-        Sem cadastro, sem dados enviados a servidores. O banco de dados fica inteiramente
-        no dispositivo. Gratuito de verdade.
-      </p>
+      <p data-i18n="lista.about-p5">Sem cadastro e sem conta: suas listas ficam inteiramente no dispositivo. Gratuito, mantido por anúncios que você aceita ou recusa.</p>
 
       <hr class="article-divider" />
 
@@ -218,10 +215,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq1-a">
-              Não. O app é 100% offline. Todos os dados ficam armazenados localmente com SQLite
-              (via Drift). Funciona normalmente em modo avião, sem Wi-Fi e sem dados móveis.
-            </div>
+            <div class="faq-answer-inner" data-i18n="lista.faq1-a">Não para usar. Todos os dados ficam armazenados localmente com SQLite (via Drift) e o app funciona em modo avião, sem Wi-Fi e sem dados móveis. A única parte que usa conexão são os anúncios, quando há internet.</div>
           </div>
         </li>
 
@@ -273,11 +267,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq5-a">
-              Não. Nenhum dado é coletado, transmitido ou compartilhado. Todas as listas, itens e
-              histórico ficam exclusivamente no banco de dados local do seu dispositivo Android.
-              Não há cadastro, não há conta, não há servidor.
-            </div>
+            <div class="faq-answer-inner" data-i18n="lista.faq5-a">Suas listas, itens e histórico ficam exclusivamente no banco de dados local do seu dispositivo Android e não são enviados a nenhum servidor; não há cadastro nem conta. Os anúncios são a exceção: se você aceitar, o SDK Unity LevelPlay e seus parceiros podem coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Você pode rever a escolha nas configurações, e os detalhes estão na política de privacidade do app.</div>
           </div>
         </li>
 
@@ -287,11 +277,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq6-a">
-              Sim, completamente gratuito. Sem compras dentro do app, sem assinatura
-              e sem funcionalidades pagas. Todas as features estão disponíveis de imediato, para
-              sempre, sem nenhuma condição.
-            </div>
+            <div class="faq-answer-inner" data-i18n="lista.faq6-a">Sim, é gratuito: sem compras dentro do app, sem assinatura e sem funcionalidades pagas, com todas as funcionalidades disponíveis desde o primeiro uso. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode rever nas configurações.</div>
           </div>
         </li>
 
@@ -300,7 +286,7 @@
       <hr class="article-divider" />
 
       <div class="article-cta">
-        <p data-i18n="lista.cta-text">Organize suas compras de forma simples e offline. Gratuito para Android.</p>
+        <p data-i18n="lista.cta-text">Organize suas compras de forma simples e sem precisar de internet. Gratuito para Android, com anúncios.</p>
         <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">
           Baixar no Google Play

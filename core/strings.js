@@ -174,9 +174,9 @@ const TRANSLATIONS = {
   'apps.word-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.damas-video-fallback': { pt: 'Seu navegador não suporta vídeo HTML5.', en: 'Your browser does not support HTML5 video.', es: 'Tu navegador no admite video HTML5.' },
   'apps.calc-desc': {
-    pt: 'Desenvolvida com Flutter e design Neumórfico, nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. Suporta as quatro operações básicas, porcentagem, IMC com faixa de peso ideal e histórico persistente de cálculos para consulta rápida. Temas claro, escuro e automático se adaptam ao ambiente, enquanto os botões foram dimensionados com área de toque generosa e tipografia de alto contraste para máxima legibilidade em qualquer tela. Disponível em cinco idiomas, sem permissões desnecessárias, compatível com Android 6.0+. Para quem quer uma calculadora que simplesmente funciona, sem surpresas.',
-    en: 'Built with Flutter and a neumorphic design, it was born out of frustration with calculators bloated with ads and features nobody uses. It supports the four basic operations, percentages, BMI with ideal weight range, and a persistent calculation history for quick reference. Light, dark, and automatic themes adapt to your environment, while buttons are sized with generous tap areas and high-contrast typography for maximum legibility on any screen. Available in five languages, with no unnecessary permissions, compatible with Android 6.0+. For anyone who wants a calculator that just works, no surprises.',
-    es: 'Desarrollada con Flutter y diseño neumórfico, nació de la insatisfacción con calculadoras sobrecargadas de anuncios y funciones que nadie usa. Soporta las cuatro operaciones básicas, porcentaje, IMC con rango de peso ideal e historial persistente de cálculos para consulta rápida. Los temas claro, oscuro y automático se adaptan al entorno, mientras que los botones fueron dimensionados con un área de toque generosa y tipografía de alto contraste para máxima legibilidad en cualquier pantalla. Disponible en cinco idiomas, sin permisos innecesarios, compatible con Android 6.0+. Para quien quiere una calculadora que simplemente funciona, sin sorpresas.',
+    pt: 'Desenvolvida com Flutter e design Neumórfico, nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. Suporta as quatro operações básicas, porcentagem, modo científico (trigonometria, logaritmos, potências, fatorial e memória), IMC com faixa de peso ideal e histórico persistente de cálculos para consulta rápida. Temas claro, escuro e automático se adaptam ao ambiente, enquanto os botões foram dimensionados com área de toque generosa e tipografia de alto contraste para máxima legibilidade em qualquer tela. Disponível em cinco idiomas, compatível com Android 7.0+ e com um banner de anúncios opcional na versão Android. Para quem quer uma calculadora que simplesmente funciona, sem surpresas.',
+    en: 'Built with Flutter and a neumorphic design, it was born out of frustration with calculators bloated with ads and features nobody uses. It supports the four basic operations, percentages, a scientific mode (trigonometry, logarithms, powers, factorial, and memory), BMI with ideal weight range, and a persistent calculation history for quick reference. Light, dark, and automatic themes adapt to your environment, while buttons are sized with generous tap areas and high-contrast typography for maximum legibility on any screen. Available in five languages, compatible with Android 7.0+ and with an optional ad banner on the Android version. For anyone who wants a calculator that just works, no surprises.',
+    es: 'Desarrollada con Flutter y diseño neumórfico, nació de la insatisfacción con calculadoras sobrecargadas de anuncios y funciones que nadie usa. Soporta las cuatro operaciones básicas, porcentaje, modo científico (trigonometría, logaritmos, potencias, factorial y memoria), IMC con rango de peso ideal e historial persistente de cálculos para consulta rápida. Los temas claro, oscuro y automático se adaptan al entorno, mientras que los botones fueron dimensionados con un área de toque generosa y tipografía de alto contraste para máxima legibilidad en cualquier pantalla. Disponible en cinco idiomas, compatible con Android 7.0+ y con un banner de anuncios opcional en la versión Android. Para quien quiere una calculadora que simplemente funciona, sin sorpresas.',
   },
   'apps.cep-desc': {
     pt: 'Consultar um CEP brasileiro não deveria ser complicado. O BuscaCep integra a API pública ViaCEP para retornar logradouro, bairro, cidade, estado, DDD e complemento em segundos. Ideal para validar endereços em compras online, preencher formulários ou localizar qualquer CEP do Brasil. Oferece duas formas de busca: por CEP direto ou por endereço completo (UF, cidade e logradouro), com resultados formatados com clareza. Interface neumórfica, intuitiva e sem poluição visual. Desenvolvido com Flutter, Riverpod e Dio, com tratamento completo de erros de conexão, timeout e CEPs inválidos. Gratuito, sem anúncios e sem coleta de dados.',
@@ -184,14 +184,14 @@ const TRANSLATIONS = {
     es: 'Consultar un código postal brasileño (CEP) no debería ser complicado. BuscaCep integra la API pública ViaCEP para devolver calle, barrio, ciudad, estado, código de área y complemento en segundos. Ideal para validar direcciones en compras online, completar formularios o localizar cualquier CEP de Brasil. Ofrece dos formas de búsqueda: por CEP directo o por dirección completa (estado, ciudad y calle), con resultados formateados con claridad. Interfaz neumórfica, intuitiva y sin ruido visual. Desarrollado con Flutter, Riverpod y Dio, con manejo completo de errores de conexión, timeout y CEPs inválidos. Gratuito, sin anuncios y sin recolección de datos.',
   },
   'apps.lista-desc': {
-    pt: 'Esquecer o papel de compras ficou no passado. A Lista da Casa é um app minimalista para gerenciar listas de compras diretamente no Telefone. Adicione itens com categoria, quantidade e preço, marque o que já foi pego e acompanhe o progresso em tempo real. Suporta múltiplas listas simultâneas para organizar compras de mercado, farmácia e outros estabelecimentos. O histórico completo das compras finalizadas e os gráficos de gastos mensais por categoria ajudam a acompanhar o orçamento doméstico ao longo do tempo. Todos os dados são salvos localmente com SQLite — sem internet, sem cadastro, totalmente offline. Interface neumórfica projetada para uso com uma mão só, ideal para o corredor do supermercado. Disponível em português, inglês e espanhol. Gratuito.',
-    en: "Forgetting the paper shopping list is a thing of the past. Lista da Casa is a minimalist app for managing shopping lists right on your phone. Add items with category, quantity, and price, check off what's already in the cart, and track progress in real time. It supports multiple simultaneous lists to organize shopping for the grocery store, pharmacy, and other places. The full history of completed purchases and monthly spending charts by category help you track your household budget over time. All data is saved locally with SQLite — no internet, no sign-up, fully offline. A neumorphic interface designed for one-handed use, ideal for the supermarket aisle. Available in Portuguese, English, and Spanish. Free.",
-    es: 'Olvidar el papel de la lista de compras quedó en el pasado. Lista da Casa es una app minimalista para gestionar listas de compras directamente en el teléfono. Agrega ítems con categoría, cantidad y precio, marca lo que ya recogiste y sigue el progreso en tiempo real. Soporta múltiples listas simultáneas para organizar compras del mercado, la farmacia y otros lugares. El historial completo de compras finalizadas y los gráficos de gastos mensuales por categoría ayudan a seguir el presupuesto doméstico a lo largo del tiempo. Todos los datos se guardan localmente con SQLite — sin internet, sin registro, totalmente offline. Interfaz neumórfica diseñada para uso con una sola mano, ideal para el pasillo del supermercado. Disponible en portugués, inglés y español. Gratis.',
+    pt: 'Esquecer o papel de compras ficou no passado. A Lista da Casa é um app minimalista para gerenciar listas de compras diretamente no Telefone. Adicione itens com categoria, quantidade e preço, marque o que já foi pego e acompanhe o progresso em tempo real. Suporta múltiplas listas simultâneas para organizar compras de mercado, farmácia e outros estabelecimentos. O histórico completo das compras finalizadas e os gráficos de gastos mensais por categoria ajudam a acompanhar o orçamento doméstico ao longo do tempo. Todos os dados são salvos localmente com SQLite — sem cadastro e funcionando sem internet. Interface neumórfica projetada para uso com uma mão só, ideal para o corredor do supermercado. Disponível em português, inglês e espanhol. Gratuito, com anúncios (você aceita ou recusa).',
+    en: 'Forgetting the paper shopping list is a thing of the past. Lista da Casa is a minimalist app for managing shopping lists right on your phone. Add items with category, quantity, and price, check off what\'s already in the cart, and track progress in real time. It supports multiple simultaneous lists to organize shopping for the grocery store, pharmacy, and other places. The full history of completed purchases and monthly spending charts by category help you track your household budget over time. All data is saved locally with SQLite — no sign-up, and it works without internet. A neumorphic interface designed for one-handed use, ideal for the supermarket aisle. Available in Portuguese, English, and Spanish. Free, with ads (you accept or decline).',
+    es: 'Olvidar el papel de la lista de compras quedó en el pasado. Lista da Casa es una app minimalista para gestionar listas de compras directamente en el teléfono. Agrega ítems con categoría, cantidad y precio, marca lo que ya recogiste y sigue el progreso en tiempo real. Soporta múltiples listas simultáneas para organizar compras del mercado, la farmacia y otros lugares. El historial completo de compras finalizadas y los gráficos de gastos mensuales por categoría ayudan a seguir el presupuesto doméstico a lo largo del tiempo. Todos los datos se guardan localmente con SQLite — sin registro y funcionando sin internet. Interfaz neumórfica diseñada para uso con una sola mano, ideal para el pasillo del supermercado. Disponible en portugués, inglés y español. Gratis, con anuncios (aceptas o rechazas).',
   },
   'apps.campo-desc': {
-    pt: 'O Campo Minado clássico, reescrito do zero para mobile com Flutter. A mecânica que você já conhece — revelar células, marcar minas, raciocinar cada toque — ganhou visuais em Material Design, efeitos sonoros, vibração tátil e animações que elevam a experiência sem trair a essência do original. Três dificuldades com tabuleiros adaptativos: Fácil (9×9), Médio (16×16) e Difícil (16×30), onde o layout se ajusta automaticamente ao tamanho da tela — e o primeiro toque é sempre seguro. Estatísticas por dificuldade, melhor tempo e taxa de vitória ficam salvos localmente, incentivando a superação. Tutorial interativo com tabuleiro de treino para quem está chegando agora, tema claro e escuro, jogo 100% offline e suporte a seis idiomas. Gratuito, com anúncios e a opção de escolher se eles serão personalizados. Para quem cresceu jogando no Windows e quer redescobrir o clássico com qualidade moderna no Telefone.',
-    en: "The classic Minesweeper, rewritten from scratch for mobile with Flutter. The mechanics you already know — reveal cells, flag mines, think through every tap — now come with Material Design visuals, sound effects, haptic feedback, and animations that elevate the experience without betraying the original's essence. Three difficulties with adaptive boards: Easy (9×9), Medium (16×16), and Hard (16×30), where the layout automatically adjusts to screen size — and your first tap is always safe. Stats per difficulty, best time, and win rate are saved locally, encouraging improvement. An interactive tutorial with a practice board for newcomers, light and dark themes, 100% offline play, and support for six languages. Free, with ads and the option to choose whether they are personalized. For anyone who grew up playing on Windows and wants to rediscover the classic with modern quality on their phone.",
-    es: 'El clásico Buscaminas, reescrito desde cero para móviles con Flutter. La mecánica que ya conoces — revelar celdas, marcar minas, pensar cada toque — ahora tiene visuales en Material Design, efectos de sonido, vibración táctil y animaciones que elevan la experiencia sin traicionar la esencia del original. Tres dificultades con tableros adaptativos: Fácil (9×9), Medio (16×16) y Difícil (16×30), donde el diseño se ajusta automáticamente al tamaño de la pantalla — y el primer toque siempre es seguro. Las estadísticas por dificultad, mejor tiempo y tasa de victoria se guardan localmente, incentivando la superación. Tutorial interactivo con tablero de práctica para quien recién llega, tema claro y oscuro, juego 100% offline y soporte para seis idiomas. Gratis, con anuncios y la opción de elegir si serán personalizados. Para quienes crecieron jugando en Windows y quieren redescubrir el clásico con calidad moderna en el teléfono.',
+    pt: 'O Campo Minado clássico, reescrito do zero para mobile com Flutter. A mecânica que você já conhece — revelar células, marcar minas, raciocinar cada toque — ganhou visuais em Material Design, efeitos sonoros, vibração tátil e animações que elevam a experiência sem trair a essência do original. Três dificuldades com tabuleiros adaptativos: Fácil (9×9), Médio (16×16) e Difícil (16×30), onde o layout se ajusta automaticamente ao tamanho da tela — e o primeiro toque é sempre seguro. Estatísticas por dificuldade, melhor tempo e taxa de vitória ficam salvos localmente, incentivando a superação. Tutorial interativo com tabuleiro de treino para quem está chegando agora, tema claro e escuro, jogo que funciona sem internet e suporte a seis idiomas. Gratuito, com anúncios e a opção de escolher se eles serão personalizados. Para quem cresceu jogando no Windows e quer redescobrir o clássico com qualidade moderna no Telefone.',
+    en: 'The classic Minesweeper, rewritten from scratch for mobile with Flutter. The mechanics you already know — reveal cells, flag mines, think through every tap — now come with Material Design visuals, sound effects, haptic feedback, and animations that elevate the experience without betraying the original\'s essence. Three difficulties with adaptive boards: Easy (9×9), Medium (16×16), and Hard (16×30), where the layout automatically adjusts to screen size — and your first tap is always safe. Stats per difficulty, best time, and win rate are saved locally, encouraging improvement. An interactive tutorial with a practice board for newcomers, light and dark themes, play that works without internet, and support for six languages. Free, with ads and the option to choose whether they are personalized. For anyone who grew up playing on Windows and wants to rediscover the classic with modern quality on their phone.',
+    es: 'El clásico Buscaminas, reescrito desde cero para móviles con Flutter. La mecánica que ya conoces — revelar celdas, marcar minas, pensar cada toque — ahora tiene visuales en Material Design, efectos de sonido, vibración táctil y animaciones que elevan la experiencia sin traicionar la esencia del original. Tres dificultades con tableros adaptativos: Fácil (9×9), Medio (16×16) y Difícil (16×30), donde el diseño se ajusta automáticamente al tamaño de la pantalla — y el primer toque siempre es seguro. Las estadísticas por dificultad, mejor tiempo y tasa de victoria se guardan localmente, incentivando la superación. Tutorial interactivo con tablero de práctica para quien recién llega, tema claro y oscuro, juego que funciona sin internet y soporte para seis idiomas. Gratis, con anuncios y la opción de elegir si serán personalizados. Para quienes crecieron jugando en Windows y quieren redescubrir el clásico con calidad moderna en el teléfono.',
   },
   'apps.damas-desc': {
     pt: 'DAMAS Evolution é o jogo de Damas brasileiro nas versões Mobile e Windows, construído para quem leva a estratégia a sério. Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — e sinta a diferença de cada um: do aprendizado tranquilo até o desafio real contra um adversário que pensa de verdade. Prefere jogar com um amigo? O modo Jogador vs Jogador permite disputas locais sem complicação. Cada partida registra seus movimentos e acompanha sua evolução. Interface limpa, resposta tátil e regras oficiais: capture peças, promova suas damas e vença no tabuleiro.',
@@ -299,9 +299,9 @@ const TRANSLATIONS = {
 
   // ── CALCULADORA LEANKAR ───────────────────────────────────
   'calc.tagline': {
-    pt: 'A calculadora que simplesmente funciona — sem anúncios, sem bloatware, sem distrações. Design neumórfico, histórico persistente de cálculos e calculadora de IMC integrada.',
-    en: 'The calculator that just works — no ads, no bloatware, no distractions. Neumorphic design, persistent calculation history, and a built-in BMI calculator.',
-    es: 'La calculadora que simplemente funciona — sin anuncios, sin bloatware, sin distracciones. Diseño neumórfico, historial persistente de cálculos y calculadora de IMC integrada.',
+    pt: 'A calculadora que simplesmente funciona: básica e científica, com IMC e histórico persistente. Sem bloatware e sem distrações, só com um banner de anúncio (Android) que você aceita ou recusa. Design neumórfico.',
+    en: 'The calculator that just works: basic and scientific, with BMI and persistent history. No bloatware, no distractions, with just one ad banner (Android) that you can accept or decline. Neumorphic design.',
+    es: 'La calculadora que simplemente funciona: básica y científica, con IMC e historial persistente. Sin bloatware ni distracciones, solo con un banner de anuncio (Android) que aceptas o rechazas. Diseño neumórfico.',
   },
   'calc.feature1': { pt: 'Quatro operações básicas: soma, subtração, multiplicação e divisão', en: 'Four basic operations: addition, subtraction, multiplication, and division', es: 'Cuatro operaciones básicas: suma, resta, multiplicación y división' },
   'calc.feature2': { pt: 'Cálculo de porcentagem integrado', en: 'Built-in percentage calculation', es: 'Cálculo de porcentaje integrado' },
@@ -310,8 +310,21 @@ const TRANSLATIONS = {
   'calc.feature5': { pt: 'Temas claro, escuro e automático (segue o sistema Android)', en: 'Light, dark, and automatic themes (follows the Android system)', es: 'Temas claro, oscuro y automático (sigue el sistema Android)' },
   'calc.feature6': { pt: 'Design Neumórfico com alto contraste e tipografia legível', en: 'Neumorphic design with high contrast and legible typography', es: 'Diseño neumórfico con alto contraste y tipografía legible' },
   'calc.tag-neumorfico': { pt: 'Neumórfico', en: 'Neumorphic', es: 'Neumórfico' },
-  'calc.feature7': { pt: '5 idiomas: português, inglês, espanhol, francês e alemão', en: '5 languages: Portuguese, English, Spanish, French, and German', es: '5 idiomas: portugués, inglés, español, francés y alemán' },
-  'calc.feature8': { pt: 'Zero permissões, zero rastreamento, 100% offline', en: 'Zero permissions, zero tracking, 100% offline', es: 'Cero permisos, cero rastreo, 100% offline' },
+  'calc.feature7': {
+    pt: '5 idiomas: português, inglês, espanhol, francês e italiano',
+    en: '5 languages: Portuguese, English, Spanish, French, and Italian',
+    es: '5 idiomas: portugués, inglés, español, francés e italiano',
+  },
+  'calc.feature8': {
+    pt: 'Funciona sem internet; anúncios opcionais, que você aceita ou recusa',
+    en: 'Works without internet; ads are optional, and you accept or decline them',
+    es: 'Funciona sin internet; anuncios opcionales, que aceptas o rechazas',
+  },
+  'calc.feature9': {
+    pt: 'Modo científico: trigonometria, logaritmos, potências, raízes, fatorial, memória e graus/radianos',
+    en: 'Scientific mode: trigonometry, logarithms, powers, roots, factorial, memory, and degrees/radians',
+    es: 'Modo científico: trigonometría, logaritmos, potencias, raíces, factorial, memoria y grados/radianes',
+  },
   'calc.about-p1': {
     pt: 'A Calculadora Leankar nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. O objetivo foi construir algo simples, funcional e esteticamente honesto: uma ferramenta que ocupa o mínimo de espaço, funciona sem internet e entrega o resultado sem distrações.',
     en: 'Calculadora Leankar was born out of frustration with calculators bloated with ads and features nobody uses. The goal was to build something simple, functional, and aesthetically honest: a tool that takes up minimal space, works without internet, and delivers results without distractions.',
@@ -322,10 +335,15 @@ const TRANSLATIONS = {
     en: 'The design follows the neumorphic language — elements that look gently pressed into the surface, with soft shadows and rounded corners. Each button was sized with a generous tap area to make it easier to use in situations where attention is divided: cooking, shopping, or converting values on the go.',
     es: 'El diseño sigue el lenguaje neumórfico — elementos que parecen ligeramente presionados en la superficie, con sombras suaves y bordes redondeados. Cada botón fue dimensionado con un área de toque generosa para facilitar el uso en situaciones donde la atención está dividida: cocinando, de compras o convirtiendo valores en movimiento.',
   },
+  'calc.about-sci': {
+    pt: 'Além do modo básico, a calculadora científica entende expressões completas, com parênteses e a ordem correta das operações. Ela traz seno, cosseno e tangente (e suas inversas pela tecla SHIFT), logaritmo e logaritmo natural, potências, raízes quadrada e cúbica, fatorial, permutação, valor absoluto, 1/x, π e o número de Euler, além de memória (M+, M−, MR, MC) e alternância entre graus e radianos. Erros como divisão por zero ou parênteses sem fechar são avisados na tela.',
+    en: 'Beyond the basic mode, the scientific calculator understands full expressions, with parentheses and the correct order of operations. It offers sine, cosine, and tangent (and their inverses via the SHIFT key), logarithm and natural logarithm, powers, square and cube roots, factorial, permutation, absolute value, 1/x, π, and Euler\'s number, plus memory (M+, M−, MR, MC) and switching between degrees and radians. Errors such as division by zero or unclosed parentheses are reported on screen.',
+    es: 'Además del modo básico, la calculadora científica entiende expresiones completas, con paréntesis y el orden correcto de las operaciones. Incluye seno, coseno y tangente (y sus inversas con la tecla SHIFT), logaritmo y logaritmo natural, potencias, raíces cuadrada y cúbica, factorial, permutación, valor absoluto, 1/x, π y el número de Euler, además de memoria (M+, M−, MR, MC) y alternancia entre grados y radianes. Los errores como la división por cero o los paréntesis sin cerrar se avisan en pantalla.',
+  },
   'calc.about-p3': {
-    pt: 'O histórico persistente é implementado com <strong>SharedPreferences</strong>: os últimos 50 cálculos são salvos automaticamente entre sessões, sem sincronização em nuvem, sem conta, sem nenhum dado enviado para servidores externos. Ao fechar e reabrir o app, o histórico está intacto.',
-    en: 'The persistent history is implemented with <strong>SharedPreferences</strong>: the last 50 calculations are automatically saved between sessions, with no cloud sync, no account, and no data sent to external servers. Close and reopen the app, and the history is still there.',
-    es: 'El historial persistente está implementado con <strong>SharedPreferences</strong>: los últimos 50 cálculos se guardan automáticamente entre sesiones, sin sincronización en la nube, sin cuenta, sin ningún dato enviado a servidores externos. Al cerrar y volver a abrir la app, el historial permanece intacto.',
+    pt: 'O histórico persistente é implementado com <strong>SharedPreferences</strong>: os últimos 50 cálculos são salvos automaticamente entre sessões, sem sincronização em nuvem e sem conta. O histórico fica só no aparelho e não é enviado a nenhum servidor. Ao fechar e reabrir o app, o histórico está intacto.',
+    en: 'The persistent history is implemented with <strong>SharedPreferences</strong>: the last 50 calculations are automatically saved between sessions, with no cloud sync and no account. The history stays on the device only and is not sent to any server. Close and reopen the app, and the history is still there.',
+    es: 'El historial persistente está implementado con <strong>SharedPreferences</strong>: los últimos 50 cálculos se guardan automáticamente entre sesiones, sin sincronización en la nube y sin cuenta. El historial queda solo en el dispositivo y no se envía a ningún servidor. Al cerrar y volver a abrir la app, el historial permanece intacto.',
   },
   'calc.about-p4': {
     pt: 'A função de IMC calcula o Índice de Massa Corporal a partir de altura e peso, exibe o resultado numérico e enquadra nas 6 faixas da tabela da OMS — de "abaixo do peso" a "obesidade grau III". Uma feature prática para quem acompanha saúde sem querer instalar um app específico só para isso.',
@@ -333,21 +351,21 @@ const TRANSLATIONS = {
     es: 'La función de IMC calcula el Índice de Masa Corporal a partir de altura y peso, muestra el resultado numérico y lo clasifica en los 6 rangos de la tabla de la OMS — desde "bajo peso" hasta "obesidad grado III". Una función práctica para quien controla su salud sin querer instalar una app específica solo para eso.',
   },
   'calc.about-p5': {
-    pt: 'Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, compatível com Android 6.0 (API 23) e superiores. Nenhuma permissão do sistema é solicitada. O app não coleta, transmite ou vende nenhum dado do usuário.',
-    en: "Built with <strong>Flutter 3</strong> and <strong>Material Design 3</strong>, compatible with Android 6.0 (API 23) and above. No system permissions are requested. The app doesn't collect, transmit, or sell any user data.",
-    es: 'Desarrollada con <strong>Flutter 3</strong> y <strong>Material Design 3</strong>, compatible con Android 6.0 (API 23) y superiores. No se solicita ningún permiso del sistema. La app no recopila, transmite ni vende ningún dato del usuario.',
+    pt: 'Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, compatível com Android 7.0 (API 24) e superiores. O app não pede nenhuma permissão que precise da sua autorização, como câmera, localização ou contatos. Na versão Android, exibe um banner de anúncios (Unity LevelPlay) somente se você aceitar: nesse caso, o SDK de anúncios pode coletar dados do aparelho, como o ID de publicidade. Detalhes na política de privacidade do app.',
+    en: 'Built with <strong>Flutter 3</strong> and <strong>Material Design 3</strong>, compatible with Android 7.0 (API 24) and above. The app does not ask for any permission that needs your authorization, such as camera, location, or contacts. On Android, it shows an ad banner (Unity LevelPlay) only if you accept: in that case, the ad SDK may collect device data, such as the advertising ID. Details are in the app\'s privacy policy.',
+    es: 'Desarrollada con <strong>Flutter 3</strong> y <strong>Material Design 3</strong>, compatible con Android 7.0 (API 24) y superiores. La app no pide ningún permiso que requiera tu autorización, como cámara, ubicación o contactos. En Android, muestra un banner de anuncios (Unity LevelPlay) solo si aceptas: en ese caso, el SDK de anuncios puede recopilar datos del dispositivo, como el ID de publicidad. Los detalles están en la política de privacidad de la app.',
   },
   'calc.faq1-q': { pt: 'O app é totalmente gratuito?', en: 'Is the app completely free?', es: '¿La app es totalmente gratuita?' },
   'calc.faq1-a': {
-    pt: 'Sim, 100% gratuito. Não há compras dentro do app, assinatura ou versão premium. Todas as funcionalidades estão disponíveis para todos desde o primeiro uso, sem nenhuma trava.',
-    en: 'Yes, 100% free. There are no in-app purchases, subscriptions, or premium version. All features are available to everyone from the very first use, with no restrictions.',
-    es: 'Sí, 100% gratuita. No hay compras dentro de la app, suscripción ni versión premium. Todas las funciones están disponibles para todos desde el primer uso, sin ninguna restricción.',
+    pt: 'Sim, é gratuito. Não há compras dentro do app, assinatura ou versão premium, e todas as funcionalidades estão disponíveis desde o primeiro uso. O app é mantido por um banner de anúncios na versão Android, que você aceita ou recusa.',
+    en: 'Yes, it is free. There are no in-app purchases, subscriptions, or premium version, and all features are available from the very first use. The app is supported by an ad banner on the Android version, which you can accept or decline.',
+    es: 'Sí, es gratuita. No hay compras dentro de la app, suscripción ni versión premium, y todas las funciones están disponibles desde el primer uso. La app se mantiene con un banner de anuncios en la versión Android, que aceptas o rechazas.',
   },
   'calc.faq2-q': { pt: 'Funciona sem conexão com a internet?', en: 'Does it work without an internet connection?', es: '¿Funciona sin conexión a internet?' },
   'calc.faq2-a': {
-    pt: 'Sim, 100% offline. O app não realiza nenhuma requisição de rede em nenhum momento. Funciona normalmente em modo avião, em áreas sem sinal e em qualquer situação sem internet.',
-    en: 'Yes, 100% offline. The app never makes any network requests. It works normally in airplane mode, in areas without signal, and in any situation without internet.',
-    es: 'Sí, 100% offline. La app nunca realiza ninguna solicitud de red. Funciona normalmente en modo avión, en zonas sin señal y en cualquier situación sin internet.',
+    pt: 'Sim. Os cálculos, o histórico e o IMC funcionam sem internet, inclusive em modo avião. A única parte que usa conexão é o banner de anúncios da versão Android, e só se você aceitar os anúncios.',
+    en: 'Yes. Calculations, history, and BMI work without internet, including in airplane mode. The only part that uses a connection is the ad banner on the Android version, and only if you accept ads.',
+    es: 'Sí. Los cálculos, el historial y el IMC funcionan sin internet, incluso en modo avión. La única parte que usa conexión es el banner de anuncios de la versión Android, y solo si aceptas los anuncios.',
   },
   'calc.faq3-q': { pt: 'Posso apagar o histórico de cálculos?', en: 'Can I clear the calculation history?', es: '¿Puedo borrar el historial de cálculos?' },
   'calc.faq3-a': {
@@ -363,9 +381,9 @@ const TRANSLATIONS = {
   },
   'calc.faq5-q': { pt: 'O app coleta ou envia meus dados?', en: 'Does the app collect or send my data?', es: '¿La app recopila o envía mis datos?' },
   'calc.faq5-a': {
-    pt: 'Não. Nenhum dado pessoal é coletado, armazenado remotamente ou transmitido. O histórico de cálculos fica exclusivamente no armazenamento local do seu dispositivo. O app não solicita nenhuma permissão do sistema operacional.',
-    en: "No. No personal data is collected, stored remotely, or transmitted. The calculation history stays exclusively in your device's local storage. The app doesn't request any operating system permissions.",
-    es: 'No. No se recopila, almacena remotamente ni transmite ningún dato personal. El historial de cálculos permanece exclusivamente en el almacenamiento local de tu dispositivo. La app no solicita ningún permiso del sistema operativo.',
+    pt: 'O histórico de cálculos fica exclusivamente no armazenamento local do seu dispositivo e não é enviado a nenhum servidor; o app não tem conta nem cadastro. Se você aceitar os anúncios (somente na versão Android), o SDK Unity LevelPlay pode coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Os detalhes estão na política de privacidade do app.',
+    en: 'The calculation history stays exclusively in your device\'s local storage and is not sent to any server; the app has no account or sign-up. If you accept ads (Android version only), the Unity LevelPlay SDK may collect device data, such as the advertising ID and IP address, to display them. If you decline, the SDK is not even started. Details are in the app\'s privacy policy.',
+    es: 'El historial de cálculos permanece exclusivamente en el almacenamiento local de tu dispositivo y no se envía a ningún servidor; la app no tiene cuenta ni registro. Si aceptas los anuncios (solo en la versión Android), el SDK Unity LevelPlay puede recopilar datos del dispositivo, como el ID de publicidad y la dirección IP, para mostrarlos. Si los rechazas, el SDK ni siquiera se inicia. Los detalles están en la política de privacidad de la app.',
   },
   'calc.faq6-q': { pt: 'Como funciona o cálculo de IMC?', en: 'How does the BMI calculation work?', es: '¿Cómo funciona el cálculo de IMC?' },
   'calc.faq6-a': {
@@ -373,10 +391,20 @@ const TRANSLATIONS = {
     en: 'Enter your weight (in kg) and height (in meters or centimeters). The app applies the standard WHO formula — BMI = weight / height² — and shows the result with the matching classification: underweight, normal weight, overweight, obesity class I, II, or III.',
     es: 'Indica el peso (en kg) y la altura (en metros o centímetros). La app aplica la fórmula estándar de la OMS — IMC = peso / altura² — y muestra el resultado con la clasificación correspondiente: bajo peso, peso normal, sobrepeso, obesidad grado I, II o III.',
   },
+  'calc.faq7-q': {
+    pt: 'Existe calculadora científica?',
+    en: 'Is there a scientific calculator?',
+    es: '¿Hay calculadora científica?',
+  },
+  'calc.faq7-a': {
+    pt: 'Sim. No menu do app há a Calculadora Científica, com trigonometria (e funções inversas pela tecla SHIFT), logaritmos, potências, raízes, fatorial, permutação, π, e, parênteses, memória (M+, M−, MR, MC) e alternância entre graus (DEG) e radianos (RAD).',
+    en: 'Yes. The app menu has the Scientific Calculator, with trigonometry (and inverse functions via the SHIFT key), logarithms, powers, roots, factorial, permutation, π, e, parentheses, memory (M+, M−, MR, MC), and switching between degrees (DEG) and radians (RAD).',
+    es: 'Sí. En el menú de la app está la Calculadora Científica, con trigonometría (y funciones inversas con la tecla SHIFT), logaritmos, potencias, raíces, factorial, permutación, π, e, paréntesis, memoria (M+, M−, MR, MC) y alternancia entre grados (DEG) y radianes (RAD).',
+  },
   'calc.cta-text': {
-    pt: 'Disponível gratuitamente no Google Play. Sem anúncios, sem cadastro, sem surpresas.',
-    en: 'Available for free on Google Play. No ads, no sign-up, no surprises.',
-    es: 'Disponible gratis en Google Play. Sin anuncios, sin registro, sin sorpresas.',
+    pt: 'Disponível gratuitamente no Google Play. Sem cadastro, com anúncios opcionais, sem surpresas.',
+    en: 'Available for free on Google Play. No sign-up, optional ads, no surprises.',
+    es: 'Disponible gratis en Google Play. Sin registro, con anuncios opcionales, sin sorpresas.',
   },
 
   // ── BUSCACEP ───────────────────────────────────────────────
@@ -414,9 +442,9 @@ const TRANSLATIONS = {
     es: 'La gestión de estado se hace con <strong>Riverpod</strong>: cada consulta genera un estado reactivo (cargando, éxito, error) que la UI consume directamente, sin boilerplate. Esto mantiene la interfaz responsiva y el código organizado a medida que crece la complejidad.',
   },
   'cep.about-p5': {
-    pt: 'O app não armazena nenhum histórico de consultas, não solicita permissões do sistema e não exibe nenhum tipo de anúncio. Gratuito sem asterisco.',
-    en: "The app doesn't store any query history, doesn't request system permissions, and doesn't show any kind of ad. Free, no asterisk.",
-    es: 'La app no almacena ningún historial de consultas, no solicita permisos del sistema y no muestra ningún tipo de anuncio. Gratis sin letra pequeña.',
+    pt: 'O app não armazena nenhum histórico de consultas, não pede permissões além do acesso à internet e não exibe nenhum tipo de anúncio. Gratuito sem asterisco.',
+    en: 'The app doesn\'t store any query history, doesn\'t ask for permissions beyond internet access, and doesn\'t show any kind of ad. Free, no asterisk.',
+    es: 'La app no almacena ningún historial de consultas, no pide permisos más allá del acceso a internet y no muestra ningún tipo de anuncio. Gratis sin letra pequeña.',
   },
   'cep.faq1-q': { pt: 'Que API é usada para consultar os CEPs?', en: 'Which API is used to look up CEPs?', es: '¿Qué API se usa para consultar los CEPs?' },
   'cep.faq1-a': {
@@ -450,9 +478,9 @@ const TRANSLATIONS = {
   },
   'cep.faq6-q': { pt: 'O app coleta ou armazena meus dados?', en: 'Does the app collect or store my data?', es: '¿La app recopila o almacena mis datos?' },
   'cep.faq6-a': {
-    pt: 'Não. O app não armazena histórico de consultas, não coleta dados pessoais e não solicita nenhuma permissão do Android. Cada consulta é independente e descartada após exibir o resultado.',
-    en: "No. The app doesn't store query history, doesn't collect personal data, and doesn't request any Android permissions. Each query is independent and discarded after showing the result.",
-    es: 'No. La app no almacena historial de consultas, no recopila datos personales y no solicita ningún permiso de Android. Cada consulta es independiente y se descarta después de mostrar el resultado.',
+    pt: 'Não. O app não armazena histórico de consultas, não coleta dados pessoais e não pede nenhuma permissão do Android além do acesso à internet. Cada consulta é independente e descartada após exibir o resultado.',
+    en: 'No. The app doesn\'t store query history, doesn\'t collect personal data, and doesn\'t ask for any Android permissions beyond internet access. Each query is independent and discarded after showing the result.',
+    es: 'No. La app no almacena historial de consultas, no recopila datos personales y no pide ningún permiso de Android más allá del acceso a internet. Cada consulta es independiente y se descarta después de mostrar el resultado.',
   },
   'cep.cta-text': {
     pt: 'Consulte qualquer CEP do Brasil. Gratuito, rápido e sem anúncios.',
@@ -472,7 +500,11 @@ const TRANSLATIONS = {
   'lista.feature4': { pt: 'Progresso da lista em tempo real (X de Y itens)', en: 'Real-time list progress (X of Y items)', es: 'Progreso de la lista en tiempo real (X de Y ítems)' },
   'lista.feature5': { pt: 'Histórico completo de compras finalizadas', en: 'Full history of completed purchases', es: 'Historial completo de compras finalizadas' },
   'lista.feature6': { pt: 'Gráficos de gastos mensais por categoria', en: 'Monthly spending charts by category', es: 'Gráficos de gastos mensuales por categoría' },
-  'lista.feature7': { pt: '100% offline com Drift (SQLite) — sem internet', en: '100% offline with Drift (SQLite) — no internet', es: '100% offline con Drift (SQLite) — sin internet' },
+  'lista.feature7': {
+    pt: 'Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)',
+    en: 'Works without internet, with data saved on the device (Drift/SQLite)',
+    es: 'Funciona sin internet, con datos guardados en el dispositivo (Drift/SQLite)',
+  },
   'lista.feature8': { pt: 'Interface para uso com uma mão — 3 idiomas', en: 'One-handed interface — 3 languages', es: 'Interfaz para uso con una sola mano — 3 idiomas' },
   'lista.about-p1': {
     pt: 'A Lista da Casa nasceu de um problema genuíno: listas de compras em papel se perdem, listas em aplicativos genéricos de notas são inflexíveis, e apps específicos de compras costumam ser pesados, cheios de anúncios ou exigem cadastro na nuvem. A proposta foi construir algo focado, leve e que funcione sem depender de internet.',
@@ -495,15 +527,15 @@ const TRANSLATIONS = {
     es: 'La interfaz fue diseñada para uso con una sola mano en el pasillo del supermercado: área de toque generosa, deslizar para marcar ítems, diseño neumórfico de alto contraste. Ninguna acción crítica está a más de dos toques de distancia. Disponible en portugués, inglés y español.',
   },
   'lista.about-p5': {
-    pt: 'Sem cadastro, sem dados enviados a servidores. O banco de dados fica inteiramente no dispositivo. Gratuito de verdade.',
-    en: 'No sign-up, no data sent to servers. The database stays entirely on the device. Truly free.',
-    es: 'Sin registro, sin datos enviados a servidores. La base de datos permanece por completo en el dispositivo. Gratis de verdad.',
+    pt: 'Sem cadastro e sem conta: suas listas ficam inteiramente no dispositivo. Gratuito, mantido por anúncios que você aceita ou recusa.',
+    en: 'No sign-up and no account: your lists stay entirely on the device. Free, supported by ads that you accept or decline.',
+    es: 'Sin registro y sin cuenta: tus listas permanecen por completo en el dispositivo. Gratis, mantenida con anuncios que aceptas o rechazas.',
   },
   'lista.faq1-q': { pt: 'O app precisa de internet para funcionar?', en: 'Does the app need internet to work?', es: '¿La app necesita internet para funcionar?' },
   'lista.faq1-a': {
-    pt: 'Não. O app é 100% offline. Todos os dados ficam armazenados localmente com SQLite (via Drift). Funciona normalmente em modo avião, sem Wi-Fi e sem dados móveis.',
-    en: 'No. The app is 100% offline. All data is stored locally with SQLite (via Drift). It works normally in airplane mode, without Wi-Fi, and without mobile data.',
-    es: 'No. La app es 100% offline. Todos los datos se almacenan localmente con SQLite (vía Drift). Funciona normalmente en modo avión, sin Wi-Fi y sin datos móviles.',
+    pt: 'Não para usar. Todos os dados ficam armazenados localmente com SQLite (via Drift) e o app funciona em modo avião, sem Wi-Fi e sem dados móveis. A única parte que usa conexão são os anúncios, quando há internet.',
+    en: 'Not to use it. All data is stored locally with SQLite (via Drift) and the app works in airplane mode, without Wi-Fi, and without mobile data. The only part that uses a connection is the ads, when internet is available.',
+    es: 'No para usarla. Todos los datos se almacenan localmente con SQLite (vía Drift) y la app funciona en modo avión, sin Wi-Fi y sin datos móviles. La única parte que usa conexión son los anuncios, cuando hay internet.',
   },
   'lista.faq2-q': { pt: 'Posso ter listas para diferentes estabelecimentos?', en: 'Can I have lists for different stores?', es: '¿Puedo tener listas para diferentes establecimientos?' },
   'lista.faq2-a': {
@@ -525,20 +557,20 @@ const TRANSLATIONS = {
   },
   'lista.faq5-q': { pt: 'O app coleta ou envia meus dados?', en: 'Does the app collect or send my data?', es: '¿La app recopila o envía mis datos?' },
   'lista.faq5-a': {
-    pt: 'Não. Nenhum dado é coletado, transmitido ou compartilhado. Todas as listas, itens e histórico ficam exclusivamente no banco de dados local do seu dispositivo Android. Não há cadastro, não há conta, não há servidor.',
-    en: "No. No data is collected, transmitted, or shared. All lists, items, and history stay exclusively in your Android device's local database. No sign-up, no account, no server.",
-    es: 'No. Ningún dato es recopilado, transmitido o compartido. Todas las listas, ítems e historial permanecen exclusivamente en la base de datos local de tu dispositivo Android. No hay registro, no hay cuenta, no hay servidor.',
+    pt: 'Suas listas, itens e histórico ficam exclusivamente no banco de dados local do seu dispositivo Android e não são enviados a nenhum servidor; não há cadastro nem conta. Os anúncios são a exceção: se você aceitar, o SDK Unity LevelPlay e seus parceiros podem coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Você pode rever a escolha nas configurações, e os detalhes estão na política de privacidade do app.',
+    en: 'Your lists, items, and history stay exclusively in your Android device\'s local database and are not sent to any server; there is no sign-up or account. Ads are the exception: if you accept, the Unity LevelPlay SDK and its partners may collect device data, such as the advertising ID and IP address, to display them. If you decline, the SDK is not even started. You can review your choice in the settings, and the details are in the app\'s privacy policy.',
+    es: 'Tus listas, ítems e historial permanecen exclusivamente en la base de datos local de tu dispositivo Android y no se envían a ningún servidor; no hay registro ni cuenta. Los anuncios son la excepción: si aceptas, el SDK Unity LevelPlay y sus socios pueden recopilar datos del dispositivo, como el ID de publicidad y la dirección IP, para mostrarlos. Si los rechazas, el SDK ni siquiera se inicia. Puedes revisar tu elección en los ajustes, y los detalles están en la política de privacidad de la app.',
   },
   'lista.faq6-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
   'lista.faq6-a': {
-    pt: 'Sim, completamente gratuito. Sem compras dentro do app, sem assinatura e sem funcionalidades pagas. Todas as features estão disponíveis de imediato, para sempre, sem nenhuma condição.',
-    en: 'Yes, completely free. No in-app purchases, no subscription, and no paid features. All features are available immediately, forever, with no strings attached.',
-    es: 'Sí, completamente gratuita. Sin compras dentro de la app, sin suscripción y sin funciones de pago. Todas las funciones están disponibles de inmediato, para siempre, sin ninguna condición.',
+    pt: 'Sim, é gratuito: sem compras dentro do app, sem assinatura e sem funcionalidades pagas, com todas as funcionalidades disponíveis desde o primeiro uso. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode rever nas configurações.',
+    en: 'Yes, it is free: no in-app purchases, no subscription, and no paid features, with all features available from the very first use. The app is supported by ads (banner and interstitial), which you accept or decline on the consent screen and can review in the settings.',
+    es: 'Sí, es gratuita: sin compras dentro de la app, sin suscripción y sin funciones de pago, con todas las funciones disponibles desde el primer uso. La app se mantiene con anuncios (banner e intersticial), que aceptas o rechazas en la pantalla de consentimiento y puedes revisar en los ajustes.',
   },
   'lista.cta-text': {
-    pt: 'Organize suas compras de forma simples e offline. Gratuito para Android.',
-    en: 'Organize your shopping simply and offline. Free for Android.',
-    es: 'Organiza tus compras de forma simple y offline. Gratis para Android.',
+    pt: 'Organize suas compras de forma simples e sem precisar de internet. Gratuito para Android, com anúncios.',
+    en: 'Organize your shopping simply and without needing internet. Free for Android, with ads.',
+    es: 'Organiza tus compras de forma simple y sin necesitar internet. Gratis para Android, con anuncios.',
   },
 
   // ── CAMPO MINADO EVOLUTION ─────────────────────────────────
@@ -554,7 +586,11 @@ const TRANSLATIONS = {
   'campo.feature5': { pt: 'Animações de célula reveal e explosão', en: 'Cell reveal and explosion animations', es: 'Animaciones de revelado de celda y explosión' },
   'campo.feature6': { pt: 'Tutorial interativo integrado para novatos', en: 'Built-in interactive tutorial for newcomers', es: 'Tutorial interactivo integrado para principiantes' },
   'campo.feature7': { pt: 'Estatísticas por dificuldade: melhor tempo e taxa de vitória', en: 'Stats per difficulty: best time and win rate', es: 'Estadísticas por dificultad: mejor tiempo y tasa de victoria' },
-  'campo.feature8': { pt: 'Material Design 3, 6 idiomas, gratuito e offline', en: 'Material Design 3, 6 languages, free and offline', es: 'Material Design 3, 6 idiomas, gratuito y offline' },
+  'campo.feature8': {
+    pt: 'Material Design 3, 6 idiomas, gratuito e funciona sem internet',
+    en: 'Material Design 3, 6 languages, free and works without internet',
+    es: 'Material Design 3, 6 idiomas, gratuito y funciona sin internet',
+  },
   'campo.about-p1': {
     pt: 'Campo Minado Evolution é uma reescrita completa do Campo Minado clássico do Windows, construída em Flutter do zero para mobile. A premissa era simples: manter a mecânica intacta e elevar tudo ao redor — visual, som, tato e fluxo de jogo.',
     en: 'Campo Minado Evolution is a complete rewrite of the classic Windows Minesweeper, built in Flutter from scratch for mobile. The premise was simple: keep the mechanics intact and elevate everything around it — visuals, sound, touch feedback, and game flow.',
@@ -576,9 +612,9 @@ const TRANSLATIONS = {
     es: 'El sistema de estadísticas persiste localmente con <strong>SharedPreferences</strong>: el mejor tiempo y la tasa de victoria se mantienen por dificultad entre sesiones. El cronómetro de la partida es preciso al centésimo de segundo, y la pantalla de victoria muestra si se batió un nuevo récord.',
   },
   'campo.about-p5': {
-    pt: 'Efeitos sonoros e vibração tátil podem ser ativados ou desativados nas configurações. Desenvolvido com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, disponível em 6 idiomas e 100% offline.',
-    en: 'Sound effects and haptic feedback can be turned on or off in the settings. Built with <strong>Flutter 3</strong> and <strong>Material Design 3</strong>, available in 6 languages and 100% offline.',
-    es: 'Los efectos de sonido y la vibración táctil se pueden activar o desactivar en la configuración. Desarrollado con <strong>Flutter 3</strong> y <strong>Material Design 3</strong>, disponible en 6 idiomas y 100% offline.',
+    pt: 'Efeitos sonoros e vibração tátil podem ser ativados ou desativados nas configurações. Desenvolvido com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, disponível em 6 idiomas e funcionando sem internet.',
+    en: 'Sound effects and haptic feedback can be turned on or off in the settings. Built with <strong>Flutter 3</strong> and <strong>Material Design 3</strong>, available in 6 languages and working without internet.',
+    es: 'Los efectos de sonido y la vibración táctil se pueden activar o desactivar en la configuración. Desarrollado con <strong>Flutter 3</strong> y <strong>Material Design 3</strong>, disponible en 6 idiomas y funcionando sin internet.',
   },
   'campo.faq1-q': { pt: 'As regras são iguais ao Campo Minado do Windows?', en: 'Are the rules the same as Windows Minesweeper?', es: '¿Las reglas son iguales al Buscaminas de Windows?' },
   'campo.faq1-a': {
@@ -612,9 +648,9 @@ const TRANSLATIONS = {
   },
   'campo.faq6-q': { pt: 'Funciona offline?', en: 'Does it work offline?', es: '¿Funciona offline?' },
   'campo.faq6-a': {
-    pt: 'Sim, completamente offline. O jogo não requer internet em nenhum momento. Funciona normalmente em modo avião, no metrô, em viagens ou em qualquer situação sem conexão.',
-    en: 'Yes, completely offline. The game never requires internet. It works normally in airplane mode, on the subway, while traveling, or in any situation without a connection.',
-    es: 'Sí, completamente offline. El juego no requiere internet en ningún momento. Funciona normalmente en modo avión, en el metro, de viaje o en cualquier situación sin conexión.',
+    pt: 'Sim. O jogo não precisa de internet para ser jogado e funciona normalmente em modo avião, no metrô, em viagens ou em qualquer situação sem conexão. Só os anúncios usam internet, quando ela existe.',
+    en: 'Yes. The game does not need internet to be played and works normally in airplane mode, on the subway, while traveling, or in any situation without a connection. Only the ads use internet, when it is available.',
+    es: 'Sí. El juego no necesita internet para jugarse y funciona normalmente en modo avión, en el metro, de viaje o en cualquier situación sin conexión. Solo los anuncios usan internet, cuando la hay.',
   },
   'campo.cta-text': {
     pt: 'Redescubra o clássico que cresceu com você, agora com qualidade moderna no Android.',
@@ -624,9 +660,9 @@ const TRANSLATIONS = {
 
   // ── WORD EVOLUTION ─────────────────────────────────────────
   'apps.word-desc': {
-    pt: 'Word Evolution reinventa o caça-palavras clássico: cada tabuleiro é gerado proceduralmente no momento em que você joga, garantindo partidas sempre novas e desafios que nunca se repetem. Escolha entre 10 categorias de palavras e 4 níveis de dificuldade para ajustar o ritmo ao seu gosto. Ficou sem saber uma palavra? Use uma dica. Complete partidas, ganhe moedas e acompanhe sua evolução com estatísticas detalhadas de desempenho. Disponível em português, inglês e espanhol, com temas claro e escuro para jogar a qualquer hora do dia.',
-    en: 'Word Evolution reinvents the classic word search: every board is procedurally generated the moment you play, guaranteeing matches that are always new and challenges that never repeat. Choose from 10 word categories and 4 difficulty levels to match the pace to your taste. Stuck on a word? Use a hint. Complete matches, earn coins, and track your progress with detailed performance statistics. Available in Portuguese, English, and Spanish, with light and dark themes to play any time of day.',
-    es: 'Word Evolution reinventa el clásico sopa de letras: cada tablero se genera proceduralmente en el momento en que juegas, garantizando partidas siempre nuevas y desafíos que nunca se repiten. Elige entre 10 categorías de palabras y 4 niveles de dificultad para ajustar el ritmo a tu gusto. ¿Te quedaste sin saber una palabra? Usa una pista. Completa partidas, gana monedas y sigue tu evolución con estadísticas detalladas de rendimiento. Disponible en portugués, inglés y español, con temas claro y oscuro para jugar a cualquier hora del día.',
+    pt: 'Word Evolution reinventa o caça-palavras clássico: cada tabuleiro é gerado proceduralmente no momento em que você joga, garantindo partidas sempre novas e desafios que nunca se repetem. Escolha entre 10 categorias de palavras e 4 níveis de dificuldade para ajustar o ritmo ao seu gosto. Ficou sem saber uma palavra? Use uma dica. Complete partidas, ganhe moedas e acompanhe sua evolução com estatísticas detalhadas de desempenho. Disponível em português, inglês, espanhol, francês e italiano, com temas claro e escuro para jogar a qualquer hora do dia.',
+    en: 'Word Evolution reinvents the classic word search: every board is procedurally generated the moment you play, guaranteeing matches that are always new and challenges that never repeat. Choose from 10 word categories and 4 difficulty levels to match the pace to your taste. Stuck on a word? Use a hint. Complete matches, earn coins, and track your progress with detailed performance statistics. Available in Portuguese, English, Spanish, French, and Italian, with light and dark themes to play any time of day.',
+    es: 'Word Evolution reinventa el clásico sopa de letras: cada tablero se genera proceduralmente en el momento en que juegas, garantizando partidas siempre nuevas y desafíos que nunca se repiten. Elige entre 10 categorías de palabras y 4 niveles de dificultad para ajustar el ritmo a tu gusto. ¿Te quedaste sin saber una palabra? Usa una pista. Completa partidas, gana monedas y sigue tu evolución con estadísticas detalladas de rendimiento. Disponible en portugués, inglés, español, francés e italiano, con temas claro y oscuro para jugar a cualquier hora del día.',
   },
   'word.tagline': {
     pt: 'Tabuleiros gerados na hora, sempre diferentes: escolha entre 10 categorias e 4 níveis de dificuldade, ganhe moedas jogando e use dicas quando precisar, acompanhando sua evolução em estatísticas detalhadas.',
@@ -640,7 +676,11 @@ const TRANSLATIONS = {
   'word.feature5': { pt: 'Dicas disponíveis quando você travar em uma palavra', en: 'Hints available whenever you get stuck on a word', es: 'Pistas disponibles cuando te atascas con una palabra' },
   'word.feature6': { pt: 'Estatísticas detalhadas de desempenho e evolução', en: 'Detailed performance and progress statistics', es: 'Estadísticas detalladas de rendimiento y evolución' },
   'word.feature7': { pt: 'Temas claro e escuro', en: 'Light and dark themes', es: 'Temas claro y oscuro' },
-  'word.feature8': { pt: 'Disponível em português, inglês e espanhol', en: 'Available in Portuguese, English, and Spanish', es: 'Disponible en portugués, inglés y español' },
+  'word.feature8': {
+    pt: 'Disponível em português, inglês, espanhol, francês e italiano',
+    en: 'Available in Portuguese, English, Spanish, French, and Italian',
+    es: 'Disponible en portugués, inglés, español, francés e italiano',
+  },
   'word.about-p1': {
     pt: 'Word Evolution reinventa o clássico caça-palavras: em vez de níveis fixos e pré-desenhados, cada tabuleiro é gerado proceduralmente no momento em que você joga. Isso garante que nenhuma partida se repete e que o desafio permanece sempre fresco, partida após partida.',
     en: 'Word Evolution reinvents the classic word search: instead of fixed, pre-designed levels, every board is procedurally generated the moment you play. That guarantees no match ever repeats and the challenge stays fresh, game after game.',
@@ -652,9 +692,9 @@ const TRANSLATIONS = {
     es: 'Elige entre 10 categorías de palabras y 4 niveles de dificultad para ajustar el desafío a tu ritmo. ¿Te atascaste con una palabra? Usa una pista. Completa partidas para ganar monedas y sigue tu evolución con estadísticas detalladas de rendimiento.',
   },
   'word.about-p3': {
-    pt: 'Disponível em português, inglês e espanhol, com temas claro e escuro para jogar do jeito que preferir, a qualquer hora do dia.',
-    en: 'Available in Portuguese, English, and Spanish, with light and dark themes so you can play however you like, any time of day.',
-    es: 'Disponible en portugués, inglés y español, con temas claro y oscuro para jugar como prefieras, a cualquier hora del día.',
+    pt: 'Disponível em português, inglês, espanhol, francês e italiano, com temas claro e escuro para jogar do jeito que preferir, a qualquer hora do dia.',
+    en: 'Available in Portuguese, English, Spanish, French, and Italian, with light and dark themes so you can play however you like, any time of day.',
+    es: 'Disponible en portugués, inglés, español, francés e italiano, con temas claro y oscuro para jugar como prefieras, a cualquier hora del día.',
   },
   'word.faq1-q': { pt: 'Os tabuleiros se repetem entre as partidas?', en: 'Do the boards repeat between matches?', es: '¿Los tableros se repiten entre partidas?' },
   'word.faq1-a': {
@@ -682,9 +722,9 @@ const TRANSLATIONS = {
   },
   'word.faq5-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
   'word.faq5-a': {
-    pt: 'Sim, é gratuito para baixar e jogar.',
-    en: 'Yes, it\'s free to download and play.',
-    es: 'Sí, es gratuita para descargar y jugar.',
+    pt: 'Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios e você escolhe, no diálogo de consentimento e nas configurações, se eles serão personalizados.',
+    en: 'Yes, it\'s free to download and play, with no in-app purchases. The app is supported by ads, and you choose, in the consent dialog and in the settings, whether they are personalized.',
+    es: 'Sí, es gratuita para descargar y jugar, sin compras dentro de la app. La app se mantiene con anuncios y tú eliges, en el diálogo de consentimiento y en los ajustes, si serán personalizados.',
   },
   'word.cta-text': {
     pt: 'Baixe grátis e desafie-se com tabuleiros que nunca se repetem.',
@@ -703,7 +743,11 @@ const TRANSLATIONS = {
   'damas.feature3': { pt: 'Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras', en: 'Brazilian rules: mandatory capture, majority rule, and flying kings', es: 'Reglas brasileñas: captura obligatoria, ley de la mayoría y damas voladoras' },
   'damas.feature4': { pt: 'Tabuleiro 2D ou 3D, com animações e efeitos sonoros', en: '2D or 3D board, with animations and sound effects', es: 'Tablero 2D o 3D, con animaciones y efectos de sonido' },
   'damas.feature5': { pt: 'Histórico de partidas e estatísticas salvos no aparelho', en: 'Match history and statistics saved on the device', es: 'Historial de partidas y estadísticas guardados en el dispositivo' },
-  'damas.feature6': { pt: 'Funciona 100% offline', en: 'Works 100% offline', es: 'Funciona 100% sin conexión' },
+  'damas.feature6': {
+    pt: 'Funciona sem internet',
+    en: 'Works without internet',
+    es: 'Funciona sin internet',
+  },
   'damas.feature7': { pt: 'Leitores de tela, fonte ampliável e layouts para celulares e tablets', en: 'Screen readers, scalable fonts, and layouts for phones and tablets', es: 'Lectores de pantalla, fuente ampliable y diseños para móviles y tablets' },
   'damas.feature8': { pt: 'Disponível em português, inglês, espanhol, francês e italiano', en: 'Available in Portuguese, English, Spanish, French, and Italian', es: 'Disponible en portugués, inglés, español, francés e italiano' },
   'damas.about-p1': {
@@ -741,9 +785,9 @@ const TRANSLATIONS = {
   },
   'damas.faq4-q': { pt: 'O app precisa de internet?', en: 'Does the app need internet?', es: '¿La app necesita internet?' },
   'damas.faq4-a': {
-    pt: 'Não. O jogo funciona totalmente offline, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho.',
-    en: 'No. The game works fully offline, and the match history and statistics are saved only on your device.',
-    es: 'No. El juego funciona totalmente sin conexión, y el historial y las estadísticas de las partidas se guardan solo en tu dispositivo.',
+    pt: 'Não para jogar. O jogo funciona totalmente sem conexão, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho. Só os anúncios usam internet, quando ela existe.',
+    en: 'Not to play. The game works fully without a connection, and the match history and statistics are saved only on your device. Only the ads use internet, when it is available.',
+    es: 'No para jugar. El juego funciona totalmente sin conexión, y el historial y las estadísticas de las partidas se guardan solo en tu dispositivo. Solo los anuncios usan internet, cuando la hay.',
   },
   'damas.faq5-q': { pt: 'Existe tabuleiro em 3D?', en: 'Is there a 3D board?', es: '¿Hay tablero en 3D?' },
   'damas.faq5-a': {
@@ -753,9 +797,9 @@ const TRANSLATIONS = {
   },
   'damas.faq6-q': { pt: 'O app é gratuito?', en: 'Is the app free?', es: '¿La app es gratuita?' },
   'damas.faq6-a': {
-    pt: 'Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios e você escolhe, nas configurações, se eles serão personalizados.',
-    en: 'Yes, it\'s free to download and play, with no in-app purchases. The app is supported by ads, and you choose in the settings whether they are personalized.',
-    es: 'Sí, es gratuita para descargar y jugar, sin compras dentro de la app. La app se mantiene con anuncios y tú eliges, en los ajustes, si serán personalizados.',
+    pt: 'Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode alterar nas configurações.',
+    en: 'Yes, it\'s free to download and play, with no in-app purchases. The app is supported by ads (banner and interstitial), which you accept or decline on the consent screen and can change in the settings.',
+    es: 'Sí, es gratuita para descargar y jugar, sin compras dentro de la app. La app se mantiene con anuncios (banner e intersticial), que aceptas o rechazas en la pantalla de consentimiento y puedes cambiar en los ajustes.',
   },
   'damas.cta-text': {
     pt: 'Baixe grátis e vença no tabuleiro: capture peças, promova suas damas e evolua partida a partida.',

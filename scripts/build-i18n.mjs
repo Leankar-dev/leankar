@@ -323,7 +323,7 @@ function generate(key, L, ctx, errors) {
 
   toks = replaceRegion(toks, 'hreflang', ind => hreflangBlock(key, ind), errors, where);
   const html = toks.findIndex(t => t.t === 'open' && t.name === 'html');
-  toks[html] = { ...toks[html], s: setAttr(toks[html].s, 'lang', HTML_LANG[L]).replace(/>$/, ' data-static-lang>') };
+  toks[html] = { ...toks[html], s: ensureStaticLang(setAttr(toks[html].s, 'lang', HTML_LANG[L])) };
   for (const [attr, name] of [['rel', 'canonical']]) {
     const i = toks.findIndex(t => t.t === 'open' && t.name === 'link' && getAttr(t.s, attr) === name);
     if (i < 0) errors.push(`${where}: <link rel="canonical"> ausente`); else toks[i] = { ...toks[i], s: setAttr(toks[i].s, 'href', pageUrl(key, L)) };
@@ -349,13 +349,34 @@ function generate(key, L, ctx, errors) {
   return serialize(out, src);
 }
 
-// Sincroniza as regiões gerenciadas da própria fonte PT (hoje: hreflang). Retorna os bytes novos.
+// Atributo booleano data-static-lang no <html>: a página tem o texto pré-gerado e o motor antigo (i18n.js) não deve mexer nela.
+const ensureStaticLang = tag => (/\sdata-static-lang(?=[\s>\/])/.test(tag) ? tag : tag.replace(/>$/, ' data-static-lang>'));
+
+// Cada seletor (div.lang-selector) da fonte tem de estar entre <!-- i18n:selector --> e <!-- /i18n:selector -->.
+function checkSelectorMarkers(toks, errors, where) {
+  const prox = (k, d) => { for (let j = k + d; j >= 0 && j < toks.length; j += d) if (!(toks[j].t === 'text' && !toks[j].s.trim())) return toks[j]; return null; };
+  let n = 0;
+  toks.forEach((t, k) => {
+    if (t.t === 'open' && t.name === 'div' && (getAttr(t.s, 'class') || '').split(/\s+/).includes('lang-selector')) {
+      n++;
+      const c = findClose(toks, k);
+      if (prox(k, -1)?.s !== '<!-- i18n:selector -->' || prox(c, 1)?.s !== '<!-- /i18n:selector -->') errors.push(`${where}: o seletor #${n} precisa estar entre <!-- i18n:selector --> e <!-- /i18n:selector -->`);
+    }
+  });
+  const marcas = toks.filter(t => t.t === 'comment' && /^<!-- \/?i18n:selector -->$/.test(t.s)).length;
+  if (marcas !== n * 2) errors.push(`${where}: marcadores i18n:selector (${marcas}) não correspondem aos seletores (${n})`);
+}
+
+// Sincroniza as regiões gerenciadas da própria fonte PT: hreflang, seletor de idioma (links) e data-static-lang. Retorna os bytes novos.
 function syncSource(key, ctx, errors) {
   const src = readSource(key); const where = `${key} [pt]`;
   let toks = tokenize(src.text);
-  const hasSel = toks.some(t => t.t === 'comment' && t.s === '<!-- i18n:selector -->');
   toks = replaceRegion(toks, 'hreflang', ind => hreflangBlock(key, ind), errors, where);
-  void hasSel; // região do seletor: Fase 2
+  checkSelectorMarkers(toks, errors, where);
+  toks = rewriteSelectors(toks, key, 'pt', errors, where);
+  const html = toks.findIndex(t => t.t === 'open' && t.name === 'html');
+  toks[html] = { ...toks[html], s: ensureStaticLang(toks[html].s) };
+  if (!/js\/lang\.js"/.test(join(toks))) errors.push(`${where}: falta <script src="…/js/lang.js"> na fonte`);
   return serialize(join(toks), src);
 }
 

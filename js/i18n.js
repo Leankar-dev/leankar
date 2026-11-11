@@ -72,6 +72,8 @@ function applyLang(lang) {
 }
 
 function initI18n() {
+  // Páginas com texto pré-gerado (uma URL por idioma: /, /en/, /es/) trazem data-static-lang no <html>: não há o que traduzir aqui.
+  if (document.documentElement.hasAttribute('data-static-lang')) return;
   const lang = detectLang();
   applyLang(lang);
 

@@ -124,171 +124,221 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/calculator_logo.png" alt="Calculadora Leankar" class="app-page-logo" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
+            <img src="../assets/logos/calculadora-leankar-280.webp" width="140" height="140" alt="Calculadora Leankar" class="app-page-logo" />
+            <span class="app-category"><span data-i18n="apps.cat-produtividade">Produtividade</span></span>
             <h1>Calculadora <span class="gradient-text">Leankar</span></h1>
-            <p class="app-tagline" data-i18n="calc.tagline">A calculadora que simplesmente funciona: básica e científica, com IMC e histórico persistente. Sem bloatware e sem distrações, só com um banner de anúncio (Android) que você aceita ou recusa. Design neumórfico.</p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Material 3</span>
-              <span class="tag" data-i18n="calc.tag-neumorfico">Neumórfico</span>
-              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
-              <span class="tag" data-i18n="app.badge-offline">Offline</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="calc.lead">Calculadora básica, científica e de IMC, com histórico e visual neumórfico.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag">Material 3</span> <span class="tag" data-i18n="app.tag-neumorphic">Neumórfico</span></div>
+            <ul class="app-trust">
+              <li data-i18n="apps.badge-free">Gratuito</li>
+              <li data-i18n="calc.trust-langs">5 idiomas</li>
+              <li data-i18n="app.val-net-none">Funciona sem internet</li>
+            </ul>
             <div class="app-page-actions">
-              <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
-                class="play-btn" target="_blank" rel="noopener noreferrer">
-                <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+              <a class="play-btn" href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <img class="play-badge" src="../assets/logos/google-play-badge.svg" width="149" height="44" alt="Disponível no Google Play" data-i18n-alt="apps.play-badge-alt" />
               </a>
+              <a class="app-link-sec" href="#video" data-i18n="app.see-video">Ver vídeo</a>
             </div>
           </div>
+          <figure class="app-hero-visual">
+            <div class="app-phone app-phone--bare">
+              <img src="../assets/apps/calculadora-leankar/01-calculadora-basica.webp" width="540" height="960" loading="eager" fetchpriority="high"
+                   alt="Calculadora básica do app Calculadora Leankar, com visual neumórfico" data-i18n-alt="calc.shot1-alt" />
+            </div>
+          </figure>
         </div>
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
-      <div class="app-video app-video--page">
-        <video controls playsinline preload="none" poster="../assets/videos/calculadora-leankar-poster.jpg"
-          width="1280" height="720" data-i18n-aria="apps.calc-video-label"
-          aria-label="Vídeo de apresentação da Calculadora Leankar">
-          <source src="../assets/videos/calculadora-leankar.mp4" type="video/mp4" />
-          <span data-i18n="apps.calc-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-        </video>
-      </div>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10"/><path d="M18 7h2"/><circle cx="16" cy="7" r="2"/><path d="M4 17h2"/><path d="M10 17h10"/><circle cx="8" cy="17" r="2"/></svg>
+          <h3 data-i18n="calc.benefit1-t">Do básico ao científico</h3>
+          <p data-i18n="calc.benefit1-d">Alterne entre a calculadora básica e a científica, com parênteses, trigonometria, logaritmos e memória.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+          <h3 data-i18n="calc.benefit2-t">IMC com faixa saudável</h3>
+          <p data-i18n="calc.benefit2-d">Informe peso e altura e veja a classificação da OMS e a faixa de peso saudável para a sua altura.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h11"/><path d="M9 12h11"/><path d="M9 17h11"/><path d="M4.5 7h.01"/><path d="M4.5 12h.01"/><path d="M4.5 17h.01"/></svg>
+          <h3 data-i18n="calc.benefit3-t">Histórico à mão</h3>
+          <p data-i18n="calc.benefit3-d">Os últimos 50 cálculos ficam salvos no aparelho; consulte ou apague quando quiser.</p>
+        </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature1">Quatro operações básicas: soma, subtração, multiplicação e divisão</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature2">Cálculo de porcentagem integrado</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature9">Modo científico: trigonometria, logaritmos, potências, raízes, fatorial, memória e graus/radianos</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature3">Calculadora de IMC com classificação OMS (6 faixas)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature4">Histórico persistente dos últimos 50 cálculos</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature5">Temas claro, escuro e automático (segue o sistema Android)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature6">Design Neumórfico com alto contraste e tipografia legível</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature7">5 idiomas: português, inglês, espanhol, francês e italiano</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature8">Funciona sem internet; anúncios opcionais, que você aceita ou recusa</span></li>
-      </ul>
+      <section class="app-section reveal" id="telas" aria-labelledby="telas-title">
+        <h2 id="telas-title" data-i18n="app.gallery-title">Telas do app</h2>
+        <div class="app-gallery-nav" hidden>
+          <button type="button" class="app-gallery-btn" data-dir="-1" aria-controls="telas-track" aria-label="Tela anterior" data-i18n-aria="app.gallery-prev">‹</button>
+          <button type="button" class="app-gallery-btn" data-dir="1" aria-controls="telas-track" aria-label="Próxima tela" data-i18n-aria="app.gallery-next">›</button>
+        </div>
+        <div class="app-gallery-track" id="telas-track" role="region" tabindex="0" aria-label="Galeria de telas" data-i18n-aria="app.gallery-label">
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/02-calculadora-cientifica.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Modo científico com seno, cosseno, tangente, logaritmos, raiz e memória" data-i18n-alt="calc.shot2-alt" />
+          <figcaption data-i18n="calc.shot2-cap">Modo científico</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/03-funcoes-avancadas.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Funções avançadas: raiz quadrada de 64 com parênteses e potência" data-i18n-alt="calc.shot3-alt" />
+          <figcaption data-i18n="calc.shot3-cap">Funções avançadas</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/04-calculadora-imc.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Calculadora de IMC com classificação e faixa de peso saudável" data-i18n-alt="calc.shot4-alt" />
+          <figcaption data-i18n="calc.shot4-cap">Calculadora de IMC</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/05-historico.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Histórico dos últimos cálculos em uma lista" data-i18n-alt="calc.shot5-alt" />
+          <figcaption data-i18n="calc.shot5-cap">Histórico de cálculos</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/06-tudo-em-um-app.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Menu lateral com histórico, IMC, calculadora científica e configurações" data-i18n-alt="calc.shot6-alt" />
+          <figcaption data-i18n="calc.shot6-cap">Tudo em um só app</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/calculadora-leankar/07-personalizacao.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Configurações com tema claro/escuro e cinco idiomas" data-i18n-alt="calc.shot7-alt" />
+          <figcaption data-i18n="calc.shot7-cap">Tema e idiomas</figcaption>
+        </figure>
+        </div>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="calc.about-p1">
-        A Calculadora Leankar nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções
-        que ninguém usa. O objetivo foi construir algo simples, funcional e esteticamente honesto: uma ferramenta
-        que ocupa o mínimo de espaço, funciona sem internet e entrega o resultado sem distrações.
-      </p>
-      <p data-i18n="calc.about-p2">
-        O design segue a linguagem neumórfica — elementos que parecem levemente pressionados na superfície,
-        com sombras suaves e bordas arredondadas. Cada botão foi dimensionado com área de toque generosa
-        para facilitar o uso em situações onde a atenção está dividida: cozinhando, fazendo compras ou
-        convertendo valores em movimento.
-      </p>
+      <section class="app-section reveal" id="video" aria-labelledby="video-title">
+        <h2 id="video-title" data-i18n="app.video-title">Veja em ação</h2>
+        <div class="app-video app-video--page">
+          <video controls playsinline preload="none" poster="../assets/videos/calculadora-leankar-poster.jpg"
+            width="1280" height="720" data-i18n-aria="apps.calc-video-label"
+            aria-label="Vídeo de apresentação da Calculadora Leankar">
+            <source src="../assets/videos/calculadora-leankar.mp4" type="video/mp4" />
+            <span data-i18n="apps.calc-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
+          </video>
+        </div>
+      </section>
+
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature1">Quatro operações básicas: soma, subtração, multiplicação e divisão</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature2">Cálculo de porcentagem integrado</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature9">Modo científico: trigonometria, logaritmos, potências, raízes, fatorial, memória e graus/radianos</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature3">Calculadora de IMC com classificação OMS (6 faixas)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature4">Histórico persistente dos últimos 50 cálculos</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature5">Temas claro, escuro e automático (segue o sistema Android)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature6">Design Neumórfico com alto contraste e tipografia legível</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature7">5 idiomas: português, inglês, espanhol, francês e italiano</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="calc.feature8">Funciona sem internet; anúncios opcionais, que você aceita ou recusa</span></li>
+        </ul>
+      </section>
+
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="calc.about-p1">A Calculadora Leankar nasceu da insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. O objetivo foi construir algo simples, funcional e esteticamente honesto: uma ferramenta que ocupa o mínimo de espaço, funciona sem internet e entrega o resultado sem distrações.</p>
+      <p data-i18n="calc.about-p2">O design segue a linguagem neumórfica — elementos que parecem levemente pressionados na superfície, com sombras suaves e bordas arredondadas. Cada botão foi dimensionado com área de toque generosa para facilitar o uso em situações onde a atenção está dividida: cozinhando, fazendo compras ou convertendo valores em movimento.</p>
       <p data-i18n="calc.about-sci">Além do modo básico, a calculadora científica entende expressões completas, com parênteses e a ordem correta das operações. Ela traz seno, cosseno e tangente (e suas inversas pela tecla SHIFT), logaritmo e logaritmo natural, potências, raízes quadrada e cúbica, fatorial, permutação, valor absoluto, 1/x, π e o número de Euler, além de memória (M+, M−, MR, MC) e alternância entre graus e radianos. Erros como divisão por zero ou parênteses sem fechar são avisados na tela.</p>
       <p data-i18n="calc.about-p3">O histórico persistente é implementado com <strong>SharedPreferences</strong>: os últimos 50 cálculos são salvos automaticamente entre sessões, sem sincronização em nuvem e sem conta. O histórico fica só no aparelho e não é enviado a nenhum servidor. Ao fechar e reabrir o app, o histórico está intacto.</p>
-      <p data-i18n="calc.about-p4">
-        A função de IMC calcula o Índice de Massa Corporal a partir de altura e peso, exibe o resultado
-        numérico e enquadra nas 6 faixas da tabela da OMS — de "abaixo do peso" a "obesidade grau III".
-        Uma feature prática para quem acompanha saúde sem querer instalar um app específico só para isso.
-      </p>
-      <p data-i18n="calc.about-p5">Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>, compatível com Android 7.0 (API 24) e superiores. O app não pede nenhuma permissão que precise da sua autorização, como câmera, localização ou contatos. Na versão Android, exibe um banner de anúncios (Unity LevelPlay) somente se você aceitar: nesse caso, o SDK de anúncios pode coletar dados do aparelho, como o ID de publicidade. Detalhes na política de privacidade do app.</p>
+      <p data-i18n="calc.about-p4">A função de IMC calcula o Índice de Massa Corporal a partir de altura e peso, exibe o resultado numérico e enquadra nas 6 faixas da tabela da OMS — de "abaixo do peso" a "obesidade grau III". Uma feature prática para quem acompanha saúde sem querer instalar um app específico só para isso.</p>
+      <p data-i18n="calc.about-p5">Desenvolvida com <strong>Flutter 3</strong> e <strong>Material Design 3</strong>. O app não pede nenhuma permissão que precise da sua autorização, como câmera, localização ou contatos. Na versão Android, exibe um banner de anúncios (Unity LevelPlay) somente se você aceitar: nesse caso, o SDK de anúncios pode coletar dados do aparelho, como o ID de publicidade. Detalhes na política de privacidade do app.</p>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="app.val-android">Android</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-android">Android mínimo</dt><dd data-i18n="app.val-android-7">Android 7.0 ou superior</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="calc.spec-langs">Português, inglês, espanhol, francês e italiano</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-price">Preço</dt><dd data-i18n="app.val-price-free">Gratuito, sem compras dentro do app</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-ads">Anúncios</dt><dd data-i18n="calc.spec-ads">Sim: banner, só na versão Android. Só aparece se você aceitar, e você pode mudar nas configurações.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="app.val-net-ads">Funciona sem internet; só os anúncios usam conexão</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="app.val-perms-ads">Acesso à internet, estado da rede e ID de publicidade, usados pelos anúncios. Nenhum pede a sua autorização.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-privacy">Política de privacidade</dt><dd><a href="https://leankar-dev.github.io/calculator-leankar-privacy/" target="_blank" rel="noopener noreferrer" data-i18n="app.privacy-link">Ver política do app</a></dd></div>
+        </dl>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
-
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq1-q">O app é totalmente gratuito?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+            <span data-i18n="calc.faq1-q">O app é totalmente gratuito?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
             <div class="faq-answer-inner" data-i18n="calc.faq1-a">Sim, é gratuito. Não há compras dentro do app, assinatura ou versão premium, e todas as funcionalidades estão disponíveis desde o primeiro uso. O app é mantido por um banner de anúncios na versão Android, que você aceita ou recusa.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq2-q">Funciona sem conexão com a internet?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+            <span data-i18n="calc.faq2-q">Funciona sem conexão com a internet?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
             <div class="faq-answer-inner" data-i18n="calc.faq2-a">Sim. Os cálculos, o histórico e o IMC funcionam sem internet, inclusive em modo avião. A única parte que usa conexão é o banner de anúncios da versão Android, e só se você aceitar os anúncios.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq3-q">Posso apagar o histórico de cálculos?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+            <span data-i18n="calc.faq3-q">Posso apagar o histórico de cálculos?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="calc.faq3-a">
-              Sim. Na tela de histórico há um botão para limpar todos os registros de uma só vez.
-              O histórico também é apagado ao limpar os dados do app nas configurações do Android.
-            </div>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-answer-inner" data-i18n="calc.faq3-a">Sim. Na tela de histórico há um botão para limpar todos os registros de uma só vez. O histórico também é apagado ao limpar os dados do app nas configurações do Android.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq4-q">Está disponível para iOS ou como app web?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+            <span data-i18n="calc.faq4-q">Está disponível para iOS ou como app web?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="calc.faq4-a">
-              Atualmente apenas para Android. A publicação na Apple App Store está nos planos, mas ainda
-              sem data definida. Não há versão web por enquanto.
-            </div>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq-answer-inner" data-i18n="calc.faq4-a">Atualmente apenas para Android. A publicação na Apple App Store está nos planos, mas ainda sem data definida. Não há versão web por enquanto.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq5-q">O app coleta ou envia meus dados?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+            <span data-i18n="calc.faq5-q">O app coleta ou envia meus dados?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
             <div class="faq-answer-inner" data-i18n="calc.faq5-a">O histórico de cálculos fica exclusivamente no armazenamento local do seu dispositivo e não é enviado a nenhum servidor; o app não tem conta nem cadastro. Se você aceitar os anúncios (somente na versão Android), o SDK Unity LevelPlay pode coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Os detalhes estão na política de privacidade do app.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq6-q">Como funciona o cálculo de IMC?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+            <span data-i18n="calc.faq6-q">Como funciona o cálculo de IMC?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="calc.faq6-a">
-              Informe peso (em kg) e altura (em metros ou centímetros). O app aplica a fórmula padrão
-              da OMS — IMC = peso / altura² — e exibe o resultado com a classificação correspondente:
-              abaixo do peso, peso normal, sobrepeso, obesidade grau I, II ou III.
-            </div>
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="faq-answer-inner" data-i18n="calc.faq6-a">Informe peso (em kg) e altura (em metros ou centímetros). O app aplica a fórmula padrão da OMS — IMC = peso / altura² — e exibe o resultado com a classificação correspondente: abaixo do peso, peso normal, sobrepeso, obesidade grau I, II ou III.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="calc.faq7-q">Existe calculadora científica?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">
+            <span data-i18n="calc.faq7-q">Existe calculadora científica?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="calc.faq7-a">
-              Sim. No menu do app há a Calculadora Científica, com trigonometria (e funções inversas pela tecla SHIFT), logaritmos, potências, raízes, fatorial, permutação, π, e, parênteses, memória (M+, M−, MR, MC) e alternância entre graus (DEG) e radianos (RAD).
-            </div>
+          <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+            <div class="faq-answer-inner" data-i18n="calc.faq7-a">Sim. No menu do app há a Calculadora Científica, com trigonometria (e funções inversas pela tecla SHIFT), logaritmos, potências, raízes, fatorial, permutação, π, e, parênteses, memória (M+, M−, MR, MC) e alternância entre graus (DEG) e radianos (RAD).</div>
           </div>
         </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="calc.cta-text">Disponível gratuitamente no Google Play. Sem cadastro, com anúncios opcionais, sem surpresas.</p>
         <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">

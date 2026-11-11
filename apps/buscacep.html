@@ -121,187 +121,221 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/buscacep_logo.png" alt="BuscaCep_las" class="app-page-logo" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-utilidades">Utilidades</span>
+            <img src="../assets/logos/buscacep-280.webp" width="140" height="140" alt="BuscaCep_las" class="app-page-logo" />
+            <span class="app-category"><span data-i18n="apps.cat-utilidades">Utilidades</span></span>
             <h1><span class="gradient-text">BuscaCep</span>_las</h1>
-            <p class="app-tagline" data-i18n="cep.tagline">
-              Consultar um CEP brasileiro não deveria ser complicado. Busque por código ou por endereço
-              completo e receba logradouro, bairro, cidade, estado e DDD em segundos.
-            </p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">API REST</span>
-              <span class="tag">ViaCEP</span>
-              <span class="tag">Riverpod</span>
-              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="cep.lead">Consulte qualquer CEP do Brasil por código ou por endereço, em segundos.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag">Riverpod</span> <span class="tag">ViaCEP</span></div>
+            <ul class="app-trust">
+              <li data-i18n="apps.badge-free">Gratuito</li>
+              <li data-i18n="app.val-ads-none">Sem anúncios</li>
+              <li data-i18n="cep.trust-source">Dados públicos do ViaCEP</li>
+            </ul>
             <div class="app-page-actions">
-              <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
-                class="play-btn" target="_blank" rel="noopener noreferrer">
-                <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+              <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <img class="play-badge" src="../assets/logos/google-play-badge.svg" width="149" height="44" alt="Disponível no Google Play" data-i18n-alt="apps.play-badge-alt" />
               </a>
+              <a class="app-link-sec" href="#video" data-i18n="app.see-video">Ver vídeo</a>
             </div>
           </div>
+          <figure class="app-hero-visual">
+            <div class="app-phone app-phone--bare">
+              <img src="../assets/apps/buscacep/01-resultado-cep.webp" width="540" height="960" loading="eager" fetchpriority="high"
+                   alt="Resultado da busca do CEP 01310-100 com o endereço formatado" data-i18n-alt="cep.shot1-alt" />
+            </div>
+          </figure>
         </div>
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
-      <div class="app-video app-video--page">
-        <video controls playsinline preload="none" poster="../assets/videos/busca-cep-las-poster.jpg"
-          width="1280" height="720" data-i18n-aria="apps.cep-video-label"
-          aria-label="Vídeo de apresentação do BuscaCep_las">
-          <source src="../assets/videos/busca-cep-las.mp4" type="video/mp4" />
-          <span data-i18n="apps.cep-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-        </video>
-      </div>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg>
+          <h3 data-i18n="cep.benefit1-t">CEP em segundos</h3>
+          <p data-i18n="cep.benefit1-d">Ao completar os 8 dígitos a busca é feita sozinha e o endereço já aparece formatado.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          <h3 data-i18n="cep.benefit2-t">Não sabe o CEP? Busque</h3>
+          <p data-i18n="cep.benefit2-d">Pesquise por UF, cidade e logradouro e veja todos os CEPs da rua em uma lista.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+          <h3 data-i18n="cep.benefit3-t">Copie com um toque</h3>
+          <p data-i18n="cep.benefit3-d">Copie o CEP ou o endereço completo e consulte bairro, cidade, estado, DDD e código IBGE.</p>
+        </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature1">Busca de CEP por código numérico direto</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature2">Busca por endereço: UF + cidade + logradouro</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature9">Busca automática ao completar os 8 dígitos, com máscara 00000-000</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature3">Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE (nos detalhes expansíveis)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature4">Tratamento de erros: CEP inválido, timeout e sem conexão</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature5">Copie o CEP ou o endereço completo com um toque</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature6">Integração com a API pública ViaCEP</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature7">Desenvolvido com Riverpod + Dio (HTTP)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature8">Interface escura e limpa, sem anúncios, sem coleta de dados</span></li>
-      </ul>
+      <section class="app-section reveal" id="telas" aria-labelledby="telas-title">
+        <h2 id="telas-title" data-i18n="app.gallery-title">Telas do app</h2>
+        <div class="app-gallery-nav" hidden>
+          <button type="button" class="app-gallery-btn" data-dir="-1" aria-controls="telas-track" aria-label="Tela anterior" data-i18n-aria="app.gallery-prev">‹</button>
+          <button type="button" class="app-gallery-btn" data-dir="1" aria-controls="telas-track" aria-label="Próxima tela" data-i18n-aria="app.gallery-next">›</button>
+        </div>
+        <div class="app-gallery-track" id="telas-track" role="region" tabindex="0" aria-label="Galeria de telas" data-i18n-aria="app.gallery-label">
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/02-inicio.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Tela inicial do BuscaCep com o campo para digitar o CEP" data-i18n-alt="cep.shot2-alt" />
+          <figcaption data-i18n="cep.shot2-cap">Tela inicial</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/03-detalhes-endereco.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Endereço completo com botões para copiar o CEP e o endereço" data-i18n-alt="cep.shot3-alt" />
+          <figcaption data-i18n="cep.shot3-cap">Endereço completo</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/04-busca-endereco.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Busca por endereço com UF, cidade e logradouro" data-i18n-alt="cep.shot4-alt" />
+          <figcaption data-i18n="cep.shot4-cap">Busca por endereço</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/05-lista-enderecos.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Lista com todos os CEPs encontrados para a rua" data-i18n-alt="cep.shot5-alt" />
+          <figcaption data-i18n="cep.shot5-cap">Todos os CEPs da rua</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/06-configuracoes.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Tela de configurações com a fonte dos dados: a API pública ViaCEP" data-i18n-alt="cep.shot6-alt" />
+          <figcaption data-i18n="cep.shot6-cap">Dados públicos (ViaCEP)</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--bare">
+          <img src="../assets/apps/buscacep/07-sobre-fonte-aviso.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Aviso de que o app é independente e sem vínculo com o governo" data-i18n-alt="cep.shot7-alt" />
+          <figcaption data-i18n="cep.shot7-cap">Aplicativo independente</figcaption>
+        </figure>
+        </div>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="cep.about-p1">
-        O BuscaCep_las surgiu de uma necessidade concreta: durante compras online, preencher formulários
-        de endereço com CEPs que não estão de cabeça é uma fricção pequena, mas irritante. O app resolve
-        isso com uma interface direta — campo de entrada, botão de busca, resultado com clareza.
-      </p>
-      <p data-i18n="cep.about-p2">
-        A integração usa a <strong>API ViaCEP</strong>, serviço público mantido pela comunidade de
-        desenvolvedores brasileiros, que cobre todos os CEPs do Brasil com dados atualizados. As requisições
-        são feitas com <strong>Dio</strong>, com configuração de timeout para evitar telas travadas em
-        conexões lentas.
-      </p>
-      <p data-i18n="cep.about-p3">
-        A busca por endereço é especialmente útil quando se conhece a rua mas não o CEP: basta informar
-        o estado (UF), a cidade e o logradouro para receber uma lista com os CEPs correspondentes.
-        Ideal para validar endereços de clientes ou localizar CEPs de bairros específicos.
-      </p>
-      <p data-i18n="cep.about-p4">
-        O gerenciamento de estado é feito com <strong>Riverpod</strong>: cada consulta gera um estado
-        reativo (carregando, sucesso, erro) que a UI consome diretamente, sem boilerplate. Isso mantém
-        a interface responsiva e o código organizado conforme a complexidade cresce.
-      </p>
+      <section class="app-section reveal" id="video" aria-labelledby="video-title">
+        <h2 id="video-title" data-i18n="app.video-title">Veja em ação</h2>
+        <div class="app-video app-video--page">
+          <video controls playsinline preload="none" poster="../assets/videos/busca-cep-las-poster.jpg"
+            width="1280" height="720" data-i18n-aria="apps.cep-video-label"
+            aria-label="Vídeo de apresentação do BuscaCep_las">
+            <source src="../assets/videos/busca-cep-las.mp4" type="video/mp4" />
+            <span data-i18n="apps.cep-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
+          </video>
+        </div>
+      </section>
+
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature1">Busca de CEP por código numérico direto</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature2">Busca por endereço: UF + cidade + logradouro</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature9">Busca automática ao completar os 8 dígitos, com máscara 00000-000</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature3">Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE (nos detalhes expansíveis)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature4">Tratamento de erros: CEP inválido, timeout e sem conexão</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature5">Copie o CEP ou o endereço completo com um toque</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature6">Integração com a API pública ViaCEP</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature7">Desenvolvido com Riverpod + Dio (HTTP)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature8">Interface escura e limpa, sem anúncios, sem coleta de dados</span></li>
+        </ul>
+      </section>
+
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="cep.about-p1">O BuscaCep_las surgiu de uma necessidade concreta: durante compras online, preencher formulários de endereço com CEPs que não estão de cabeça é uma fricção pequena, mas irritante. O app resolve isso com uma interface direta — campo de entrada, botão de busca, resultado com clareza.</p>
+      <p data-i18n="cep.about-p2">A integração usa a <strong>API ViaCEP</strong>, serviço público mantido pela comunidade de desenvolvedores brasileiros, que cobre todos os CEPs do Brasil com dados atualizados. As requisições são feitas com <strong>Dio</strong>, com configuração de timeout para evitar telas travadas em conexões lentas.</p>
+      <p data-i18n="cep.about-p3">A busca por endereço é especialmente útil quando se conhece a rua mas não o CEP: basta informar o estado (UF), a cidade e o logradouro para receber uma lista com os CEPs correspondentes. Ideal para validar endereços de clientes ou localizar CEPs de bairros específicos.</p>
+      <p data-i18n="cep.about-p4">O gerenciamento de estado é feito com <strong>Riverpod</strong>: cada consulta gera um estado reativo (carregando, sucesso, erro) que a UI consome diretamente, sem boilerplate. Isso mantém a interface responsiva e o código organizado conforme a complexidade cresce.</p>
       <p data-i18n="cep.about-p5">O app não armazena nenhum histórico de consultas, não pede permissões além do acesso à internet e não exibe nenhum tipo de anúncio. Gratuito sem asterisco.</p>
-
       <p data-i18n="cep.about-p6">O BuscaCep_las é um aplicativo independente: não é oficial do governo brasileiro e não tem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta dados públicos disponibilizados pela API ViaCEP.</p>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="app.val-android">Android</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-android">Android mínimo</dt><dd data-i18n="app.val-android-7">Android 7.0 ou superior</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="cep.spec-langs">Português (Brasil)</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-price">Preço</dt><dd data-i18n="app.val-price-free">Gratuito, sem compras dentro do app</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-ads">Anúncios</dt><dd data-i18n="app.val-ads-none">Sem anúncios</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="cep.spec-net">Requer internet (consulta à API pública ViaCEP)</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="app.val-perms-internet">Somente acesso à internet</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-privacy">Política de privacidade</dt><dd><a href="https://leankar-dev.github.io/busca_cep_app_privacy_policy/" target="_blank" rel="noopener noreferrer" data-i18n="app.privacy-link">Ver política do app</a></dd></div>
+        </dl>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
-
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq1-q">Que API é usada para consultar os CEPs?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+            <span data-i18n="cep.faq1-q">Que API é usada para consultar os CEPs?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="cep.faq1-a">
-              O app usa a API pública <strong>ViaCEP</strong> (viacep.com.br), um serviço gratuito e
-              amplamente utilizado no Brasil que cobre todos os CEPs do território nacional com dados
-              atualizados. A requisição é feita diretamente do app para a API sem nenhum intermediário.
-            </div>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="faq-answer-inner" data-i18n="cep.faq1-a">O app usa a API pública <strong>ViaCEP</strong> (viacep.com.br), um serviço gratuito e amplamente utilizado no Brasil que cobre todos os CEPs do território nacional com dados atualizados. A requisição é feita diretamente do app para a API sem nenhum intermediário.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq2-q">O app funciona sem internet?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+            <span data-i18n="cep.faq2-q">O app funciona sem internet?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="cep.faq2-a">
-              Não, é necessária conexão com a internet para consultar os CEPs, pois os dados vêm da
-              API ViaCEP em tempo real. O app detecta a ausência de conexão e exibe uma mensagem de
-              erro adequada sem travar a interface.
-            </div>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq-answer-inner" data-i18n="cep.faq2-a">Não, é necessária conexão com a internet para consultar os CEPs, pois os dados vêm da API ViaCEP em tempo real. O app detecta a ausência de conexão e exibe uma mensagem de erro adequada sem travar a interface.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq3-q">Consigo buscar CEPs de outros países?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+            <span data-i18n="cep.faq3-q">Consigo buscar CEPs de outros países?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="cep.faq3-a">
-              Não, o BuscaCep_las é especializado nos CEPs brasileiros. A API ViaCEP cobre apenas o
-              Brasil. Para outros países seria necessário integrar APIs diferentes, o que não está
-              nos planos atuais do app.
-            </div>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-answer-inner" data-i18n="cep.faq3-a">Não, o BuscaCep_las é especializado nos CEPs brasileiros. A API ViaCEP cobre apenas o Brasil. Para outros países seria necessário integrar APIs diferentes, o que não está nos planos atuais do app.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq4-q">O app é gratuito?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+            <span data-i18n="cep.faq4-q">O app é gratuito?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="cep.faq4-a">
-              Sim, 100% gratuito e sem anúncios. Não há compras dentro do app, não há limitação de
-              consultas e não há nenhuma funcionalidade bloqueada. O app não monetiza o usuário de
-              nenhuma forma.
-            </div>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq-answer-inner" data-i18n="cep.faq4-a">Sim, 100% gratuito e sem anúncios. Não há compras dentro do app, não há limitação de consultas e não há nenhuma funcionalidade bloqueada. O app não monetiza o usuário de nenhuma forma.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq5-q">Como funciona a busca por endereço?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+            <span data-i18n="cep.faq5-q">Como funciona a busca por endereço?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="cep.faq5-a">
-              Na aba de busca por endereço, informe o estado (UF de 2 letras, ex: SP), a cidade e
-              o logradouro (nome da rua, avenida etc.). O app consulta a ViaCEP e retorna uma lista
-              com todos os CEPs que correspondem ao endereço informado.
-            </div>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq-answer-inner" data-i18n="cep.faq5-a">Na aba de busca por endereço, informe o estado (UF de 2 letras, ex: SP), a cidade e o logradouro (nome da rua, avenida etc.). O app consulta a ViaCEP e retorna uma lista com todos os CEPs que correspondem ao endereço informado.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq6-q">O app coleta ou armazena meus dados?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+            <span data-i18n="cep.faq6-q">O app coleta ou armazena meus dados?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
             <div class="faq-answer-inner" data-i18n="cep.faq6-a">Não. O app não armazena histórico de consultas, não coleta dados pessoais e não pede nenhuma permissão do Android além do acesso à internet. Cada consulta é independente e descartada após exibir o resultado.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="cep.faq7-q">O BuscaCep é um app oficial dos Correios ou do governo?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">
+            <span data-i18n="cep.faq7-q">O BuscaCep é um app oficial dos Correios ou do governo?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
             <div class="faq-answer-inner" data-i18n="cep.faq7-a">Não. O BuscaCep é um aplicativo independente, sem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta os dados públicos da API ViaCEP. O mesmo aviso aparece na tela de Configurações do app.</div>
           </div>
         </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="cep.cta-text">Consulte qualquer CEP do Brasil. Gratuito, rápido e sem anúncios.</p>
         <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">

@@ -68,9 +68,12 @@
     "featureList": [
       "Busca de CEP por código direto",
       "Busca por endereço: UF, cidade e logradouro",
-      "Retorna logradouro, bairro, cidade, estado, DDD e complemento",
+      "Busca automática ao completar os 8 dígitos, com máscara 00000-000",
+      "Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE",
+      "Copiar o CEP ou o endereço completo com um toque",
       "Tratamento de erros: CEP inválido, sem conexão e timeout",
       "Integração com API ViaCEP",
+      "Aplicativo independente, sem vínculo com Correios, IBGE ou governo",
       "Interface escura e limpa, zero anúncios"
     ]
   }
@@ -164,9 +167,10 @@
       <ul class="app-features-list">
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature1">Busca de CEP por código numérico direto</span></li>
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature2">Busca por endereço: UF + cidade + logradouro</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature3">Retorna logradouro, bairro, cidade, estado, DDD e complemento</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature9">Busca automática ao completar os 8 dígitos, com máscara 00000-000</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature3">Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE (nos detalhes expansíveis)</span></li>
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature4">Tratamento de erros: CEP inválido, timeout e sem conexão</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature5">Resultados copiáveis com toque longo</span></li>
+        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature5">Copie o CEP ou o endereço completo com um toque</span></li>
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature6">Integração com a API pública ViaCEP</span></li>
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature7">Desenvolvido com Riverpod + Dio (HTTP)</span></li>
         <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="cep.feature8">Interface escura e limpa, sem anúncios, sem coleta de dados</span></li>
@@ -195,6 +199,8 @@
         a interface responsiva e o código organizado conforme a complexidade cresce.
       </p>
       <p data-i18n="cep.about-p5">O app não armazena nenhum histórico de consultas, não pede permissões além do acesso à internet e não exibe nenhum tipo de anúncio. Gratuito sem asterisco.</p>
+
+      <p data-i18n="cep.about-p6">O BuscaCep_las é um aplicativo independente: não é oficial do governo brasileiro e não tem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta dados públicos disponibilizados pela API ViaCEP.</p>
 
       <hr class="article-divider" />
 
@@ -278,6 +284,16 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner" data-i18n="cep.faq6-a">Não. O app não armazena histórico de consultas, não coleta dados pessoais e não pede nenhuma permissão do Android além do acesso à internet. Cada consulta é independente e descartada após exibir o resultado.</div>
+          </div>
+        </li>
+
+        <li class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="cep.faq7-q">O BuscaCep é um app oficial dos Correios ou do governo?</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner" data-i18n="cep.faq7-a">Não. O BuscaCep é um aplicativo independente, sem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta os dados públicos da API ViaCEP. O mesmo aviso aparece na tela de Configurações do app.</div>
           </div>
         </li>
 

@@ -440,15 +440,28 @@ const TRANSLATIONS = {
   },
   'cep.feature1': { pt: 'Busca de CEP por código numérico direto', en: 'CEP lookup by direct numeric code', es: 'Búsqueda de CEP por código numérico directo' },
   'cep.feature2': { pt: 'Busca por endereço: UF + cidade + logradouro', en: 'Search by address: state + city + street', es: 'Búsqueda por dirección: estado + ciudad + calle' },
-  'cep.feature3': { pt: 'Retorna logradouro, bairro, cidade, estado, DDD e complemento', en: 'Returns street, neighborhood, city, state, area code, and complement', es: 'Devuelve calle, barrio, ciudad, estado, código de área y complemento' },
+  'cep.feature3': {
+    pt: "Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE (nos detalhes expansíveis)",
+    en: "Returns street, neighborhood, city, state, area code, complement, and IBGE code (in the expandable details)",
+    es: "Devuelve calle, barrio, ciudad, estado, código de área, complemento y código IBGE (en los detalles expandibles)",
+  },
   'cep.feature4': { pt: 'Tratamento de erros: CEP inválido, timeout e sem conexão', en: 'Error handling: invalid CEP, timeout, and no connection', es: 'Manejo de errores: CEP inválido, timeout y sin conexión' },
-  'cep.feature5': { pt: 'Resultados copiáveis com toque longo', en: 'Results copyable with a long press', es: 'Resultados copiables con toque largo' },
+  'cep.feature5': {
+    pt: "Copie o CEP ou o endereço completo com um toque",
+    en: "Copy the CEP or the full address with one tap",
+    es: "Copia el CEP o la dirección completa con un toque",
+  },
   'cep.feature6': { pt: 'Integração com a API pública ViaCEP', en: 'Integration with the public ViaCEP API', es: 'Integración con la API pública ViaCEP' },
   'cep.feature7': { pt: 'Desenvolvido com Riverpod + Dio (HTTP)', en: 'Built with Riverpod + Dio (HTTP)', es: 'Desarrollado con Riverpod + Dio (HTTP)' },
   'cep.feature8': {
     pt: 'Interface escura e limpa, sem anúncios, sem coleta de dados',
     en: 'Dark, clean interface, no ads, no data collection',
     es: 'Interfaz oscura y limpia, sin anuncios, sin recolección de datos',
+  },
+  'cep.feature9': {
+    pt: "Busca automática ao completar os 8 dígitos, com máscara 00000-000",
+    en: "Automatic search as soon as the 8 digits are entered, with a 00000-000 input mask",
+    es: "Búsqueda automática al completar los 8 dígitos, con máscara 00000-000",
   },
   'cep.about-p1': {
     pt: 'O BuscaCep_las surgiu de uma necessidade concreta: durante compras online, preencher formulários de endereço com CEPs que não estão de cabeça é uma fricção pequena, mas irritante. O app resolve isso com uma interface direta — campo de entrada, botão de busca, resultado com clareza.',
@@ -511,6 +524,17 @@ const TRANSLATIONS = {
     en: 'No. The app doesn\'t store query history, doesn\'t collect personal data, and doesn\'t ask for any Android permissions beyond internet access. Each query is independent and discarded after showing the result.',
     es: 'No. La app no almacena historial de consultas, no recopila datos personales y no pide ningún permiso de Android más allá del acceso a internet. Cada consulta es independiente y se descarta después de mostrar el resultado.',
   },
+  'cep.about-p6': {
+    pt: "O BuscaCep_las é um aplicativo independente: não é oficial do governo brasileiro e não tem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta dados públicos disponibilizados pela API ViaCEP.",
+    en: "BuscaCep_las is an independent app: it is not an official Brazilian government app and has no affiliation with Correios, IBGE, or any government entity. It only queries public data provided by the ViaCEP API.",
+    es: "BuscaCep_las es una app independiente: no es una app oficial del gobierno brasileño y no tiene vínculo con Correios, el IBGE ni ninguna entidad gubernamental. Solo consulta datos públicos proporcionados por la API ViaCEP.",
+  },
+  'cep.faq7-q': { pt: "O BuscaCep é um app oficial dos Correios ou do governo?", en: "Is BuscaCep an official Correios or government app?", es: "¿BuscaCep es una app oficial de Correios o del gobierno?" },
+  'cep.faq7-a': {
+    pt: "Não. O BuscaCep é um aplicativo independente, sem vínculo com os Correios, o IBGE ou qualquer entidade governamental. Ele apenas consulta os dados públicos da API ViaCEP. O mesmo aviso aparece na tela de Configurações do app.",
+    en: "No. BuscaCep is an independent app with no affiliation with Correios, IBGE, or any government entity. It only queries the public data from the ViaCEP API. The same notice appears on the app's Settings screen.",
+    es: "No. BuscaCep es una app independiente, sin vínculo con Correios, el IBGE ni ninguna entidad gubernamental. Solo consulta los datos públicos de la API ViaCEP. El mismo aviso aparece en la pantalla de Configuración de la app.",
+  },
   'cep.cta-text': {
     pt: 'Consulte qualquer CEP do Brasil. Gratuito, rápido e sem anúncios.',
     en: 'Look up any CEP in Brazil. Free, fast, and ad-free.',
@@ -528,13 +552,27 @@ const TRANSLATIONS = {
   'lista.feature3': { pt: 'Marcação de itens já pegos no carrinho', en: 'Checking off items already in the cart', es: 'Marcado de ítems ya recogidos en el carrito' },
   'lista.feature4': { pt: 'Progresso da lista em tempo real (X de Y itens)', en: 'Real-time list progress (X of Y items)', es: 'Progreso de la lista en tiempo real (X de Y ítems)' },
   'lista.feature5': { pt: 'Histórico completo de compras finalizadas', en: 'Full history of completed purchases', es: 'Historial completo de compras finalizadas' },
-  'lista.feature6': { pt: 'Gráficos de gastos mensais por categoria', en: 'Monthly spending charts by category', es: 'Gráficos de gastos mensuales por categoría' },
+  'lista.feature6': {
+    pt: "Totais por mês, média mensal e gráfico de pizza dos gastos por categoria",
+    en: "Monthly totals, monthly average, and a pie chart of spending by category",
+    es: "Totales por mes, promedio mensual y gráfico circular de gastos por categoría",
+  },
   'lista.feature7': {
     pt: 'Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)',
     en: 'Works without internet, with data saved on the device (Drift/SQLite)',
     es: 'Funciona sin internet, con datos guardados en el dispositivo (Drift/SQLite)',
   },
   'lista.feature8': { pt: 'Interface para uso com uma mão — 3 idiomas', en: 'One-handed interface — 3 languages', es: 'Interfaz para uso con una sola mano — 3 idiomas' },
+  'lista.feature9': {
+    pt: "20 categorias, cada uma com ícone e cor próprios",
+    en: "20 categories, each with its own icon and color",
+    es: "20 categorías, cada una con su propio ícono y color",
+  },
+  'lista.feature10': {
+    pt: "Gestão de mercados: cadastre e edite os estabelecimentos onde você compra",
+    en: "Store management: add and edit the stores where you shop",
+    es: "Gestión de mercados: registra y edita los establecimientos donde compras",
+  },
   'lista.about-p1': {
     pt: 'A Lista da Casa nasceu de um problema genuíno: listas de compras em papel se perdem, listas em aplicativos genéricos de notas são inflexíveis, e apps específicos de compras costumam ser pesados, cheios de anúncios ou exigem cadastro na nuvem. A proposta foi construir algo focado, leve e que funcione sem depender de internet.',
     en: 'Lista da Casa was born from a genuine problem: paper shopping lists get lost, generic notes apps are inflexible, and dedicated shopping apps tend to be heavy, full of ads, or require a cloud account. The goal was to build something focused, lightweight, and that works without depending on internet.',
@@ -711,12 +749,26 @@ const TRANSLATIONS = {
   },
   'word.feature4': { pt: 'Sistema de moedas ganhas jogando', en: 'Coin system earned by playing', es: 'Sistema de monedas ganadas jugando' },
   'word.feature5': { pt: 'Dicas disponíveis quando você travar em uma palavra', en: 'Hints available whenever you get stuck on a word', es: 'Pistas disponibles cuando te atascas con una palabra' },
-  'word.feature6': { pt: 'Estatísticas detalhadas de desempenho e evolução', en: 'Detailed performance and progress statistics', es: 'Estadísticas detalladas de rendimiento y evolución' },
+  'word.feature6': {
+    pt: "Estatísticas detalhadas de desempenho, por categoria e por dificuldade",
+    en: "Detailed performance statistics, by category and by difficulty",
+    es: "Estadísticas detalladas de rendimiento, por categoría y por dificultad",
+  },
   'word.feature7': { pt: 'Temas claro e escuro', en: 'Light and dark themes', es: 'Temas claro y oscuro' },
   'word.feature8': {
     pt: 'Disponível em português, inglês, espanhol, francês e italiano',
     en: 'Available in Portuguese, English, Spanish, French, and Italian',
     es: 'Disponible en portugués, inglés, español, francés e italiano',
+  },
+  'word.feature9': {
+    pt: "XP, níveis e 7 títulos, de Iniciante a Imortal",
+    en: "XP, levels, and 7 titles, from Beginner to Immortal",
+    es: "XP, niveles y 7 títulos, de Principiante a Inmortal",
+  },
+  'word.feature10': {
+    pt: "Sequência de vitórias: a atual e a sua melhor marca",
+    en: "Win streak: your current one and your best record",
+    es: "Racha de victorias: la actual y tu mejor marca",
   },
   'word.about-p1': {
     pt: 'Word Evolution reinventa o clássico caça-palavras: em vez de níveis fixos e pré-desenhados, cada tabuleiro é gerado proceduralmente no momento em que você joga. Isso garante que nenhuma partida se repete e que o desafio permanece sempre fresco, partida após partida.',
@@ -946,6 +998,11 @@ const TRANSLATIONS = {
   'mycarlas.feature8': { pt: 'Relatório mensal com total, comparação com o mês anterior e divisão por tipo e por categoria', en: 'Monthly report with the total, comparison with the previous month and a breakdown by type and by category', es: 'Informe mensual con el total, comparación con el mes anterior y desglose por tipo y por categoría' },
   'mycarlas.feature9': { pt: 'Tema claro, escuro ou do sistema, e seis idiomas: português (Brasil e Portugal), inglês, espanhol, italiano e francês', en: 'Light, dark or system theme, and six languages: Portuguese (Brazil and Portugal), English, Spanish, Italian and French', es: 'Tema claro, oscuro o del sistema, y seis idiomas: portugués (Brasil y Portugal), inglés, español, italiano y francés' },
   'mycarlas.feature10': { pt: 'Sem conta, sem servidor e sem anúncios: seus dados ficam no aparelho', en: 'No account, no server and no ads: your data stays on the device', es: 'Sin cuenta, sin servidor y sin anuncios: tus datos se quedan en el dispositivo' },
+  'mycarlas.feature11': {
+    pt: "Sete moedas à escolha: real (BRL), dólar (USD), euro (EUR), libra (GBP), dólar canadense (CAD), peso mexicano (MXN) e franco suíço (CHF)",
+    en: "Seven currencies to choose from: Brazilian real (BRL), US dollar (USD), euro (EUR), pound sterling (GBP), Canadian dollar (CAD), Mexican peso (MXN) and Swiss franc (CHF)",
+    es: "Siete monedas a elegir: real (BRL), dólar (USD), euro (EUR), libra (GBP), dólar canadiense (CAD), peso mexicano (MXN) y franco suizo (CHF)",
+  },
   'mycarlas.about-p1': {
     pt: 'MY CAR LAS é um aplicativo Flutter para quem quer saber, de verdade, quanto o carro ou a moto custa e o que ele precisa — sem planilha e sem depender de internet. Você registra abastecimentos, despesas, manutenções e quilometragem, e o app transforma esses registros em consumo médio, histórico e um relatório mensal.',
     en: 'MY CAR LAS is a Flutter app for anyone who wants to know what their car or motorbike really costs and what it needs — with no spreadsheet and no internet required. You log fuel-ups, expenses, maintenance and mileage, and the app turns those records into average consumption, a history and a monthly report.',

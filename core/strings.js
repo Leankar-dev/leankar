@@ -285,7 +285,7 @@ const TRANSLATIONS = {
   'contato.error':       { pt: 'Erro ao enviar. Tente novamente em instantes.', en: 'Failed to send. Please try again.', es: 'Error al enviar. Inténtalo de nuevo.' },
 
   // ── FOOTER ────────────────────────────────────────────────
-  'footer.copy':    { pt: 'Feito com ♥ e Flutter', en: 'Made with ♥ and Flutter', es: 'Hecho con ♥ y Flutter' },
+  'footer.copy':    { pt: 'Feito com <span class="heart">♥</span> e Flutter', en: 'Made with <span class="heart">♥</span> and Flutter', es: 'Hecho con <span class="heart">♥</span> y Flutter' },
   'footer.privacy': { pt: 'Política de Privacidade', en: 'Privacy Policy', es: 'Política de Privacidad' },
 
   // ── PÁGINAS DE APPS (padrão comum) ────────────────────────

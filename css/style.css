@@ -1804,6 +1804,12 @@ body {
   font-weight: 700;
 }
 
+/* Seletor por links (páginas /en e /es geradas): mesmo visual dos botões */
+a.lang-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
 .lang-sep {
   color: var(--border);
   font-size: 0.65rem;

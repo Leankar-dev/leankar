@@ -1,0 +1,119 @@
+{
+  "apps/damas-evolution.html": {
+    "head": {
+      "title": {
+        "pt": "Damas Evolution — App Flutter Android | leankar.dev",
+        "en": "Damas Evolution — Flutter Android App | leankar.dev",
+        "es": "Damas Evolution — App Flutter para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "Damas Evolution — jogo de damas brasileiras em Flutter para Android, com IA em 3 níveis, modo dois jogadores, tabuleiro 2D ou 3D, histórico de partidas e estatísticas. Gratuito e offline.",
+        "en": "Damas Evolution — Brazilian checkers game built with Flutter for Android, with a 3-level AI, two-player mode, 2D or 3D board, match history and statistics. Free and offline.",
+        "es": "Damas Evolution — juego de damas brasileñas hecho con Flutter para Android, con IA en 3 niveles, modo de dos jugadores, tablero 2D o 3D, historial de partidas y estadísticas. Gratis y sin conexión."
+      },
+      "ogTitle": {
+        "pt": "Damas Evolution — App Flutter Android",
+        "en": "Damas Evolution — Flutter Android App",
+        "es": "Damas Evolution — App Flutter para Android"
+      },
+      "ogDescription": {
+        "pt": "Damas brasileiras com captura obrigatória, lei da maioria e damas voadoras. IA em 3 níveis, dois jogadores no mesmo aparelho, tabuleiro 2D ou 3D e estatísticas. Gratuito.",
+        "en": "Brazilian checkers with mandatory capture, the majority rule and flying kings. 3-level AI, two players on the same device, 2D or 3D board and statistics. Free.",
+        "es": "Damas brasileñas con captura obligatoria, ley de la mayoría y damas voladoras. IA en 3 niveles, dos jugadores en el mismo dispositivo, tablero 2D o 3D y estadísticas. Gratis."
+      },
+      "twitterTitle": {
+        "pt": "Damas Evolution — App Flutter Android",
+        "en": "Damas Evolution — Flutter Android App",
+        "es": "Damas Evolution — App Flutter para Android"
+      },
+      "twitterDescription": {
+        "pt": "Damas brasileiras com IA em 3 níveis, modo dois jogadores e tabuleiro 2D ou 3D. Flutter, gratuito, em 5 idiomas.",
+        "en": "Brazilian checkers with a 3-level AI, two-player mode and a 2D or 3D board. Flutter, free, in 5 languages.",
+        "es": "Damas brasileñas con IA en 3 niveles, modo de dos jugadores y tablero 2D o 3D. Flutter, gratis, en 5 idiomas."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app Damas Evolution, com a frase: Damas brasileiras contra a IA ou um amigo, em tabuleiro 2D ou 3D.",
+        "en": "Damas Evolution app icon and name, with the line: Brazilian checkers against the AI or a friend, on a 2D or 3D board.",
+        "es": "Ícono y nombre de la app Damas Evolution, con la frase: Damas brasileñas contra la IA o un amigo, en tablero 2D o 3D."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "Jogo de damas brasileiras em Flutter: captura obrigatória pela lei da maioria, damas voadoras, IA em 3 níveis, modo dois jogadores, tabuleiro 2D ou 3D e estatísticas de partidas.",
+            "en": "Brazilian checkers game built with Flutter: mandatory capture under the majority rule, flying kings, a 3-level AI, two-player mode, 2D or 3D board and match statistics.",
+            "es": "Juego de damas brasileñas hecho con Flutter: captura obligatoria por la ley de la mayoría, damas voladoras, IA en 3 niveles, modo de dos jugadores, tablero 2D o 3D y estadísticas de partidas."
+          },
+          "/video/name": {
+            "pt": "Damas Evolution — vídeo de apresentação",
+            "en": "Damas Evolution — trailer",
+            "es": "Damas Evolution — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação do Damas Evolution: jogabilidade e recursos do app.",
+            "en": "Damas Evolution trailer: gameplay and app features.",
+            "es": "Presentación de Damas Evolution: jugabilidad y funciones de la app."
+          },
+          "/featureList/0": {
+            "pt": "Jogue contra a IA em três níveis: Fácil, Médio e Difícil",
+            "en": "Play against the AI on three levels: Easy, Medium and Hard",
+            "es": "Juega contra la IA en tres niveles: Fácil, Medio y Difícil"
+          },
+          "/featureList/1": {
+            "pt": "Modo dois jogadores no mesmo aparelho",
+            "en": "Two-player mode on the same device",
+            "es": "Modo de dos jugadores en el mismo dispositivo"
+          },
+          "/featureList/2": {
+            "pt": "Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras",
+            "en": "Brazilian rules: mandatory capture, majority rule and flying kings",
+            "es": "Reglas brasileñas: captura obligatoria, ley de la mayoría y damas voladoras"
+          },
+          "/featureList/3": {
+            "pt": "Tabuleiro 2D ou 3D com efeitos sonoros",
+            "en": "2D or 3D board with sound effects",
+            "es": "Tablero 2D o 3D con efectos de sonido"
+          },
+          "/featureList/4": {
+            "pt": "Histórico de partidas e estatísticas",
+            "en": "Match history and statistics",
+            "es": "Historial de partidas y estadísticas"
+          },
+          "/featureList/5": {
+            "pt": "Funciona offline",
+            "en": "Works offline",
+            "es": "Funciona sin conexión"
+          },
+          "/featureList/6": {
+            "pt": "Português, inglês, espanhol, francês e italiano",
+            "en": "Portuguese, English, Spanish, French and Italian",
+            "es": "Portugués, inglés, español, francés e italiano"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  }
+}

@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://leankar.dev/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/"/>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -38,48 +62,240 @@
   </url>
   <url>
     <loc>https://leankar.dev/apps/calculadora-leankar.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/calculadora-leankar.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/calculadora-leankar.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/calculadora-leankar.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/calculadora-leankar.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/calculadora-leankar.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/calculadora-leankar.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/buscacep.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/buscacep.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/buscacep.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/buscacep.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/buscacep.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/buscacep.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/buscacep.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/lista-da-casa.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/lista-da-casa.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/lista-da-casa.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/lista-da-casa.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/lista-da-casa.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/lista-da-casa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/lista-da-casa.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/campo-minado-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/campo-minado-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/campo-minado-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/campo-minado-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/campo-minado-evolution.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/word-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/word-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/word-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/word-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/word-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/word-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/word-evolution.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/reportgo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/reportgo.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/reportgo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/reportgo.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/reportgo.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/reportgo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/reportgo.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/my-car-las.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/my-car-las.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/my-car-las.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/my-car-las.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/my-car-las.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/my-car-las.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/my-car-las.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leankar.dev/apps/damas-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/damas-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/en/apps/damas-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/damas-evolution.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leankar.dev/es/apps/damas-evolution.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://leankar.dev/en/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://leankar.dev/es/apps/damas-evolution.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://leankar.dev/apps/damas-evolution.html"/>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

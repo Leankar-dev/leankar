@@ -7,10 +7,12 @@
 //   node scripts/build-i18n.mjs --only apps/damas-evolution.html     só essa fonte
 //   node scripts/build-i18n.mjs --identity   teste de identidade: com L=pt o texto visível tem de ser igual ao da fonte
 //
+// Também escreve sitemap.xml (ordem/frequência em scripts/i18n/sitemap.json; lastmod em sitemap-state.json), exceto com --only.
 // Escopo = páginas listadas em scripts/i18n/meta.json (<head> e JSON-LD em PT/EN/ES).
 // Corpo = core/strings.js (atributos data-i18n, data-i18n-alt, data-i18n-aria, data-i18n-placeholder).
 // Faltou tradução, JSON-LD sem classificação ou texto PT desatualizado no meta.json → o build FALHA e não escreve nada.
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
@@ -414,6 +416,44 @@ function identity(key, ctx) {
   return res;
 }
 
+// ───────────────────────── sitemap.xml ─────────────────────────
+// Páginas migradas (meta.json) saem em 3 URLs com <xhtml:link> para as 4 alternates; as demais, só em PT.
+// lastmod: guardado em scripts/i18n/sitemap-state.json junto com um hash do conteúdo; só muda (para a data de hoje) quando o conteúdo da página mudou.
+const hoje = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+function buildSitemap(outputs, ctx, errors) {
+  const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/i18n/sitemap.json'), 'utf8'));
+  const statePath = 'scripts/i18n/sitemap-state.json', smPath = 'sitemap.xml';
+  const prev = fs.existsSync(path.join(ROOT, statePath)) ? JSON.parse(fs.readFileSync(path.join(ROOT, statePath), 'utf8')) : {};
+  const antigo = fs.existsSync(path.join(ROOT, smPath)) ? fs.readFileSync(path.join(ROOT, smPath), 'utf8') : '';
+  const listadas = new Set(cfg.pages.map(p => p.key));
+  for (const k of ctx.scope) if (!listadas.has(k)) errors.push(`sitemap.json: a página "${k}" (meta.json) não está listada`);
+  for (const p of cfg.pages) if (!fs.existsSync(path.join(ROOT, p.key))) errors.push(`sitemap.json: arquivo inexistente: ${p.key}`);
+  if (errors.length) return;
+  const hoje_ = hoje(), state = {}, blocos = [];
+  for (const p of cfg.pages) {
+    const migrada = ctx.scope.has(p.key);
+    const bufs = migrada ? [outputs.get(p.key), outputs.get(`en/${p.key}`), outputs.get(`es/${p.key}`)] : [fs.readFileSync(path.join(ROOT, p.key))];
+    const hash = crypto.createHash('sha256').update(Buffer.concat(bufs)).digest('hex').slice(0, 16);
+    const ant = prev[p.key];
+    let lastmod;
+    if (ant && ant.hash === hash) lastmod = ant.lastmod; // conteúdo igual: preserva
+    else if (!ant && !migrada) { const m = new RegExp(`<loc>${escapeRe(pageUrl(p.key, 'pt'))}</loc>\\s*<lastmod>([^<]+)</lastmod>`).exec(antigo); lastmod = m ? m[1] : hoje_; } // 1ª vez de uma página só em PT: mantém o lastmod do sitemap atual
+    else lastmod = hoje_;
+    state[p.key] = { hash, lastmod };
+    const langs = migrada ? ALL : ['pt'];
+    for (const L of langs) {
+      const linhas = ['  <url>', `    <loc>${pageUrl(p.key, L)}</loc>`];
+      if (migrada) for (const [h, l] of [['pt-BR', 'pt'], ['en', 'en'], ['es', 'es'], ['x-default', 'pt']]) linhas.push(`    <xhtml:link rel="alternate" hreflang="${h}" href="${pageUrl(p.key, l)}"/>`);
+      linhas.push(`    <lastmod>${lastmod}</lastmod>`, `    <changefreq>${p.changefreq}</changefreq>`, `    <priority>${p.priority}</priority>`, '  </url>');
+      blocos.push(linhas.join('\n'));
+    }
+  }
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${blocos.join('\n')}\n</urlset>\n`;
+  outputs.set(smPath, Buffer.from(xml, 'utf8'));
+  outputs.set(statePath, Buffer.from(JSON.stringify(state, null, 2) + '\n', 'utf8'));
+}
+const escapeRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 // ───────────────────────── principal ─────────────────────────
 function main() {
   const args = process.argv.slice(2);
@@ -436,6 +476,7 @@ function main() {
     outputs.set(k, syncSource(k, ctx, errors));
     for (const L of LANGS) outputs.set(`${L}/${k}`, generate(k, L, ctx, errors));
   }
+  if (!only && !errors.length) buildSitemap(outputs, ctx, errors); // o sitemap depende de todas as páginas
   if (errors.length) {
     console.error(`\nBUILD FALHOU — ${errors.length} problema(s); nada foi escrito:\n`);
     for (const e of [...new Set(errors)]) console.error('  ✗ ' + e);

@@ -1,0 +1,19 @@
+{
+  "_comentario": "Ordem e frequência das páginas do sitemap.xml (gerado por scripts/build-i18n.mjs). Páginas listadas em meta.json saem em 3 idiomas com alternates; as demais saem só em PT. lastmod é controlado por sitemap-state.json (muda só quando o conteúdo da página muda).",
+  "pages": [
+    { "key": "index.html", "changefreq": "monthly", "priority": "1.0" },
+    { "key": "privacy.html", "changefreq": "yearly", "priority": "0.3" },
+    { "key": "blog/reportgo-app-relatorios-fotograficos-offline-first.html", "changefreq": "monthly", "priority": "0.9" },
+    { "key": "blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html", "changefreq": "yearly", "priority": "0.8" },
+    { "key": "blog/app-lista-compras-offline-first-flutter-drift-sqlite.html", "changefreq": "yearly", "priority": "0.8" },
+    { "key": "blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html", "changefreq": "yearly", "priority": "0.8" },
+    { "key": "apps/calculadora-leankar.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/buscacep.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/lista-da-casa.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/campo-minado-evolution.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/word-evolution.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/reportgo.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/my-car-las.html", "changefreq": "monthly", "priority": "0.7" },
+    { "key": "apps/damas-evolution.html", "changefreq": "monthly", "priority": "0.7" }
+  ]
+}

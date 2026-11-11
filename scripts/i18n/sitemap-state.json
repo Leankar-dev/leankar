@@ -1,0 +1,58 @@
+{
+  "index.html": {
+    "hash": "c2e603c5ca666be2",
+    "lastmod": "2026-11-11"
+  },
+  "privacy.html": {
+    "hash": "9612ceccdd57cb69",
+    "lastmod": "2026-11-10"
+  },
+  "blog/reportgo-app-relatorios-fotograficos-offline-first.html": {
+    "hash": "d8f46fba81fea65e",
+    "lastmod": "2026-11-10"
+  },
+  "blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html": {
+    "hash": "afcb8c1f71939fd1",
+    "lastmod": "2026-11-10"
+  },
+  "blog/app-lista-compras-offline-first-flutter-drift-sqlite.html": {
+    "hash": "ba7769e02ce95435",
+    "lastmod": "2026-11-10"
+  },
+  "blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html": {
+    "hash": "b034ef0052f26ceb",
+    "lastmod": "2026-11-10"
+  },
+  "apps/calculadora-leankar.html": {
+    "hash": "d829d3fc69b6b4b6",
+    "lastmod": "2026-11-11"
+  },
+  "apps/buscacep.html": {
+    "hash": "ab531531a4e41cad",
+    "lastmod": "2026-11-11"
+  },
+  "apps/lista-da-casa.html": {
+    "hash": "c81be84bb631a1cd",
+    "lastmod": "2026-11-11"
+  },
+  "apps/campo-minado-evolution.html": {
+    "hash": "5ecb430d63869e21",
+    "lastmod": "2026-11-11"
+  },
+  "apps/word-evolution.html": {
+    "hash": "60f994b55cc72fa0",
+    "lastmod": "2026-11-11"
+  },
+  "apps/reportgo.html": {
+    "hash": "1c9451c02887a653",
+    "lastmod": "2026-11-11"
+  },
+  "apps/my-car-las.html": {
+    "hash": "5602f0a81f261101",
+    "lastmod": "2026-11-11"
+  },
+  "apps/damas-evolution.html": {
+    "hash": "9580a0de62de2313",
+    "lastmod": "2026-11-11"
+  }
+}

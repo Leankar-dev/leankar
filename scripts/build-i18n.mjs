@@ -333,6 +333,15 @@ function generate(key, L, ctx, errors) {
     if (i < 0) errors.push(`${where}: <link rel="canonical"> ausente`); else toks[i] = { ...toks[i], s: setAttr(toks[i].s, 'href', pageUrl(key, L)) };
   }
   const ou = metaTok(toks, 'property', 'og:url', errors, where); if (ou >= 0) toks[ou] = { ...toks[ou], s: setAttr(toks[ou].s, 'content', pageUrl(key, L)) };
+  // Imagem Open Graph por idioma: https://leankar.dev/assets/og/<slug>.jpg → …/assets/og/<L>/<slug>.jpg quando o arquivo existe (senão fica a do PT)
+  for (const [attr, name] of [['property', 'og:image'], ['name', 'twitter:image']]) {
+    const i = metaTok(toks, attr, name, errors, where, false);
+    if (i < 0) continue;
+    const v = getAttr(toks[i].s, 'content') || '', pref = `${ORIGIN}/assets/og/`;
+    if (!v.startsWith(pref) || v.slice(pref.length).includes('/')) continue; // outra imagem (ex.: logo da home) ou já por idioma
+    const rel = `assets/og/${L}/${v.slice(pref.length)}`;
+    if (fs.existsSync(path.join(ROOT, rel))) toks[i] = { ...toks[i], s: setAttr(toks[i].s, 'content', `${ORIGIN}/${rel}`) };
+  }
   const ol = metaTok(toks, 'property', 'og:locale', errors, where);
   if (ol >= 0) {
     const ind = indentBefore(toks, ol);

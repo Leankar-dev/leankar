@@ -3,6 +3,21 @@
 ───────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ─────────────────────────────────────────
+   FONTES RESERVA (CLS): enquanto o Google Fonts (display=swap) carrega, o texto usa o Arial com largura e altura de linha
+   ajustadas às de Inter / Space Grotesk. Assim a troca não muda as quebras de linha nem empurra o conteúdo (o hero das
+   páginas de app tinha CLS 0,10–0,15 por isso). Razões medidas no Chrome por peso; se o Arial não existir, nada muda.
+───────────────────────────────────────── */
+@font-face { font-family: 'Inter Fallback'; font-weight: 300; src: local('Arial'), local('ArialMT'), local('Liberation Sans'); size-adjust: 103.8%; ascent-override: 93.3%; descent-override: 23.2%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 400; src: local('Arial'), local('ArialMT'), local('Liberation Sans'); size-adjust: 105.5%; ascent-override: 91.8%; descent-override: 22.8%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 500; src: local('Arial'), local('ArialMT'), local('Liberation Sans'); size-adjust: 106.5%; ascent-override: 91.0%; descent-override: 22.6%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 600; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'); size-adjust: 100.4%; ascent-override: 96.5%; descent-override: 24.0%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 700; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'); size-adjust: 101.3%; ascent-override: 95.6%; descent-override: 23.8%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; font-weight: 800; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'); size-adjust: 102.4%; ascent-override: 94.6%; descent-override: 23.5%; line-gap-override: 0%; }
+@font-face { font-family: 'Space Grotesk Fallback'; font-weight: 400; src: local('Arial'), local('ArialMT'), local('Liberation Sans'); size-adjust: 106.1%; ascent-override: 92.7%; descent-override: 27.5%; line-gap-override: 0%; }
+@font-face { font-family: 'Space Grotesk Fallback'; font-weight: 600; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'); size-adjust: 99.4%; ascent-override: 99.0%; descent-override: 29.4%; line-gap-override: 0%; }
+@font-face { font-family: 'Space Grotesk Fallback'; font-weight: 700; src: local('Arial Bold'), local('Arial-BoldMT'), local('Liberation Sans Bold'); size-adjust: 99.5%; ascent-override: 98.9%; descent-override: 29.3%; line-gap-override: 0%; }
+
 :root {
   --bg:         #080d1a;
   --bg-card:    rgba(255,255,255,0.04);
@@ -24,8 +39,8 @@
   --radius-sm:  10px;
   --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --font-body:  'Inter', sans-serif;
-  --font-head:  'Space Grotesk', sans-serif;
+  --font-body:  'Inter', 'Inter Fallback', sans-serif;
+  --font-head:  'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
 }
 
 html { scroll-behavior: smooth; }

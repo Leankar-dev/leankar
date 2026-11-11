@@ -1565,7 +1565,8 @@ body {
 .article-body .app-section:first-child { margin-top: 0; }
 .article-body .app-section > h2 { margin-top: 0; }
 .article-body .app-section .app-video--page { margin-top: 14px; }
-.app-section[id] { scroll-margin-top: 132px; }
+/* 164 = 132 (navbar de 112 px + respiro) + 32 do translateY inicial do .reveal: o navegador calcula o destino com a seção ainda deslocada, e ela sobe 32 px ao ser revelada */
+.app-section[id] { scroll-margin-top: 164px; }
 
 /* benefícios */
 .article-body .app-benefits {

@@ -122,153 +122,198 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/damas_evolution_logo.png" alt="Damas Evolution" class="app-page-logo" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
+            <img src="../assets/logos/damas-evolution-280.webp" width="140" height="140" alt="Damas Evolution" class="app-page-logo" />
+            <span class="app-category"><span data-i18n="apps.cat-jogos">Jogos</span></span>
             <h1>Damas <span class="gradient-text">Evolution</span></h1>
-            <p class="app-tagline" data-i18n="damas.tagline">
-              Damas brasileiras para quem leva a estratégia a sério: enfrente uma IA em três níveis ou jogue com
-              um amigo, alterne entre tabuleiro 2D e 3D e acompanhe sua evolução no histórico e nas estatísticas.
-            </p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag" data-i18n="apps.cat-jogos">Jogos</span>
-              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
-              <span class="tag" data-i18n="app.badge-offline">Offline</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="damas.lead">Damas brasileiras contra a IA ou um amigo, em tabuleiro 2D ou 3D.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag">Flame</span></div>
+            <ul class="app-trust">
+              <li data-i18n="apps.badge-free">Gratuito</li>
+              <li data-i18n="damas.trust-langs">5 idiomas</li>
+              <li data-i18n="app.val-net-none">Funciona sem internet</li>
+            </ul>
             <div class="app-page-actions">
-              <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
-                class="play-btn" target="_blank" rel="noopener noreferrer">
-                <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+              <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <img class="play-badge" src="../assets/logos/google-play-badge.svg" width="149" height="44" alt="Disponível no Google Play" data-i18n-alt="apps.play-badge-alt" />
               </a>
+              <a class="app-link-sec" href="#video" data-i18n="app.see-video">Ver vídeo</a>
             </div>
           </div>
+          <figure class="app-hero-visual">
+            <div class="app-phone">
+              <img src="../assets/apps/damas-evolution/01-game-2d.webp" width="540" height="960" loading="eager" fetchpriority="high"
+                   alt="Tabuleiro de damas 2D com peças vermelhas e azuis e a indicação “Sua vez”" data-i18n-alt="damas.shot1-alt" />
+            </div>
+          </figure>
         </div>
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
-      <div class="app-video app-video--page">
-        <video controls playsinline preload="none" poster="../assets/videos/damas-evolution-poster.jpg"
-          width="1280" height="720" data-i18n-aria="apps.damas-video-label"
-          aria-label="Vídeo de apresentação do Damas Evolution">
-          <source src="../assets/videos/damas-evolution.mp4" type="video/mp4" />
-          <span data-i18n="apps.damas-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-        </video>
-      </div>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+          <h3 data-i18n="damas.benefit1-t">Regras brasileiras</h3>
+          <p data-i18n="damas.benefit1-d">Captura obrigatória pela lei da maioria, captura para trás e damas voadoras.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M17.5 14.3c2 .5 3 2.2 3 4.7"/></svg>
+          <h3 data-i18n="damas.benefit2-t">Desafie a IA ou amigos</h3>
+          <p data-i18n="damas.benefit2-d">Três níveis de IA ou dois jogadores no mesmo aparelho.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></svg>
+          <h3 data-i18n="damas.benefit3-t">Veja seu progresso</h3>
+          <p data-i18n="damas.benefit3-d">Histórico das partidas e estatísticas por modo e por dificuldade, salvos no aparelho.</p>
+        </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature1">Jogue contra a IA em três níveis: Fácil, Médio e Difícil</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature2">Modo Jogador vs Jogador no mesmo aparelho</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature3">Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature4">Tabuleiro 2D ou 3D, com animações e efeitos sonoros</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature5">Histórico de partidas e estatísticas salvos no aparelho</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature6">Funciona sem internet</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature7">Leitores de tela, fonte ampliável e layouts para celulares e tablets</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature8">Disponível em português, inglês, espanhol, francês e italiano</span></li>
-      </ul>
+      <section class="app-section reveal" id="telas" aria-labelledby="telas-title">
+        <h2 id="telas-title" data-i18n="app.gallery-title">Telas do app</h2>
+        <div class="app-gallery-nav" hidden>
+          <button type="button" class="app-gallery-btn" data-dir="-1" aria-controls="telas-track" aria-label="Tela anterior" data-i18n-aria="app.gallery-prev">‹</button>
+          <button type="button" class="app-gallery-btn" data-dir="1" aria-controls="telas-track" aria-label="Próxima tela" data-i18n-aria="app.gallery-next">›</button>
+        </div>
+        <div class="app-gallery-track" id="telas-track" role="region" tabindex="0" aria-label="Galeria de telas" data-i18n-aria="app.gallery-label">
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/damas-evolution/02-game-3d.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Tabuleiro de damas em 3D com visual neon" data-i18n-alt="damas.shot2-alt" />
+          <figcaption data-i18n="damas.shot2-cap">Tabuleiro 3D</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/damas-evolution/03-home.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Tela inicial com as opções Jogador vs Jogador e Jogador vs IA" data-i18n-alt="damas.shot3-alt" />
+          <figcaption data-i18n="damas.shot3-cap">Escolha o modo de jogo</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/damas-evolution/04-difficulty.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Seleção de dificuldade da IA: Fácil, Médio e Difícil" data-i18n-alt="damas.shot4-alt" />
+          <figcaption data-i18n="damas.shot4-cap">Três níveis de IA</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/damas-evolution/05-statistics.webp" width="540" height="960" loading="lazy" decoding="async"
+               alt="Estatísticas de partidas, vitórias e sequência" data-i18n-alt="damas.shot5-alt" />
+          <figcaption data-i18n="damas.shot5-cap">Estatísticas</figcaption>
+        </figure>
+        </div>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="damas.about-p1">
-        Damas Evolution é o jogo de damas brasileiras para celular, feito em Flutter. As regras são as oficiais:
-        captura obrigatória pela lei da maioria, captura para trás, damas voadoras e empate após 40 jogadas sem
-        progresso.
-      </p>
-      <p data-i18n="damas.about-p2">
-        Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — ou use o modo Jogador vs Jogador
-        para disputar partidas locais com um amigo. Escolha entre o tabuleiro 2D e o 3D, com animações e efeitos
-        sonoros, e acompanhe seu progresso no histórico de partidas e nas estatísticas.
-      </p>
-      <p data-i18n="damas.about-p3">
-        Disponível em português, inglês, espanhol, francês e italiano, com recursos de acessibilidade e layouts
-        que se adaptam de celulares pequenos a tablets, em retrato e paisagem.
-      </p>
+      <section class="app-section reveal" id="video" aria-labelledby="video-title">
+        <h2 id="video-title" data-i18n="app.video-title">Veja em ação</h2>
+        <div class="app-video app-video--page">
+          <video controls playsinline preload="none" poster="../assets/videos/damas-evolution-poster.jpg"
+            width="1280" height="720" data-i18n-aria="apps.damas-video-label"
+            aria-label="Vídeo de apresentação do Damas Evolution">
+            <source src="../assets/videos/damas-evolution.mp4" type="video/mp4" />
+            <span data-i18n="apps.damas-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
+          </video>
+        </div>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature1">Jogue contra a IA em três níveis: Fácil, Médio e Difícil</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature2">Modo Jogador vs Jogador no mesmo aparelho</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature3">Regras brasileiras: captura obrigatória, lei da maioria e damas voadoras</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature4">Tabuleiro 2D ou 3D, com animações e efeitos sonoros</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature5">Histórico de partidas e estatísticas salvos no aparelho</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature6">Funciona sem internet</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature7">Leitores de tela, fonte ampliável e layouts para celulares e tablets</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="damas.feature8">Disponível em português, inglês, espanhol, francês e italiano</span></li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="damas.about-p1">Damas Evolution é o jogo de damas brasileiras para celular, feito em Flutter. As regras são as oficiais: captura obrigatória pela lei da maioria, captura para trás, damas voadoras e empate após 40 jogadas sem progresso.</p>
+      <p data-i18n="damas.about-p2">Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — ou use o modo Jogador vs Jogador para disputar partidas locais com um amigo. Escolha entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros, e acompanhe seu progresso no histórico de partidas e nas estatísticas.</p>
+      <p data-i18n="damas.about-p3">Disponível em português, inglês, espanhol, francês e italiano, com recursos de acessibilidade e layouts que se adaptam de celulares pequenos a tablets, em retrato e paisagem.</p>
+      </section>
 
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="app.val-android">Android</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-android">Android mínimo</dt><dd data-i18n="app.val-android-7">Android 7.0 ou superior</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="damas.spec-langs">Português, inglês, espanhol, francês e italiano</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-price">Preço</dt><dd data-i18n="damas.spec-price">Gratuito, sem compras dentro do app</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-ads">Anúncios</dt><dd data-i18n="damas.spec-ads">Sim: banner e intersticial. Você aceita ou recusa na tela de consentimento e pode mudar nas configurações.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="damas.spec-net">Funciona sem internet; só os anúncios usam conexão</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="damas.spec-perms">Acesso à internet, estado da rede e ID de publicidade, usados pelos anúncios. Nenhum pede a sua autorização.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-privacy">Política de privacidade</dt><dd><a href="https://leankar-dev.github.io/damas_evolution_privacy_policy/" target="_blank" rel="noopener noreferrer" data-i18n="app.privacy-link">Ver política do app</a></dd></div>
+        </dl>
+      </section>
+
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq1-q">Quais são as regras usadas no jogo?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+            <span data-i18n="damas.faq1-q">Quais são as regras usadas no jogo?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="damas.faq1-a">
-              São as regras das damas brasileiras: a captura é obrigatória e vale a lei da maioria (você deve escolher a sequência que captura mais peças), peças podem capturar para trás, as damas são voadoras e a partida termina empatada após 40 jogadas sem progresso.
-            </div>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="faq-answer-inner" data-i18n="damas.faq1-a">São as regras das damas brasileiras: a captura é obrigatória e vale a lei da maioria (você deve escolher a sequência que captura mais peças), peças podem capturar para trás, as damas são voadoras e a partida termina empatada após 40 jogadas sem progresso.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq2-q">Quais são os níveis de dificuldade da IA?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+            <span data-i18n="damas.faq2-q">Quais são os níveis de dificuldade da IA?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="damas.faq2-a">
-              São três: Fácil, Médio e Difícil. Do aprendizado tranquilo até um adversário que calcula várias jogadas à frente, você escolhe o desafio que prefere.
-            </div>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq-answer-inner" data-i18n="damas.faq2-a">São três: Fácil, Médio e Difícil. Do aprendizado tranquilo até um adversário que calcula várias jogadas à frente, você escolhe o desafio que prefere.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq3-q">Posso jogar contra um amigo?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+            <span data-i18n="damas.faq3-q">Posso jogar contra um amigo?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="damas.faq3-a">
-              Sim. O modo Jogador vs Jogador permite disputar partidas locais, no mesmo aparelho, sem complicação.
-            </div>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-answer-inner" data-i18n="damas.faq3-a">Sim. O modo Jogador vs Jogador permite disputar partidas locais, no mesmo aparelho, sem complicação.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq4-q">O app precisa de internet?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+            <span data-i18n="damas.faq4-q">O app precisa de internet?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
             <div class="faq-answer-inner" data-i18n="damas.faq4-a">Não para jogar. O jogo funciona totalmente sem conexão, e o histórico e as estatísticas das partidas ficam salvos apenas no seu aparelho. Só os anúncios usam internet, quando ela existe.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq5-q">Existe tabuleiro em 3D?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+            <span data-i18n="damas.faq5-q">Existe tabuleiro em 3D?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="damas.faq5-a">
-              Sim. Você pode alternar entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros.
-            </div>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="faq-answer-inner" data-i18n="damas.faq5-a">Sim. Você pode alternar entre o tabuleiro 2D e o 3D, com animações e efeitos sonoros.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="damas.faq6-q">O app é gratuito?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+            <span data-i18n="damas.faq6-q">O app é gratuito?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
             <div class="faq-answer-inner" data-i18n="damas.faq6-a">Sim, é gratuito para baixar e jogar, sem compras dentro do app. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode alterar nas configurações.</div>
           </div>
         </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="damas.cta-text">Baixe grátis e vença no tabuleiro: capture peças, promova suas damas e evolua partida a partida.</p>
         <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">

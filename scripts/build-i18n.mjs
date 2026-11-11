@@ -165,6 +165,7 @@ function visibleOf(toks) {
   let text = ''; const attrs = [];
   for (const t of tokenize(join(toks))) { // re-tokeniza: as traduções inseridas podem conter marcação (<span>, <strong>)
     if (t.t === 'text') text += t.s;
+    else if (t.t === 'open' && t.name === 'br') text += ' '; // <br> é quebra de linha: separa palavras
     else if (t.t === 'open') for (const a of ['alt', 'aria-label', 'placeholder']) { const v = getAttr(t.s, a); if (v !== null) attrs.push(`${a}=${norm(v)}`); }
   }
   return { text: norm(decode(text)), attrs };
@@ -188,8 +189,9 @@ function setHead(toks, head, L, errors, where, usedHead) {
     else if (norm(e[l]) === norm(e.pt) && !e.same) errors.push(`${where}: head.${key}.${l} igual ao PT (use "same": true se for nome próprio)`);
     if (L !== 'pt') setNew(e[L]);
   };
+  const OPCIONAIS = new Set(['imageAlt']);
   const metaField = (key, attr, name) => {
-    const i = metaTok(toks, attr, name, errors, where);
+    const i = metaTok(toks, attr, name, errors, where, !(OPCIONAIS.has(key) && !head[key]));
     if (i < 0) return;
     field(key, () => getAttr(toks[i].s, 'content'), v => { toks[i] = { ...toks[i], s: setAttr(toks[i].s, 'content', v) }; });
   };
@@ -230,7 +232,7 @@ function setAt(root, ptr, value) {
   for (let i = 0; i < parts.length - 1; i++) o = o[parts[i]];
   o[parts[parts.length - 1]] = value;
 }
-function translateJsonLd(toks, key, L, spec, errors, where, usedLd) {
+function translateJsonLd(toks, key, L, spec, errors, where, usedLd, scope) {
   const idxs = toks.map((t, i) => (t.t === 'open' && t.name === 'script' && getAttr(t.s, 'type') === 'application/ld+json' ? i + 1 : -1)).filter(i => i > 0);
   const blocks = spec || [];
   if (idxs.length !== blocks.length) { errors.push(`${where}: a página tem ${idxs.length} bloco(s) JSON-LD e o meta.json descreve ${blocks.length}`); return; }
@@ -238,6 +240,7 @@ function translateJsonLd(toks, key, L, spec, errors, where, usedLd) {
     const b = blocks[n], loc = `${where} jsonld[${n}]`;
     let data; try { data = JSON.parse(toks[ti].s); } catch (e) { errors.push(`${loc}: JSON inválido na fonte (${e.message})`); return; }
     const selfPt = pageUrl(key, 'pt');
+    const paginasPt = new Map([...scope].map(k => [pageUrl(k, 'pt'), k])); // URL PT → fonte (apps, home…)
     const tr = b.translate || {}, keep = b.keep || [];
     const seenTr = new Set(), seenKeep = new Set();
     for (const [ptr, val] of leaves(data)) {
@@ -252,6 +255,7 @@ function translateJsonLd(toks, key, L, spec, errors, where, usedLd) {
       const kp = keep.find(p => keepMatch(p, ptr));
       if (kp) { seenKeep.add(kp); continue; }
       if (val === selfPt) { if (L !== 'pt') setAt(data, ptr, pageUrl(key, L)); continue; } // URL da própria página
+      if (paginasPt.has(val)) { if (L !== 'pt') setAt(data, ptr, pageUrl(paginasPt.get(val), L)); continue; } // URL de outra página do escopo (ex.: lista de apps na home)
       errors.push(`${loc}: string NÃO CLASSIFICADA em ${ptr} = ${JSON.stringify(val).slice(0, 70)} (ponha em "translate" ou "keep")`);
     }
     for (const p of Object.keys(tr)) if (!seenTr.has(p)) errors.push(`${loc}: entrada "translate" sem uso: ${p}`);
@@ -319,7 +323,7 @@ function generate(key, L, ctx, errors) {
   toks = translateBody(toks, L, T, errors, where, null);
   setHead(toks, meta.head, L, errors, where, usedHead);
   for (const k of Object.keys(meta.head)) if (!usedHead.has(k)) errors.push(`${where}: head.${k} do meta.json não é usado pela página`);
-  translateJsonLd(toks, key, L, meta.jsonld, errors, where, usedLd);
+  translateJsonLd(toks, key, L, meta.jsonld, errors, where, usedLd, scope);
 
   toks = replaceRegion(toks, 'hreflang', ind => hreflangBlock(key, ind), errors, where);
   const html = toks.findIndex(t => t.t === 'open' && t.name === 'html');
@@ -343,8 +347,9 @@ function generate(key, L, ctx, errors) {
 
   let out = join(toks);
   const usesForm = /contact-form\.js/.test(out);
-  if (usesForm) console.warn(`  aviso: ${where} usa contact-form.js — mantive strings.js/i18n.js (tratar na Fase 4/7)`);
-  else out = out.replace(/^[ \t]*<script src="[^"]*\/(?:core\/strings|js\/i18n)\.js"><\/script>\n/gm, '');
+  // js/i18n.js não faz nada em página com data-static-lang; core/strings.js só é preciso onde há formulário (contact-form.js lê 3 chaves; a Fase 7 troca isso por runtime-strings.js)
+  out = out.replace(/^[ \t]*<script src="[^"]*\/js\/i18n\.js"><\/script>\n/gm, '');
+  if (!usesForm) out = out.replace(/^[ \t]*<script src="[^"]*\/core\/strings\.js"><\/script>\n/gm, '');
   if (/data-i18n/.test(out)) errors.push(`${where}: restou atributo data-i18n* na saída`);
   return serialize(out, src);
 }

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-static-lang>
 
 <head>
   <!-- Google tag (gtag.js) -->
@@ -28,11 +28,12 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://leankar.dev/" />
 
-  <!-- hreflang: mesma URL, idioma trocado via JS + localStorage -->
+  <!-- i18n:hreflang -->
   <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/" />
-  <link rel="alternate" hreflang="en" href="https://leankar.dev/" />
-  <link rel="alternate" hreflang="es" href="https://leankar.dev/" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/" />
   <link rel="alternate" hreflang="x-default" href="https://leankar.dev/" />
+  <!-- /i18n:hreflang -->
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -77,7 +78,7 @@
   }
   </script>
 
-  <!-- JSON-LD: SoftwareApplication (apps publicados) -->
+  <!-- JSON-LD: SoftwareApplication (os 8 apps; url = página do app; installUrl só nos publicados) -->
   <script type="application/ld+json">
   [
     {
@@ -87,7 +88,8 @@
       "applicationCategory": "ProductivityApplication",
       "operatingSystem": "Android",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-      "url": "https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025",
+      "url": "https://leankar.dev/apps/calculadora-leankar.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025",
       "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
     },
     {
@@ -97,7 +99,8 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-      "url": "https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas",
+      "url": "https://leankar.dev/apps/buscacep.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas",
       "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
     },
     {
@@ -107,7 +110,8 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-      "url": "https://play.google.com/store/apps/details?id=dev.leankar.listadacasa",
+      "url": "https://leankar.dev/apps/lista-da-casa.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=dev.leankar.listadacasa",
       "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
     },
     {
@@ -117,7 +121,48 @@
       "applicationCategory": "GameApplication",
       "operatingSystem": "Android",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
-      "url": "https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution",
+      "url": "https://leankar.dev/apps/campo-minado-evolution.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution",
+      "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Word Evolution",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+      "url": "https://leankar.dev/apps/word-evolution.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=leankar.dev.word_evolution",
+      "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Damas Evolution",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+      "url": "https://leankar.dev/apps/damas-evolution.html",
+      "installUrl": "https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution",
+      "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ReportGoApp",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android",
+      "url": "https://leankar.dev/apps/reportgo.html",
+      "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MY CAR LAS",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android, Windows",
+      "url": "https://leankar.dev/apps/my-car-las.html",
       "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
     }
   ]
@@ -141,13 +186,15 @@
         <a href="#apps" data-i18n="nav.apps">Aplicativos</a>
         <a href="#contato" data-i18n="nav.contato">Contato</a>
       </nav>
+      <!-- i18n:selector -->
       <div class="lang-selector" aria-label="Language selector">
-        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <a class="lang-btn active" href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <a class="lang-btn" href="/en/" hreflang="en" lang="en">EN</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        <a class="lang-btn" href="/es/" hreflang="es" lang="es">ES</a>
       </div>
+      <!-- /i18n:selector -->
       <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -156,13 +203,15 @@
       <a href="#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
       <a href="#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
       <a href="#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <!-- i18n:selector -->
       <div class="lang-selector lang-selector--mobile">
-        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <a class="lang-btn active" href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <a class="lang-btn" href="/en/" hreflang="en" lang="en">EN</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        <a class="lang-btn" href="/es/" hreflang="es" lang="es">ES</a>
       </div>
+      <!-- /i18n:selector -->
     </div>
   </header>
 
@@ -889,6 +938,7 @@
   <script src="js/particles.js"></script>
   <script src="core/strings.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/lang.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact-form.js"></script>
 </body>

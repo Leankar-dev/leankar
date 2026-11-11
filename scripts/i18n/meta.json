@@ -933,5 +933,82 @@
         ]
       }
     ]
+  },
+  "index.html": {
+    "head": {
+      "title": {
+        "pt": "leankar.dev — Mobile Developer",
+        "en": "leankar.dev — Mobile Developer",
+        "es": "leankar.dev — Desarrollador móvil",
+        "same": true
+      },
+      "description": {
+        "pt": "leankar.dev — Desenvolvedor Mobile Flutter. Aplicativos modernos e intuitivos para Android.",
+        "en": "leankar.dev — Flutter Mobile Developer. Modern, intuitive apps for Android.",
+        "es": "leankar.dev — Desarrollador móvil Flutter. Aplicaciones modernas e intuitivas para Android."
+      },
+      "ogTitle": {
+        "pt": "leankar.dev — Flutter Developer",
+        "en": "leankar.dev — Flutter Developer",
+        "es": "leankar.dev — Desarrollador Flutter",
+        "same": true
+      },
+      "ogDescription": {
+        "pt": "Desenvolvedor Flutter criando apps Android modernos e intuitivos. Apps no Google Play: Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution e Word Evolution.",
+        "en": "Flutter developer building modern, intuitive Android apps. Apps on Google Play: Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution and Word Evolution.",
+        "es": "Desarrollador Flutter que crea apps Android modernas e intuitivas. Apps en Google Play: Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution y Word Evolution."
+      },
+      "twitterTitle": {
+        "pt": "leankar.dev — Flutter Developer",
+        "en": "leankar.dev — Flutter Developer",
+        "es": "leankar.dev — Desarrollador Flutter",
+        "same": true
+      },
+      "twitterDescription": {
+        "pt": "Apps Flutter modernos para Android. Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution e Word Evolution. Gratuitos.",
+        "en": "Modern Flutter apps for Android. Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution and Word Evolution. Free.",
+        "es": "Apps Flutter modernas para Android. Calculadora, BuscaCep, Lista da Casa, Campo Minado Evolution y Word Evolution. Gratis."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {},
+        "keep": [
+          "/name",
+          "/url",
+          "/jobTitle",
+          "/email",
+          "/knowsAbout/*",
+          "/sameAs/*"
+        ]
+      },
+      {
+        "translate": {
+          "/description": {
+            "pt": "Portfólio de Leandro, desenvolvedor Flutter — aplicativos Android modernos e gratuitos disponíveis no Google Play.",
+            "en": "Portfolio of Leandro, a Flutter developer — modern, free Android apps available on Google Play.",
+            "es": "Portafolio de Leandro, desarrollador Flutter — aplicaciones Android modernas y gratuitas disponibles en Google Play."
+          }
+        },
+        "keep": [
+          "/name",
+          "/url",
+          "/author/name"
+        ]
+      },
+      {
+        "translate": {},
+        "keep": [
+          "/*/name",
+          "/*/applicationCategory",
+          "/*/operatingSystem",
+          "/*/offers/price",
+          "/*/offers/priceCurrency",
+          "/*/installUrl",
+          "/*/author/name",
+          "/*/author/url"
+        ]
+      }
+    ]
   }
 }

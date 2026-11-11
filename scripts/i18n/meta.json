@@ -115,5 +115,823 @@
         ]
       }
     ]
+  },
+  "apps/calculadora-leankar.html": {
+    "head": {
+      "title": {
+        "pt": "Calculadora Leankar — App Flutter Android | leankar.dev",
+        "en": "Calculadora Leankar — Flutter Android App | leankar.dev",
+        "es": "Calculadora Leankar — App Flutter para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "Calculadora Leankar — app Flutter para Android com calculadora básica e científica, design neumórfico, histórico de cálculos, IMC e múltiplos temas. Gratuito, com banner de anúncios opcional no Android.",
+        "en": "Calculadora Leankar — Flutter app for Android with a basic and scientific calculator, neumorphic design, calculation history, BMI and multiple themes. Free, with an optional ad banner on Android.",
+        "es": "Calculadora Leankar — app Flutter para Android con calculadora básica y científica, diseño neumórfico, historial de cálculos, IMC y varios temas. Gratis, con banner de anuncios opcional en Android."
+      },
+      "ogTitle": {
+        "pt": "Calculadora Leankar — App Flutter Android",
+        "en": "Calculadora Leankar — Flutter Android App",
+        "es": "Calculadora Leankar — App Flutter para Android"
+      },
+      "ogDescription": {
+        "pt": "Calculadora básica e científica para Android. Design neumórfico, histórico de cálculos, IMC e 5 idiomas. Gratuito, com anúncios opcionais.",
+        "en": "Basic and scientific calculator for Android. Neumorphic design, calculation history, BMI and 5 languages. Free, with optional ads.",
+        "es": "Calculadora básica y científica para Android. Diseño neumórfico, historial de cálculos, IMC y 5 idiomas. Gratis, con anuncios opcionales."
+      },
+      "twitterTitle": {
+        "pt": "Calculadora Leankar — App Flutter Android",
+        "en": "Calculadora Leankar — Flutter Android App",
+        "es": "Calculadora Leankar — App Flutter para Android"
+      },
+      "twitterDescription": {
+        "pt": "Calculadora Flutter básica e científica para Android. IMC, histórico e design neumórfico. Gratuita, com anúncios opcionais.",
+        "en": "Basic and scientific Flutter calculator for Android. BMI, history and neumorphic design. Free, with optional ads.",
+        "es": "Calculadora Flutter básica y científica para Android. IMC, historial y diseño neumórfico. Gratis, con anuncios opcionales."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app Calculadora Leankar, com a frase: Calculadora básica, científica e de IMC, com histórico e visual neumórfico.",
+        "en": "Calculadora Leankar app icon and name, with the line: Basic, scientific and BMI calculator, with history and a neumorphic look.",
+        "es": "Ícono y nombre de la app Calculadora Leankar, con la frase: Calculadora básica, científica y de IMC, con historial y diseño neumórfico."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "Calculadora básica e científica para Android com design neumórfico, histórico persistente de cálculos, calculadora de IMC, múltiplos temas e 5 idiomas. Gratuito, funciona sem internet, com banner de anúncios opcional no Android.",
+            "en": "Basic and scientific calculator for Android with neumorphic design, persistent calculation history, BMI calculator, multiple themes and 5 languages. Free, works without internet, with an optional ad banner on Android.",
+            "es": "Calculadora básica y científica para Android con diseño neumórfico, historial persistente de cálculos, calculadora de IMC, varios temas y 5 idiomas. Gratis, funciona sin internet, con banner de anuncios opcional en Android."
+          },
+          "/video/name": {
+            "pt": "Calculadora Leankar — vídeo de apresentação",
+            "en": "Calculadora Leankar — trailer",
+            "es": "Calculadora Leankar — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação da Calculadora Leankar: design neumórfico, vírgula decimal, botão de porcentagem, IMC e histórico de cálculos.",
+            "en": "Calculadora Leankar trailer: neumorphic design, decimal comma, percentage button, BMI and calculation history.",
+            "es": "Presentación de Calculadora Leankar: diseño neumórfico, coma decimal, botón de porcentaje, IMC e historial de cálculos."
+          },
+          "/featureList/0": {
+            "pt": "Quatro operações básicas e porcentagem",
+            "en": "Four basic operations and percentage",
+            "es": "Cuatro operaciones básicas y porcentaje"
+          },
+          "/featureList/1": {
+            "pt": "Modo científico: trigonometria, logaritmos, potências, fatorial e memória",
+            "en": "Scientific mode: trigonometry, logarithms, powers, factorial and memory",
+            "es": "Modo científico: trigonometría, logaritmos, potencias, factorial y memoria"
+          },
+          "/featureList/2": {
+            "pt": "Cálculo de IMC com classificação OMS",
+            "en": "BMI calculation with WHO classification",
+            "es": "Cálculo de IMC con clasificación de la OMS"
+          },
+          "/featureList/3": {
+            "pt": "Histórico persistente de 50 cálculos",
+            "en": "Persistent history of 50 calculations",
+            "es": "Historial persistente de 50 cálculos"
+          },
+          "/featureList/4": {
+            "pt": "Temas claro, escuro e automático",
+            "en": "Light, dark and automatic themes",
+            "es": "Temas claro, oscuro y automático"
+          },
+          "/featureList/5": {
+            "pt": "Design Neumórfico",
+            "en": "Neumorphic design",
+            "es": "Diseño neumórfico"
+          },
+          "/featureList/6": {
+            "pt": "5 idiomas suportados",
+            "en": "5 supported languages",
+            "es": "5 idiomas compatibles"
+          },
+          "/featureList/7": {
+            "pt": "Funciona sem internet; anúncios opcionais (banner, só no Android)",
+            "en": "Works without internet; optional ads (banner, Android only)",
+            "es": "Funciona sin internet; anuncios opcionales (banner, solo en Android)"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  },
+  "apps/buscacep.html": {
+    "head": {
+      "title": {
+        "pt": "BuscaCep_las — Consulta de CEP para Android | leankar.dev",
+        "en": "BuscaCep_las — Brazilian Postal Code (CEP) Lookup for Android | leankar.dev",
+        "es": "BuscaCep_las — Consulta de CEP (código postal de Brasil) para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "BuscaCep_las — app Flutter Android para consulta de CEP via ViaCEP. Busca por código ou endereço. Interface escura e limpa, gratuito, sem anúncios.",
+        "en": "BuscaCep_las — Flutter Android app to look up Brazilian postal codes (CEP) via ViaCEP. Search by code or address. Clean dark interface, free, no ads.",
+        "es": "BuscaCep_las — app Flutter para Android para consultar CEP (códigos postales de Brasil) con ViaCEP. Búsqueda por código o dirección. Interfaz oscura y limpia, gratis, sin anuncios."
+      },
+      "ogTitle": {
+        "pt": "BuscaCep_las — Consulta de CEP para Android",
+        "en": "BuscaCep_las — Brazilian CEP Lookup for Android",
+        "es": "BuscaCep_las — Consulta de CEP de Brasil para Android"
+      },
+      "ogDescription": {
+        "pt": "Consulte qualquer CEP do Brasil por código ou endereço. Interface escura e limpa, sem anúncios, integração com ViaCEP.",
+        "en": "Look up any Brazilian postal code (CEP) by code or address. Clean dark interface, no ads, ViaCEP integration.",
+        "es": "Consulta cualquier CEP de Brasil por código o dirección. Interfaz oscura y limpia, sin anuncios, integración con ViaCEP."
+      },
+      "twitterTitle": {
+        "pt": "BuscaCep_las — Consulta de CEP para Android",
+        "en": "BuscaCep_las — Brazilian CEP Lookup for Android",
+        "es": "BuscaCep_las — Consulta de CEP de Brasil para Android"
+      },
+      "twitterDescription": {
+        "pt": "Consulte CEPs do Brasil por código ou endereço. Integração ViaCEP, Flutter, gratuito e sem anúncios.",
+        "en": "Look up Brazilian CEPs by code or address. ViaCEP integration, Flutter, free and no ads.",
+        "es": "Consulta CEP de Brasil por código o dirección. Integración con ViaCEP, Flutter, gratis y sin anuncios."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app BuscaCep_las, com a frase: Consulte qualquer CEP do Brasil por código ou por endereço, em segundos.",
+        "en": "BuscaCep_las app icon and name, with the line: Look up any postal code (CEP) in Brazil by code or by address, in seconds.",
+        "es": "Ícono y nombre de la app BuscaCep_las, con la frase: Consulta cualquier CEP de Brasil por código o por dirección, en segundos."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "App Android para consulta de CEPs brasileiros via API ViaCEP. Busca por código direto ou por endereço (UF, cidade, logradouro). Interface escura e limpa, sem anúncios.",
+            "en": "Android app to look up Brazilian postal codes (CEP) through the ViaCEP API. Search by code or by address (state, city, street). Clean dark interface, no ads.",
+            "es": "App Android para consultar CEP brasileños con la API de ViaCEP. Búsqueda por código o por dirección (estado, ciudad, calle). Interfaz oscura y limpia, sin anuncios."
+          },
+          "/video/name": {
+            "pt": "BuscaCep_las — vídeo de apresentação",
+            "en": "BuscaCep_las — trailer",
+            "es": "BuscaCep_las — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação do BuscaCep_las: consulta de CEP por código ou por endereço, com resultado completo via ViaCEP.",
+            "en": "BuscaCep_las trailer: CEP lookup by code or by address, with the full result from ViaCEP.",
+            "es": "Presentación de BuscaCep_las: consulta de CEP por código o por dirección, con el resultado completo de ViaCEP."
+          },
+          "/featureList/0": {
+            "pt": "Busca de CEP por código direto",
+            "en": "Postal code (CEP) lookup by code",
+            "es": "Búsqueda de CEP por código directo"
+          },
+          "/featureList/1": {
+            "pt": "Busca por endereço: UF, cidade e logradouro",
+            "en": "Address search: state, city and street",
+            "es": "Búsqueda por dirección: estado, ciudad y calle"
+          },
+          "/featureList/2": {
+            "pt": "Busca automática ao completar os 8 dígitos, com máscara 00000-000",
+            "en": "Automatic search when the 8 digits are complete, with the 00000-000 mask",
+            "es": "Búsqueda automática al completar los 8 dígitos, con máscara 00000-000"
+          },
+          "/featureList/3": {
+            "pt": "Retorna logradouro, bairro, cidade, estado, DDD, complemento e código IBGE",
+            "en": "Returns street, district, city, state, area code (DDD), complement and IBGE code",
+            "es": "Devuelve calle, barrio, ciudad, estado, código de área (DDD), complemento y código IBGE"
+          },
+          "/featureList/4": {
+            "pt": "Copiar o CEP ou o endereço completo com um toque",
+            "en": "Copy the CEP or the full address with one tap",
+            "es": "Copiar el CEP o la dirección completa con un toque"
+          },
+          "/featureList/5": {
+            "pt": "Tratamento de erros: CEP inválido, sem conexão e timeout",
+            "en": "Error handling: invalid CEP, no connection and timeout",
+            "es": "Manejo de errores: CEP inválido, sin conexión y tiempo de espera agotado"
+          },
+          "/featureList/6": {
+            "pt": "Integração com API ViaCEP",
+            "en": "ViaCEP API integration",
+            "es": "Integración con la API de ViaCEP"
+          },
+          "/featureList/7": {
+            "pt": "Aplicativo independente, sem vínculo com Correios, IBGE ou governo",
+            "en": "Independent app, not affiliated with Correios, IBGE or the government",
+            "es": "App independiente, sin vínculo con Correios, IBGE ni el gobierno"
+          },
+          "/featureList/8": {
+            "pt": "Interface escura e limpa, zero anúncios",
+            "en": "Clean dark interface, no ads",
+            "es": "Interfaz oscura y limpia, sin anuncios"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  },
+  "apps/lista-da-casa.html": {
+    "head": {
+      "title": {
+        "pt": "Lista da Casa — App de Lista de Compras Android | leankar.dev",
+        "en": "Lista da Casa — Shopping List App for Android | leankar.dev",
+        "es": "Lista da Casa — App de lista de compras para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "Lista da Casa — app de lista de compras para Android. Funciona sem internet (SQLite local), múltiplas listas, gráficos de gastos e interface neumórfica. Gratuito, com anúncios.",
+        "en": "Lista da Casa — shopping list app for Android. Works without internet (local SQLite), multiple lists, spending charts and a neumorphic interface. Free, with ads.",
+        "es": "Lista da Casa — app de lista de compras para Android. Funciona sin internet (SQLite local), varias listas, gráficos de gastos e interfaz neumórfica. Gratis, con anuncios."
+      },
+      "ogTitle": {
+        "pt": "Lista da Casa — App de Lista de Compras Android",
+        "en": "Lista da Casa — Shopping List App for Android",
+        "es": "Lista da Casa — App de lista de compras para Android"
+      },
+      "ogDescription": {
+        "pt": "App de lista de compras que funciona sem internet, com SQLite. Múltiplas listas, categorias, gráficos de gastos e interface neumórfica. Gratuito, com anúncios.",
+        "en": "Shopping list app that works without internet, with SQLite. Multiple lists, categories, spending charts and a neumorphic interface. Free, with ads.",
+        "es": "App de lista de compras que funciona sin internet, con SQLite. Varias listas, categorías, gráficos de gastos e interfaz neumórfica. Gratis, con anuncios."
+      },
+      "twitterTitle": {
+        "pt": "Lista da Casa — App de Lista de Compras Android",
+        "en": "Lista da Casa — Shopping List App for Android",
+        "es": "Lista da Casa — App de lista de compras para Android"
+      },
+      "twitterDescription": {
+        "pt": "Lista de compras que funciona sem internet, com SQLite, categorias, gráficos de gastos e design neumórfico. Gratuito para Android, com anúncios.",
+        "en": "Shopping list that works without internet, with SQLite, categories, spending charts and neumorphic design. Free for Android, with ads.",
+        "es": "Lista de compras que funciona sin internet, con SQLite, categorías, gráficos de gastos y diseño neumórfico. Gratis para Android, con anuncios."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app Lista da Casa, com a frase: Listas de compras por mercado, com histórico e gráficos de gastos. Sem cadastro.",
+        "en": "Lista da Casa app icon and name, with the line: Shopping lists by store, with history and spending charts. No sign-up.",
+        "es": "Ícono y nombre de la app Lista da Casa, con la frase: Listas de compras por mercado, con historial y gráficos de gastos. Sin registro."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "App de lista de compras para Android. Funciona sem internet, com Drift (SQLite), múltiplas listas simultâneas, categorias, preços, histórico e gráficos de gastos mensais.",
+            "en": "Shopping list app for Android. Works without internet, with Drift (SQLite), multiple simultaneous lists, categories, prices, history and monthly spending charts.",
+            "es": "App de lista de compras para Android. Funciona sin internet, con Drift (SQLite), varias listas simultáneas, categorías, precios, historial y gráficos de gastos mensuales."
+          },
+          "/video/name": {
+            "pt": "Lista da Casa — vídeo de apresentação",
+            "en": "Lista da Casa — trailer",
+            "es": "Lista da Casa — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação da Lista da Casa: como montar a lista, marcar itens no carrinho e consultar o histórico de compras.",
+            "en": "Lista da Casa trailer: how to build the list, tick items into the cart and check the purchase history.",
+            "es": "Presentación de Lista da Casa: cómo armar la lista, marcar artículos en el carrito y consultar el historial de compras."
+          },
+          "/featureList/0": {
+            "pt": "Múltiplas listas simultâneas",
+            "en": "Multiple simultaneous lists",
+            "es": "Varias listas simultáneas"
+          },
+          "/featureList/1": {
+            "pt": "Itens com categoria, quantidade e preço",
+            "en": "Items with category, quantity and price",
+            "es": "Artículos con categoría, cantidad y precio"
+          },
+          "/featureList/2": {
+            "pt": "20 categorias com ícone e cor",
+            "en": "20 categories with icon and color",
+            "es": "20 categorías con ícono y color"
+          },
+          "/featureList/3": {
+            "pt": "Gestão de mercados: cadastro e edição de estabelecimentos",
+            "en": "Store management: add and edit stores",
+            "es": "Gestión de comercios: alta y edición de establecimientos"
+          },
+          "/featureList/4": {
+            "pt": "Marcação de itens no carrinho",
+            "en": "Mark items as in the cart",
+            "es": "Marcado de artículos en el carrito"
+          },
+          "/featureList/5": {
+            "pt": "Histórico de compras finalizadas",
+            "en": "History of completed purchases",
+            "es": "Historial de compras finalizadas"
+          },
+          "/featureList/6": {
+            "pt": "Totais por mês, média mensal e gráfico de pizza por categoria",
+            "en": "Monthly totals, monthly average and a pie chart by category",
+            "es": "Totales por mes, promedio mensual y gráfico circular por categoría"
+          },
+          "/featureList/7": {
+            "pt": "Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)",
+            "en": "Works without internet, with data saved on the device (Drift/SQLite)",
+            "es": "Funciona sin internet, con datos guardados en el dispositivo (Drift/SQLite)"
+          },
+          "/featureList/8": {
+            "pt": "3 idiomas: português, inglês e espanhol",
+            "en": "3 languages: Portuguese, English and Spanish",
+            "es": "3 idiomas: portugués, inglés y español"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  },
+  "apps/campo-minado-evolution.html": {
+    "head": {
+      "title": {
+        "pt": "Campo Minado Evolution — App Flutter Android | leankar.dev",
+        "en": "Campo Minado Evolution — Flutter Android App | leankar.dev",
+        "es": "Campo Minado Evolution — App Flutter para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "Campo Minado Evolution — app Flutter Android com Material Design 3, efeitos sonoros, vibração tátil, 3 dificuldades e estatísticas. Gratuito, com anúncios.",
+        "en": "Campo Minado Evolution — Flutter Android Minesweeper app with Material Design 3, sound effects, haptic vibration, 3 difficulty levels and statistics. Free, with ads.",
+        "es": "Campo Minado Evolution — app Flutter de Buscaminas para Android con Material Design 3, efectos de sonido, vibración háptica, 3 dificultades y estadísticas. Gratis, con anuncios."
+      },
+      "ogTitle": {
+        "pt": "Campo Minado Evolution — App Flutter Android",
+        "en": "Campo Minado Evolution — Flutter Android App",
+        "es": "Campo Minado Evolution — App Flutter para Android"
+      },
+      "ogDescription": {
+        "pt": "Campo Minado clássico reimaginado para mobile com Material Design 3, efeitos sonoros, vibração tátil e estatísticas salvas. Gratuito.",
+        "en": "The classic Minesweeper reimagined for mobile, with Material Design 3, sound effects, haptic vibration and saved statistics. Free.",
+        "es": "El clásico Buscaminas reimaginado para móvil con Material Design 3, efectos de sonido, vibración háptica y estadísticas guardadas. Gratis."
+      },
+      "twitterTitle": {
+        "pt": "Campo Minado Evolution — App Flutter Android",
+        "en": "Campo Minado Evolution — Flutter Android App",
+        "es": "Campo Minado Evolution — App Flutter para Android"
+      },
+      "twitterDescription": {
+        "pt": "Campo Minado clássico com Material Design 3, efeitos sonoros, vibração tátil e estatísticas. Flutter, gratuito, com anúncios.",
+        "en": "Classic Minesweeper with Material Design 3, sound effects, haptic vibration and statistics. Flutter, free, with ads.",
+        "es": "Buscaminas clásico con Material Design 3, efectos de sonido, vibración háptica y estadísticas. Flutter, gratis, con anuncios."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app Campo Minado Evolution, com a frase: O Campo Minado clássico no celular, com tutorial, 3 dificuldades e estatísticas.",
+        "en": "Campo Minado Evolution app icon and name, with the line: The classic Minesweeper on your phone, with a tutorial, 3 difficulty levels and statistics.",
+        "es": "Ícono y nombre de la app Campo Minado Evolution, con la frase: El clásico Buscaminas en el móvil, con tutorial, 3 dificultades y estadísticas."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "Campo Minado clássico reimaginado para mobile em Flutter com Material Design 3, efeitos sonoros, vibração tátil, tabuleiros adaptativos e estatísticas salvas localmente.",
+            "en": "Classic Minesweeper reimagined for mobile in Flutter with Material Design 3, sound effects, haptic vibration, adaptive boards and statistics saved locally.",
+            "es": "Buscaminas clásico reimaginado para móvil en Flutter con Material Design 3, efectos de sonido, vibración háptica, tableros adaptativos y estadísticas guardadas localmente."
+          },
+          "/video/name": {
+            "pt": "Campo Minado Evolution — vídeo de apresentação",
+            "en": "Campo Minado Evolution — trailer",
+            "es": "Campo Minado Evolution — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação do Campo Minado Evolution: dificuldades, como se joga e recursos do app.",
+            "en": "Campo Minado Evolution trailer: difficulty levels, how to play and app features.",
+            "es": "Presentación de Campo Minado Evolution: dificultades, cómo se juega y funciones de la app."
+          },
+          "/featureList/0": {
+            "pt": "Mecânica fiel ao Campo Minado original",
+            "en": "Mechanics faithful to the original Minesweeper",
+            "es": "Mecánica fiel al Buscaminas original"
+          },
+          "/featureList/1": {
+            "pt": "3 dificuldades com grade adaptada à tela (referência clássica: 9x9, 16x16 e 16x30)",
+            "en": "3 difficulty levels with a grid adapted to the screen (classic reference: 9x9, 16x16 and 16x30)",
+            "es": "3 dificultades con cuadrícula adaptada a la pantalla (referencia clásica: 9x9, 16x16 y 16x30)"
+          },
+          "/featureList/2": {
+            "pt": "Tabuleiros adaptativos ao tamanho da tela",
+            "en": "Boards that adapt to the screen size",
+            "es": "Tableros adaptativos al tamaño de la pantalla"
+          },
+          "/featureList/3": {
+            "pt": "Efeitos sonoros e vibração tátil",
+            "en": "Sound effects and haptic vibration",
+            "es": "Efectos de sonido y vibración háptica"
+          },
+          "/featureList/4": {
+            "pt": "Tutorial interativo",
+            "en": "Interactive tutorial",
+            "es": "Tutorial interactivo"
+          },
+          "/featureList/5": {
+            "pt": "Estatísticas por dificuldade",
+            "en": "Statistics by difficulty",
+            "es": "Estadísticas por dificultad"
+          },
+          "/featureList/6": {
+            "pt": "Material Design 3, 6 idiomas",
+            "en": "Material Design 3, 6 languages",
+            "es": "Material Design 3, 6 idiomas",
+            "same": true
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  },
+  "apps/word-evolution.html": {
+    "head": {
+      "title": {
+        "pt": "Word Evolution — App Flutter Android | leankar.dev",
+        "en": "Word Evolution — Flutter Android App | leankar.dev",
+        "es": "Word Evolution — App Flutter para Android | leankar.dev"
+      },
+      "description": {
+        "pt": "Word Evolution — caça-palavras Flutter Android com tabuleiros 100% procedurais, 10 categorias, 3 níveis de dificuldade, sistema de moedas, dicas e estatísticas detalhadas. Gratuito.",
+        "en": "Word Evolution — Flutter Android word search with 100% procedural boards, 10 categories, 3 difficulty levels, a coin system, hints and detailed statistics. Free.",
+        "es": "Word Evolution — sopa de letras Flutter para Android con tableros 100% procedurales, 10 categorías, 3 niveles de dificultad, sistema de monedas, pistas y estadísticas detalladas. Gratis."
+      },
+      "ogTitle": {
+        "pt": "Word Evolution — App Flutter Android",
+        "en": "Word Evolution — Flutter Android App",
+        "es": "Word Evolution — App Flutter para Android"
+      },
+      "ogDescription": {
+        "pt": "Caça-palavras com tabuleiros 100% procedurais: nenhuma partida é igual à outra. 10 categorias, 3 dificuldades, moedas, dicas e estatísticas detalhadas. Gratuito.",
+        "en": "Word search with 100% procedural boards: no two matches are alike. 10 categories, 3 difficulty levels, coins, hints and detailed statistics. Free.",
+        "es": "Sopa de letras con tableros 100% procedurales: ninguna partida es igual a otra. 10 categorías, 3 dificultades, monedas, pistas y estadísticas detalladas. Gratis."
+      },
+      "twitterTitle": {
+        "pt": "Word Evolution — App Flutter Android",
+        "en": "Word Evolution — Flutter Android App",
+        "es": "Word Evolution — App Flutter para Android"
+      },
+      "twitterDescription": {
+        "pt": "Caça-palavras com tabuleiros 100% procedurais, 10 categorias e 3 dificuldades. Flutter, gratuito, em 5 idiomas.",
+        "en": "Word search with 100% procedural boards, 10 categories and 3 difficulty levels. Flutter, free, in 5 languages.",
+        "es": "Sopa de letras con tableros 100% procedurales, 10 categorías y 3 dificultades. Flutter, gratis, en 5 idiomas."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app Word Evolution, com a frase: Caça-palavras com tabuleiros novos a cada partida, 10 categorias e dicas.",
+        "en": "Word Evolution app icon and name, with the line: Word search with a new board every match, 10 categories and hints.",
+        "es": "Ícono y nombre de la app Word Evolution, con la frase: Sopa de letras con tableros nuevos en cada partida, 10 categorías y pistas."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/softwareRequirements": {
+            "pt": "Android 7.0 ou superior",
+            "en": "Android 7.0 or higher",
+            "es": "Android 7.0 o superior"
+          },
+          "/description": {
+            "pt": "Caça-palavras com tabuleiros 100% procedurais gerados em Flutter: 10 categorias, 3 níveis de dificuldade, sistema de moedas, dicas e estatísticas detalhadas de desempenho.",
+            "en": "Word search with 100% procedural boards generated in Flutter: 10 categories, 3 difficulty levels, a coin system, hints and detailed performance statistics.",
+            "es": "Sopa de letras con tableros 100% procedurales generados en Flutter: 10 categorías, 3 niveles de dificultad, sistema de monedas, pistas y estadísticas detalladas de rendimiento."
+          },
+          "/video/name": {
+            "pt": "Word Evolution — vídeo de apresentação",
+            "en": "Word Evolution — trailer",
+            "es": "Word Evolution — video de presentación"
+          },
+          "/video/description": {
+            "pt": "Apresentação do Word Evolution: tabuleiros de caça-palavras gerados na hora, 10 categorias, 3 níveis de dificuldade, moedas, dicas e estatísticas de desempenho.",
+            "en": "Word Evolution trailer: word search boards generated on the spot, 10 categories, 3 difficulty levels, coins, hints and performance statistics.",
+            "es": "Presentación de Word Evolution: tableros de sopa de letras generados al instante, 10 categorías, 3 niveles de dificultad, monedas, pistas y estadísticas de rendimiento."
+          },
+          "/featureList/0": {
+            "pt": "Tabuleiros 100% procedurais",
+            "en": "100% procedural boards",
+            "es": "Tableros 100% procedurales"
+          },
+          "/featureList/1": {
+            "pt": "10 categorias de palavras",
+            "en": "10 word categories",
+            "es": "10 categorías de palabras"
+          },
+          "/featureList/2": {
+            "pt": "3 níveis de dificuldade: Fácil, Médio e Difícil",
+            "en": "3 difficulty levels: Easy, Medium and Hard",
+            "es": "3 niveles de dificultad: Fácil, Medio y Difícil"
+          },
+          "/featureList/3": {
+            "pt": "Sistema de moedas e dicas",
+            "en": "Coin and hint system",
+            "es": "Sistema de monedas y pistas"
+          },
+          "/featureList/4": {
+            "pt": "XP, níveis e 7 títulos, de Iniciante a Imortal",
+            "en": "XP, levels and 7 titles, from Beginner to Immortal",
+            "es": "XP, niveles y 7 títulos, de Principiante a Inmortal"
+          },
+          "/featureList/5": {
+            "pt": "Sequência de vitórias (atual e melhor)",
+            "en": "Win streak (current and best)",
+            "es": "Racha de victorias (actual y mejor)"
+          },
+          "/featureList/6": {
+            "pt": "Estatísticas detalhadas por categoria e por dificuldade",
+            "en": "Detailed statistics by category and by difficulty",
+            "es": "Estadísticas detalladas por categoría y por dificultad"
+          },
+          "/featureList/7": {
+            "pt": "Temas claro e escuro",
+            "en": "Light and dark themes",
+            "es": "Temas claro y oscuro"
+          },
+          "/featureList/8": {
+            "pt": "Português, inglês, espanhol, francês e italiano",
+            "en": "Portuguese, English, Spanish, French and Italian",
+            "es": "Portugués, inglés, español, francés e italiano"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/offers/price",
+          "/offers/priceCurrency",
+          "/installUrl",
+          "/image",
+          "/screenshot/*",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*",
+          "/video/thumbnailUrl",
+          "/video/contentUrl",
+          "/video/uploadDate",
+          "/video/duration"
+        ]
+      }
+    ]
+  },
+  "apps/reportgo.html": {
+    "head": {
+      "title": {
+        "pt": "ReportGoApp — App Flutter em desenvolvimento | leankar.dev",
+        "en": "ReportGoApp — Flutter App in Development | leankar.dev",
+        "es": "ReportGoApp — App Flutter en desarrollo | leankar.dev"
+      },
+      "description": {
+        "pt": "ReportGoApp — app Flutter em desenvolvimento para relatórios fotográficos técnicos: fotos com GPS e marca d'água, assinatura na tela e PDF, tudo offline. Ainda não disponível nas lojas.",
+        "en": "ReportGoApp — Flutter app in development for technical photo reports: photos with GPS and watermark, on-screen signature and PDF, all offline. Not yet available in the stores.",
+        "es": "ReportGoApp — app Flutter en desarrollo para informes fotográficos técnicos: fotos con GPS y marca de agua, firma en pantalla y PDF, todo sin conexión. Aún no disponible en las tiendas."
+      },
+      "ogTitle": {
+        "pt": "ReportGoApp — App Flutter em desenvolvimento",
+        "en": "ReportGoApp — Flutter App in Development",
+        "es": "ReportGoApp — App Flutter en desarrollo"
+      },
+      "ogDescription": {
+        "pt": "Relatórios fotográficos técnicos com GPS, marca d'água, assinatura na tela e PDF — offline. Em desenvolvimento, ainda não disponível nas lojas.",
+        "en": "Technical photo reports with GPS, watermark, on-screen signature and PDF — offline. In development, not yet available in the stores.",
+        "es": "Informes fotográficos técnicos con GPS, marca de agua, firma en pantalla y PDF — sin conexión. En desarrollo, aún no disponible en las tiendas."
+      },
+      "twitterTitle": {
+        "pt": "ReportGoApp — App Flutter em desenvolvimento",
+        "en": "ReportGoApp — Flutter App in Development",
+        "es": "ReportGoApp — App Flutter en desarrollo"
+      },
+      "twitterDescription": {
+        "pt": "Relatórios fotográficos técnicos com GPS, marca d'água, assinatura e PDF — offline. Em desenvolvimento.",
+        "en": "Technical photo reports with GPS, watermark, signature and PDF — offline. In development.",
+        "es": "Informes fotográficos técnicos con GPS, marca de agua, firma y PDF — sin conexión. En desarrollo."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app ReportGoApp, com a frase: Relatórios fotográficos técnicos com GPS, assinatura e PDF, direto do celular. Em desenvolvimento.",
+        "en": "ReportGoApp app icon and name, with the line: Technical photo reports with GPS, signature and PDF, straight from your phone. In development.",
+        "es": "Ícono y nombre de la app ReportGoApp, con la frase: Informes fotográficos técnicos con GPS, firma y PDF, directo desde el móvil. En desarrollo."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/description": {
+            "pt": "App Flutter em desenvolvimento para relatórios fotográficos técnicos: fotos com GPS e marca d'água, texto rico, assinatura manuscrita na tela, mapa e exportação em PDF. Funciona offline.",
+            "en": "Flutter app in development for technical photo reports: photos with GPS and watermark, rich text, handwritten on-screen signature, map and PDF export. Works offline.",
+            "es": "App Flutter en desarrollo para informes fotográficos técnicos: fotos con GPS y marca de agua, texto enriquecido, firma manuscrita en pantalla, mapa y exportación a PDF. Funciona sin conexión."
+          },
+          "/featureList/0": {
+            "pt": "Relatórios numerados automaticamente",
+            "en": "Automatically numbered reports",
+            "es": "Informes numerados automáticamente"
+          },
+          "/featureList/1": {
+            "pt": "Fotos com GPS e data/hora gravados no arquivo e marca d'água",
+            "en": "Photos with GPS and date/time written to the file, plus watermark",
+            "es": "Fotos con GPS y fecha/hora grabados en el archivo y marca de agua"
+          },
+          "/featureList/2": {
+            "pt": "Texto rico para o relatório e legenda por foto",
+            "en": "Rich text for the report and a caption per photo",
+            "es": "Texto enriquecido para el informe y leyenda por foto"
+          },
+          "/featureList/3": {
+            "pt": "Assinatura manuscrita na tela com proteção do relatório assinado",
+            "en": "Handwritten on-screen signature with protection of the signed report",
+            "es": "Firma manuscrita en pantalla con protección del informe firmado"
+          },
+          "/featureList/4": {
+            "pt": "Mapa, galeria unificada e calendário",
+            "en": "Map, unified gallery and calendar",
+            "es": "Mapa, galería unificada y calendario"
+          },
+          "/featureList/5": {
+            "pt": "Exportação e compartilhamento em PDF",
+            "en": "PDF export and sharing",
+            "es": "Exportar y compartir en PDF"
+          },
+          "/featureList/6": {
+            "pt": "Funciona offline, em português, inglês e espanhol",
+            "en": "Works offline, in Portuguese, English and Spanish",
+            "es": "Funciona sin conexión, en portugués, inglés y español"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/image",
+          "/author/name",
+          "/author/url"
+        ]
+      }
+    ]
+  },
+  "apps/my-car-las.html": {
+    "head": {
+      "title": {
+        "pt": "MY CAR LAS — App Flutter em desenvolvimento | leankar.dev",
+        "en": "MY CAR LAS — Flutter App in Development | leankar.dev",
+        "es": "MY CAR LAS — App Flutter en desarrollo | leankar.dev"
+      },
+      "description": {
+        "pt": "MY CAR LAS — app Flutter em desenvolvimento para controlar abastecimentos, despesas, manutenção, quilometragem e lembretes do seu veículo, tudo offline e sem anúncios. Ainda não disponível nas lojas.",
+        "en": "MY CAR LAS — Flutter app in development to track your vehicle's fuel-ups, expenses, maintenance, mileage and reminders, all offline and with no ads. Not yet available in the stores.",
+        "es": "MY CAR LAS — app Flutter en desarrollo para controlar las cargas de combustible, gastos, mantenimiento, kilometraje y recordatorios de tu vehículo, todo sin conexión y sin anuncios. Aún no disponible en las tiendas."
+      },
+      "ogTitle": {
+        "pt": "MY CAR LAS — App Flutter em desenvolvimento",
+        "en": "MY CAR LAS — Flutter App in Development",
+        "es": "MY CAR LAS — App Flutter en desarrollo"
+      },
+      "ogDescription": {
+        "pt": "Abastecimentos, despesas, manutenção, quilometragem e lembretes do seu veículo — offline e sem anúncios. Em desenvolvimento, ainda não disponível nas lojas.",
+        "en": "Your vehicle's fuel-ups, expenses, maintenance, mileage and reminders — offline and with no ads. In development, not yet available in the stores.",
+        "es": "Cargas de combustible, gastos, mantenimiento, kilometraje y recordatorios de tu vehículo — sin conexión y sin anuncios. En desarrollo, aún no disponible en las tiendas."
+      },
+      "twitterTitle": {
+        "pt": "MY CAR LAS — App Flutter em desenvolvimento",
+        "en": "MY CAR LAS — Flutter App in Development",
+        "es": "MY CAR LAS — App Flutter en desarrollo"
+      },
+      "twitterDescription": {
+        "pt": "Gestão de veículos, despesas, manutenção e lembretes — offline e sem anúncios. Em desenvolvimento.",
+        "en": "Vehicle management, expenses, maintenance and reminders — offline and with no ads. In development.",
+        "es": "Gestión de vehículos, gastos, mantenimiento y recordatorios — sin conexión y sin anuncios. En desarrollo."
+      },
+      "imageAlt": {
+        "pt": "Ícone e nome do app MY CAR LAS, com a frase: Abastecimentos, despesas, manutenção e lembretes do seu veículo, tudo no aparelho. Em desenvolvimento.",
+        "en": "MY CAR LAS app icon and name, with the line: Fuel-ups, expenses, maintenance and reminders for your vehicle, all on your device. In development.",
+        "es": "Ícono y nombre de la app MY CAR LAS, con la frase: Cargas de combustible, gastos, mantenimiento y recordatorios de tu vehículo, todo en el dispositivo. En desarrollo."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/description": {
+            "pt": "App Flutter em desenvolvimento para gestão de veículos: abastecimentos com consumo médio, despesas, manutenções, quilometragem, lembretes por data ou quilometragem e relatório mensal. Funciona offline, sem conta e sem anúncios.",
+            "en": "Flutter app in development for vehicle management: fuel-ups with average consumption, expenses, maintenance, mileage, reminders by date or mileage and a monthly report. Works offline, with no account and no ads.",
+            "es": "App Flutter en desarrollo para la gestión de vehículos: cargas de combustible con consumo medio, gastos, mantenimiento, kilometraje, recordatorios por fecha o kilometraje e informe mensual. Funciona sin conexión, sin cuenta y sin anuncios."
+          },
+          "/featureList/0": {
+            "pt": "Até 2 veículos ativos: carro, moto, scooter, van, caminhão e outros",
+            "en": "Up to 2 active vehicles: car, motorcycle, scooter, van, truck and others",
+            "es": "Hasta 2 vehículos activos: auto, moto, scooter, furgoneta, camión y otros"
+          },
+          "/featureList/1": {
+            "pt": "Quilometragem com validação de leituras incoerentes",
+            "en": "Mileage with validation of inconsistent readings",
+            "es": "Kilometraje con validación de lecturas incoherentes"
+          },
+          "/featureList/2": {
+            "pt": "Abastecimentos com consumo médio calculado entre tanques cheios",
+            "en": "Fuel-ups with average consumption calculated between full tanks",
+            "es": "Cargas de combustible con consumo medio calculado entre tanques llenos"
+          },
+          "/featureList/3": {
+            "pt": "Despesas por categoria e manutenções por tipo",
+            "en": "Expenses by category and maintenance by type",
+            "es": "Gastos por categoría y mantenimientos por tipo"
+          },
+          "/featureList/4": {
+            "pt": "Lembretes por data e/ou quilometragem, com repetição e notificações locais",
+            "en": "Reminders by date and/or mileage, with repetition and local notifications",
+            "es": "Recordatorios por fecha y/o kilometraje, con repetición y notificaciones locales"
+          },
+          "/featureList/5": {
+            "pt": "Histórico unificado com filtros",
+            "en": "Unified history with filters",
+            "es": "Historial unificado con filtros"
+          },
+          "/featureList/6": {
+            "pt": "Relatório mensal com comparação com o mês anterior",
+            "en": "Monthly report with comparison to the previous month",
+            "es": "Informe mensual con comparación con el mes anterior"
+          },
+          "/featureList/7": {
+            "pt": "Sete moedas: BRL, USD, EUR, GBP, CAD, MXN e CHF",
+            "en": "Seven currencies: BRL, USD, EUR, GBP, CAD, MXN and CHF",
+            "es": "Siete monedas: BRL, USD, EUR, GBP, CAD, MXN y CHF"
+          },
+          "/featureList/8": {
+            "pt": "Offline, sem conta e sem anúncios, em seis idiomas",
+            "en": "Offline, no account and no ads, in six languages",
+            "es": "Sin conexión, sin cuenta y sin anuncios, en seis idiomas"
+          }
+        },
+        "keep": [
+          "/name",
+          "/applicationCategory",
+          "/operatingSystem",
+          "/image",
+          "/author/name",
+          "/author/url",
+          "/inLanguage/*"
+        ]
+      }
+    ]
   }
 }

@@ -125,171 +125,212 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/listadacasa_logo.png" alt="Lista da Casa" class="app-page-logo" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-organizacao">Organização</span>
+            <img src="../assets/logos/lista-da-casa-280.webp" width="140" height="140" alt="Lista da Casa" class="app-page-logo" />
+            <span class="app-category"><span data-i18n="apps.cat-organizacao">Organização</span></span>
             <h1>Lista da <span class="gradient-text">Casa</span></h1>
-            <p class="app-tagline" data-i18n="lista.tagline">
-              Esquecer o papel de compras ficou no passado. Organize suas compras por categoria,
-              acompanhe o progresso no corredor do mercado e controle o orçamento mensal com gráficos.
-              Sem internet, sem cadastro, sem complicação.
-            </p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">SQLite</span>
-              <span class="tag">Drift</span>
-              <span class="tag" data-i18n="app.badge-offline">Offline</span>
-              <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="lista.lead">Listas de compras por mercado, com histórico e gráficos de gastos. Sem cadastro.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag">SQLite</span> <span class="tag">Drift</span> <span class="tag" data-i18n="app.tag-neumorphic">Neumórfico</span></div>
+            <ul class="app-trust">
+              <li data-i18n="apps.badge-free">Gratuito</li>
+              <li data-i18n="lista.trust-nosignup">Sem cadastro</li>
+              <li data-i18n="app.val-net-none">Funciona sem internet</li>
+            </ul>
             <div class="app-page-actions">
-              <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
-                class="play-btn" target="_blank" rel="noopener noreferrer">
-                <img src="../assets/logos/google-play-badge.svg"
-                  data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+              <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                <img class="play-badge" src="../assets/logos/google-play-badge.svg" width="149" height="44" alt="Disponível no Google Play" data-i18n-alt="apps.play-badge-alt" />
               </a>
+              <a class="app-link-sec" href="#video" data-i18n="app.see-video">Ver vídeo</a>
             </div>
           </div>
+          <figure class="app-hero-visual">
+            <div class="app-phone app-phone--navcut">
+              <img src="../assets/apps/lista-da-casa/01-lista-de-compras.webp" width="540" height="897" loading="eager" fetchpriority="high"
+                   alt="Lista de compras com total estimado, total gasto e progresso dos itens" data-i18n-alt="lista.shot1-alt" />
+            </div>
+          </figure>
         </div>
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
-      <div class="app-video app-video--page">
-        <video controls playsinline preload="none" poster="../assets/videos/lista-da-casa-poster.jpg"
-          width="1280" height="720" data-i18n-aria="apps.lista-video-label"
-          aria-label="Vídeo de apresentação da Lista da Casa">
-          <source src="../assets/videos/lista-da-casa.mp4" type="video/mp4" />
-          <span data-i18n="apps.lista-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-        </video>
-      </div>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7h11"/><path d="M9 12h11"/><path d="M9 17h11"/><path d="M4.5 7h.01"/><path d="M4.5 12h.01"/><path d="M4.5 17h.01"/></svg>
+          <h3 data-i18n="lista.benefit1-t">Compras organizadas</h3>
+          <p data-i18n="lista.benefit1-d">Várias listas ao mesmo tempo, por mercado, com itens por categoria, quantidade e preço.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg>
+          <h3 data-i18n="lista.benefit2-t">Saiba quanto vai gastar</h3>
+          <p data-i18n="lista.benefit2-d">Total estimado e total gasto em tempo real, com o progresso dos itens já pegos.</p>
+        </li>
+        <li class="app-benefit">
+          <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></svg>
+          <h3 data-i18n="lista.benefit3-t">Entenda seu orçamento</h3>
+          <p data-i18n="lista.benefit3-d">Histórico das compras, gráfico de gastos por categoria e totais mensais do ano.</p>
+        </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature1">Múltiplas listas simultâneas por estabelecimento</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature2">Itens com categoria, quantidade e preço estimado</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature9">20 categorias, cada uma com ícone e cor próprios</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature10">Gestão de mercados: cadastre e edite os estabelecimentos onde você compra</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature3">Marcação de itens já pegos no carrinho</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature4">Progresso da lista em tempo real (X de Y itens)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature5">Histórico completo de compras finalizadas</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature6">Totais por mês, média mensal e gráfico de pizza dos gastos por categoria</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature7">Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature8">Interface para uso com uma mão — 3 idiomas</span></li>
-      </ul>
+      <section class="app-section reveal" id="telas" aria-labelledby="telas-title">
+        <h2 id="telas-title" data-i18n="app.gallery-title">Telas do app</h2>
+        <div class="app-gallery-nav" hidden>
+          <button type="button" class="app-gallery-btn" data-dir="-1" aria-controls="telas-track" aria-label="Tela anterior" data-i18n-aria="app.gallery-prev">‹</button>
+          <button type="button" class="app-gallery-btn" data-dir="1" aria-controls="telas-track" aria-label="Próxima tela" data-i18n-aria="app.gallery-next">›</button>
+        </div>
+        <div class="app-gallery-track" id="telas-track" role="region" tabindex="0" aria-label="Galeria de telas" data-i18n-aria="app.gallery-label">
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/02-graficos.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Gráfico de pizza com os gastos por categoria" data-i18n-alt="lista.shot2-alt" />
+          <figcaption data-i18n="lista.shot2-cap">Gastos por categoria</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/03-historico.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Histórico das compras finalizadas com data, mercado e valor" data-i18n-alt="lista.shot3-alt" />
+          <figcaption data-i18n="lista.shot3-cap">Histórico de compras</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/04-adicionar-item.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Formulário para adicionar um item com categoria, quantidade e preço" data-i18n-alt="lista.shot4-alt" />
+          <figcaption data-i18n="lista.shot4-cap">Adicione itens</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/05-detalhe-da-compra.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Detalhe de uma compra com os itens e o total gasto" data-i18n-alt="lista.shot5-alt" />
+          <figcaption data-i18n="lista.shot5-cap">Detalhe da compra</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/06-totais-mensais.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Totais mensais do ano com média por compra" data-i18n-alt="lista.shot6-alt" />
+          <figcaption data-i18n="lista.shot6-cap">Totais mensais</figcaption>
+        </figure>
+        <figure class="app-shot app-shot--raw">
+          <img src="../assets/apps/lista-da-casa/07-categorias.webp" width="540" height="897" loading="lazy" decoding="async"
+               alt="Lista de categorias com ícone e cor" data-i18n-alt="lista.shot7-alt" />
+          <figcaption data-i18n="lista.shot7-cap">Categorias</figcaption>
+        </figure>
+        </div>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="lista.about-p1">
-        A Lista da Casa nasceu de um problema genuíno: listas de compras em papel se perdem, listas em
-        aplicativos genéricos de notas são inflexíveis, e apps específicos de compras costumam ser
-        pesados, cheios de anúncios ou exigem cadastro na nuvem. A proposta foi construir algo focado,
-        leve e que funcione sem depender de internet.
-      </p>
-      <p data-i18n="lista.about-p2">
-        Toda a persistência é feita com <strong>Drift</strong>, um ORM type-safe para SQLite no Flutter.
-        Drift permite definir tabelas como classes Dart, escrever queries com verificação em tempo de
-        compilação e receber streams reativos automaticamente — cada alteração em um item reflete
-        instantaneamente em toda a interface sem `setState` manual.
-      </p>
-      <p data-i18n="lista.about-p3">
-        O sistema de categorias é o diferencial central: cada item pertence a uma categoria (hortifruti,
-        laticínios, limpeza, etc.), o que permite agrupar itens visualmente e gerar gráficos de gastos
-        mensais por categoria. Ao longo do tempo, o usuário consegue ver em quais categorias está
-        gastando mais e ajustar o orçamento doméstico com dados concretos.
-      </p>
-      <p data-i18n="lista.about-p4">
-        A interface foi projetada para uso com uma mão no corredor do supermercado: área de toque generosa,
-        deslize para marcar itens, design neumórfico com alto contraste. Nenhuma ação crítica está a mais
-        de dois toques de distância. Disponível em português, inglês e espanhol.
-      </p>
+      <section class="app-section reveal" id="video" aria-labelledby="video-title">
+        <h2 id="video-title" data-i18n="app.video-title">Veja em ação</h2>
+        <div class="app-video app-video--page">
+          <video controls playsinline preload="none" poster="../assets/videos/lista-da-casa-poster.jpg"
+            width="1280" height="720" data-i18n-aria="apps.lista-video-label"
+            aria-label="Vídeo de apresentação da Lista da Casa">
+            <source src="../assets/videos/lista-da-casa.mp4" type="video/mp4" />
+            <span data-i18n="apps.lista-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
+          </video>
+        </div>
+      </section>
+
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature1">Múltiplas listas simultâneas por estabelecimento</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature2">Itens com categoria, quantidade e preço estimado</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature9">20 categorias, cada uma com ícone e cor próprios</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature10">Gestão de mercados: cadastre e edite os estabelecimentos onde você compra</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature3">Marcação de itens já pegos no carrinho</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature4">Progresso da lista em tempo real (X de Y itens)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature5">Histórico completo de compras finalizadas</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature6">Totais por mês, média mensal e gráfico de pizza dos gastos por categoria</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature7">Funciona sem internet, com dados salvos no aparelho (Drift/SQLite)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="lista.feature8">Interface para uso com uma mão — 3 idiomas</span></li>
+        </ul>
+      </section>
+
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+      <p data-i18n="lista.about-p1">A Lista da Casa nasceu de um problema genuíno: listas de compras em papel se perdem, listas em aplicativos genéricos de notas são inflexíveis, e apps específicos de compras costumam ser pesados, cheios de anúncios ou exigem cadastro na nuvem. A proposta foi construir algo focado, leve e que funcione sem depender de internet.</p>
+      <p data-i18n="lista.about-p2">Toda a persistência é feita com <strong>Drift</strong>, um ORM type-safe para SQLite no Flutter. Drift permite definir tabelas como classes Dart, escrever queries com verificação em tempo de compilação e receber streams reativos automaticamente — cada alteração em um item reflete instantaneamente em toda a interface sem `setState` manual.</p>
+      <p data-i18n="lista.about-p3">O sistema de categorias é o diferencial central: cada item pertence a uma categoria (hortifruti, laticínios, limpeza, etc.), o que permite agrupar itens visualmente e gerar gráficos de gastos mensais por categoria. Ao longo do tempo, o usuário consegue ver em quais categorias está gastando mais e ajustar o orçamento doméstico com dados concretos.</p>
+      <p data-i18n="lista.about-p4">A interface foi projetada para uso com uma mão no corredor do supermercado: área de toque generosa, deslize para marcar itens, design neumórfico com alto contraste. Nenhuma ação crítica está a mais de dois toques de distância. Disponível em português, inglês e espanhol.</p>
       <p data-i18n="lista.about-p5">Sem cadastro e sem conta: suas listas ficam inteiramente no dispositivo. Gratuito, mantido por anúncios que você aceita ou recusa.</p>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="app.val-android">Android</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-android">Android mínimo</dt><dd data-i18n="app.val-android-7">Android 7.0 ou superior</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="lista.spec-langs">Português, inglês e espanhol</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-price">Preço</dt><dd data-i18n="app.val-price-free">Gratuito, sem compras dentro do app</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-ads">Anúncios</dt><dd data-i18n="lista.spec-ads">Sim: banner e intersticial. Você aceita ou recusa na primeira abertura e pode rever nas configurações.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="app.val-net-ads">Funciona sem internet; só os anúncios usam conexão</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="app.val-perms-ads">Acesso à internet, estado da rede e ID de publicidade, usados pelos anúncios. Nenhum pede a sua autorização.</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-privacy">Política de privacidade</dt><dd><a href="https://leankar-dev.github.io/lista_da_casa_las_privacy_policy/" target="_blank" rel="noopener noreferrer" data-i18n="app.privacy-link">Ver política do app</a></dd></div>
+        </dl>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
-
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq1-q">O app precisa de internet para funcionar?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+            <span data-i18n="lista.faq1-q">O app precisa de internet para funcionar?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
             <div class="faq-answer-inner" data-i18n="lista.faq1-a">Não para usar. Todos os dados ficam armazenados localmente com SQLite (via Drift) e o app funciona em modo avião, sem Wi-Fi e sem dados móveis. A única parte que usa conexão são os anúncios, quando há internet.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq2-q">Posso ter listas para diferentes estabelecimentos?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+            <span data-i18n="lista.faq2-q">Posso ter listas para diferentes estabelecimentos?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq2-a">
-              Sim. É possível criar múltiplas listas simultâneas, cada uma com nome próprio —
-              por exemplo, "Mercado", "Farmácia" e "Feira". As listas ficam salvas e podem ser
-              retomadas a qualquer momento.
-            </div>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="faq-answer-inner" data-i18n="lista.faq2-a">Sim. É possível criar múltiplas listas simultâneas, cada uma com nome próprio — por exemplo, "Mercado", "Farmácia" e "Feira". As listas ficam salvas e podem ser retomadas a qualquer momento.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq3-q">Como funciona o histórico e os gráficos de gastos?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+            <span data-i18n="lista.faq3-q">Como funciona o histórico e os gráficos de gastos?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq3-a">
-              Ao finalizar uma compra, ela é movida para o histórico com a data e o total gasto.
-              Na tela de gastos, gráficos mostram o valor mensal por categoria ao longo do tempo,
-              permitindo identificar onde o orçamento doméstico está sendo mais consumido.
-            </div>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="faq-answer-inner" data-i18n="lista.faq3-a">Ao finalizar uma compra, ela é movida para o histórico com a data e o total gasto. Na tela de gastos, gráficos mostram o valor mensal por categoria ao longo do tempo, permitindo identificar onde o orçamento doméstico está sendo mais consumido.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq4-q">Posso compartilhar a lista com outra pessoa?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+            <span data-i18n="lista.faq4-q">Posso compartilhar a lista com outra pessoa?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="lista.faq4-a">
-              Atualmente não há sincronização entre dispositivos nem compartilhamento direto. O app
-              é focado em uso individual offline. Sincronização colaborativa é um recurso que
-              pode ser adicionado em versões futuras.
-            </div>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="faq-answer-inner" data-i18n="lista.faq4-a">Atualmente não há sincronização entre dispositivos nem compartilhamento direto. O app é focado em uso individual offline. Sincronização colaborativa é um recurso que pode ser adicionado em versões futuras.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq5-q">O app coleta ou envia meus dados?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+            <span data-i18n="lista.faq5-q">O app coleta ou envia meus dados?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
             <div class="faq-answer-inner" data-i18n="lista.faq5-a">Suas listas, itens e histórico ficam exclusivamente no banco de dados local do seu dispositivo Android e não são enviados a nenhum servidor; não há cadastro nem conta. Os anúncios são a exceção: se você aceitar, o SDK Unity LevelPlay e seus parceiros podem coletar dados do aparelho, como o ID de publicidade e o endereço IP, para exibi-los. Se recusar, o SDK nem é iniciado. Você pode rever a escolha nas configurações, e os detalhes estão na política de privacidade do app.</div>
           </div>
         </li>
 
         <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="lista.faq6-q">O app é gratuito?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
+          <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+            <span data-i18n="lista.faq6-q">O app é gratuito?</span><span class="faq-icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
             <div class="faq-answer-inner" data-i18n="lista.faq6-a">Sim, é gratuito: sem compras dentro do app, sem assinatura e sem funcionalidades pagas, com todas as funcionalidades disponíveis desde o primeiro uso. O app é mantido por anúncios (banner e intersticial), que você aceita ou recusa na tela de consentimento e pode rever nas configurações.</div>
           </div>
         </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="lista.cta-text">Organize suas compras de forma simples e sem precisar de internet. Gratuito para Android, com anúncios.</p>
         <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
           class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="app.cta-btn">

@@ -1559,6 +1559,8 @@ body {
   box-shadow: var(--glow-cyan);
 }
 .app-phone--bare img { object-fit: contain; }
+/* prints com a barra de navegação do Android recortada (540×897, ≈9:14,95): evita que object-fit:cover corte o topo/base no hero */
+.app-phone--navcut { aspect-ratio: 540 / 897; }
 
 /* seções do corpo: espaçamento padrão e âncoras abaixo da navbar fixa (112 px) */
 .article-body .app-section { margin-top: 56px; }

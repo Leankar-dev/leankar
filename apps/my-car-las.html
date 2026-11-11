@@ -116,24 +116,21 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/mycarlas.png" alt="MY CAR LAS" class="app-page-logo" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-veiculos">Veículos</span>
+            <img src="../assets/logos/my-car-las-280.webp" width="140" height="140" alt="MY CAR LAS" class="app-page-logo" />
+            <span class="app-category"><span data-i18n="apps.cat-veiculos">Veículos</span></span>
             <h1>MY CAR <span class="gradient-text">LAS</span></h1>
-            <p class="app-tagline" data-i18n="mycarlas.tagline">
-              Abastecimentos, despesas, manutenção, quilometragem e lembretes do seu carro ou moto em um só lugar —
-              offline, sem conta e sem anúncios.
-            </p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Offline-first</span>
-              <span class="tag" data-i18n="mycarlas.tag-platforms">Android e Windows</span>
-              <span class="tag tag--wip" data-i18n="mycarlas.status">Em desenvolvimento</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="mycarlas.lead">Abastecimentos, despesas, manutenção e lembretes do seu veículo, tudo no aparelho.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag">Drift (SQLite)</span> <span class="tag">Riverpod</span> <span class="tag tag--wip"><span aria-hidden="true">🚧</span> <span data-i18n="mycarlas.status">Em desenvolvimento</span></span></div>
+            <ul class="app-trust">
+              <li data-i18n="app.val-ads-none">Sem anúncios</li>
+              <li data-i18n="mycarlas.trust-noaccount">Sem conta</li>
+              <li data-i18n="app.val-net-none">Funciona sem internet</li>
+            </ul>
             <div class="app-page-actions">
               <a href="/#contato" class="btn btn-primary" data-i18n="mycarlas.cta-btn">Entrar em contato</a>
             </div>
@@ -142,7 +139,7 @@
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
       <div class="app-dev-notice">
         <span class="app-dev-notice-ico" aria-hidden="true">🚧</span>
@@ -153,120 +150,123 @@
         </p>
       </div>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature1">Até 2 veículos ativos: carro, moto, scooter, van, caminhão ou outro, com motor a gasolina, diesel, etanol, flex, GNV, GLP, híbrido ou elétrico</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature2">Quilometragem com validação: o app avisa quando uma leitura parece incoerente com as anteriores</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature3">Abastecimentos com consumo médio (L/100 km ou km/L) calculado entre tanques cheios</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature4">Despesas por categoria: reparos, pneus, seguro, vistoria, impostos e taxas, estacionamento e pedágio, limpeza e outras</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature5">Manutenções por tipo (óleo e filtro, freios, correia, bateria, pneus e mais), com próxima intervenção por data ou quilometragem</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature6">Lembretes por data e/ou quilometragem, com repetição, adiamento e notificações no aparelho</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature7">Histórico unificado com filtros por período, veículo e tipo de registro</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature8">Relatório mensal com total, comparação com o mês anterior e divisão por tipo e por categoria</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature11">Sete moedas à escolha: real (BRL), dólar (USD), euro (EUR), libra (GBP), dólar canadense (CAD), peso mexicano (MXN) e franco suíço (CHF)</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature9">Tema claro, escuro ou do sistema, e seis idiomas: português (Brasil e Portugal), inglês, espanhol, italiano e francês</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature10">Sem conta, sem servidor e sem anúncios: seus dados ficam no aparelho</span></li>
-      </ul>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V11"/><path d="M12 20V4"/><path d="M19 20v-6"/></svg>
+            <h3 data-i18n="mycarlas.benefit1-t">Quanto o carro custa</h3>
+            <p data-i18n="mycarlas.benefit1-d">Abastecimentos com consumo médio, despesas por categoria e relatório mensal com comparação.</p>
+          </li>
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6z"/></svg>
+            <h3 data-i18n="mycarlas.benefit2-t">Nada esquecido</h3>
+            <p data-i18n="mycarlas.benefit2-d">Lembretes por data ou quilometragem, com repetição e notificações no aparelho.</p>
+          </li>
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+            <h3 data-i18n="mycarlas.benefit3-t">Seus dados, só seus</h3>
+            <p data-i18n="mycarlas.benefit3-d">Sem conta e sem servidor: tudo fica no aparelho e o app não precisa de internet.</p>
+          </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="mycarlas.about-p1">
-        MY CAR LAS é um aplicativo Flutter para quem quer saber, de verdade, quanto o carro ou a moto custa e o que ele
-        precisa — sem planilha e sem depender de internet. Você registra abastecimentos, despesas, manutenções e
-        quilometragem, e o app transforma esses registros em consumo médio, histórico e um relatório mensal.
-      </p>
-      <p data-i18n="mycarlas.about-p2">
-        Os lembretes são o coração do app: troca de óleo, seguro, vistoria, impostos e taxas ou uma atualização da
-        quilometragem. Eles podem vencer por data, por quilometragem ou pelo que vier primeiro, repetir-se sozinhos e
-        avisar com antecedência por notificação local, sem nenhum servidor envolvido.
-      </p>
-      <p data-i18n="mycarlas.about-p3">
-        Os dados ficam em um banco SQLite no próprio aparelho, e o app não pede conta nem envia nada para a internet.
-        Por dentro, usa Clean Architecture com MVVM, Riverpod, Drift e testes automatizados com exigência de cobertura.
-        O projeto está em desenvolvimento ativo, para Android e Windows; o iOS fica para depois.
-      </p>
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature1">Até 2 veículos ativos: carro, moto, scooter, van, caminhão ou outro, com motor a gasolina, diesel, etanol, flex, GNV, GLP, híbrido ou elétrico</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature2">Quilometragem com validação: o app avisa quando uma leitura parece incoerente com as anteriores</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature3">Abastecimentos com consumo médio (L/100 km ou km/L) calculado entre tanques cheios</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature4">Despesas por categoria: reparos, pneus, seguro, vistoria, impostos e taxas, estacionamento e pedágio, limpeza e outras</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature5">Manutenções por tipo (óleo e filtro, freios, correia, bateria, pneus e mais), com próxima intervenção por data ou quilometragem</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature6">Lembretes por data e/ou quilometragem, com repetição, adiamento e notificações no aparelho</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature7">Histórico unificado com filtros por período, veículo e tipo de registro</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature8">Relatório mensal com total, comparação com o mês anterior e divisão por tipo e por categoria</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature11">Sete moedas à escolha: real (BRL), dólar (USD), euro (EUR), libra (GBP), dólar canadense (CAD), peso mexicano (MXN) e franco suíço (CHF)</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature9">Tema claro, escuro ou do sistema, e seis idiomas: português (Brasil e Portugal), inglês, espanhol, italiano e francês</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="mycarlas.feature10">Sem conta, sem servidor e sem anúncios: seus dados ficam no aparelho</span></li>
+        </ul>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+        <p data-i18n="mycarlas.about-p1">MY CAR LAS é um aplicativo Flutter para quem quer saber, de verdade, quanto o carro ou a moto custa e o que ele precisa — sem planilha e sem depender de internet. Você registra abastecimentos, despesas, manutenções e quilometragem, e o app transforma esses registros em consumo médio, histórico e um relatório mensal.</p>
+        <p data-i18n="mycarlas.about-p2">Os lembretes são o coração do app: troca de óleo, seguro, vistoria, impostos e taxas ou uma atualização da quilometragem. Eles podem vencer por data, por quilometragem ou pelo que vier primeiro, repetir-se sozinhos e avisar com antecedência por notificação local, sem nenhum servidor envolvido.</p>
+        <p data-i18n="mycarlas.about-p3">Os dados ficam em um banco SQLite no próprio aparelho, e o app não pede conta nem envia nada para a internet. Por dentro, usa Clean Architecture com MVVM, Riverpod, Drift e testes automatizados com exigência de cobertura. O projeto está em desenvolvimento ativo, para Android e Windows; o iOS fica para depois.</p>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="mycarlas.spec-platforms">Android e Windows (iOS planejado, sem data)</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="mycarlas.spec-langs">Português (Brasil e Portugal), inglês, espanhol, italiano e francês</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-price">Preço</dt><dd data-i18n="mycarlas.spec-price">Versão gratuita permite até 2 veículos ativos</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-ads">Anúncios</dt><dd data-i18n="app.val-ads-none">Sem anúncios</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="mycarlas.spec-net">Não usa internet</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="mycarlas.spec-perms">Notificações (lembretes), reinício do aparelho (reagendar lembretes) e vibração</dd></div>
+        </dl>
+      </section>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq1-q">Quando o MY CAR LAS será lançado?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq1-a">
-              Ainda não há data definida. O app está em desenvolvimento ativo, com as telas principais prontas e em fase de testes e auditoria. A primeira publicação deve ser no Google Play; quando houver novidades, elas aparecem aqui.
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+              <span data-i18n="mycarlas.faq1-q">Quando o MY CAR LAS será lançado?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq1-a">Ainda não há data definida. O app está em desenvolvimento ativo, com as telas principais prontas e em fase de testes e auditoria. A primeira publicação deve ser no Google Play; quando houver novidades, elas aparecem aqui.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq2-q">Como posso testar antes do lançamento?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq2-a">
-              Envie uma mensagem pelo formulário de contato do site contando como você controla os gastos e a manutenção do seu veículo hoje. Estou buscando pessoas para testar a versão de desenvolvimento e dar feedback.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+              <span data-i18n="mycarlas.faq2-q">Como posso testar antes do lançamento?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq2-a">Envie uma mensagem pelo formulário de contato do site contando como você controla os gastos e a manutenção do seu veículo hoje. Estou buscando pessoas para testar a versão de desenvolvimento e dar feedback.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq3-q">O app precisa de internet?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq3-a">
-              Não. Todos os registros, o consumo, o histórico, o relatório e os lembretes funcionam offline. O app não tem servidor.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+              <span data-i18n="mycarlas.faq3-q">O app precisa de internet?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq3-a">Não. Todos os registros, o consumo, o histórico, o relatório e os lembretes funcionam offline. O app não tem servidor.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq4-q">Onde ficam meus dados?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq4-a">
-              No seu próprio aparelho, em um banco de dados local. Não é preciso criar conta. Nas configurações há a opção de apagar todos os dados, com confirmação, e o app avisa antes de qualquer exclusão de veículo ou registro.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+              <span data-i18n="mycarlas.faq4-q">Onde ficam meus dados?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq4-a">No seu próprio aparelho, em um banco de dados local. Não é preciso criar conta. Nas configurações há a opção de apagar todos os dados, com confirmação, e o app avisa antes de qualquer exclusão de veículo ou registro.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq5-q">Quantos veículos posso cadastrar?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq5-a">
-              A versão gratuita permite até 2 veículos ativos ao mesmo tempo. Veículos arquivados não contam para o limite e mantêm todo o histórico, então você pode arquivar um para cadastrar outro.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+              <span data-i18n="mycarlas.faq5-q">Quantos veículos posso cadastrar?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq5-a">A versão gratuita permite até 2 veículos ativos ao mesmo tempo. Veículos arquivados não contam para o limite e mantêm todo o histórico, então você pode arquivar um para cadastrar outro.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="mycarlas.faq6-q">Em quais plataformas o app funciona?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="mycarlas.faq6-a">
-              O projeto é feito para Android e Windows. Uma versão para iPhone é um passo planejado, ainda sem data.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+              <span data-i18n="mycarlas.faq6-q">Em quais plataformas o app funciona?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+              <div class="faq-answer-inner" data-i18n="mycarlas.faq6-a">O projeto é feito para Android e Windows. Uma versão para iPhone é um passo planejado, ainda sem data.</div>
             </div>
-          </div>
-        </li>
+          </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="mycarlas.cta-text">Quer acompanhar o MY CAR LAS, testar a versão de desenvolvimento ou conversar sobre o projeto?</p>
         <a href="/#contato" class="btn btn-primary" data-i18n="mycarlas.cta-btn">Entrar em contato</a>
       </div>

@@ -1008,11 +1008,18 @@ const TRANSLATIONS = {
   },
 
   // ── REPORTGO (página de detalhes · em desenvolvimento) ─────
-  'reportgo.tagline': {
-    pt: 'Relatórios fotográficos técnicos para quem trabalha em campo: fotografe, descreva, assine e exporte em PDF — tudo no celular, mesmo sem internet.',
-    en: 'Technical photo reports for people who work in the field: shoot, describe, sign and export to PDF — all on your phone, even without internet.',
-    es: 'Informes fotográficos técnicos para quienes trabajan en campo: fotografía, describe, firma y exporta a PDF — todo en el celular, incluso sin internet.',
-  },
+  'reportgo.lead': { pt: "Relatórios fotográficos técnicos com GPS, assinatura e PDF, direto do celular.", en: "Technical photo reports with GPS, signature and PDF, straight from your phone.", es: "Informes fotográficos técnicos con GPS, firma y PDF, directo desde el móvil." },
+  'reportgo.trust-data': { pt: "Dados no aparelho", en: "Data on your device", es: "Datos en el dispositivo" },
+  'reportgo.trust-offline': { pt: "Funciona sem internet, exceto o mapa", en: "Works without internet, except the map", es: "Funciona sin internet, excepto el mapa" },
+  'reportgo.benefit1-t': { pt: "Relatório no local", en: "Report on site", es: "Informe en el lugar" },
+  'reportgo.benefit1-d': { pt: "Fotografe, descreva cada foto e colha a assinatura na tela, tudo no celular.", en: "Take the photos, describe each one and collect the signature on screen, all on your phone.", es: "Fotografía, describe cada foto y recoge la firma en pantalla, todo en el móvil." },
+  'reportgo.benefit2-t': { pt: "Prova de onde e quando", en: "Proof of where and when", es: "Prueba de dónde y cuándo" },
+  'reportgo.benefit2-d': { pt: "GPS e data/hora gravados no arquivo da foto, com marca d’água de data, hora e coordenadas.", en: "GPS and date/time saved in the photo file, with a watermark of date, time and coordinates.", es: "GPS y fecha/hora guardados en el archivo de la foto, con marca de agua de fecha, hora y coordenadas." },
+  'reportgo.benefit3-t': { pt: "PDF pronto", en: "PDF ready to go", es: "PDF listo" },
+  'reportgo.benefit3-d': { pt: "Exporte e compartilhe o relatório em PDF direto do celular, com numeração automática.", en: "Export and share the report as a PDF straight from your phone, with automatic numbering.", es: "Exporta y comparte el informe en PDF desde el móvil, con numeración automática." },
+  'reportgo.spec-langs': { pt: "Português, inglês e espanhol", en: "Portuguese, English and Spanish", es: "Portugués, inglés y español" },
+  'reportgo.spec-net': { pt: "Funciona sem internet; só o mapa usa internet (para baixar as imagens do mapa)", en: "Works without internet; only the map uses internet (to download the map images)", es: "Funciona sin internet; solo el mapa usa internet (para descargar las imágenes del mapa)" },
+  'reportgo.spec-perms': { pt: "Câmera e localização (pedidas em tempo de execução) e internet (mapa)", en: "Camera and location (requested at runtime) and internet (map)", es: "Cámara y ubicación (solicitadas en tiempo de ejecución) e internet (mapa)" },
   'reportgo.status': { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
   'reportgo.notice': {
     pt: 'O ReportGoApp ainda <strong>não está disponível</strong> no Google Play nem na App Store. As funcionalidades abaixo já existem na versão de desenvolvimento e passam por testes em aparelhos reais; não há data de lançamento definida. Quer testar antes? Fale comigo.',
@@ -1087,13 +1094,20 @@ const TRANSLATIONS = {
   'reportgo.cta-article': { pt: 'Ler o artigo sobre o app', en: 'Read the article about the app', es: 'Leer el artículo sobre la app' },
 
   // ── MY CAR LAS (página de detalhes · em desenvolvimento) ─────
-  'mycarlas.tagline': {
-    pt: 'Abastecimentos, despesas, manutenção, quilometragem e lembretes do seu carro ou moto em um só lugar — offline, sem conta e sem anúncios.',
-    en: 'Fuel-ups, expenses, maintenance, mileage and reminders for your car or motorbike in one place — offline, with no account and no ads.',
-    es: 'Cargas de combustible, gastos, mantenimiento, kilometraje y recordatorios de tu auto o moto en un solo lugar — sin conexión, sin cuenta y sin anuncios.',
-  },
+  'mycarlas.lead': { pt: "Abastecimentos, despesas, manutenção e lembretes do seu veículo, tudo no aparelho.", en: "Fuel-ups, expenses, maintenance and reminders for your vehicle, all on your device.", es: "Cargas de combustible, gastos, mantenimiento y recordatorios de tu vehículo, todo en el dispositivo." },
+  'mycarlas.trust-noaccount': { pt: "Sem conta", en: "No account", es: "Sin cuenta" },
+  'mycarlas.benefit1-t': { pt: "Quanto o carro custa", en: "What your car costs", es: "Cuánto cuesta el auto" },
+  'mycarlas.benefit1-d': { pt: "Abastecimentos com consumo médio, despesas por categoria e relatório mensal com comparação.", en: "Fuel-ups with average consumption, expenses by category and a monthly report with comparison.", es: "Cargas de combustible con consumo medio, gastos por categoría e informe mensual con comparación." },
+  'mycarlas.benefit2-t': { pt: "Nada esquecido", en: "Nothing forgotten", es: "Nada olvidado" },
+  'mycarlas.benefit2-d': { pt: "Lembretes por data ou quilometragem, com repetição e notificações no aparelho.", en: "Reminders by date or mileage, with repeats and notifications on your device.", es: "Recordatorios por fecha o kilometraje, con repetición y notificaciones en el dispositivo." },
+  'mycarlas.benefit3-t': { pt: "Seus dados, só seus", en: "Your data, yours alone", es: "Tus datos, solo tuyos" },
+  'mycarlas.benefit3-d': { pt: "Sem conta e sem servidor: tudo fica no aparelho e o app não precisa de internet.", en: "No account and no server: everything stays on your device and the app needs no internet.", es: "Sin cuenta y sin servidor: todo queda en el dispositivo y la app no necesita internet." },
+  'mycarlas.spec-platforms': { pt: "Android e Windows (iOS planejado, sem data)", en: "Android and Windows (iOS planned, no date)", es: "Android y Windows (iOS planificado, sin fecha)" },
+  'mycarlas.spec-langs': { pt: "Português (Brasil e Portugal), inglês, espanhol, italiano e francês", en: "Portuguese (Brazil and Portugal), English, Spanish, Italian and French", es: "Portugués (Brasil y Portugal), inglés, español, italiano y francés" },
+  'mycarlas.spec-price': { pt: "Versão gratuita permite até 2 veículos ativos", en: "The free version allows up to 2 active vehicles", es: "La versión gratuita permite hasta 2 vehículos activos" },
+  'mycarlas.spec-net': { pt: "Não usa internet", en: "Does not use internet", es: "No usa internet" },
+  'mycarlas.spec-perms': { pt: "Notificações (lembretes), reinício do aparelho (reagendar lembretes) e vibração", en: "Notifications (reminders), device restart (to reschedule reminders) and vibration", es: "Notificaciones (recordatorios), reinicio del dispositivo (reprogramar recordatorios) y vibración" },
   'mycarlas.status': { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
-  'mycarlas.tag-platforms': { pt: 'Android e Windows', en: 'Android & Windows', es: 'Android y Windows' },
   'mycarlas.notice': {
     pt: 'O MY CAR LAS ainda <strong>não está disponível</strong> no Google Play nem na App Store. As funcionalidades abaixo já existem na versão de desenvolvimento, que passa por testes e auditoria antes da publicação; não há data de lançamento definida. Quer acompanhar ou testar antes? Fale comigo.',
     en: 'MY CAR LAS is <strong>not yet available</strong> on Google Play or the App Store. The features below already exist in the development version, which is going through testing and auditing before release; there is no release date yet. Want to follow along or try it early? Get in touch.',

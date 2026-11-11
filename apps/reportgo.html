@@ -115,23 +115,20 @@
 
   <main>
 
-    <div class="app-page-hero">
+    <div class="app-page-hero app-page-hero--visual">
       <div class="container">
         <a href="/#apps" class="back-link" data-i18n="app.back-link">← Todos os aplicativos</a>
-        <div class="app-page-hero-inner reveal">
-          <img src="../assets/logos/reportgo_logo.png" alt="ReportGoApp" class="app-page-logo app-page-logo--light" width="140" height="140" />
+        <div class="app-page-hero-inner">
           <div class="app-page-meta">
-            <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
+            <img src="../assets/logos/reportgo-280.webp" width="140" height="140" alt="ReportGoApp" class="app-page-logo app-page-logo--light" />
+            <span class="app-category"><span data-i18n="apps.cat-produtividade">Produtividade</span></span>
             <h1>Report<span class="gradient-text">Go</span>App</h1>
-            <p class="app-tagline" data-i18n="reportgo.tagline">
-              Relatórios fotográficos técnicos para quem trabalha em campo: fotografe, descreva, assine e exporte em
-              PDF — tudo no celular, mesmo sem internet.
-            </p>
-            <div class="app-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Offline-first</span>
-              <span class="tag tag--wip" data-i18n="reportgo.status">Em desenvolvimento</span>
-            </div>
+            <p class="app-tagline"><span data-i18n="reportgo.lead">Relatórios fotográficos técnicos com GPS, assinatura e PDF, direto do celular.</span></p>
+            <div class="app-tags"><span class="tag">Flutter</span> <span class="tag tag--wip"><span aria-hidden="true">🚧</span> <span data-i18n="reportgo.status">Em desenvolvimento</span></span></div>
+            <ul class="app-trust">
+              <li data-i18n="reportgo.trust-data">Dados no aparelho</li>
+              <li data-i18n="reportgo.trust-offline">Funciona sem internet, exceto o mapa</li>
+            </ul>
             <div class="app-page-actions">
               <a href="/#contato" class="btn btn-primary" data-i18n="reportgo.cta-btn">Entrar em contato</a>
               <a href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" class="btn btn-outline"
@@ -142,7 +139,7 @@
       </div>
     </div>
 
-    <div class="article-body reveal article-body--app">
+    <div class="article-body article-body--app">
 
       <div class="app-dev-notice">
         <span class="app-dev-notice-ico" aria-hidden="true">🚧</span>
@@ -153,115 +150,118 @@
         </p>
       </div>
 
-      <h2 data-i18n="app.features-title">Funcionalidades</h2>
-      <ul class="app-features-list">
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature1">Relatórios numerados automaticamente (Rel.0001-26), sem duplicidade</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature2">Fotos pela câmera ou galeria, com GPS e data/hora gravados no arquivo</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature3">Marca d'água com data, hora e coordenadas em cada foto</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature4">Texto rico para o relatório e legenda para cada foto</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature5">Assinatura manuscrita na tela; relatório assinado fica protegido contra alterações</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature6">Mapa dos relatórios com filtros, galeria unificada e calendário</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature7">Exportação e compartilhamento em PDF direto do celular</span></li>
-        <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature8">Offline-first, em português, inglês e espanhol, com seus dados no aparelho</span></li>
-      </ul>
+      <section class="app-section reveal" id="beneficios" aria-labelledby="beneficios-title">
+        <h2 id="beneficios-title" data-i18n="app.benefits-title">Por que usar</h2>
+        <ul class="app-benefits">
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.5"/></svg>
+            <h3 data-i18n="reportgo.benefit1-t">Relatório no local</h3>
+            <p data-i18n="reportgo.benefit1-d">Fotografe, descreva cada foto e colha a assinatura na tela, tudo no celular.</p>
+          </li>
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+            <h3 data-i18n="reportgo.benefit2-t">Prova de onde e quando</h3>
+            <p data-i18n="reportgo.benefit2-d">GPS e data/hora gravados no arquivo da foto, com marca d’água de data, hora e coordenadas.</p>
+          </li>
+          <li class="app-benefit">
+            <svg class="app-benefit-ico" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>
+            <h3 data-i18n="reportgo.benefit3-t">PDF pronto</h3>
+            <p data-i18n="reportgo.benefit3-d">Exporte e compartilhe o relatório em PDF direto do celular, com numeração automática.</p>
+          </li>
+        </ul>
+      </section>
 
-      <h2 data-i18n="app.about-title">Sobre o aplicativo</h2>
-      <p data-i18n="reportgo.about-p1">
-        ReportGoApp é um aplicativo Flutter para criar relatórios fotográficos técnicos — vistorias, laudos, inspeções de
-        obra e perícias — direto do local de trabalho. O slogan resume a proposta: "Registre. Nós fazemos o resto."
-      </p>
-      <p data-i18n="reportgo.about-p2">
-        Você cria o relatório, fotografa ou importa as imagens, descreve cada uma, coleta a assinatura e exporta o PDF.
-        O app cuida da numeração, dos metadados, da organização e da proteção do relatório depois de assinado.
-      </p>
-      <p data-i18n="reportgo.about-p3">
-        Tudo funciona offline e os dados ficam no seu aparelho. A única exceção é o mapa, que precisa baixar as imagens
-        do mapa quando há conexão. Uma versão com nuvem (backup e sincronização) está nos planos, como recurso opcional
-        futuro.
-      </p>
+      <section class="app-section reveal" id="funcionalidades" aria-labelledby="funcionalidades-title">
+        <h2 id="funcionalidades-title" data-i18n="app.features-title">Funcionalidades</h2>
+        <ul class="app-features-list">
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature1">Relatórios numerados automaticamente (Rel.0001-26), sem duplicidade</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature2">Fotos pela câmera ou galeria, com GPS e data/hora gravados no arquivo</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature3">Marca d'água com data, hora e coordenadas em cada foto</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature4">Texto rico para o relatório e legenda para cada foto</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature5">Assinatura manuscrita na tela; relatório assinado fica protegido contra alterações</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature6">Mapa dos relatórios com filtros, galeria unificada e calendário</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature7">Exportação e compartilhamento em PDF direto do celular</span></li>
+          <li><span class="feature-check" aria-hidden="true">✓</span><span data-i18n="reportgo.feature8">Offline-first, em português, inglês e espanhol, com seus dados no aparelho</span></li>
+        </ul>
+      </section>
 
-      <hr class="article-divider" />
+      <section class="app-section reveal" id="sobre" aria-labelledby="sobre-title">
+        <h2 id="sobre-title" data-i18n="app.about-title">Sobre o aplicativo</h2>
+        <p data-i18n="reportgo.about-p1">ReportGoApp é um aplicativo Flutter para criar relatórios fotográficos técnicos — vistorias, laudos, inspeções de obra e perícias — direto do local de trabalho. O slogan resume a proposta: "Registre. Nós fazemos o resto."</p>
+        <p data-i18n="reportgo.about-p2">Você cria o relatório, fotografa ou importa as imagens, descreve cada uma, coleta a assinatura e exporta o PDF. O app cuida da numeração, dos metadados, da organização e da proteção do relatório depois de assinado.</p>
+        <p data-i18n="reportgo.about-p3">Tudo funciona offline e os dados ficam no seu aparelho. A única exceção é o mapa, que precisa baixar as imagens do mapa quando há conexão. Uma versão com nuvem (backup e sincronização) está nos planos, como recurso opcional futuro.</p>
+      </section>
 
-      <h2 data-i18n="app.faq-title">Perguntas frequentes</h2>
-      <ul class="faq-list">
+      <section class="app-section reveal" id="requisitos" aria-labelledby="req-title">
+        <h2 id="req-title" data-i18n="app.req-title">Requisitos e compatibilidade</h2>
+        <dl class="app-specs">
+          <div class="app-spec"><dt data-i18n="app.spec-platform">Plataforma</dt><dd data-i18n="app.val-android">Android</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-langs">Idiomas</dt><dd data-i18n="reportgo.spec-langs">Português, inglês e espanhol</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-net">Conexão</dt><dd data-i18n="reportgo.spec-net">Funciona sem internet; só o mapa usa internet (para baixar as imagens do mapa)</dd></div>
+          <div class="app-spec"><dt data-i18n="app.spec-perms">Permissões</dt><dd data-i18n="reportgo.spec-perms">Câmera e localização (pedidas em tempo de execução) e internet (mapa)</dd></div>
+        </dl>
+      </section>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq1-q">Quando o ReportGoApp será lançado?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq1-a">
-              Ainda não há data definida. O app está em desenvolvimento ativo, em fase de auditoria e testes em aparelhos reais. A primeira publicação deve ser na Google Play; quando houver novidades, elas aparecem aqui.
+      <section class="app-section reveal" id="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="app.faq-title">Perguntas frequentes</h2>
+        <ul class="faq-list">
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q1" aria-expanded="false" aria-controls="faq-a1">
+              <span data-i18n="reportgo.faq1-q">Quando o ReportGoApp será lançado?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq1-a">Ainda não há data definida. O app está em desenvolvimento ativo, em fase de auditoria e testes em aparelhos reais. A primeira publicação deve ser na Google Play; quando houver novidades, elas aparecem aqui.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq2-q">Como posso testar antes do lançamento?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq2-a">
-              Envie uma mensagem pelo formulário de contato do site contando como você trabalha com relatórios fotográficos. Estou buscando profissionais de campo para pilotos gratuitos e feedback.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+              <span data-i18n="reportgo.faq2-q">Como posso testar antes do lançamento?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq2-a">Envie uma mensagem pelo formulário de contato do site contando como você trabalha com relatórios fotográficos. Estou buscando profissionais de campo para pilotos gratuitos e feedback.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq3-q">O app precisa de internet?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq3-a">
-              Não para o uso principal: relatórios, fotos, assinatura e PDF funcionam offline. Somente o mapa depende de conexão para exibir as imagens do mapa.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+              <span data-i18n="reportgo.faq3-q">O app precisa de internet?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq3-a">Não para o uso principal: relatórios, fotos, assinatura e PDF funcionam offline. Somente o mapa depende de conexão para exibir as imagens do mapa.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq4-q">Onde ficam meus dados?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq4-a">
-              No seu próprio aparelho. Nesta fase o app não tem servidor: contas, relatórios e fotos ficam armazenados localmente, e cada usuário só enxerga os seus.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+              <span data-i18n="reportgo.faq4-q">Onde ficam meus dados?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq4-a">No seu próprio aparelho. Nesta fase o app não tem servidor: contas, relatórios e fotos ficam armazenados localmente, e cada usuário só enxerga os seus.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq5-q">O app será gratuito?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq5-a">
-              A ideia é que o app funcione gratuitamente offline, com recursos de nuvem como possível versão paga no futuro. Preços e planos ainda não foram definidos.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+              <span data-i18n="reportgo.faq5-q">O app será gratuito?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq5-a">A ideia é que o app funcione gratuitamente offline, com recursos de nuvem como possível versão paga no futuro. Preços e planos ainda não foram definidos.</div>
             </div>
-          </div>
-        </li>
+          </li>
 
-        <li class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="reportgo.faq6-q">Haverá versão para iPhone?</span>
-            <span class="faq-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner" data-i18n="reportgo.faq6-a">
-              É um passo planejado. Hoje o app é validado em aparelhos Android; a validação e a publicação para iOS vêm em seguida.
+          <li class="faq-item">
+            <button type="button" class="faq-question" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+              <span data-i18n="reportgo.faq6-q">Haverá versão para iPhone?</span><span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+              <div class="faq-answer-inner" data-i18n="reportgo.faq6-a">É um passo planejado. Hoje o app é validado em aparelhos Android; a validação e a publicação para iOS vêm em seguida.</div>
             </div>
-          </div>
-        </li>
+          </li>
+        </ul>
+      </section>
 
-      </ul>
-
-      <hr class="article-divider" />
-
-      <div class="article-cta">
+      <div class="article-cta reveal">
         <p data-i18n="reportgo.cta-text">Trabalha com vistorias, laudos ou inspeções? Quer testar o ReportGoApp antes do lançamento ou conversar sobre o projeto?</p>
         <a href="/#contato" class="btn btn-primary" data-i18n="reportgo.cta-btn">Entrar em contato</a>
       </div>

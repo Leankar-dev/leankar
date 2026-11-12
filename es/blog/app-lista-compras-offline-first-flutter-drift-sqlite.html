@@ -14,7 +14,10 @@
              font-src 'self';
              img-src 'self' data:;
              script-src 'self' https://www.googletagmanager.com;
-             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;
+             base-uri 'self';
+             object-src 'none';
+             form-action 'none';" />
   <meta name="description"
     content="Cómo crear una app de lista de compras offline-first con Flutter y Drift (SQLite): tablas tipadas, streams reactivos e integración con Riverpod." />
   <meta name="robots" content="index, follow" />

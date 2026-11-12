@@ -1,0 +1,7 @@
+# Atualização semanal das Actions do workflow (elas estão fixadas por SHA; o Dependabot propõe o SHA novo em um pull request).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

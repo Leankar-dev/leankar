@@ -14,7 +14,10 @@
              font-src 'self';
              img-src 'self' data:;
              script-src 'self' https://www.googletagmanager.com;
-             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;
+             base-uri 'self';
+             object-src 'none';
+             form-action 'none';" />
   <meta name="description"
     content="How I implemented Campo Minado Evolution in Flutter: board data structure, mine placement, adjacent-count calculation and iterative flood fill." />
   <meta name="robots" content="index, follow" />

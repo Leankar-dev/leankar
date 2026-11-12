@@ -334,13 +334,42 @@ function rewriteSelectors(toks, key, L, errors, where) {
 // 3 mensagens em runtime: carrega core/runtime-strings.js (gerado abaixo) no lugar do strings.js. Idempotente.
 const RUNTIME_KEYS = ['contato.btn-submit', 'contato.btn-sending', 'contato.btn-sent', 'contato.invalid'];
 function syncScripts(text, where, errors) {
-  const usaForm = /<script src="(?:\.\.\/)?js\/contact-form\.js"><\/script>/.test(text);
-  text = text.replace(/^[ \t]*<script src="(?:\.\.\/)?js\/i18n\.js"><\/script>\n/m, '');
-  const m = /^([ \t]*)<script src="((?:\.\.\/)?)core\/strings\.js"><\/script>\n/m.exec(text);
+  const Q = '(?:\\?v=[0-9a-f]+)?'; // sufixo de versão opcional (?v=…), ver versionAssets
+  const usaForm = new RegExp(`<script src="(?:\\.\\./)?js/contact-form\\.js${Q}"></script>`).test(text);
+  text = text.replace(new RegExp(`^[ \\t]*<script src="(?:\\.\\./)?js/i18n\\.js${Q}"></script>\\n`, 'm'), '');
+  const m = new RegExp(`^([ \\t]*)<script src="((?:\\.\\./)?)core/strings\\.js${Q}"></script>\\n`, 'm').exec(text);
   if (m) text = text.replace(m[0], usaForm ? `${m[1]}<script src="${m[2]}core/runtime-strings.js"></script>\n` : '');
-  if (usaForm && !/core\/runtime-strings\.js"/.test(text)) errors.push(`${where}: a página tem formulário (contact-form.js) mas não carrega core/runtime-strings.js`);
-  if (!usaForm && /core\/runtime-strings\.js"/.test(text)) errors.push(`${where}: carrega runtime-strings.js sem ter formulário`);
+  const temRuntime = new RegExp(`core/runtime-strings\\.js${Q}"`).test(text);
+  if (usaForm && !temRuntime) errors.push(`${where}: a página tem formulário (contact-form.js) mas não carrega core/runtime-strings.js`);
+  if (!usaForm && temRuntime) errors.push(`${where}: carrega runtime-strings.js sem ter formulário`);
   return text;
+}
+
+// ───────────────────────── versão dos recursos (cache busting) ─────────────────────────
+// O GitHub Pages serve css/js com Cache-Control: max-age=600. Sem versão na URL, quem abre o site logo após um deploy pode receber o HTML novo
+// com o CSS/JS velho do cache. Aqui cada <link rel="stylesheet"> e <script src> local ganha ?v=<8 primeiros hex do sha256 do conteúdo>:
+// mudou o arquivo → muda a URL → o navegador busca de novo. Mesmo conteúdo → mesma URL (continua em cache). O hash ignora o fim de linha (CRLF/LF).
+const ASSET_RE = /^((?:\.\.\/)*|\/)((?:css|js|core)\/[\w.-]+\.(?:css|js))(?:\?v=[0-9a-f]+)?$/;
+const ASSET_OVERRIDE = new Map(); // caminho → Buffer ainda não escrito em disco (core/runtime-strings.js é gerado nesta mesma execução)
+const ASSET_CACHE = new Map();
+function assetVersion(rel) {
+  if (!ASSET_CACHE.has(rel)) {
+    const buf = ASSET_OVERRIDE.get(rel) ?? (fs.existsSync(path.join(ROOT, rel)) ? fs.readFileSync(path.join(ROOT, rel)) : null);
+    ASSET_CACHE.set(rel, buf ? crypto.createHash('sha256').update(lf(buf)).digest('hex').slice(0, 8) : null);
+  }
+  return ASSET_CACHE.get(rel);
+}
+function versionAssets(toks, errors, where) {
+  return toks.map(t => {
+    if (t.t !== 'open') return t;
+    const attr = t.name === 'link' && /(?:^|\s)stylesheet(?:\s|$)/.test(getAttr(t.s, 'rel') || '') ? 'href' : t.name === 'script' ? 'src' : null;
+    const v = attr && getAttr(t.s, attr);
+    const m = v && ASSET_RE.exec(v);
+    if (!m) return t;
+    const ver = assetVersion(m[2]);
+    if (!ver) { errors.push(`${where}: recurso local inexistente: ${m[2]}`); return t; }
+    return { ...t, s: setAttr(t.s, attr, `${m[1]}${m[2]}?v=${ver}`) };
+  });
 }
 function buildRuntimeStrings(T, errors) {
   const o = {};
@@ -391,6 +420,7 @@ function generate(key, L, ctx, errors) {
     toks.splice(ol + 1, 0, { t: 'text', s: alt });
   }
   toks = rewriteLinksAndResources(toks, L, scope);
+  toks = versionAssets(toks, errors, where);
   toks = rewriteSelectors(toks, key, L, errors, where);
   const hd = toks.findIndex(t => t.t === 'open' && t.name === 'head');
   toks.splice(hd + 1, 0, { t: 'text', s: `\n  <!-- GERADO por scripts/build-i18n.mjs a partir de ${key}. NÃO EDITE. -->` });
@@ -429,7 +459,8 @@ function syncSource(key, ctx, errors) {
   toks = rewriteSelectors(toks, key, 'pt', errors, where);
   const html = toks.findIndex(t => t.t === 'open' && t.name === 'html');
   toks[html] = { ...toks[html], s: ensureStaticLang(toks[html].s) };
-  if (!/js\/lang\.js"/.test(join(toks))) errors.push(`${where}: falta <script src="…/js/lang.js"> na fonte`);
+  toks = versionAssets(toks, errors, where);
+  if (!/js\/lang\.js(?:\?v=[0-9a-f]+)?"/.test(join(toks))) errors.push(`${where}: falta <script src="…/js/lang.js"> na fonte`);
   return serialize(join(toks), src);
 }
 
@@ -474,7 +505,8 @@ function buildSitemap(outputs, ctx, errors) {
   for (const p of cfg.pages) {
     const migrada = ctx.scope.has(p.key);
     const bufs = migrada ? [outputs.get(p.key), outputs.get(`en/${p.key}`), outputs.get(`es/${p.key}`)] : [fs.readFileSync(path.join(ROOT, p.key))];
-    const hash = crypto.createHash('sha256').update(lf(Buffer.concat(bufs))).digest('hex').slice(0, 16);
+    // o ?v= dos recursos não conta: trocar o CSS/JS não deve mudar o lastmod de todas as páginas
+    const hash = crypto.createHash('sha256').update(Buffer.from(lf(Buffer.concat(bufs)).toString('latin1').replace(/\?v=[0-9a-f]{8}(?=")/g, ''), 'latin1')).digest('hex').slice(0, 16);
     const ant = prev[p.key];
     let lastmod;
     if (ant && (migrar || ant.hash === hash)) lastmod = ant.lastmod; // conteúdo igual: preserva
@@ -547,11 +579,13 @@ function main() {
   }
 
   const errors = []; const outputs = new Map(); // caminho relativo → Buffer
+  const runtime = buildRuntimeStrings(ctx.T, errors);
+  ASSET_OVERRIDE.set('core/runtime-strings.js', runtime); // as páginas versionam o runtime-strings.js pelo conteúdo que será escrito
   for (const k of keys) {
     outputs.set(k, syncSource(k, ctx, errors));
     for (const L of LANGS) outputs.set(`${L}/${k}`, generate(k, L, ctx, errors));
   }
-  if (!only) outputs.set('core/runtime-strings.js', buildRuntimeStrings(ctx.T, errors));
+  if (!only) outputs.set('core/runtime-strings.js', runtime);
   if (!only && !errors.length) buildSitemap(outputs, ctx, errors); // o sitemap depende de todas as páginas
   if (errors.length) {
     console.error(`\nBUILD FALHOU — ${errors.length} problema(s); nada foi escrito:\n`);

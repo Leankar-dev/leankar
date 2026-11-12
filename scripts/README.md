@@ -76,6 +76,15 @@ Em app **com anúncios** não se pode escrever "sem anúncios", "no ads", "ad-fr
 - **Imagens Open Graph:** se o PT aponta para `https://leankar.dev/assets/og/<nome>.jpg` e existe `assets/og/en/<nome>.jpg` (e `es/`), a página do idioma (e o `image` do JSON-LD) usa a dela. As imagens da home e dos artigos são geradas por uma ferramenta local (`gerar_og_cards.cjs`, fora do git) a partir do título de cada idioma.
 - **`404.html`** (PT/EN/ES numa página só), **`favicon.ico`** e **`.nojekyll`** ficam na raiz e não passam pelo gerador.
 
+## Versão do CSS/JS na URL (cache)
+
+O GitHub Pages serve `css/` e `js/` com `Cache-Control: max-age=600`. Para quem abre o site logo depois de um deploy não receber HTML novo com CSS/JS velho, o gerador acrescenta `?v=<hash>` em todo `<link rel="stylesheet">` e `<script src>` **local** das páginas PT, EN e ES (ex.: `css/style.css?v=c11b879f`). O hash vem do conteúdo do arquivo (ignora CRLF/LF), então só muda quando o arquivo muda.
+
+- **Editou `css/*.css`, `js/*.js` ou `core/*.js`?** Rode o gerador: ele atualiza o `?v=` em todas as páginas. Sem isso o `--check` (hook e GitHub) falha. Não escreva o `?v=` à mão.
+- Página nova: use o caminho sem versão (`css/style.css`); o gerador acrescenta.
+- O `?v=` não entra no hash do `lastmod` do sitemap: trocar o CSS não muda a data de todas as páginas.
+- Fora do gerador: `404.html` (não passa por ele) e as fontes/imagens (`assets/`, não mudam de conteúdo).
+
 ## Faixa opcional de idioma
 
 `js/lang.js` mostra, só para quem tem o navegador em inglês ou espanhol e está numa página de outro idioma, uma faixa discreta "Esta página também está em…". Não redireciona, é dispensável, não aparece para robôs nem para quem já escolheu o idioma pelo seletor.

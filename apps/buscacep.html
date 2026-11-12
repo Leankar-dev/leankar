@@ -99,6 +99,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo" data-i18n="nav.skip">Pular para o conteúdo</a>
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <header class="navbar" id="navbar">
@@ -107,13 +108,13 @@
         <img src="../assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" data-i18n-aria="nav.main-label" aria-label="Principal">
         <a href="/#sobre" data-i18n="nav.sobre">Sobre</a>
         <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
         <a href="/#contato" data-i18n="nav.contato">Contato</a>
       </nav>
       <!-- i18n:selector -->
-      <div class="lang-selector" aria-label="Language selector">
+      <div class="lang-selector" role="group" data-i18n-aria="lang.label" aria-label="Idioma">
         <a class="lang-btn active" href="/apps/buscacep.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
         <a class="lang-btn" href="/en/apps/buscacep.html" hreflang="en" lang="en">EN</a>
@@ -130,7 +131,7 @@
       <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
       <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
       <!-- i18n:selector -->
-      <div class="lang-selector lang-selector--mobile">
+      <div class="lang-selector lang-selector--mobile" role="group" data-i18n-aria="lang.label" aria-label="Idioma">
         <a class="lang-btn active" href="/apps/buscacep.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
         <a class="lang-btn" href="/en/apps/buscacep.html" hreflang="en" lang="en">EN</a>
@@ -141,7 +142,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo" tabindex="-1">
 
     <div class="app-page-hero app-page-hero--visual">
       <div class="container">

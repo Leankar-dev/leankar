@@ -242,6 +242,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Skip to content</a>
 
   <!-- ── CANVAS DE PARTÍCULAS ── -->
   <canvas id="particles-canvas" aria-hidden="true"></canvas>
@@ -253,13 +254,13 @@
         <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
         <span>leankar<span class="accent">.dev</span></span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Main">
         <a href="#sobre">About</a>
         <a href="#apps">Apps</a>
         <a href="#contato">Contact</a>
       </nav>
       <!-- i18n:selector -->
-      <div class="lang-selector" aria-label="Language selector">
+      <div class="lang-selector" role="group" aria-label="Language">
         <a class="lang-btn" href="/" hreflang="pt-BR" lang="pt-BR">PT</a>
         <span class="lang-sep">|</span>
         <a class="lang-btn active" href="/en/" hreflang="en" lang="en" aria-current="true">EN</a>
@@ -276,7 +277,7 @@
       <a href="#apps" class="mobile-link">Apps</a>
       <a href="#contato" class="mobile-link">Contact</a>
       <!-- i18n:selector -->
-      <div class="lang-selector lang-selector--mobile">
+      <div class="lang-selector lang-selector--mobile" role="group" aria-label="Language">
         <a class="lang-btn" href="/" hreflang="pt-BR" lang="pt-BR">PT</a>
         <span class="lang-sep">|</span>
         <a class="lang-btn active" href="/en/" hreflang="en" lang="en" aria-current="true">EN</a>
@@ -287,7 +288,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo" tabindex="-1">
 
     <!-- ── HERO ── -->
     <section class="hero" id="hero">

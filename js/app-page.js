@@ -23,6 +23,15 @@ mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
   });
 });
 
+/* Esc fecha o menu móvel e devolve o foco ao botão */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !mobileMenu.classList.contains('open')) return;
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.focus();
+});
+
 /* ── REVEAL ON SCROLL ──
    threshold 0: revela quando QUALQUER parte entra na área útil. Com 0.1 um bloco muito alto (mais de ~10× a
    viewport) nunca atingia a razão e ficava invisível. Sem IntersectionObserver, mostra tudo. */

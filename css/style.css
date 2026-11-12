@@ -1818,6 +1818,23 @@ a.lang-btn {
   font-weight: 700;
 }
 
+/* Link "pular para o conteúdo": invisível até receber foco por teclado */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -64px;
+  z-index: 2000;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--cyan);
+  color: #04101c;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s;
+}
+.skip-link:focus { top: 12px; }
+main:focus { outline: none; } /* main#conteudo recebe o foco programático do skip-link; sem contorno no bloco inteiro */
+
 /* Faixa opcional de idioma (js/lang.js): fixa embaixo, não desloca o layout, dispensável */
 .lang-banner {
   position: fixed;

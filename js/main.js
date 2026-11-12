@@ -25,6 +25,15 @@ mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
   });
 });
 
+/* Esc fecha o menu móvel e devolve o foco ao botão */
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape' || !mobileMenu.classList.contains('open')) return;
+  mobileMenu.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.focus();
+});
+
 /* ── REVEAL ON SCROLL ── */
 const revealEls = document.querySelectorAll('.reveal');
 const observer  = new IntersectionObserver(
@@ -35,7 +44,7 @@ revealEls.forEach(el => observer.observe(el));
 
 /* ── SMOOTH SCROLL para links internos ── */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (!target) return;

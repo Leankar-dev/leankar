@@ -15,6 +15,8 @@ const TRANSLATIONS = {
   'nav.apps':         { pt: 'Aplicativos',  en: 'Apps',    es: 'Apps' },
   'nav.contato':      { pt: 'Contato',      en: 'Contact', es: 'Contacto' },
   'nav.menu-label':   { pt: 'Abrir menu',   en: 'Open menu', es: 'Abrir menú' },
+  'nav.skip':         { pt: 'Pular para o conteúdo', en: 'Skip to content', es: 'Saltar al contenido' },
+  'nav.main-label':   { pt: 'Principal', en: 'Main', es: 'Principal' },
 
   // ── HERO ──────────────────────────────────────────────────
   'hero.badge': { pt: 'LEANKAR.DEV', en: 'LEANKAR.DEV', es: 'LEANKAR.DEV' },

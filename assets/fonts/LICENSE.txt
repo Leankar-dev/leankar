@@ -1,0 +1,7 @@
+Fontes distribuídas por este site (auto-hospedadas)
+
+Inter (inter-latin-var.woff2) — Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)
+Space Grotesk (space-grotesk-latin-var.woff2) — Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+
+Ambas licenciadas sob a SIL Open Font License, Version 1.1 — https://openfontlicense.org/ (texto completo: https://scripts.sil.org/OFL).
+Arquivos obtidos do Google Fonts (subconjunto "latin", fonte variável) e servidos por este site, sem requisições a terceiros.

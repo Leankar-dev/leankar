@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#080d1a" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
-             style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-             font-src https://fonts.gstatic.com;
+             style-src 'self' 'unsafe-inline';
+             font-src 'self';
              img-src 'self' data:;
              script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
@@ -22,11 +22,8 @@
   <title>Privacy Policy — leankar.dev</title>
   <link rel="icon" type="image/jpeg" href="/assets/logos/logo_leankar.jpeg" />
   <link rel="apple-touch-icon" href="/assets/logos/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link rel="preload" href="/assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/css/style.css" />
   <style>
     /* ── PRIVACY PAGE ── */
@@ -506,13 +503,6 @@
             pseudonymized form, including pages visited, session duration, country of origin, device
             type, and browser. The IP address is anonymized by Google before storage.
           </li>
-          <li>
-            <strong>Google Fonts:</strong> the Inter and Space Grotesk fonts are loaded from Google's
-            servers (fonts.googleapis.com / fonts.gstatic.com). This request may log the visitor's IP
-            address in accordance with
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              Google's privacy policy</a>.
-          </li>
         </ul>
       </div>
 
@@ -637,10 +627,6 @@
             <strong>Google Analytics:</strong> the controller's legitimate interest in audience
             analysis and site improvement (Art. 7, IX), with pseudonymized data and active IP
             anonymization.
-          </li>
-          <li>
-            <strong>Google Fonts:</strong> the controller's legitimate interest in properly displaying
-            the site (Art. 7, IX). Necessary for correct interface rendering.
           </li>
           <li>
             <strong>Contact form (Formspree):</strong> performance of procedures at the data subject's

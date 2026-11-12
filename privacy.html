@@ -10,8 +10,8 @@
   <meta name="theme-color" content="#080d1a" />
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
-             style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-             font-src https://fonts.gstatic.com;
+             style-src 'self' 'unsafe-inline';
+             font-src 'self';
              img-src 'self' data:;
              script-src 'self' https://www.googletagmanager.com;
              connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
@@ -21,11 +21,8 @@
   <title>Política de Privacidade — leankar.dev</title>
   <link rel="icon" type="image/jpeg" href="assets/logos/logo_leankar.jpeg" />
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
   <style>
     /* ── PRIVACY PAGE ── */
@@ -504,13 +501,6 @@
             pseudonimizada, incluindo páginas visitadas, duração da sessão, país de origem, tipo de
             dispositivo e navegador. O endereço IP é anonimizado pelo Google antes do armazenamento.
           </li>
-          <li>
-            <strong>Google Fonts:</strong> as fontes Inter e Space Grotesk são carregadas dos servidores
-            do Google (fonts.googleapis.com / fonts.gstatic.com). Essa requisição pode registrar o IP do
-            visitante conforme a
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              política de privacidade do Google</a>.
-          </li>
         </ul>
       </div>
 
@@ -642,10 +632,6 @@
           <li>
             <strong>Google Analytics:</strong> legítimo interesse do controlador na análise de audiência
             e melhoria do site (Art. 7º, IX), com dados pseudonimizados e anonimização de IP ativa.
-          </li>
-          <li>
-            <strong>Google Fonts:</strong> legítimo interesse do controlador na exibição adequada do site
-            (Art. 7º, IX). Necessário para a renderização correta da interface.
           </li>
           <li>
             <strong>Formulário de contato (Formspree):</strong> execução de procedimentos a pedido do
@@ -870,13 +856,6 @@
             pseudonymized form, including pages visited, session duration, country of origin, device
             type, and browser. The IP address is anonymized by Google before storage.
           </li>
-          <li>
-            <strong>Google Fonts:</strong> the Inter and Space Grotesk fonts are loaded from Google's
-            servers (fonts.googleapis.com / fonts.gstatic.com). This request may log the visitor's IP
-            address in accordance with
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              Google's privacy policy</a>.
-          </li>
         </ul>
       </div>
 
@@ -1001,10 +980,6 @@
             <strong>Google Analytics:</strong> the controller's legitimate interest in audience
             analysis and site improvement (Art. 7, IX), with pseudonymized data and active IP
             anonymization.
-          </li>
-          <li>
-            <strong>Google Fonts:</strong> the controller's legitimate interest in properly displaying
-            the site (Art. 7, IX). Necessary for correct interface rendering.
           </li>
           <li>
             <strong>Contact form (Formspree):</strong> performance of procedures at the data subject's
@@ -1230,13 +1205,6 @@
             tipo de dispositivo y navegador. La dirección IP es anonimizada por Google antes de su
             almacenamiento.
           </li>
-          <li>
-            <strong>Google Fonts:</strong> las fuentes Inter y Space Grotesk se cargan desde los
-            servidores de Google (fonts.googleapis.com / fonts.gstatic.com). Esta solicitud puede
-            registrar la IP del visitante conforme a la
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-              política de privacidad de Google</a>.
-          </li>
         </ul>
       </div>
 
@@ -1361,10 +1329,6 @@
             <strong>Google Analytics:</strong> interés legítimo del responsable en el análisis de
             audiencia y la mejora del sitio (Art. 7, IX), con datos pseudonimizados y anonimización de
             IP activa.
-          </li>
-          <li>
-            <strong>Google Fonts:</strong> interés legítimo del responsable en la correcta visualización
-            del sitio (Art. 7, IX). Necesario para el renderizado correcto de la interfaz.
           </li>
           <li>
             <strong>Formulario de contacto (Formspree):</strong> ejecución de procedimientos a

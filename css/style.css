@@ -4,7 +4,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 /* ─────────────────────────────────────────
-   FONTES RESERVA (CLS): enquanto o Google Fonts (display=swap) carrega, o texto usa o Arial com largura e altura de linha
+   FONTES AUTO-HOSPEDADAS (assets/fonts, licença SIL OFL 1.1): Inter e Space Grotesk, variáveis, só o subconjunto latino
+   (cobre PT, EN e ES). Nenhuma requisição ao Google. Os símbolos e emojis fora do latino caem na fonte do sistema.
+───────────────────────────────────────── */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 300 800; font-display: swap; src: url('../assets/fonts/inter-latin-var.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../assets/fonts/space-grotesk-latin-var.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* ─────────────────────────────────────────
+   FONTES RESERVA (CLS): enquanto a fonte web (display=swap) carrega, o texto usa o Arial com largura e altura de linha
    ajustadas às de Inter / Space Grotesk. Assim a troca não muda as quebras de linha nem empurra o conteúdo (o hero das
    páginas de app tinha CLS 0,10–0,15 por isso). Razões medidas no Chrome por peso; se o Arial não existir, nada muda.
 ───────────────────────────────────────── */

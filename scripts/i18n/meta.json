@@ -1342,7 +1342,6 @@
         "keep": [
           "/datePublished",
           "/dateModified",
-          "/image",
           "/author/name",
           "/author/url",
           "/publisher/name",

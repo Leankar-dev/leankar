@@ -88,6 +88,10 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* Sem JavaScript (desativado ou bloqueado) nada revela o conteúdo: mostra tudo, sem animação de entrada */
+@media (scripting: none) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
 
 /* ─────────────────────────────────────────
    NAVBAR
@@ -1817,6 +1821,21 @@ a.lang-btn {
   color: var(--cyan);
   font-weight: 700;
 }
+
+/* Página 404.html (sem JavaScript, nos 3 idiomas) */
+.nf {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 32px 24px;
+}
+.nf h1 { font-size: clamp(3rem, 12vw, 6rem); line-height: 1; margin: 8px 0 4px; }
+.nf p { color: var(--muted); max-width: 46ch; margin: 0; }
+.nf-lang { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 12px; }
 
 /* Link "pular para o conteúdo": invisível até receber foco por teclado */
 .skip-link {

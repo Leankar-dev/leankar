@@ -131,6 +131,19 @@ function applyLangBlocks(toks, L) {
   return out;
 }
 
+// Nas páginas PT de blog/privacy os blocos EN/ES ficam escondidos e o título deles é <h2 data-promote="h1"> (para o HTML PT ter um só <h1>);
+// na página gerada o bloco do idioma é o único e o título volta a ser <h1>.
+function promoverTitulos(toks) {
+  for (let k = 0; k < toks.length; k++) {
+    const t = toks[k];
+    if (t.t !== 'open' || t.name !== 'h2' || getAttr(t.s, 'data-promote') !== 'h1') continue;
+    const c = findClose(toks, k);
+    toks[k] = { ...t, name: 'h1', s: removeAttr(t.s, 'data-promote').replace(/^<h2/, '<h1') };
+    toks[c] = { ...toks[c], name: 'h1', s: '</h1>' };
+  }
+  return toks;
+}
+
 // Passo 2: corpo (data-i18n → innerHTML; -alt/-aria/-placeholder → atributos). Remove todos os data-i18n*.
 function translateBody(toks, L, T, errors, where, used) {
   const out = [];
@@ -255,6 +268,8 @@ function translateJsonLd(toks, key, L, spec, errors, where, usedLd, scope) {
         if (L !== 'pt') setAt(data, ptr, e[L]);
         continue;
       }
+      const mog = /^https:\/\/leankar\.dev\/assets\/og\/([^/]+)$/.exec(val); // imagem Open Graph no JSON-LD: usa a do idioma quando existe (igual ao og:image)
+      if (mog) { if (L !== 'pt' && fs.existsSync(path.join(ROOT, `assets/og/${L}/${mog[1]}`))) setAt(data, ptr, `${ORIGIN}/assets/og/${L}/${mog[1]}`); continue; }
       const kp = keep.find(p => keepMatch(p, ptr));
       if (kp) { seenKeep.add(kp); continue; }
       if (val === selfPt) { if (L !== 'pt') setAt(data, ptr, pageUrl(key, L)); continue; } // URL da própria página
@@ -344,7 +359,7 @@ function generate(key, L, ctx, errors) {
   const meta = META[key];
   const usedHead = new Set(), usedLd = new Set();
 
-  toks = applyLangBlocks(toks, L);
+  toks = promoverTitulos(applyLangBlocks(toks, L));
   toks = translateBody(toks, L, T, errors, where, null);
   setHead(toks, meta.head, L, errors, where, usedHead);
   for (const k of Object.keys(meta.head)) if (!usedHead.has(k)) errors.push(`${where}: head.${k} do meta.json não é usado pela página`);

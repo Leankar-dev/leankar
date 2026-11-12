@@ -67,6 +67,12 @@ Convenções do `meta.json` por página: `head` (title, description, ogTitle, og
 
 Em app **com anúncios** não se pode escrever "sem anúncios", "no ads", "ad-free", "sin anuncios", "zero permissões", "100% offline" etc. (salvo frase qualificada, como "nenhuma permissão **que precise** da sua autorização"). O BuscaCep exige internet (nunca "offline"). O ReportGo nunca diz "Gratuito/Free/Gratis". App em desenvolvimento não tem selo do Google Play, "Ver vídeo" nem `installUrl`. A tradução não pode afirmar o que o português não afirma.
 
+## Detalhes que ajudam a não errar
+
+- **Blog e privacidade** trazem os 3 idiomas no mesmo HTML-fonte. Para a página em português ter um só `<h1>`, o título dos blocos EN/ES é escrito como `<h2 data-promote="h1">…</h2>`; o gerador o devolve a `<h1>` na página do idioma.
+- **Imagens Open Graph:** se o PT aponta para `https://leankar.dev/assets/og/<nome>.jpg` e existe `assets/og/en/<nome>.jpg` (e `es/`), a página do idioma (e o `image` do JSON-LD) usa a dela. As imagens da home e dos artigos são geradas por uma ferramenta local (`gerar_og_cards.cjs`, fora do git) a partir do título de cada idioma.
+- **`404.html`** (PT/EN/ES numa página só), **`favicon.ico`** e **`.nojekyll`** ficam na raiz e não passam pelo gerador.
+
 ## Faixa opcional de idioma
 
 `js/lang.js` mostra, só para quem tem o navegador em inglês ou espanhol e está numa página de outro idioma, uma faixa discreta "Esta página também está em…". Não redireciona, é dispensável, não aparece para robôs nem para quem já escolheu o idioma pelo seletor.

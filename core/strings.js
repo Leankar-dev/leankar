@@ -283,6 +283,7 @@ const TRANSLATIONS = {
   'contato.btn-sent':    { pt: 'Enviado!',         en: 'Sent!',          es: '¡Enviado!' },
   'contato.success':     { pt: '✓ Mensagem enviada! Responderei em breve.', en: '✓ Message sent! I will reply soon.', es: '✓ ¡Mensaje enviado! Te responderé pronto.' },
   'contato.error':       { pt: 'Erro ao enviar. Tente novamente em instantes.', en: 'Failed to send. Please try again.', es: 'Error al enviar. Inténtalo de nuevo.' },
+  'contato.invalid':     { pt: 'Preencha seu nome, um e-mail válido e a mensagem.', en: 'Please enter your name, a valid email and a message.', es: 'Escribe tu nombre, un correo válido y un mensaje.' },
 
   // ── FOOTER ────────────────────────────────────────────────
   'footer.copy':    { pt: 'Feito com <span class="heart">♥</span> e Flutter', en: 'Made with <span class="heart">♥</span> and Flutter', es: 'Hecho con <span class="heart">♥</span> y Flutter' },

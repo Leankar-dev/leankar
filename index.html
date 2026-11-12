@@ -897,11 +897,12 @@
             </div>
             <textarea name="mensagem" data-i18n-placeholder="contato.placeholder-msg"
               placeholder="Descreva seu projeto ou tire sua dúvida…" required></textarea>
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button type="submit" class="btn btn-primary" id="contact-submit" data-i18n="contato.btn-submit">Enviar
               mensagem</button>
-            <p class="form-msg form-msg--ok" id="form-ok" data-i18n="contato.success">✓ Mensagem enviada! Responderei em
+            <p class="form-msg form-msg--ok" id="form-ok" role="status" data-i18n="contato.success">✓ Mensagem enviada! Responderei em
               breve.</p>
-            <p class="form-msg form-msg--err" id="form-err" data-i18n="contato.error">Erro ao enviar. Tente novamente em
+            <p class="form-msg form-msg--err" id="form-err" role="alert" data-i18n="contato.error">Erro ao enviar. Tente novamente em
               instantes.</p>
           </form>
 

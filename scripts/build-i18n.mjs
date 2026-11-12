@@ -316,7 +316,7 @@ function rewriteSelectors(toks, key, L, errors, where) {
 // ───────────────────────── scripts de idioma (Fase 7) ─────────────────────────
 // Páginas migradas não carregam core/strings.js (171 KB) nem js/i18n.js: o texto já vem pronto. Só a página com formulário (contact-form.js) precisa de
 // 3 mensagens em runtime: carrega core/runtime-strings.js (gerado abaixo) no lugar do strings.js. Idempotente.
-const RUNTIME_KEYS = ['contato.btn-submit', 'contato.btn-sending', 'contato.btn-sent'];
+const RUNTIME_KEYS = ['contato.btn-submit', 'contato.btn-sending', 'contato.btn-sent', 'contato.invalid'];
 function syncScripts(text, where, errors) {
   const usaForm = /<script src="(?:\.\.\/)?js\/contact-form\.js"><\/script>/.test(text);
   text = text.replace(/^[ \t]*<script src="(?:\.\.\/)?js\/i18n\.js"><\/script>\n/m, '');
@@ -441,6 +441,9 @@ function identity(key, ctx) {
 // Páginas migradas (meta.json) saem em 3 URLs com <xhtml:link> para as 4 alternates; as demais, só em PT.
 // lastmod: guardado em scripts/i18n/sitemap-state.json junto com um hash do conteúdo; só muda (para a data de hoje) quando o conteúdo da página mudou.
 const hoje = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+// Fim de linha não conta: o mesmo conteúdo com CRLF (checkout no Windows com autocrlf) ou LF (Linux/Mac/CI) tem de dar o mesmo hash e passar no --check.
+const lf = b => Buffer.from(b.toString('latin1').replace(/\r\n/g, '\n'), 'latin1');
+const HASH_V = 2; // versão do cálculo do hash (1 = bytes com o fim de linha da máquina; 2 = normalizado para LF)
 function buildSitemap(outputs, ctx, errors) {
   const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/i18n/sitemap.json'), 'utf8'));
   const statePath = 'scripts/i18n/sitemap-state.json', smPath = 'sitemap.xml';
@@ -450,14 +453,15 @@ function buildSitemap(outputs, ctx, errors) {
   for (const k of ctx.scope) if (!listadas.has(k)) errors.push(`sitemap.json: a página "${k}" (meta.json) não está listada`);
   for (const p of cfg.pages) if (!fs.existsSync(path.join(ROOT, p.key))) errors.push(`sitemap.json: arquivo inexistente: ${p.key}`);
   if (errors.length) return;
-  const hoje_ = hoje(), state = {}, blocos = [];
+  const hoje_ = hoje(), state = { _v: HASH_V }, blocos = [];
+  const migrar = prev._v !== HASH_V; // estado antigo (hash v1): adota o hash novo e PRESERVA o lastmod (vale se a árvore estava em dia com o estado antigo)
   for (const p of cfg.pages) {
     const migrada = ctx.scope.has(p.key);
     const bufs = migrada ? [outputs.get(p.key), outputs.get(`en/${p.key}`), outputs.get(`es/${p.key}`)] : [fs.readFileSync(path.join(ROOT, p.key))];
-    const hash = crypto.createHash('sha256').update(Buffer.concat(bufs)).digest('hex').slice(0, 16);
+    const hash = crypto.createHash('sha256').update(lf(Buffer.concat(bufs))).digest('hex').slice(0, 16);
     const ant = prev[p.key];
     let lastmod;
-    if (ant && ant.hash === hash) lastmod = ant.lastmod; // conteúdo igual: preserva
+    if (ant && (migrar || ant.hash === hash)) lastmod = ant.lastmod; // conteúdo igual: preserva
     else if (!ant && !migrada) { const m = new RegExp(`<loc>${escapeRe(pageUrl(p.key, 'pt'))}</loc>\\s*<lastmod>([^<]+)</lastmod>`).exec(antigo); lastmod = m ? m[1] : hoje_; } // 1ª vez de uma página só em PT: mantém o lastmod do sitemap atual
     else lastmod = hoje_;
     state[p.key] = { hash, lastmod };
@@ -515,7 +519,7 @@ function main() {
   const stale = [], fresh = [];
   for (const [rel, buf] of outputs) {
     const abs = path.join(ROOT, rel);
-    (fs.existsSync(abs) && Buffer.compare(fs.readFileSync(abs), buf) === 0 ? fresh : stale).push(rel);
+    (fs.existsSync(abs) && Buffer.compare(lf(fs.readFileSync(abs)), lf(buf)) === 0 ? fresh : stale).push(rel);
   }
   if (check) {
     if (stale.length || orphans.length) {

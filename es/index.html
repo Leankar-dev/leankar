@@ -863,9 +863,10 @@
             </div>
             <textarea name="mensagem"
               placeholder="Describe tu proyecto o haz tu pregunta…" required></textarea>
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button type="submit" class="btn btn-primary" id="contact-submit">Enviar mensaje</button>
-            <p class="form-msg form-msg--ok" id="form-ok">✓ ¡Mensaje enviado! Te responderé pronto.</p>
-            <p class="form-msg form-msg--err" id="form-err">Error al enviar. Inténtalo de nuevo.</p>
+            <p class="form-msg form-msg--ok" id="form-ok" role="status">✓ ¡Mensaje enviado! Te responderé pronto.</p>
+            <p class="form-msg form-msg--err" id="form-err" role="alert">Error al enviar. Inténtalo de nuevo.</p>
           </form>
 
           <div class="contato-deco">

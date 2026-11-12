@@ -1726,6 +1726,9 @@ body {
   background: rgba(0,198,255,0.04);
 }
 .contact-form textarea { min-height: 120px; }
+.contact-form [aria-invalid="true"] { border-color: #ef4444; }
+/* campo-isca anti-spam (_gotcha do Formspree): fora da tela, fora da ordem de Tab e do leitor de tela */
+.contact-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
 .contact-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .contact-form .btn { width: 100%; justify-content: center; }
 .form-msg {

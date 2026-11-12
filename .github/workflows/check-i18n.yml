@@ -1,0 +1,24 @@
+# Confere, a cada push e pull request, que as páginas em /en e /es, o sitemap.xml e o core/runtime-strings.js
+# estão em dia com as páginas em português (mesmo comando do scripts/README.md). Só lê o repositório; não publica nada.
+name: Conferir páginas por idioma
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check-i18n:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: node scripts/build-i18n.mjs --check
+        run: node scripts/build-i18n.mjs --check
+      - name: Teste de identidade (texto PT do strings.js == fontes)
+        run: node scripts/build-i18n.mjs --identity

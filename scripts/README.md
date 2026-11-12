@@ -25,6 +25,7 @@ Comandos:
 | `node scripts/build-i18n.mjs --check` | não escreve; lista o que está desatualizado e sai com 1 |
 | `node scripts/build-i18n.mjs --only apps/damas-evolution.html` | só essa fonte (não mexe no sitemap) |
 | `node scripts/build-i18n.mjs --identity` | teste de identidade: o texto do `strings.js` em PT tem de ser igual ao da fonte |
+| `node scripts/build-i18n.mjs --update-pt` | copia o texto PT atual das fontes para o `pt` do `meta.json` e **lista** o que mudou (não mexe em en/es) |
 
 Se faltar tradução, o `meta.json` estiver velho ou uma string do JSON-LD não estiver classificada, o build **falha e não escreve nada**.
 
@@ -53,7 +54,9 @@ O gerador reescreve, **dentro das páginas PT**, só estes trechos (não edite �
 
 **Corrigir um texto em inglês/espanhol do corpo:** edite `core/strings.js` → rode o gerador → `--check` → commit.
 **Corrigir o `<title>`, a descrição ou o JSON-LD:** edite `scripts/i18n/meta.json` (o campo `pt` tem de continuar igual ao HTML-fonte; se você mudou o PT, atualize o `pt` também) → gerador.
-**Mudou o texto em português de uma página:** o `pt` do `meta.json` (se for do `<head>`/JSON-LD) ou o `pt` do `strings.js` tem de acompanhar; o gerador acusa quando ficam diferentes.
+**Mudou o texto em português do `<head>` ou do JSON-LD de uma página:** o build falha de propósito ("`pt` DESATUALIZADO"), porque a tradução pode ter ficado velha. Rode `node scripts/build-i18n.mjs --update-pt`: ele atualiza o `pt` do `meta.json` e lista cada campo (antes/agora). **Revise o inglês e o espanhol desses campos** no `meta.json` e rode o gerador. Para textos do corpo, o `pt` do `strings.js` é editado junto com o HTML (o `--identity` acusa se divergirem).
+
+**Conferência automática (CI):** o arquivo `.github/workflows/check-i18n.yml` roda `--check` e `--identity` no GitHub a cada push e pull request; se você esquecer de rodar o gerador, o GitHub marca o commit com um X vermelho. Funciona em qualquer sistema (o `--check` ignora a diferença de fim de linha).
 
 **Adicionar uma página nova (em PT, com EN/ES):**
 1. crie o HTML em PT (copie uma página parecida), com os `data-i18n` e as **chaves novas** no `core/strings.js` (pt, en e es);

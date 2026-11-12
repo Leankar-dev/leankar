@@ -5,6 +5,7 @@
 //   node scripts/build-i18n.mjs              escreve /en e /es e sincroniza as regiões gerenciadas das fontes PT
 //   node scripts/build-i18n.mjs --check      não escreve; sai com código 1 se algo estiver desatualizado
 //   node scripts/build-i18n.mjs --only apps/damas-evolution.html     só essa fonte
+//   node scripts/build-i18n.mjs --update-pt  copia o texto PT atual das fontes para o "pt" do meta.json e lista o que mudou (revise EN/ES)
 //   node scripts/build-i18n.mjs --identity   teste de identidade: com L=pt o texto visível tem de ser igual ao da fonte
 //
 // Também escreve sitemap.xml (ordem/frequência em scripts/i18n/sitemap.json; lastmod em sitemap-state.json), exceto com --only.
@@ -494,16 +495,50 @@ function buildSitemap(outputs, ctx, errors) {
 }
 const escapeRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+// ───────────────────────── --update-pt ─────────────────────────
+// Depois de editar um texto em PORTUGUÊS no <head> ou no JSON-LD de uma fonte, o "pt" do meta.json fica velho e o build falha de propósito (a tradução pode estar velha).
+// --update-pt copia o texto PT atual da fonte para o "pt" do meta.json e LISTA o que mudou, para você revisar o EN e o ES desses campos. Não altera en/es.
+function updatePt(key, ctx) {
+  const src = readSource(key); const toks = tokenize(syncScripts(src.text, key, []));
+  const meta = ctx.META[key]; const mud = [];
+  const set = (entrada, rotulo, atual) => { if (atual !== null && atual !== undefined && norm(entrada.pt) !== norm(atual)) { mud.push(`${key} → ${rotulo}\n      antes: ${norm(entrada.pt)}\n      agora: ${norm(atual)}`); entrada.pt = atual; } };
+  const ti = toks.findIndex(t => t.t === 'open' && t.name === 'title');
+  if (ti >= 0 && meta.head.title) set(meta.head.title, 'head.title', decode(toks[ti + 1].s));
+  for (const [campo, attr, nome] of [['description', 'name', 'description'], ['ogTitle', 'property', 'og:title'], ['ogDescription', 'property', 'og:description'], ['twitterTitle', 'name', 'twitter:title'], ['twitterDescription', 'name', 'twitter:description'], ['imageAlt', 'property', 'og:image:alt']]) {
+    if (!meta.head[campo]) continue;
+    const i = metaTok(toks, attr, nome, [], key, false);
+    if (i >= 0) set(meta.head[campo], 'head.' + campo, getAttr(toks[i].s, 'content'));
+  }
+  const lds = toks.map((t, i) => (t.t === 'open' && t.name === 'script' && getAttr(t.s, 'type') === 'application/ld+json' ? i + 1 : -1)).filter(i => i > 0);
+  (meta.jsonld || []).forEach((b, n) => {
+    let data; try { data = JSON.parse(toks[lds[n]].s); } catch { mud.push(`${key} → JSON-LD #${n}: ausente ou inválido na fonte`); return; }
+    for (const [ptr, entrada] of Object.entries(b.translate || {})) {
+      const v = ptr.split('/').slice(1).map(unesc).reduce((o, k) => (o == null ? o : o[k]), data);
+      if (typeof v !== 'string') mud.push(`${key} → JSON-LD #${n} ${ptr}: o ponteiro não existe mais na fonte (remova do meta.json)`); else set(entrada, `jsonld[${n}] ${ptr}`, v);
+    }
+  });
+  return mud;
+}
+
 // ───────────────────────── principal ─────────────────────────
 function main() {
   const args = process.argv.slice(2);
-  const check = args.includes('--check'), idMode = args.includes('--identity');
+  const check = args.includes('--check'), idMode = args.includes('--identity'), updPt = args.includes('--update-pt');
   const oi = args.indexOf('--only'); const only = oi >= 0 ? args[oi + 1] : null;
-  const unknown = args.filter((a, i) => !['--check', '--identity', '--only'].includes(a) && args[i - 1] !== '--only');
+  const unknown = args.filter((a, i) => !['--check', '--identity', '--only', '--update-pt'].includes(a) && args[i - 1] !== '--only');
   if (unknown.length) { console.error('argumento desconhecido: ' + unknown.join(' ')); process.exit(2); }
   const ctx = loadContext();
   let keys = Object.keys(ctx.META);
   if (only) { if (!keys.includes(only)) { console.error(`--only: "${only}" não está em meta.json`); process.exit(2); } keys = [only]; }
+
+  if (updPt) {
+    const todas = keys.flatMap(k => updatePt(k, ctx));
+    if (!todas.length) { console.log('nada a atualizar: o "pt" do meta.json já é igual ao das fontes.'); return; }
+    fs.writeFileSync(path.join(ROOT, 'scripts/i18n/meta.json'), JSON.stringify(ctx.META, null, 2) + '\n');
+    console.log(`meta.json: ${todas.length} campo(s) com o "pt" atualizado. REVISE o inglês e o espanhol destes campos (não foram alterados) e depois rode o gerador:\n`);
+    todas.forEach(m => console.log('  • ' + m));
+    return;
+  }
 
   if (idMode) {
     let bad = 0;

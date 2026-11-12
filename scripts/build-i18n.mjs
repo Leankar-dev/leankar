@@ -311,11 +311,32 @@ function rewriteSelectors(toks, key, L, errors, where) {
   return out;
 }
 
+// ───────────────────────── scripts de idioma (Fase 7) ─────────────────────────
+// Páginas migradas não carregam core/strings.js (171 KB) nem js/i18n.js: o texto já vem pronto. Só a página com formulário (contact-form.js) precisa de
+// 3 mensagens em runtime: carrega core/runtime-strings.js (gerado abaixo) no lugar do strings.js. Idempotente.
+const RUNTIME_KEYS = ['contato.btn-submit', 'contato.btn-sending', 'contato.btn-sent'];
+function syncScripts(text, where, errors) {
+  const usaForm = /<script src="(?:\.\.\/)?js\/contact-form\.js"><\/script>/.test(text);
+  text = text.replace(/^[ \t]*<script src="(?:\.\.\/)?js\/i18n\.js"><\/script>\n/m, '');
+  const m = /^([ \t]*)<script src="((?:\.\.\/)?)core\/strings\.js"><\/script>\n/m.exec(text);
+  if (m) text = text.replace(m[0], usaForm ? `${m[1]}<script src="${m[2]}core/runtime-strings.js"></script>\n` : '');
+  if (usaForm && !/core\/runtime-strings\.js"/.test(text)) errors.push(`${where}: a página tem formulário (contact-form.js) mas não carrega core/runtime-strings.js`);
+  if (!usaForm && /core\/runtime-strings\.js"/.test(text)) errors.push(`${where}: carrega runtime-strings.js sem ter formulário`);
+  return text;
+}
+function buildRuntimeStrings(T, errors) {
+  const o = {};
+  for (const k of RUNTIME_KEYS) { const e = T[k]; if (!e || ALL.some(l => typeof e[l] !== 'string' || !e[l].trim())) { errors.push(`runtime-strings: chave "${k}" sem pt/en/es`); continue; } o[k] = { pt: e.pt, en: e.en, es: e.es }; }
+  const corpo = Object.entries(o).map(([k, v]) => `  ${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(',\n');
+  return Buffer.from(`// GERADO por scripts/build-i18n.mjs a partir de core/strings.js (RUNTIME_KEYS). NÃO EDITE.\n// Mensagens que o JavaScript do formulário (js/contact-form.js) mostra depois de a página carregar.\nconst TRANSLATIONS = {\n${corpo}\n};\n`, 'utf8');
+}
+
 // ───────────────────────── geração de uma página ─────────────────────────
 function generate(key, L, ctx, errors) {
   const { T, META, scope } = ctx;
   const where = `${key} [${L}]`;
   const src = readSource(key);
+  src.text = syncScripts(src.text, where, errors);
   let toks = tokenize(src.text);
   if (join(toks) !== src.text) throw new Error(`${where}: o tokenizador não é sem perdas`);
   const meta = META[key];
@@ -357,10 +378,7 @@ function generate(key, L, ctx, errors) {
   toks.splice(hd + 1, 0, { t: 'text', s: `\n  <!-- GERADO por scripts/build-i18n.mjs a partir de ${key}. NÃO EDITE. -->` });
 
   let out = join(toks);
-  const usesForm = /contact-form\.js/.test(out);
-  // js/i18n.js não faz nada em página com data-static-lang; core/strings.js só é preciso onde há formulário (contact-form.js lê 3 chaves; a Fase 7 troca isso por runtime-strings.js)
-  out = out.replace(/^[ \t]*<script src="[^"]*\/js\/i18n\.js"><\/script>\n/gm, '');
-  if (!usesForm) out = out.replace(/^[ \t]*<script src="[^"]*\/core\/strings\.js"><\/script>\n/gm, '');
+  if (/core\/strings\.js|js\/i18n\.js/.test(out)) errors.push(`${where}: restou strings.js ou i18n.js na saída`);
   if (/data-i18n/.test(out)) errors.push(`${where}: restou atributo data-i18n* na saída`);
   return serialize(out, src);
 }
@@ -386,6 +404,7 @@ function checkSelectorMarkers(toks, errors, where) {
 // Sincroniza as regiões gerenciadas da própria fonte PT: hreflang, seletor de idioma (links) e data-static-lang. Retorna os bytes novos.
 function syncSource(key, ctx, errors) {
   const src = readSource(key); const where = `${key} [pt]`;
+  src.text = syncScripts(src.text, where, errors);
   let toks = tokenize(src.text);
   toks = replaceRegion(toks, 'hreflang', ind => hreflangBlock(key, ind), errors, where);
   checkSelectorMarkers(toks, errors, where);
@@ -476,6 +495,7 @@ function main() {
     outputs.set(k, syncSource(k, ctx, errors));
     for (const L of LANGS) outputs.set(`${L}/${k}`, generate(k, L, ctx, errors));
   }
+  if (!only) outputs.set('core/runtime-strings.js', buildRuntimeStrings(ctx.T, errors));
   if (!only && !errors.length) buildSitemap(outputs, ctx, errors); // o sitemap depende de todas as páginas
   if (errors.length) {
     console.error(`\nBUILD FALHOU — ${errors.length} problema(s); nada foi escrito:\n`);

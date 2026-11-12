@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-static-lang>
+
+<head>
+  <!-- GERADO por scripts/build-i18n.mjs a partir de blog/reportgo-app-relatorios-fotograficos-offline-first.html. NÃO EDITE. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="/js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="ReportGoApp: an offline-first Flutter app that turns field photos into technical reports with GPS, watermark, signature and PDF. Discover the product, the architecture and the opportunity." />
+  <meta name="robots" content="index, follow" />
+  <title>ReportGoApp: offline photo reports — leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <!-- /i18n:hreflang -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ReportGoApp: the app that turns field photos into professional reports" />
+  <meta property="og:description" content="Photos with GPS and watermark, on-screen signature and PDF — all offline. See the product, the engineering behind it and the opportunity." />
+  <meta property="og:url" content="https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/reportgo_og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:site_name" content="leankar.dev" />
+  <meta property="article:published_time" content="2026-10-22" />
+  <meta property="article:author" content="Leandro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ReportGoApp: the app that turns field photos into professional reports" />
+  <meta name="twitter:description" content="Photos with GPS and watermark, on-screen signature and PDF — all offline." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/reportgo_og.png" />
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "en",
+    "headline": "ReportGoApp: the app that turns field photos into professional reports",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "description": "ReportGoApp is an offline-first Flutter app for technical photo reports: photos with GPS and watermark, on-screen signature and PDF export.",
+    "url": "https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html",
+    "image": "https://leankar.dev/assets/logos/reportgo_og.png",
+    "author": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html"
+    },
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "ReportGoApp",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Android"
+    },
+    "keywords": [
+      "ReportGoApp",
+      "photo report",
+      "site inspection",
+      "inspection report",
+      "offline-first",
+      "Flutter",
+      "field app"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/en/" class="nav-logo">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/en/#sobre">About</a>
+        <a href="/en/#apps">Apps</a>
+        <a href="/en/#contato">Contact</a>
+      </nav>
+      <!-- i18n:selector -->
+      <div class="lang-selector" aria-label="Language selector">
+        <a class="lang-btn" href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="en" lang="en" aria-current="true">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="es" lang="es">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/en/#sobre" class="mobile-link">About</a>
+      <a href="/en/#apps" class="mobile-link">Apps</a>
+      <a href="/en/#contato" class="mobile-link">Contact</a>
+      <!-- i18n:selector -->
+      <div class="lang-selector lang-selector--mobile">
+        <a class="lang-btn" href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="en" lang="en" aria-current="true">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="es" lang="es">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+    </div>
+  </header>
+
+  <main>
+    <div class="article-hero">
+      <h1>ReportGoApp: the app that turns field photos<br />into <span class="gradient-text">professional reports</span></h1>
+      <div class="article-meta">
+        <span>October 22, 2026</span>
+        <span>·</span>
+        <span>9 min read</span>
+        <span>·</span>
+        <span>by Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">ReportGoApp</span>
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Product</span>
+        <span class="article-tag">For investors</span>
+      </div>
+    </div>
+    
+
+    <!-- Visual do hero (ilustrativo, neutro quanto ao idioma) -->
+    <div class="rg-hero-visual">
+      <div class="rg-logo-card">
+        <img src="/assets/logos/reportgo-280.webp" alt="ReportGoApp" width="280" height="280" />
+      </div>
+      <div class="rg-phone" aria-hidden="true">
+        <div class="rg-screen">
+          <div class="rg-screen-brand">Report<b>Go</b>App</div>
+          <div class="rg-screen-title">Rel.0004-26</div>
+          <div class="rg-screen-status"><span>V 0.1</span><i>● offline</i><span>22/Oct/26</span></div>
+          <div class="rg-tile-row">
+            <div class="rg-tile rg-tile--new">＋ 📄<span>New · Nuevo · Novo</span></div>
+            <div class="rg-tile rg-tile--map">📍 Map</div>
+            <div class="rg-tile rg-tile--gal">🖼 Gallery</div>
+            <div class="rg-tile rg-tile--cal">📅 Cal.</div>
+          </div>
+          <div class="rg-list">
+            <div class="rg-list-item">Rel.0004-26 <em>✓</em><small>18 📷 · 📍 GPS · ✍</small></div>
+            <div class="rg-list-item">Rel.0003-26 <em>✓</em><small>12 📷 · 📍 GPS · ✍</small></div>
+            <div class="rg-list-item">Rel.0002-26 <em class="pend">…</em><small>7 📷 · 📍 GPS</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ PORTUGUÊS ═══════════════ -->
+    
+
+    <!-- ═══════════════ ENGLISH ═══════════════ -->
+    <div class="article-body">
+
+      <a href="/en/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to homepage
+      </a>
+
+      <p class="rg-lead">
+        Every property inspector, surveyor, site engineer or real-estate agent knows the scene: 80
+        photos in the camera roll, mixed in with family pictures, a Word file open, WhatsApp full of
+        loose images — and a whole evening of work to turn all that into a report someone will take
+        seriously. <strong>ReportGoApp</strong> was born to eliminate that evening.
+      </p>
+
+      <p>
+        I'm a Flutter developer and this is the most ambitious project I've built so far. In this
+        article I show what the app does, how it works under the hood and — for those who follow the
+        vertical-software market — why I believe there is a real opportunity here.
+      </p>
+
+      <div class="rg-stats">
+        <div class="rg-stat"><span class="rg-stat-num">100%</span><span class="rg-stat-label">works offline, in the middle of the job site</span></div>
+        <div class="rg-stat"><span class="rg-stat-num">3</span><span class="rg-stat-label">languages: Portuguese, English and Spanish</span></div>
+        <div class="rg-stat"><span class="rg-stat-num">600+</span><span class="rg-stat-label">automated tests in the project</span></div>
+        <div class="rg-stat"><span class="rg-stat-num">0</span><span class="rg-stat-label">servers needed — data stays on the device</span></div>
+      </div>
+
+      <h2>The problem: a good report depends on proof, and proof gets lost along the way</h2>
+      <p>
+        A photo report is only worth something when every photo carries <strong>when, where and by
+        whom</strong> it was taken. In practice, the field workflow is usually improvised:
+      </p>
+
+      <div class="rg-compare-wrap">
+        <table class="rg-compare">
+          <thead>
+            <tr><th>How it usually goes</th><th>With ReportGoApp</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Loose photos in the camera roll, mixed with personal ones</td><td>Photos inside the right report, already numbered (<code>Rel.0001-26</code>)</td></tr>
+            <tr><td>Date, time and place typed by hand — or forgotten</td><td>GPS and timestamp stored in EXIF and printed on the photo itself</td></tr>
+            <tr><td>Text in Word, photos pasted one by one</td><td>Rich-text comment per report and caption per photo</td></tr>
+            <tr><td>Paper signature, scanned later</td><td>Handwritten signature on screen; the report locks once signed</td></tr>
+            <tr><td>PDF assembled on the computer at night</td><td>PDF generated on the phone itself, ready to share</td></tr>
+            <tr><td>No signal, no work</td><td>Everything works offline</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How it works: from tap to PDF in 5 steps</h2>
+      <p>The app's tagline sums up the idea: <strong>"Register. We do the rest."</strong></p>
+      <ol class="rg-steps">
+        <li><strong>Create the report</strong>Title, date and summary. The app assigns the year's sequential number itself (<code>Rel.0001-26</code>), with no risk of duplicates.</li>
+        <li><strong>Shoot or import</strong>Camera or gallery. The app reads the EXIF, applies a watermark with date, time and coordinates, and compresses the image — with no extra work from you.</li>
+        <li><strong>Describe</strong>Rich-text editor for the report and for each photo: bold, lists, highlights. What the field saw, written in the field.</li>
+        <li><strong>Sign</strong>The author signs with a finger on the screen. After that the report is protected against changes — exactly what a formal report needs.</li>
+        <li><strong>Export</strong>PDF generated on the device, with photos, captions, signature and numbering, ready to send to the client.</li>
+      </ol>
+
+      <h2>Features that make the difference</h2>
+      <div class="rg-grid">
+        <div class="rg-card"><span class="rg-card-ico">📸</span><h3>Photos with evidentiary value</h3><p>EXIF with GPS and date/time preserved in the final file, plus a visual watermark. Metadata that survives compression.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">✍️</span><h3>Signature and locking</h3><p>Handwritten signature as PNG. A signed report accepts no new photos or edits — the rule lives in the database, not just on the screen.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">🗺️</span><h3>Report map</h3><p>See where each inspection took place, with filters for places, completed, pending and recent. No Google Maps API costs.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">🖼️</span><h3>Unified gallery</h3><p>All photos from all reports in one place, with search and filters.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">📅</span><h3>Field calendar</h3><p>Monthly agenda with each day's reports and shortcuts to create and export.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">📄</span><h3>PDF on the phone</h3><p>Export and share without depending on a computer or a server.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">🌐</span><h3>Multi-language</h3><p>Portuguese, English and Spanish from the MVP, with dates formatted for the active language.</p></div>
+        <div class="rg-card"><span class="rg-card-ico">🔒</span><h3>Privacy by design</h3><p>Local data, PBKDF2 password hashing, permissions requested only at the moment of use, and isolation between users on the same device.</p></div>
+      </div>
+
+      <h2>Who it's for</h2>
+      <p>
+        For anyone who produces photo-based reports as part of their job: <strong>property inspectors,
+        surveyors, engineers and site supervisors, real-estate agents, maintenance technicians and
+        inspectors</strong>. In all of these routines the photo must be organized, dated, located and
+        often signed — and the professional rarely has an internet signal where they work.
+      </p>
+
+      <h2>Under the hood: engineering built to last</h2>
+      <p>
+        For developers (and anyone doing technical due diligence): ReportGoApp is not a prototype. It's
+        an app with a layered architecture and business rules protected by tests.
+      </p>
+      <ul>
+        <li><strong>Clean Architecture + MVVM</strong> per feature (domain, data, presentation), with Riverpod 3 for dependency injection and state, Freezed for immutable models and <code>Result</code>/<code>Failure</code> for typed errors.</li>
+        <li><strong>Drift (SQLite)</strong> with reactive streams. The <code>Rel.0001-26</code> numbering is atomic: reading the highest number and inserting happen in the same transaction, with a unique key as a second line of defense.</li>
+        <li><strong>Rules in the database:</strong> SQLite triggers prevent changing an already-signed report, even if a UI bug tries to. Every query filters by the session user.</li>
+        <li><strong>Photo pipeline</strong> with each step isolated in a testable service and heavy image processing kept off the UI thread:</li>
+      </ul>
+      <pre><code>Camera / Gallery
+  → permission (only at the moment of use)
+  → EXIF read (GPS + date/time)
+  → watermark (in an Isolate, off the UI thread)
+  → compression
+  → EXIF re-injection into the final file
+  → private storage + SQLite record</code></pre>
+      <ul>
+        <li><strong>Security:</strong> PBKDF2-HMAC-SHA256 password hashing with 100k iterations and a random salt, session kept in secure storage, audio permissions removed from the Android manifest.</li>
+        <li><strong>Quality:</strong> over 600 automated tests, clean static analysis and validation on two real Samsung devices (not just an emulator).</li>
+        <li><strong>Cloud-ready:</strong> UUID primary keys, a sync-state field and repositories decoupled from the database. When the backend arrives, it plugs in as a new data source — no app rewrite.</li>
+      </ul>
+
+      <div class="rg-invest">
+        <h2>For investors and partners: the thesis</h2>
+        <p>
+          Vertical software for field professionals is a niche where the typical competitor is
+          <em>improvisation</em> (camera + Word + WhatsApp), not another dominant product. It's where
+          a simple, fast and reliable app can enter without fighting giants for attention.
+        </p>
+        <div class="rg-pillars">
+          <div class="rg-pillar"><h3>Recurring pain</h3><p>Every inspection produces a report. People in this line of work write reports every week — usage is naturally frequent.</p></div>
+          <div class="rg-pillar"><h3>Offline-first edge</h3><p>Works where there's little or no signal: job sites, rural areas, basements. That's the weak spot of many cloud-dependent solutions.</p></div>
+          <div class="rg-pillar"><h3>Low operating cost</h3><p>No backend in the MVP and no map-API billing, so the marginal cost of each new user is very small.</p></div>
+        </div>
+        <h3>Business model</h3>
+        <p>
+          The product premise is a <strong>free app, fully functional offline</strong>, with cloud
+          storage as a <strong>future paid tier</strong>. The monetization paths I'm considering
+          (still being validated, none implemented):
+        </p>
+        <ul>
+          <li><strong>Paid cloud plan:</strong> backup and sync across devices.</li>
+          <li><strong>Report link:</strong> share the report to open directly in a browser or the app.</li>
+          <li><strong>Teams and branding:</strong> multiple users per company, report templates and the client's logo on the PDF.</li>
+        </ul>
+        <div class="rg-callout">
+          <span class="rg-callout-title">Transparency about the current stage</span>
+          <p>
+            ReportGoApp is in <strong>pre-launch</strong> (version 0.1.x): the offline MVP is functional
+            and validated on Android devices. <strong>There are no paying users, revenue or retention
+            metrics yet</strong>, and I'd rather say so than inflate numbers. What exists is a real,
+            well-built product ready to be tested by people who live this problem.
+          </p>
+        </div>
+        <p>
+          What I'm looking for now: <strong>professionals for free pilots</strong>, feedback from
+          people who write reports, and conversations with <strong>angel investors, accelerators and
+          mentors</strong> interested in vertical software.
+        </p>
+      </div>
+
+      <h2>Roadmap</h2>
+      <ul class="rg-timeline">
+        <li class="done"><span>Done</span><strong>Functional offline MVP</strong>Local sign-up and login, numbered reports, camera with EXIF and watermark, rich editor, signature, map, gallery, calendar and PDF export.</li>
+        <li class="now"><span>In progress</span><strong>Audit and polish</strong>On-device testing, accessibility, local diagnostics and preparation for Google Play release.</li>
+        <li><span>Next</span><strong>iOS and store launch</strong>iPhone validation and release to the first users.</li>
+        <li><span>Later</span><strong>Cloud and collaboration</strong>Backup and sync (paid plan), report sharing link and team features.</li>
+      </ul>
+
+      <hr class="article-divider" />
+
+      <p>
+        ReportGoApp's thesis is simple: field professionals should spend their time <em>in the field</em>,
+        not in front of a computer rebuilding what they already saw. If you live this problem, or you
+        see value in well-executed vertical software, let's talk.
+      </p>
+
+      <div class="rg-cta-split">
+        <div class="article-cta">
+          <h3>I'm a field professional</h3>
+          <p>Want to try ReportGoApp before launch and help shape the product?</p>
+          <a href="/en/#contato" class="btn btn-primary">I want to test it</a>
+        </div>
+        <div class="article-cta article-cta--invest">
+          <h3>I'm an investor or partner</h3>
+          <p>Want to learn the vision, roadmap and architecture in detail?</p>
+          <a href="/en/#contato" class="btn btn-primary">Talk to the founder</a>
+        </div>
+      </div>
+      <p class="rg-note">
+        This article describes the project's state as of October 2026. Future features mentioned
+        (cloud, report link, teams) are plans, not delivery promises.
+        <a href="/en/apps/reportgo.html">See the app page →</a>
+      </p>
+
+    </div>
+
+    <!-- ═══════════════ ESPAÑOL ═══════════════ -->
+    </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> leankar.dev — <span>Made with <span class="heart">♥</span> and Flutter</span>
+      </p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/en/privacy.html" class="footer-privacy-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/particles.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

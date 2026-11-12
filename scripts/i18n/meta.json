@@ -1010,5 +1010,354 @@
         ]
       }
     ]
+  },
+  "privacy.html": {
+    "head": {
+      "title": {
+        "pt": "Política de Privacidade — leankar.dev",
+        "en": "Privacy Policy — leankar.dev",
+        "es": "Política de Privacidad — leankar.dev"
+      },
+      "description": {
+        "pt": "Política de Privacidade do site leankar.dev — Como coletamos e usamos seus dados.",
+        "en": "Privacy Policy of the leankar.dev website — how we collect and use your data.",
+        "es": "Política de Privacidad del sitio leankar.dev — cómo recopilamos y usamos tus datos."
+      },
+      "ogTitle": {
+        "pt": "Política de Privacidade — leankar.dev",
+        "en": "Privacy Policy — leankar.dev",
+        "es": "Política de Privacidad — leankar.dev"
+      },
+      "ogDescription": {
+        "pt": "Política de Privacidade do site leankar.dev: dados coletados, uso de cookies (Google Analytics), formulário de contato (Formspree) e direitos do usuário pela LGPD.",
+        "en": "Privacy Policy of leankar.dev: data collected, use of cookies (Google Analytics), contact form (Formspree) and user rights under Brazil's LGPD.",
+        "es": "Política de Privacidad de leankar.dev: datos recopilados, uso de cookies (Google Analytics), formulario de contacto (Formspree) y derechos del usuario según la LGPD de Brasil."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/name": {
+            "pt": "Política de Privacidade — leankar.dev",
+            "en": "Privacy Policy — leankar.dev",
+            "es": "Política de Privacidad — leankar.dev"
+          },
+          "/description": {
+            "pt": "Política de Privacidade do site leankar.dev conforme a LGPD.",
+            "en": "Privacy Policy of the leankar.dev website in accordance with the LGPD.",
+            "es": "Política de Privacidad del sitio leankar.dev conforme a la LGPD."
+          }
+        },
+        "keep": [
+          "/isPartOf/url"
+        ],
+        "lang": [
+          "/inLanguage"
+        ]
+      }
+    ]
+  },
+  "blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html": {
+    "head": {
+      "title": {
+        "pt": "Como publiquei meu primeiro app Flutter na Play Store — leankar.dev",
+        "en": "How I published my first Flutter app on the Play Store — leankar.dev",
+        "es": "Cómo publiqué mi primera app Flutter en la Play Store — leankar.dev"
+      },
+      "description": {
+        "pt": "Guia passo a passo de como publiquei meu primeiro app Flutter na Google Play Store: keystore, AAB, assets da loja e processo de revisão.",
+        "en": "Step-by-step guide to how I published my first Flutter app on the Google Play Store: keystore, AAB, store assets and the review process.",
+        "es": "Guía paso a paso de cómo publiqué mi primera app Flutter en Google Play Store: keystore, AAB, recursos de la tienda y proceso de revisión."
+      },
+      "ogTitle": {
+        "pt": "Como publiquei meu primeiro app Flutter na Play Store: passo a passo",
+        "en": "How I published my first Flutter app on the Play Store: a step-by-step guide",
+        "es": "Cómo publiqué mi primera app Flutter en la Play Store: paso a paso"
+      },
+      "ogDescription": {
+        "pt": "Keystore, App Bundle, assets da loja e o processo de revisão — tudo que ninguém te conta antes da primeira publicação.",
+        "en": "Keystore, App Bundle, store assets and the review process — everything nobody tells you before your first release.",
+        "es": "Keystore, App Bundle, recursos de la tienda y el proceso de revisión: todo lo que nadie te cuenta antes de la primera publicación."
+      },
+      "twitterTitle": {
+        "pt": "Como publiquei meu primeiro app Flutter na Play Store",
+        "en": "How I published my first Flutter app on the Play Store",
+        "es": "Cómo publiqué mi primera app Flutter en la Play Store"
+      },
+      "twitterDescription": {
+        "pt": "Keystore, App Bundle, assets da loja e o processo de revisão — passo a passo.",
+        "en": "Keystore, App Bundle, store assets and the review process — step by step.",
+        "es": "Keystore, App Bundle, recursos de la tienda y proceso de revisión: paso a paso."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/headline": {
+            "pt": "Como publiquei meu primeiro app Flutter na Play Store: passo a passo",
+            "en": "How I published my first Flutter app on the Play Store: a step-by-step guide",
+            "es": "Cómo publiqué mi primera app Flutter en la Play Store: paso a paso"
+          },
+          "/description": {
+            "pt": "Guia passo a passo de como publiquei meu primeiro app Flutter na Google Play Store: keystore, AAB, assets da loja e processo de revisão.",
+            "en": "Step-by-step guide to how I published my first Flutter app on the Google Play Store: keystore, AAB, store assets and the review process.",
+            "es": "Guía paso a paso de cómo publiqué mi primera app Flutter en Google Play Store: keystore, AAB, recursos de la tienda y proceso de revisión."
+          },
+          "/keywords/3": {
+            "pt": "publicação",
+            "en": "publishing",
+            "es": "publicación"
+          }
+        },
+        "keep": [
+          "/datePublished",
+          "/dateModified",
+          "/author/name",
+          "/author/url",
+          "/publisher/name",
+          "/publisher/url",
+          "/keywords/0",
+          "/keywords/1",
+          "/keywords/2",
+          "/keywords/4",
+          "/keywords/5"
+        ],
+        "lang": [
+          "/inLanguage"
+        ]
+      }
+    ]
+  },
+  "blog/app-lista-compras-offline-first-flutter-drift-sqlite.html": {
+    "head": {
+      "title": {
+        "pt": "App de lista de compras offline-first com Flutter e Drift — leankar.dev",
+        "en": "Offline-first shopping list app with Flutter and Drift — leankar.dev",
+        "es": "App de lista de compras offline-first con Flutter y Drift — leankar.dev"
+      },
+      "description": {
+        "pt": "Como criar um app de lista de compras offline-first com Flutter e Drift (SQLite): tabelas tipadas, streams reativos e integração com Riverpod.",
+        "en": "How to build an offline-first shopping list app with Flutter and Drift (SQLite): typed tables, reactive streams and Riverpod integration.",
+        "es": "Cómo crear una app de lista de compras offline-first con Flutter y Drift (SQLite): tablas tipadas, streams reactivos e integración con Riverpod."
+      },
+      "ogTitle": {
+        "pt": "App de lista de compras offline-first com Flutter e Drift (SQLite)",
+        "en": "Offline-first shopping list app with Flutter and Drift (SQLite)",
+        "es": "App de lista de compras offline-first con Flutter y Drift (SQLite)"
+      },
+      "ogDescription": {
+        "pt": "Como usei Drift para criar persistência local type-safe com streams reativos, integrado ao Riverpod.",
+        "en": "How I used Drift to build type-safe local persistence with reactive streams, integrated with Riverpod.",
+        "es": "Cómo usé Drift para crear persistencia local type-safe con streams reactivos, integrada con Riverpod."
+      },
+      "twitterTitle": {
+        "pt": "App offline-first com Flutter e Drift (SQLite)",
+        "en": "Offline-first app with Flutter and Drift (SQLite)",
+        "es": "App offline-first con Flutter y Drift (SQLite)"
+      },
+      "twitterDescription": {
+        "pt": "Drift, SQLite, Riverpod: como criar persistência local reativa no Flutter.",
+        "en": "Drift, SQLite, Riverpod: how to build reactive local persistence in Flutter.",
+        "es": "Drift, SQLite, Riverpod: cómo crear persistencia local reactiva en Flutter."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/headline": {
+            "pt": "Como criei um app de lista de compras offline-first com Flutter e Drift (SQLite)",
+            "en": "How I built an offline-first shopping list app with Flutter and Drift (SQLite)",
+            "es": "Cómo creé una app de lista de compras offline-first con Flutter y Drift (SQLite)"
+          },
+          "/description": {
+            "pt": "Como usar Drift para criar persistência local type-safe com streams reativos, integrado ao Riverpod no Flutter.",
+            "en": "How to use Drift to build type-safe local persistence with reactive streams, integrated with Riverpod in Flutter.",
+            "es": "Cómo usar Drift para crear persistencia local type-safe con streams reactivos, integrada con Riverpod en Flutter."
+          },
+          "/keywords/5": {
+            "pt": "persistência local",
+            "en": "local persistence",
+            "es": "persistencia local"
+          }
+        },
+        "keep": [
+          "/datePublished",
+          "/dateModified",
+          "/author/name",
+          "/author/url",
+          "/publisher/name",
+          "/publisher/url",
+          "/keywords/0",
+          "/keywords/1",
+          "/keywords/2",
+          "/keywords/3",
+          "/keywords/4"
+        ],
+        "lang": [
+          "/inLanguage"
+        ]
+      }
+    ]
+  },
+  "blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html": {
+    "head": {
+      "title": {
+        "pt": "Campo Minado em Flutter: algoritmo de geração de tabuleiro — leankar.dev",
+        "en": "Minesweeper in Flutter: board generation algorithm — leankar.dev",
+        "es": "Buscaminas en Flutter: algoritmo de generación de tablero — leankar.dev"
+      },
+      "description": {
+        "pt": "Como implementei o Campo Minado Evolution em Flutter: estrutura de dados do tabuleiro, distribuição de minas, cálculo de adjacentes e flood fill iterativo.",
+        "en": "How I implemented Campo Minado Evolution in Flutter: board data structure, mine placement, adjacent-count calculation and iterative flood fill.",
+        "es": "Cómo implementé Campo Minado Evolution en Flutter: estructura de datos del tablero, distribución de minas, cálculo de adyacentes y flood fill iterativo."
+      },
+      "ogTitle": {
+        "pt": "Campo Minado em Flutter: algoritmo de geração de tabuleiro e lógica do jogo",
+        "en": "Minesweeper in Flutter: board generation algorithm and game logic",
+        "es": "Buscaminas en Flutter: algoritmo de generación de tablero y lógica del juego"
+      },
+      "ogDescription": {
+        "pt": "Distribuição de minas com proteção do primeiro clique, cálculo de adjacentes e flood fill iterativo implementados no Campo Minado Evolution.",
+        "en": "Mine placement with first-click protection, adjacent-count calculation and iterative flood fill implemented in Campo Minado Evolution.",
+        "es": "Distribución de minas con protección del primer clic, cálculo de adyacentes y flood fill iterativo implementados en Campo Minado Evolution."
+      },
+      "twitterTitle": {
+        "pt": "Campo Minado em Flutter: algoritmo de geração de tabuleiro",
+        "en": "Minesweeper in Flutter: board generation algorithm",
+        "es": "Buscaminas en Flutter: algoritmo de generación de tablero"
+      },
+      "twitterDescription": {
+        "pt": "Flood fill, distribuição de minas e proteção do primeiro clique — algoritmos do Campo Minado Evolution.",
+        "en": "Flood fill, mine placement and first-click protection — algorithms from Campo Minado Evolution.",
+        "es": "Flood fill, distribución de minas y protección del primer clic: algoritmos de Campo Minado Evolution."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/headline": {
+            "pt": "Campo Minado em Flutter: algoritmo de geração de tabuleiro e lógica do jogo",
+            "en": "Minesweeper in Flutter: board generation algorithm and game logic",
+            "es": "Buscaminas en Flutter: algoritmo de generación de tablero y lógica del juego"
+          },
+          "/description": {
+            "pt": "Como implementei o Campo Minado Evolution em Flutter: estrutura de dados do tabuleiro, distribuição de minas, cálculo de adjacentes e flood fill iterativo.",
+            "en": "How I implemented Campo Minado Evolution in Flutter: board data structure, mine placement, adjacent-count calculation and iterative flood fill.",
+            "es": "Cómo implementé Campo Minado Evolution en Flutter: estructura de datos del tablero, distribución de minas, cálculo de adyacentes y flood fill iterativo."
+          },
+          "/keywords/2": {
+            "pt": "algoritmos",
+            "en": "algorithms",
+            "es": "algoritmos",
+            "same": true
+          }
+        },
+        "keep": [
+          "/datePublished",
+          "/dateModified",
+          "/author/name",
+          "/author/url",
+          "/publisher/name",
+          "/publisher/url",
+          "/keywords/0",
+          "/keywords/1",
+          "/keywords/3",
+          "/keywords/4",
+          "/keywords/5"
+        ],
+        "lang": [
+          "/inLanguage"
+        ]
+      }
+    ]
+  },
+  "blog/reportgo-app-relatorios-fotograficos-offline-first.html": {
+    "head": {
+      "title": {
+        "pt": "ReportGoApp: relatórios fotográficos offline — leankar.dev",
+        "en": "ReportGoApp: offline photo reports — leankar.dev",
+        "es": "ReportGoApp: informes fotográficos sin conexión — leankar.dev"
+      },
+      "description": {
+        "pt": "ReportGoApp: app Flutter offline-first que transforma fotos de campo em relatórios técnicos com GPS, marca d'água, assinatura e PDF. Conheça o produto, a arquitetura e a oportunidade.",
+        "en": "ReportGoApp: an offline-first Flutter app that turns field photos into technical reports with GPS, watermark, signature and PDF. Discover the product, the architecture and the opportunity.",
+        "es": "ReportGoApp: app Flutter offline-first que convierte fotos de campo en informes técnicos con GPS, marca de agua, firma y PDF. Conoce el producto, la arquitectura y la oportunidad."
+      },
+      "ogTitle": {
+        "pt": "ReportGoApp: o app que transforma fotos de campo em laudos profissionais",
+        "en": "ReportGoApp: the app that turns field photos into professional reports",
+        "es": "ReportGoApp: la app que convierte fotos de campo en informes profesionales"
+      },
+      "ogDescription": {
+        "pt": "Fotos com GPS e marca d'água, assinatura na tela e PDF — tudo offline. Veja o produto, a engenharia por trás e a oportunidade.",
+        "en": "Photos with GPS and watermark, on-screen signature and PDF — all offline. See the product, the engineering behind it and the opportunity.",
+        "es": "Fotos con GPS y marca de agua, firma en pantalla y PDF, todo sin conexión. Conoce el producto, la ingeniería detrás y la oportunidad."
+      },
+      "twitterTitle": {
+        "pt": "ReportGoApp: o app que transforma fotos de campo em laudos profissionais",
+        "en": "ReportGoApp: the app that turns field photos into professional reports",
+        "es": "ReportGoApp: la app que convierte fotos de campo en informes profesionales"
+      },
+      "twitterDescription": {
+        "pt": "Fotos com GPS e marca d'água, assinatura na tela e PDF — tudo offline.",
+        "en": "Photos with GPS and watermark, on-screen signature and PDF — all offline.",
+        "es": "Fotos con GPS y marca de agua, firma en pantalla y PDF, todo sin conexión."
+      }
+    },
+    "jsonld": [
+      {
+        "translate": {
+          "/headline": {
+            "pt": "ReportGoApp: o app que transforma fotos de campo em laudos profissionais",
+            "en": "ReportGoApp: the app that turns field photos into professional reports",
+            "es": "ReportGoApp: la app que convierte fotos de campo en informes profesionales"
+          },
+          "/description": {
+            "pt": "ReportGoApp é um app Flutter offline-first para relatórios fotográficos técnicos: fotos com GPS e marca d'água, assinatura na tela e exportação em PDF.",
+            "en": "ReportGoApp is an offline-first Flutter app for technical photo reports: photos with GPS and watermark, on-screen signature and PDF export.",
+            "es": "ReportGoApp es una app Flutter offline-first para informes fotográficos técnicos: fotos con GPS y marca de agua, firma en pantalla y exportación a PDF."
+          },
+          "/keywords/1": {
+            "pt": "relatório fotográfico",
+            "en": "photo report",
+            "es": "informe fotográfico"
+          },
+          "/keywords/2": {
+            "pt": "vistoria",
+            "en": "site inspection",
+            "es": "inspección"
+          },
+          "/keywords/3": {
+            "pt": "laudo",
+            "en": "inspection report",
+            "es": "informe pericial"
+          },
+          "/keywords/6": {
+            "pt": "app de campo",
+            "en": "field app",
+            "es": "app de campo",
+            "same": true
+          }
+        },
+        "keep": [
+          "/datePublished",
+          "/dateModified",
+          "/image",
+          "/author/name",
+          "/author/url",
+          "/publisher/name",
+          "/publisher/url",
+          "/about/name",
+          "/about/applicationCategory",
+          "/about/operatingSystem",
+          "/keywords/0",
+          "/keywords/4",
+          "/keywords/5"
+        ],
+        "lang": [
+          "/inLanguage"
+        ]
+      }
+    ]
   }
 }

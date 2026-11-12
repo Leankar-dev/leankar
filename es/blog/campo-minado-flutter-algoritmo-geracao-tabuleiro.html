@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-static-lang>
+
+<head>
+  <!-- GERADO por scripts/build-i18n.mjs a partir de blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html. NÃO EDITE. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="/js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="Cómo implementé Campo Minado Evolution en Flutter: estructura de datos del tablero, distribución de minas, cálculo de adyacentes y flood fill iterativo." />
+  <meta name="robots" content="index, follow" />
+  <title>Buscaminas en Flutter: algoritmo de generación de tablero — leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <!-- /i18n:hreflang -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Buscaminas en Flutter: algoritmo de generación de tablero y lógica del juego" />
+  <meta property="og:description" content="Distribución de minas con protección del primer clic, cálculo de adyacentes y flood fill iterativo implementados en Campo Minado Evolution." />
+  <meta property="og:url" content="https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="leankar.dev" />
+  <meta property="article:published_time" content="2026-06-19" />
+  <meta property="article:modified_time" content="2026-10-22" />
+  <meta property="article:author" content="Leandro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Buscaminas en Flutter: algoritmo de generación de tablero" />
+  <meta name="twitter:description" content="Flood fill, distribución de minas y protección del primer clic: algoritmos de Campo Minado Evolution." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "es",
+    "headline": "Buscaminas en Flutter: algoritmo de generación de tablero y lógica del juego",
+    "datePublished": "2026-06-19",
+    "dateModified": "2026-10-22",
+    "description": "Cómo implementé Campo Minado Evolution en Flutter: estructura de datos del tablero, distribución de minas, cálculo de adyacentes y flood fill iterativo.",
+    "url": "https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html",
+    "author": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html"
+    },
+    "keywords": [
+      "Flutter",
+      "Dart",
+      "algoritmos",
+      "Campo Minado",
+      "flood fill",
+      "game development"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/es/" class="nav-logo">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/es/#sobre">Sobre mí</a>
+        <a href="/es/#apps">Apps</a>
+        <a href="/es/#contato">Contacto</a>
+      </nav>
+      <!-- i18n:selector -->
+      <div class="lang-selector" aria-label="Language selector">
+        <a class="lang-btn" href="/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="en" lang="en">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="es" lang="es" aria-current="true">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/es/#sobre" class="mobile-link">Sobre mí</a>
+      <a href="/es/#apps" class="mobile-link">Apps</a>
+      <a href="/es/#contato" class="mobile-link">Contacto</a>
+      <!-- i18n:selector -->
+      <div class="lang-selector lang-selector--mobile">
+        <a class="lang-btn" href="/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="en" lang="en">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="es" lang="es" aria-current="true">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+    </div>
+  </header>
+
+  <main>
+    <div class="article-hero">
+      <h1>Buscaminas en Flutter:<br /><span class="gradient-text">algoritmo de generación de tablero</span> y lógica del juego</h1>
+      <div class="article-meta">
+        <span>19 de junio de 2026</span>
+        <span>·</span>
+        <span>8 min de lectura</span>
+        <span>·</span>
+        <span>por Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Dart</span>
+        <span class="article-tag">Algoritmos</span>
+        <span class="article-tag">Game Dev</span>
+      </div>
+    </div>
+
+    
+
+    
+
+    <div class="article-body">
+
+      <a href="/es/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Volver a la página de inicio
+      </a>
+
+      <p>
+        El Buscaminas parece simple a primera vista — es una cuadrícula con números y minas. Pero
+        implementarlo desde cero revela varias decisiones técnicas interesantes: ¿cómo distribuir las
+        minas de forma verdaderamente aleatoria? ¿Cómo garantizar que el primer clic nunca sea una
+        mina? ¿Cómo implementar el revelado en cascada de celdas vacías sin bloquear la UI? En este
+        artículo muestro cómo resolví cada una de estas cuestiones en <strong>Campo Minado Evolution</strong>.
+      </p>
+
+      <p><em>Actualizado el 22 de octubre de 2026: el artículo fue revisado para reflejar la implementación actual de la app — celdas inmutables, sorteo de minas con una lista mezclada y flood fill iterativo con cola.</em></p>
+
+      <h2>La estructura de datos: modelando una celda</h2>
+      <p>
+        Cada posición del tablero está representada por un objeto <code>Cell</code> inmutable, con todo el estado necesario para el renderizado y la lógica del juego:
+      </p>
+      <pre><code>class Cell {
+  final int row;
+  final int col;
+  final bool isMine;
+  final bool isRevealed;
+  final bool isFlagged;
+  final int adjacentMines;
+  final bool isExploded;
+
+  const Cell({
+    required this.row,
+    required this.col,
+    required this.isMine,
+    required this.isRevealed,
+    required this.isFlagged,
+    required this.adjacentMines,
+    this.isExploded = false,
+  });
+
+  Cell copyWith({
+    bool? isMine,
+    bool? isRevealed,
+    bool? isFlagged,
+    int? adjacentMines,
+    bool? isExploded,
+  }) {
+    return Cell(
+      row: row,
+      col: col,
+      isMine: isMine ?? this.isMine,
+      isRevealed: isRevealed ?? this.isRevealed,
+      isFlagged: isFlagged ?? this.isFlagged,
+      adjacentMines: adjacentMines ?? this.adjacentMines,
+      isExploded: isExploded ?? this.isExploded,
+    );
+  }
+}</code></pre>
+      <p>
+        Todos los campos son <code>final</code>: cualquier cambio genera una nueva celda mediante <code>copyWith</code>. Esto evita efectos secundarios ocultos y permite que Riverpod compare el estado anterior con el nuevo para saber exactamente qué cambió.
+      </p>
+      <p>
+        Todo el tablero es una lista bidimensional inicializada con celdas limpias. No se coloca ninguna mina en la creación — este tablero inicial es solo un marcador de posición, y las minas se sortean en el primer toque, como veremos a continuación.
+      </p>
+      <pre><code>List&lt;List&lt;Cell&gt;&gt; createEmptyBoard(int rows, int cols) {
+  return List.generate(
+    rows,
+    (r) =&gt; List.generate(
+      cols,
+      (c) =&gt; Cell(
+        row: r,
+        col: c,
+        isMine: false,
+        isRevealed: false,
+        isFlagged: false,
+        adjacentMines: 0,
+      ),
+    ),
+  );
+}</code></pre>
+
+      <h2>Distribuyendo las minas: el problema del primer clic</h2>
+      <p>
+        Una regla clásica del Buscaminas: <strong>el primer clic nunca puede detonar una mina</strong>. Esto significa que las minas deben distribuirse <em>después</em> del primer clic, excluyendo la celda pulsada y todas sus vecinas del sorteo. En la app, el primer toque regenera el tablero pasando la posición pulsada como zona segura:
+      </p>
+      <pre><code>void placeMines(
+  List&lt;List&lt;Cell&gt;&gt; board,
+  int count, {
+  int? safeRow,
+  int? safeCol,
+}) {
+  final rows = board.length;
+  final cols = board[0].length;
+
+  final excluded = &lt;(int, int)&gt;{};
+  if (safeRow != null &amp;&amp; safeCol != null) {
+    for (final dr in [-1, 0, 1]) {
+      for (final dc in [-1, 0, 1]) {
+        excluded.add((safeRow + dr, safeCol + dc));
+      }
+    }
+  }
+
+  final positions = [
+    for (int r = 0; r &lt; rows; r++)
+      for (int c = 0; c &lt; cols; c++)
+        if (!excluded.contains((r, c))) (r, c),
+  ];
+
+  positions.shuffle(Random());
+
+  for (int i = 0; i &lt; count; i++) {
+    final (r, c) = positions[i];
+    board[r][c] = board[r][c].copyWith(isMine: true);
+  }
+}</code></pre>
+      <p>
+        En lugar de sortear coordenadas aleatorias y descartar las repetidas hasta completar el total de minas, armo la lista de posiciones candidatas (todo lo que queda fuera de la zona segura), la mezclo y tomo las primeras <code>count</code>. El costo es predecible, no hay ningún bucle que pueda girar indefinidamente y la distribución sigue siendo uniforme. La zona de exclusión de 3×3 garantiza que el primer toque abra un espacio para que el jugador razone. Si el número de minas excede las posiciones disponibles, el use case lanza una excepción en lugar de generar un tablero inválido (el código anterior es una versión simplificada).
+      </p>
+
+      <h2>Calculando los números adyacentes</h2>
+      <p>
+        Después de distribuir las minas, recorremos todo el tablero y calculamos cuántas minas existen entre las 8 vecinas de cada celda que no es mina:
+      </p>
+      <pre><code>void calculateAdjacentCounts(List&lt;List&lt;Cell&gt;&gt; board) {
+  final rows = board.length;
+  final cols = board[0].length;
+  const offsets = [-1, 0, 1];
+
+  for (int r = 0; r &lt; rows; r++) {
+    for (int c = 0; c &lt; cols; c++) {
+      if (board[r][c].isMine) continue;
+
+      int count = 0;
+      for (final dr in offsets) {
+        for (final dc in offsets) {
+          if (dr == 0 &amp;&amp; dc == 0) continue;
+          final nr = r + dr;
+          final nc = c + dc;
+          if (nr &gt;= 0 &amp;&amp; nr &lt; rows &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; cols &amp;&amp;
+              board[nr][nc].isMine) {
+            count++;
+          }
+        }
+      }
+      board[r][c] = board[r][c].copyWith(adjacentMines: count);
+    }
+  }
+}</code></pre>
+
+      <h2>El revelado en cascada: flood fill iterativo con cola</h2>
+      <p>
+        Cuando el jugador toca una celda con <code>adjacentMines == 0</code>, todas las celdas vacías conectadas deben revelarse automáticamente — junto con los números en los bordes de esa región. Este es un algoritmo de <strong>flood fill</strong> (relleno por inundación), el mismo que usan las herramientas de relleno tipo balde en programas de pintura.
+      </p>
+      <pre><code>List&lt;List&lt;Cell&gt;&gt; reveal(List&lt;List&lt;Cell&gt;&gt; board, int row, int col) {
+  final updated = board.map((r) =&gt; [...r]).toList();
+  final pending = Queue&lt;(int, int)&gt;()..add((row, col));
+
+  while (pending.isNotEmpty) {
+    final (r, c) = pending.removeFirst();
+    final cell = updated[r][c];
+    if (cell.isRevealed || cell.isFlagged) continue;
+
+    updated[r][c] = cell.copyWith(isRevealed: true);
+
+    if (cell.adjacentMines == 0 &amp;&amp; !cell.isMine) {
+      for (final neighbor in neighborsOf(updated, r, c)) {
+        pending.add((neighbor.row, neighbor.col));
+      }
+    }
+  }
+  return updated;
+}</code></pre>
+      <p>
+        La versión recursiva es la más directa de escribir, pero la pila de llamadas crece con el tamaño de la región vacía — y en tableros grandes eso es un riesgo. Por eso el revelado usa una cola (<code>Queue</code>): cada celda vacía encola a sus vecinas para procesarlas después, y el bucle termina cuando la cola se vacía. Las celdas ya reveladas o marcadas con bandera se omiten, y las celdas con un número mayor que cero se revelan pero no expanden la búsqueda (los bordes de la región). El revelado trabaja sobre una copia del tablero, preservando la inmutabilidad del estado. El auxiliar <code>neighborsOf</code> devuelve las hasta 8 celdas vecinas que están dentro de los límites del tablero.
+      </p>
+
+      <h2>Renderizando el tablero con Flutter</h2>
+      <p>
+        El tablero se renderiza con <code>GridView.builder</code> usando un delegate de conteo fijo de columnas. El tamaño de la celda se calcula a partir del espacio disponible, para que la cuadrícula llene la pantalla en cualquier dispositivo. Cada celda es un <code>ConsumerWidget</code> que observa solo su posición en el estado:
+      </p>
+      <pre><code>class CellWidget extends ConsumerWidget {
+  // ...
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cell = ref.watch(
+      gameProvider.select((s) =&gt; s.game.board[row][col]),
+    );
+
+    return GestureDetector(
+      onTap: () =&gt; _onTap(ref),
+      onLongPress: () =&gt; _onLongPress(ref),
+      child: CellContentWidget(cell: cell, cellSize: cellSize),
+    );
+  }
+}</code></pre>
+      <p>
+        Como <code>select</code> compara la <code>Cell</code> anterior con la nueva, solo se reconstruyen las celdas que cambiaron — fundamental en el modo Difícil, con cientos de celdas. El toque simple revela la celda; la pulsación larga coloca la bandera. También hay un botón de modo bandera, que hace que el toque simple marque en lugar de revelar, para quien prefiere no usar la pulsación larga.
+      </p>
+      <pre><code>GridView.builder(
+  physics: const NeverScrollableScrollPhysics(),
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: cols,
+    childAspectRatio: 1.0,
+    mainAxisSpacing: spacing,
+    crossAxisSpacing: spacing,
+  ),
+  itemCount: rows * cols,
+  itemBuilder: (context, index) {
+    final row = index ~/ cols;
+    final col = index % cols;
+    return CellWidget(
+      key: ValueKey('cell_${row}_$col'),
+      row: row,
+      col: col,
+      cellSize: cellSize,
+    );
+  },
+)</code></pre>
+      <p>
+        El <code>CellContentWidget</code> decide qué mostrar: celda cubierta, bandera, número coloreado o mina. Los colores de los números siguen la convención clásica del Buscaminas: 1 azul, 2 verde, 3 rojo, etc.
+      </p>
+
+      <h2>Condiciones de victoria y derrota</h2>
+      <p>Ambas condiciones se verifican después de cada jugada. La derrota ocurre cuando la celda revelada es una mina; la victoria, cuando no queda ninguna celda sin mina cubierta:</p>
+      <pre><code>bool checkVictory(List&lt;List&lt;Cell&gt;&gt; board) {
+  return board
+      .expand((row) =&gt; row)
+      .where((cell) =&gt; !cell.isRevealed &amp;&amp; !cell.isMine)
+      .isEmpty;
+}</code></pre>
+      <p>
+        En la victoria, el cronómetro se detiene, la app reproduce el sonido de victoria, vibra y guarda el tiempo en las estadísticas (Drift/SQLite), que alimentan el mejor tiempo y la tasa de victoria por dificultad. En la derrota, todas las minas se revelan, la que explotó se marca con <code>isExploded: true</code> para recibir su propia animación, y la derrota también se registra.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Implementar el Buscaminas en Flutter es un ejercicio excelente porque combina algoritmos clásicos (flood fill, generación aleatoria con restricciones) con UI reactiva. Toda la lógica vive fuera del árbol de widgets, en use cases puros — <code>GenerateBoardUseCase</code>, <code>RevealCellUseCase</code>, <code>CheckVictoryUseCase</code> y <code>ToggleFlagUseCase</code> — orquestados por un <code>GameViewModel</code> (un Notifier de Riverpod). Al ser funciones sobre estado inmutable, son simples de probar sin mocks, y la UI solo reconstruye lo que cambió.
+      </p>
+
+      <div class="article-cta">
+        <p>Prueba Campo Minado Evolution gratis en Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Descargar Campo Minado Evolution</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> leankar.dev — <span>Hecho con <span class="heart">♥</span> y Flutter</span>
+      </p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/es/privacy.html" class="footer-privacy-link">Política de Privacidad</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/particles.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

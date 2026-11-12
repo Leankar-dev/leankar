@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-static-lang>
+
+<head>
+  <!-- GERADO por scripts/build-i18n.mjs a partir de blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html. NÃO EDITE. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="/js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="How I implemented Campo Minado Evolution in Flutter: board data structure, mine placement, adjacent-count calculation and iterative flood fill." />
+  <meta name="robots" content="index, follow" />
+  <title>Minesweeper in Flutter: board generation algorithm — leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <!-- /i18n:hreflang -->
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Minesweeper in Flutter: board generation algorithm and game logic" />
+  <meta property="og:description" content="Mine placement with first-click protection, adjacent-count calculation and iterative flood fill implemented in Campo Minado Evolution." />
+  <meta property="og:url" content="https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" />
+  <meta property="og:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:site_name" content="leankar.dev" />
+  <meta property="article:published_time" content="2026-06-19" />
+  <meta property="article:modified_time" content="2026-10-22" />
+  <meta property="article:author" content="Leandro" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Minesweeper in Flutter: board generation algorithm" />
+  <meta name="twitter:description" content="Flood fill, mine placement and first-click protection — algorithms from Campo Minado Evolution." />
+  <meta name="twitter:image" content="https://leankar.dev/assets/logos/campominadoevolution_logo.png" />
+
+  <!-- JSON-LD: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "inLanguage": "en",
+    "headline": "Minesweeper in Flutter: board generation algorithm and game logic",
+    "datePublished": "2026-06-19",
+    "dateModified": "2026-10-22",
+    "description": "How I implemented Campo Minado Evolution in Flutter: board data structure, mine placement, adjacent-count calculation and iterative flood fill.",
+    "url": "https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html",
+    "author": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Leandro",
+      "url": "https://leankar.dev"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://leankar.dev/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html"
+    },
+    "keywords": [
+      "Flutter",
+      "Dart",
+      "algorithms",
+      "Campo Minado",
+      "flood fill",
+      "game development"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/en/" class="nav-logo">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/en/#sobre">About</a>
+        <a href="/en/#apps">Apps</a>
+        <a href="/en/#contato">Contact</a>
+      </nav>
+      <!-- i18n:selector -->
+      <div class="lang-selector" aria-label="Language selector">
+        <a class="lang-btn" href="/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="en" lang="en" aria-current="true">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="es" lang="es">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/en/#sobre" class="mobile-link">About</a>
+      <a href="/en/#apps" class="mobile-link">Apps</a>
+      <a href="/en/#contato" class="mobile-link">Contact</a>
+      <!-- i18n:selector -->
+      <div class="lang-selector lang-selector--mobile">
+        <a class="lang-btn" href="/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/en/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="en" lang="en" aria-current="true">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/es/blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html" hreflang="es" lang="es">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+    </div>
+  </header>
+
+  <main>
+    <div class="article-hero">
+      <h1>Minesweeper in Flutter:<br /><span class="gradient-text">board generation algorithm</span> and game logic</h1>
+      <div class="article-meta">
+        <span>June 19, 2026</span>
+        <span>·</span>
+        <span>8 min read</span>
+        <span>·</span>
+        <span>by Leandro</span>
+      </div>
+      <div class="article-tags">
+        <span class="article-tag">Flutter</span>
+        <span class="article-tag">Dart</span>
+        <span class="article-tag">Algorithms</span>
+        <span class="article-tag">Game Dev</span>
+      </div>
+    </div>
+    
+
+    
+
+    <div class="article-body">
+
+      <a href="/en/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        Back to homepage
+      </a>
+
+      <p>
+        Minesweeper looks simple at first glance — it's a grid of numbers and mines. But implementing
+        it from scratch reveals several interesting technical decisions: how do you distribute mines
+        in a truly random way? How do you guarantee the first click is never a mine? How do you
+        implement the cascading reveal of empty cells without freezing the UI? In this article I show
+        how I solved each of these questions in <strong>Campo Minado Evolution</strong>.
+      </p>
+
+      <p><em>Updated on October 22, 2026: this article was revised to reflect the app's current implementation — immutable cells, mine placement with a shuffled list, and an iterative queue-based flood fill.</em></p>
+
+      <h2>The data structure: modeling a cell</h2>
+      <p>
+        Each board position is represented by an immutable <code>Cell</code> object holding all the state needed for rendering and game logic:
+      </p>
+      <pre><code>class Cell {
+  final int row;
+  final int col;
+  final bool isMine;
+  final bool isRevealed;
+  final bool isFlagged;
+  final int adjacentMines;
+  final bool isExploded;
+
+  const Cell({
+    required this.row,
+    required this.col,
+    required this.isMine,
+    required this.isRevealed,
+    required this.isFlagged,
+    required this.adjacentMines,
+    this.isExploded = false,
+  });
+
+  Cell copyWith({
+    bool? isMine,
+    bool? isRevealed,
+    bool? isFlagged,
+    int? adjacentMines,
+    bool? isExploded,
+  }) {
+    return Cell(
+      row: row,
+      col: col,
+      isMine: isMine ?? this.isMine,
+      isRevealed: isRevealed ?? this.isRevealed,
+      isFlagged: isFlagged ?? this.isFlagged,
+      adjacentMines: adjacentMines ?? this.adjacentMines,
+      isExploded: isExploded ?? this.isExploded,
+    );
+  }
+}</code></pre>
+      <p>
+        Every field is <code>final</code>: any change produces a new cell via <code>copyWith</code>. That rules out hidden side effects and lets Riverpod compare the old state with the new one to know exactly what changed.
+      </p>
+      <p>
+        The entire board is a two-dimensional list initialized with clean cells. No mine is placed at creation time — this initial board is just a placeholder, and the mines are drawn on the first tap, as we'll see next.
+      </p>
+      <pre><code>List&lt;List&lt;Cell&gt;&gt; createEmptyBoard(int rows, int cols) {
+  return List.generate(
+    rows,
+    (r) =&gt; List.generate(
+      cols,
+      (c) =&gt; Cell(
+        row: r,
+        col: c,
+        isMine: false,
+        isRevealed: false,
+        isFlagged: false,
+        adjacentMines: 0,
+      ),
+    ),
+  );
+}</code></pre>
+
+      <h2>Distributing the mines: the first-click problem</h2>
+      <p>
+        A classic Minesweeper rule: <strong>the first click can never explode a mine</strong>. That means mines need to be distributed <em>after</em> the first click, excluding the tapped cell and all of its neighbors from the draw. In the app, the first tap regenerates the board, passing the tapped position as the safe zone:
+      </p>
+      <pre><code>void placeMines(
+  List&lt;List&lt;Cell&gt;&gt; board,
+  int count, {
+  int? safeRow,
+  int? safeCol,
+}) {
+  final rows = board.length;
+  final cols = board[0].length;
+
+  final excluded = &lt;(int, int)&gt;{};
+  if (safeRow != null &amp;&amp; safeCol != null) {
+    for (final dr in [-1, 0, 1]) {
+      for (final dc in [-1, 0, 1]) {
+        excluded.add((safeRow + dr, safeCol + dc));
+      }
+    }
+  }
+
+  final positions = [
+    for (int r = 0; r &lt; rows; r++)
+      for (int c = 0; c &lt; cols; c++)
+        if (!excluded.contains((r, c))) (r, c),
+  ];
+
+  positions.shuffle(Random());
+
+  for (int i = 0; i &lt; count; i++) {
+    final (r, c) = positions[i];
+    board[r][c] = board[r][c].copyWith(isMine: true);
+  }
+}</code></pre>
+      <p>
+        Instead of drawing random coordinates and discarding duplicates until the mine total is reached, I build the list of candidate positions (everything outside the safe zone), shuffle it, and take the first <code>count</code>. The cost is predictable, there is no loop that could spin indefinitely, and the distribution stays uniform. The 3×3 exclusion zone guarantees the first tap opens up some room for the player to reason. If the number of mines exceeds the available positions, the use case throws instead of producing an invalid board (the code above is a simplified version).
+      </p>
+
+      <h2>Calculating the adjacent numbers</h2>
+      <p>
+        After distributing the mines, we walk the entire board and calculate how many mines exist among the 8 neighbors of every non-mine cell:
+      </p>
+      <pre><code>void calculateAdjacentCounts(List&lt;List&lt;Cell&gt;&gt; board) {
+  final rows = board.length;
+  final cols = board[0].length;
+  const offsets = [-1, 0, 1];
+
+  for (int r = 0; r &lt; rows; r++) {
+    for (int c = 0; c &lt; cols; c++) {
+      if (board[r][c].isMine) continue;
+
+      int count = 0;
+      for (final dr in offsets) {
+        for (final dc in offsets) {
+          if (dr == 0 &amp;&amp; dc == 0) continue;
+          final nr = r + dr;
+          final nc = c + dc;
+          if (nr &gt;= 0 &amp;&amp; nr &lt; rows &amp;&amp; nc &gt;= 0 &amp;&amp; nc &lt; cols &amp;&amp;
+              board[nr][nc].isMine) {
+            count++;
+          }
+        }
+      }
+      board[r][c] = board[r][c].copyWith(adjacentMines: count);
+    }
+  }
+}</code></pre>
+
+      <h2>The cascading reveal: iterative flood fill with a queue</h2>
+      <p>
+        When the player taps a cell with <code>adjacentMines == 0</code>, every connected empty cell must be revealed automatically — along with the numbers at the edges of that region. This is a <strong>flood fill</strong> algorithm, the same technique used by bucket-fill tools in paint programs.
+      </p>
+      <pre><code>List&lt;List&lt;Cell&gt;&gt; reveal(List&lt;List&lt;Cell&gt;&gt; board, int row, int col) {
+  final updated = board.map((r) =&gt; [...r]).toList();
+  final pending = Queue&lt;(int, int)&gt;()..add((row, col));
+
+  while (pending.isNotEmpty) {
+    final (r, c) = pending.removeFirst();
+    final cell = updated[r][c];
+    if (cell.isRevealed || cell.isFlagged) continue;
+
+    updated[r][c] = cell.copyWith(isRevealed: true);
+
+    if (cell.adjacentMines == 0 &amp;&amp; !cell.isMine) {
+      for (final neighbor in neighborsOf(updated, r, c)) {
+        pending.add((neighbor.row, neighbor.col));
+      }
+    }
+  }
+  return updated;
+}</code></pre>
+      <p>
+        The recursive version is the simplest to write, but the call stack grows with the size of the empty region — which is a risk on large boards. That's why the reveal uses a queue (<code>Queue</code>): each empty cell enqueues its neighbors to process later, and the loop ends when the queue is empty. Cells that are already revealed or flagged are skipped, and cells with a number greater than zero are revealed but don't expand the search (the edges of the region). The reveal works on a copy of the board, preserving the immutability of the state. The <code>neighborsOf</code> helper returns the up-to-8 neighboring cells that fall within the board bounds.
+      </p>
+
+      <h2>Rendering the board with Flutter</h2>
+      <p>
+        The board is rendered with <code>GridView.builder</code> using a fixed cross-axis-count delegate. The cell size is computed from the available space so the grid fills the screen on any device. Each cell is a <code>ConsumerWidget</code> that watches only its own position in the state:
+      </p>
+      <pre><code>class CellWidget extends ConsumerWidget {
+  // ...
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cell = ref.watch(
+      gameProvider.select((s) =&gt; s.game.board[row][col]),
+    );
+
+    return GestureDetector(
+      onTap: () =&gt; _onTap(ref),
+      onLongPress: () =&gt; _onLongPress(ref),
+      child: CellContentWidget(cell: cell, cellSize: cellSize),
+    );
+  }
+}</code></pre>
+      <p>
+        Because <code>select</code> compares the old <code>Cell</code> with the new one, only the cells that changed are rebuilt — essential on Hard, with hundreds of cells. A simple tap reveals the cell; a long press places a flag. There's also a flag-mode button that makes a simple tap place a flag instead of revealing, for players who prefer not to long-press.
+      </p>
+      <pre><code>GridView.builder(
+  physics: const NeverScrollableScrollPhysics(),
+  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: cols,
+    childAspectRatio: 1.0,
+    mainAxisSpacing: spacing,
+    crossAxisSpacing: spacing,
+  ),
+  itemCount: rows * cols,
+  itemBuilder: (context, index) {
+    final row = index ~/ cols;
+    final col = index % cols;
+    return CellWidget(
+      key: ValueKey('cell_${row}_$col'),
+      row: row,
+      col: col,
+      cellSize: cellSize,
+    );
+  },
+)</code></pre>
+      <p>
+        The <code>CellContentWidget</code> decides what to display: a covered cell, a flag, a colored number, or a mine. The number colors follow the classic Minesweeper convention: 1 blue, 2 green, 3 red, and so on.
+      </p>
+
+      <h2>Win and loss conditions</h2>
+      <p>Both conditions are checked after every move. A loss happens when the revealed cell is a mine; a win, when no covered non-mine cell remains:</p>
+      <pre><code>bool checkVictory(List&lt;List&lt;Cell&gt;&gt; board) {
+  return board
+      .expand((row) =&gt; row)
+      .where((cell) =&gt; !cell.isRevealed &amp;&amp; !cell.isMine)
+      .isEmpty;
+}</code></pre>
+      <p>
+        On a win, the timer stops, the app plays the victory sound, vibrates, and saves the time to the stats (Drift/SQLite), which feed the best time and win rate per difficulty. On a loss, every mine is revealed, the one that exploded is marked with <code>isExploded: true</code> so it gets its own animation, and the defeat is recorded too.
+      </p>
+
+      <hr class="article-divider" />
+
+      <p>
+        Implementing Minesweeper in Flutter is an excellent exercise because it combines classic algorithms (flood fill, constrained random generation) with reactive UI. All the logic lives outside the widget tree, in pure use cases — <code>GenerateBoardUseCase</code>, <code>RevealCellUseCase</code>, <code>CheckVictoryUseCase</code>, and <code>ToggleFlagUseCase</code> — orchestrated by a <code>GameViewModel</code> (a Riverpod Notifier). Since they are functions over immutable state, they're simple to test without mocks, and the UI only rebuilds what changed.
+      </p>
+
+      <div class="article-cta">
+        <p>Try Campo Minado Evolution for free on Google Play:</p>
+        <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Campo Minado Evolution</a>
+      </div>
+
+    </div>
+
+    </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> leankar.dev — <span>Made with <span class="heart">♥</span> and Flutter</span>
+      </p>
+      <p class="footer-copy footer-copy--sub">
+        <a href="/en/privacy.html" class="footer-privacy-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/particles.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

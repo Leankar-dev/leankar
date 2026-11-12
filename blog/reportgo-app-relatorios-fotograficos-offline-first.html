@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-static-lang>
 
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
@@ -26,6 +26,13 @@
   <!-- Canonical -->
   <link rel="canonical" href="https://leankar.dev/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
 
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/blog/reportgo-app-relatorios-fotograficos-offline-first.html" />
+  <!-- /i18n:hreflang -->
+
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="ReportGoApp: o app que transforma fotos de campo em laudos profissionais" />
@@ -50,6 +57,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
+    "inLanguage": "pt-BR",
     "headline": "ReportGoApp: o app que transforma fotos de campo em laudos profissionais",
     "datePublished": "2026-10-22",
     "dateModified": "2026-10-22",
@@ -87,13 +95,15 @@
         <a href="/#apps" data-i18n="nav.apps">Aplicativos</a>
         <a href="/#contato" data-i18n="nav.contato">Contato</a>
       </nav>
+      <!-- i18n:selector -->
       <div class="lang-selector" aria-label="Language selector">
-        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <a class="lang-btn active" href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <a class="lang-btn" href="/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="en" lang="en">EN</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        <a class="lang-btn" href="/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="es" lang="es">ES</a>
       </div>
+      <!-- /i18n:selector -->
       <button class="hamburger" id="hamburger" data-i18n-aria="nav.menu-label" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
       </button>
@@ -102,13 +112,15 @@
       <a href="/#sobre" class="mobile-link" data-i18n="nav.sobre">Sobre</a>
       <a href="/#apps" class="mobile-link" data-i18n="nav.apps">Aplicativos</a>
       <a href="/#contato" class="mobile-link" data-i18n="nav.contato">Contato</a>
+      <!-- i18n:selector -->
       <div class="lang-selector lang-selector--mobile">
-        <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+        <a class="lang-btn active" href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <a class="lang-btn" href="/en/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="en" lang="en">EN</a>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        <a class="lang-btn" href="/es/blog/reportgo-app-relatorios-fotograficos-offline-first.html" hreflang="es" lang="es">ES</a>
       </div>
+      <!-- /i18n:selector -->
     </div>
   </header>
 
@@ -746,8 +758,7 @@
   </footer>
 
   <script src="../js/particles.js"></script>
-  <script src="../core/strings.js"></script>
-  <script src="../js/i18n.js"></script>
+  <script src="../js/lang.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

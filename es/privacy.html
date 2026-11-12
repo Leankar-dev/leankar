@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+<html lang="es" data-static-lang>
+
+<head>
+  <!-- GERADO por scripts/build-i18n.mjs a partir de privacy.html. NÃO EDITE. -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V438JPJTN"></script>
+  <script src="/js/gtag-init.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             script-src 'self' https://www.googletagmanager.com;
+             connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com;" />
+  <meta name="description"
+    content="Política de Privacidad del sitio leankar.dev — cómo recopilamos y usamos tus datos." />
+  <meta name="robots" content="index, follow" />
+  <title>Política de Privacidad — leankar.dev</title>
+  <link rel="icon" type="image/jpeg" href="/assets/logos/logo_leankar.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* ── PRIVACY PAGE ── */
+    .privacy-hero {
+      padding: 130px 24px 56px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .privacy-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: #f0f4ff;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .privacy-hero .subtitle {
+      color: rgba(240,244,255,0.5);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .privacy-hero .subtitle::before,
+    .privacy-hero .subtitle::after {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: rgba(240,244,255,0.2);
+    }
+
+    /* ── LAYOUT ── */
+    .privacy-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #00c6ff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 36px;
+      padding: 8px 16px;
+      border: 1px solid rgba(0,198,255,0.2);
+      border-radius: 40px;
+      background: rgba(0,198,255,0.05);
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .back-link:hover {
+      background: rgba(0,198,255,0.1);
+      border-color: rgba(0,198,255,0.4);
+      text-decoration: none;
+    }
+    .back-link svg { flex-shrink: 0; }
+
+    /* ── INTRO CARD ── */
+    .privacy-intro {
+      background: rgba(0,198,255,0.05);
+      border: 1px solid rgba(0,198,255,0.15);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .privacy-intro-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(0,198,255,0.1);
+      border: 1px solid rgba(0,198,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00c6ff;
+    }
+    .privacy-intro p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(240,244,255,0.75);
+      margin: 0;
+    }
+    .privacy-intro strong {
+      color: #f0f4ff;
+      font-weight: 600;
+    }
+
+    /* ── SECTION CARD ── */
+    .privacy-section {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      transition: border-color 0.3s;
+    }
+    .privacy-section:hover {
+      border-color: rgba(0,198,255,0.15);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .section-badge {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #00c6ff22, #7c3aed22);
+      border: 1px solid rgba(0,198,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #00c6ff;
+      line-height: 1;
+    }
+    .section-header h2 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #f0f4ff;
+      margin: 0;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .privacy-section p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,244,255,0.72);
+      margin-bottom: 14px;
+    }
+    .privacy-section p:last-child { margin-bottom: 0; }
+    .privacy-section strong {
+      color: #f0f4ff;
+      font-weight: 600;
+    }
+    .privacy-section a {
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .privacy-section a:hover { text-decoration: underline; }
+    .privacy-section ul {
+      padding-left: 0;
+      margin: 10px 0 14px;
+      list-style: none;
+    }
+    .privacy-section ul li {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: rgba(240,244,255,0.72);
+      padding: 8px 12px 8px 36px;
+      position: relative;
+      border-radius: 8px;
+      margin-bottom: 4px;
+      transition: background 0.2s;
+    }
+    .privacy-section ul li:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    .privacy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 16px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00c6ff;
+      opacity: 0.7;
+    }
+    .privacy-section ul li strong {
+      color: #f0f4ff;
+      font-weight: 600;
+    }
+    .privacy-section ul li a {
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .privacy-section ul li a:hover { text-decoration: underline; }
+
+    /* ── CONTACT BLOCK ── */
+    .contact-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(240,244,255,0.72);
+    }
+    .contact-block strong { color: #f0f4ff; }
+    .contact-block a { color: #00c6ff; text-decoration: none; font-weight: 500; }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* ── TABLE ── */
+    .privacy-table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      min-width: 480px;
+    }
+    .privacy-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: rgba(0,198,255,0.06);
+      color: #00c6ff;
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .privacy-table td {
+      text-align: left;
+      padding: 14px 16px;
+      color: rgba(240,244,255,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .privacy-table tbody tr:last-child td { border-bottom: none; }
+    .privacy-table tbody tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .privacy-table td strong {
+      color: #f0f4ff;
+      font-weight: 600;
+    }
+    .privacy-table td a {
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .privacy-table td a:hover { text-decoration: underline; }
+
+    /* ── TAG BADGE ── */
+    .tag-offline {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(124,58,237,0.15);
+      border: 1px solid rgba(124,58,237,0.3);
+      color: #a78bfa;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .tag-api {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: rgba(0,198,255,0.1);
+      border: 1px solid rgba(0,198,255,0.25);
+      color: #00c6ff;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    @media (max-width: 540px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+    .right-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: border-color 0.2s;
+    }
+    .right-item:hover { border-color: rgba(0,198,255,0.2); }
+    .right-item .right-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #00c6ff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .right-item p {
+      font-size: 0.855rem !important;
+      color: rgba(240,244,255,0.65) !important;
+      margin: 0 !important;
+      line-height: 1.55 !important;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .privacy-section { padding: 22px 18px; }
+      .privacy-intro { flex-direction: column; gap: 12px; }
+    }
+  </style>
+
+  <link rel="canonical" href="https://leankar.dev/es/privacy.html" />
+
+  <!-- i18n:hreflang -->
+  <link rel="alternate" hreflang="pt-BR" href="https://leankar.dev/privacy.html" />
+  <link rel="alternate" hreflang="en" href="https://leankar.dev/en/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://leankar.dev/es/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://leankar.dev/privacy.html" />
+  <!-- /i18n:hreflang -->
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Política de Privacidad — leankar.dev" />
+  <meta property="og:description" content="Política de Privacidad de leankar.dev: datos recopilados, uso de cookies (Google Analytics), formulario de contacto (Formspree) y derechos del usuario según la LGPD de Brasil." />
+  <meta property="og:url" content="https://leankar.dev/es/privacy.html" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="leankar.dev" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "inLanguage": "es",
+    "name": "Política de Privacidad — leankar.dev",
+    "url": "https://leankar.dev/es/privacy.html",
+    "description": "Política de Privacidad del sitio leankar.dev conforme a la LGPD.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://leankar.dev"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/es/" class="nav-logo">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev logo" width="96" height="96" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="/es/#sobre">Sobre mí</a>
+        <a href="/es/#apps">Apps</a>
+        <a href="/es/#contato">Contacto</a>
+      </nav>
+      <!-- i18n:selector -->
+      <div class="lang-selector" aria-label="Language selector">
+        <a class="lang-btn" href="/privacy.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/en/privacy.html" hreflang="en" lang="en">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/es/privacy.html" hreflang="es" lang="es" aria-current="true">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/es/#sobre" class="mobile-link">Sobre mí</a>
+      <a href="/es/#apps" class="mobile-link">Apps</a>
+      <a href="/es/#contato" class="mobile-link">Contacto</a>
+      <!-- i18n:selector -->
+      <div class="lang-selector lang-selector--mobile">
+        <a class="lang-btn" href="/privacy.html" hreflang="pt-BR" lang="pt-BR">PT</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn" href="/en/privacy.html" hreflang="en" lang="en">EN</a>
+        <span class="lang-sep">|</span>
+        <a class="lang-btn active" href="/es/privacy.html" hreflang="es" lang="es" aria-current="true">ES</a>
+      </div>
+      <!-- /i18n:selector -->
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="privacy-hero">
+      <h1>Política de <span class="gradient-text">Privacidad</span></h1>
+      <p class="subtitle">Última actualización: 20 de junio de 2026</p>
+    </div>
+
+    
+
+    
+
+    <div class="privacy-wrap">
+
+      <!-- BACK -->
+      <a href="/es/" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Volver a la página de inicio
+      </a>
+
+      <!-- INTRO -->
+      <div class="privacy-intro">
+        <div class="privacy-intro-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+          </svg>
+        </div>
+        <p>
+          Esta Política de Privacidad describe cómo el sitio <strong>leankar.dev</strong> recopila, usa
+          y protege la información de los visitantes, de conformidad con la
+          <strong>Ley General de Protección de Datos de Brasil (Ley n.º 13.709/2018 — LGPD)</strong>.
+          Al navegar por este sitio, declaras estar al tanto de los términos descritos a continuación.
+        </p>
+      </div>
+
+      <!-- 1. QUIÉNES SOMOS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">01</div>
+          <h2>Quiénes somos</h2>
+        </div>
+        <p>
+          El sitio <strong>leankar.dev</strong> es el portafolio personal de Leandro, desarrollador
+          mobile especializado en Flutter y Dart, con aplicaciones publicadas en Google Play. El sitio
+          presenta proyectos, artículos técnicos, stack de desarrollo y un canal de contacto
+          profesional.
+        </p>
+        <div class="contact-block">
+          <strong>Responsable del tratamiento:</strong> Leandro (leankar.dev)<br />
+          <strong>Correo electrónico:</strong> <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a><br />
+          <strong>Sitio web:</strong> <a href="https://leankar.dev">leankar.dev</a>
+        </div>
+      </div>
+
+      <!-- 2. DATOS RECOPILADOS AUTOMÁTICAMENTE -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">02</div>
+          <h2>Datos recopilados automáticamente</h2>
+        </div>
+        <p>
+          Al acceder a cualquier página de este sitio, los servicios de terceros integrados pueden
+          recopilar automáticamente la información indicada a continuación. No recopilamos datos
+          personales directamente por cuenta propia.
+        </p>
+        <ul>
+          <li>
+            <strong>Google Analytics 4 — ID: G-8V438JPJTN:</strong> recopila datos de navegación de
+            forma pseudonimizada, incluyendo páginas visitadas, duración de la sesión, país de origen,
+            tipo de dispositivo y navegador. La dirección IP es anonimizada por Google antes de su
+            almacenamiento.
+          </li>
+          <li>
+            <strong>Google Fonts:</strong> las fuentes Inter y Space Grotesk se cargan desde los
+            servidores de Google (fonts.googleapis.com / fonts.gstatic.com). Esta solicitud puede
+            registrar la IP del visitante conforme a la
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              política de privacidad de Google</a>.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. FORMULARIO DE CONTACTO -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">03</div>
+          <h2>Formulario de contacto</h2>
+        </div>
+        <p>
+          El formulario de contacto es procesado por el servicio
+          <strong>Formspree</strong> (<a href="https://formspree.io" target="_blank" rel="noopener noreferrer">formspree.io</a>).
+          Al enviar el formulario, se recopilan los siguientes datos:
+        </p>
+        <ul>
+          <li><strong>Nombre</strong> — campo obligatorio</li>
+          <li><strong>Correo electrónico</strong> — campo obligatorio, usado para responder</li>
+          <li><strong>Mensaje</strong> — campo obligatorio</li>
+        </ul>
+        <p>
+          Los datos se transmiten vía HTTPS a los servidores de Formspree y se reenvían a
+          <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>. No se almacenan en una base
+          de datos propia. Consulta la
+          <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+            Política de Privacidad de Formspree</a> para más detalles.
+        </p>
+        <div class="contact-block">
+          <strong>Finalidad:</strong> responder solicitudes de contacto profesional.<br />
+          <strong>Base legal (LGPD):</strong> interés legítimo (Art. 7, IX) y ejecución de contrato a
+          solicitud del titular (Art. 7, V).
+        </div>
+      </div>
+
+      <!-- 4. COOKIES -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">04</div>
+          <h2>Uso de cookies</h2>
+        </div>
+        <p>
+          Este sitio utiliza únicamente cookies de terceros para el análisis de audiencia.
+          No utilizamos cookies propias.
+        </p>
+        <ul>
+          <li>
+            <strong>Google Analytics (_ga, _gid, _ga_*):</strong> identifican sesiones únicas y
+            registran el comportamiento de navegación de forma agregada. Expiran en hasta 2 años (_ga)
+            o 24 horas (_gid).
+          </li>
+        </ul>
+        <p>
+          Puedes gestionar o desactivar las cookies en la configuración de tu navegador.
+        </p>
+      </div>
+
+      <!-- 5. APPS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">05</div>
+          <h2>Aplicaciones Android publicadas</h2>
+        </div>
+        <p>
+          El sitio presenta seis aplicaciones Android disponibles en Google Play, todas desarrolladas por Leandro. <strong>Cada aplicación tiene su propia política de privacidad</strong>, que describe los datos que trata y es el documento que rige para la app. La tabla siguiente resume el uso de anuncios e incluye el enlace a cada política:
+        </p>
+        <div class="privacy-table-wrap">
+          <table class="privacy-table">
+            <thead>
+              <tr>
+                <th>Aplicación</th>
+                <th>Anuncios</th>
+                <th>Política de la aplicación</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Calculadora Leankar</strong></td>
+                <td>Banner (solo en la versión Android), mostrado únicamente si aceptas.</td>
+                <td><a href="https://leankar-dev.github.io/calculator-leankar-privacy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+              <tr>
+                <td><strong>BuscaCep_las</strong></td>
+                <td>Sin anuncios. La consulta del CEP se envía a la API pública <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a> para devolver la dirección.</td>
+                <td><a href="https://leankar-dev.github.io/busca_cep_app_privacy_policy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+              <tr>
+                <td><strong>Lista da Casa</strong></td>
+                <td>Banner e intersticial, con elección de consentimiento en la app.</td>
+                <td><a href="https://leankar-dev.github.io/lista_da_casa_las_privacy_policy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+              <tr>
+                <td><strong>Campo Minado Evolution</strong></td>
+                <td>Banner e intersticial, con elección de consentimiento en la app.</td>
+                <td><a href="https://leankar-dev.github.io/campo_minado_evolution_privacy_policy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+              <tr>
+                <td><strong>Word Evolution</strong></td>
+                <td>Banner e intersticial, con elección de consentimiento en la app.</td>
+                <td><a href="https://leankar-dev.github.io/word_evolution_privacy_policy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+              <tr>
+                <td><strong>Damas Evolution</strong></td>
+                <td>Banner e intersticial, mostrados únicamente si aceptas.</td>
+                <td><a href="https://leankar-dev.github.io/damas_evolution_privacy_policy/" target="_blank" rel="noopener noreferrer">Política de privacidad</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="privacy-note">
+          Las aplicaciones con anuncios usan <strong>Unity LevelPlay</strong> y redes asociadas que, mientras los anuncios están activos, pueden recopilar datos del dispositivo, como el ID de publicidad y la dirección IP, según se describe en la política de cada app. Las listas, historiales y estadísticas que cada app guarda en tu dispositivo no se envían a servidores del desarrollador. ReportGoApp y MY CAR LAS están en desarrollo, aún no se han publicado y tendrán su propia política cuando se lancen. Las dudas específicas sobre una app pueden enviarse a <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>.
+        </p>
+      </div>
+
+      <!-- 6. BASES LEGALES -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">06</div>
+          <h2>Bases legales para el tratamiento de datos (LGPD)</h2>
+        </div>
+        <p>Conforme lo exige la LGPD (Art. 7), a continuación se indican las bases legales de cada actividad de tratamiento:</p>
+        <ul>
+          <li>
+            <strong>Google Analytics:</strong> interés legítimo del responsable en el análisis de
+            audiencia y la mejora del sitio (Art. 7, IX), con datos pseudonimizados y anonimización de
+            IP activa.
+          </li>
+          <li>
+            <strong>Google Fonts:</strong> interés legítimo del responsable en la correcta visualización
+            del sitio (Art. 7, IX). Necesario para el renderizado correcto de la interfaz.
+          </li>
+          <li>
+            <strong>Formulario de contacto (Formspree):</strong> ejecución de procedimientos a
+            solicitud del titular (Art. 7, V) e interés legítimo en la atención de solicitudes
+            profesionales (Art. 7, IX).
+          </li>
+        </ul>
+      </div>
+
+      <!-- 7. COMPARTICIÓN DE DATOS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">07</div>
+          <h2>Compartición de datos</h2>
+        </div>
+        <p>
+          No vendemos, intercambiamos ni transferimos datos personales a terceros con fines
+          comerciales. Los únicos terceros que reciben datos son los operadores de servicio descritos
+          en esta política:
+        </p>
+        <ul>
+          <li>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              Política de Privacidad de Google</a> — Analytics, Fonts
+          </li>
+          <li>
+            <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+              Política de Privacidad de Formspree</a> — formulario de contacto
+          </li>
+          <li>
+            <a href="https://viacep.com.br" target="_blank" rel="noopener noreferrer">ViaCEP</a> —
+            consultas de CEP por la app BuscaCep_las (API pública, sin registro de datos personales)
+          </li>
+        </ul>
+      </div>
+
+      <!-- 8. DERECHOS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">08</div>
+          <h2>Tus derechos (LGPD — Art. 18)</h2>
+        </div>
+        <p>
+          Conforme a la <strong>Ley General de Protección de Datos (Ley n.º 13.709/2018)</strong>,
+          tienes los siguientes derechos en relación con tus datos personales:
+        </p>
+        <div class="rights-grid">
+          <div class="right-item">
+            <div class="right-label">Acceso</div>
+            <p>Confirmar la existencia del tratamiento y obtener acceso a los datos tratados.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Corrección</div>
+            <p>Solicitar la actualización de datos incompletos, inexactos o desactualizados.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Eliminación</div>
+            <p>De los datos innecesarios, excesivos o tratados en incumplimiento de la LGPD.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Portabilidad</div>
+            <p>Solicitar la transferencia de tus datos a otro proveedor de servicio.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Oposición</div>
+            <p>Al tratamiento realizado con base en interés legítimo, en caso de incumplimiento de la LGPD.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Revocación</div>
+            <p>Del consentimiento en cualquier momento y sin costo, para tratamientos basados en él.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">Información</div>
+            <p>Sobre los terceros con quienes se compartieron los datos.</p>
+          </div>
+          <div class="right-item">
+            <div class="right-label">ANPD</div>
+            <p>Presentar reclamaciones ante la Autoridad Nacional de Protección de Datos en
+              <a href="https://www.gov.br/anpd" target="_blank" rel="noopener noreferrer">gov.br/anpd</a>.</p>
+          </div>
+        </div>
+        <p class="privacy-note--lg">
+          Para ejercer cualquiera de estos derechos, contáctanos por correo a
+          <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a>.
+          Responderemos dentro del plazo previsto por la LGPD.
+        </p>
+      </div>
+
+      <!-- 9. ENLACES EXTERNOS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">09</div>
+          <h2>Enlaces externos</h2>
+        </div>
+        <p>
+          Este sitio contiene enlaces a servicios externos, incluyendo Google Play Store, GitHub y
+          otros. No somos responsables de las prácticas de privacidad de esos sitios. Recomendamos leer
+          la política de privacidad de cada servicio que visites.
+        </p>
+      </div>
+
+      <!-- 10. SEGURIDAD -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">10</div>
+          <h2>Seguridad</h2>
+        </div>
+        <p>
+          Este sitio se sirve exclusivamente vía <strong>HTTPS</strong> y no almacena datos personales
+          en servidores propios. Todas las páginas implementan <strong>Content Security Policy (CSP)</strong>
+          para mitigar riesgos de inyección de contenido malicioso (XSS). La transmisión de datos del
+          formulario de contacto está cifrada de extremo a extremo vía TLS.
+        </p>
+      </div>
+
+      <!-- 11. RETENCIÓN -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">11</div>
+          <h2>Retención de datos</h2>
+        </div>
+        <p>Los datos recopilados por servicios de terceros se retienen conforme a sus propias políticas:</p>
+        <ul>
+          <li>
+            <strong>Google Analytics:</strong> datos de eventos retenidos durante 14 meses por defecto (configuración de GA4).
+          </li>
+          <li>
+            <strong>Formspree:</strong> datos retenidos en los servidores de Formspree conforme a su
+            política; el responsable del sitio conserva los correos solo durante el tiempo necesario
+            para responder cada solicitud.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 12. CAMBIOS -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">12</div>
+          <h2>Cambios en esta política</h2>
+        </div>
+        <p>
+          Esta Política de Privacidad puede actualizarse periódicamente para reflejar cambios en los
+          servicios utilizados o en la legislación aplicable. La fecha de "última actualización" en la
+          parte superior de esta página indica cuándo ocurrió la revisión más reciente. El uso
+          continuado del sitio después de los cambios implica la aceptación de la política actualizada.
+        </p>
+      </div>
+
+      <!-- 13. CONTACTO -->
+      <div class="privacy-section">
+        <div class="section-header">
+          <div class="section-badge">13</div>
+          <h2>Contacto</h2>
+        </div>
+        <p>
+          Las dudas, solicitudes o reclamaciones relacionadas con esta Política de Privacidad deben
+          dirigirse a:
+        </p>
+        <div class="contact-block">
+          <strong>Responsable (Controlador):</strong> Leandro<br />
+          <strong>Correo electrónico:</strong> <a href="mailto:leankar.dev@gmail.com">leankar.dev@gmail.com</a><br />
+          <strong>Sitio web:</strong> <a href="https://leankar.dev">leankar.dev</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/assets/logos/logo_leankar.jpeg" alt="leankar.dev" class="footer-logo" width="80" height="80" />
+        <span>leankar<span class="accent">.dev</span></span>
+      </div>
+      <p class="footer-copy">
+        &copy; <span id="year"></span> leankar.dev — <span>Hecho con <span class="heart">♥</span> y Flutter</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="/js/particles.js"></script>
+  <script src="/js/lang.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>

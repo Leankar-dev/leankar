@@ -191,7 +191,7 @@ function setHead(toks, head, L, errors, where, usedHead) {
     else if (norm(e[l]) === norm(e.pt) && !e.same) errors.push(`${where}: head.${key}.${l} igual ao PT (use "same": true se for nome próprio)`);
     if (L !== 'pt') setNew(e[L]);
   };
-  const OPCIONAIS = new Set(['imageAlt']);
+  const OPCIONAIS = new Set(['imageAlt', 'twitterTitle', 'twitterDescription']);
   const metaField = (key, attr, name) => {
     const i = metaTok(toks, attr, name, errors, where, !(OPCIONAIS.has(key) && !head[key]));
     if (i < 0) return;
@@ -226,7 +226,7 @@ const unesc = s => s.replace(/~1/g, '/').replace(/~0/g, '~');
 function* leaves(node, ptr = '') {
   if (typeof node === 'string') yield [ptr, node];
   else if (Array.isArray(node)) for (let i = 0; i < node.length; i++) yield* leaves(node[i], `${ptr}/${i}`);
-  else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) if (!k.startsWith('@')) yield* leaves(v, `${ptr}/${k.replace(/~/g, '~0').replace(/\//g, '~1')}`);
+  else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) if (k !== '@type' && k !== '@context') yield* leaves(v, `${ptr}/${k.replace(/~/g, '~0').replace(/\//g, '~1')}`);
 }
 const keepMatch = (pattern, ptr) => { const a = pattern.split('/'), b = ptr.split('/'); return a.length === b.length && a.every((x, i) => x === '*' ? /^\d+$/.test(b[i]) : x === b[i]); };
 function setAt(root, ptr, value) {
@@ -243,9 +243,10 @@ function translateJsonLd(toks, key, L, spec, errors, where, usedLd, scope) {
     let data; try { data = JSON.parse(toks[ti].s); } catch (e) { errors.push(`${loc}: JSON inválido na fonte (${e.message})`); return; }
     const selfPt = pageUrl(key, 'pt');
     const paginasPt = new Map([...scope].map(k => [pageUrl(k, 'pt'), k])); // URL PT → fonte (apps, home…)
-    const tr = b.translate || {}, keep = b.keep || [];
-    const seenTr = new Set(), seenKeep = new Set();
+    const tr = b.translate || {}, keep = b.keep || [], langPtrs = b.lang || []; // lang: ponteiros cujo valor é o código do idioma da PÁGINA (ex.: /inLanguage de Article/WebPage)
+    const seenTr = new Set(), seenKeep = new Set(), seenLang = new Set();
     for (const [ptr, val] of leaves(data)) {
+      if (langPtrs.includes(ptr)) { seenLang.add(ptr); if (val !== HTML_LANG.pt) errors.push(`${loc}: ${ptr} deveria ser "${HTML_LANG.pt}" na fonte PT (veio "${val}")`); if (L !== 'pt') setAt(data, ptr, HTML_LANG[L]); continue; }
       if (Object.prototype.hasOwnProperty.call(tr, ptr)) {
         seenTr.add(ptr); const e = tr[ptr];
         if (norm(e.pt) !== norm(val)) errors.push(`${loc}: ${ptr}.pt está DESATUALIZADO em relação ao HTML-fonte\n      HTML:      ${norm(val)}\n      meta.json: ${norm(e.pt)}`);
@@ -262,6 +263,7 @@ function translateJsonLd(toks, key, L, spec, errors, where, usedLd, scope) {
     }
     for (const p of Object.keys(tr)) if (!seenTr.has(p)) errors.push(`${loc}: entrada "translate" sem uso: ${p}`);
     for (const p of keep) if (!seenKeep.has(p)) errors.push(`${loc}: entrada "keep" sem uso: ${p}`);
+    for (const p of langPtrs) if (!seenLang.has(p)) errors.push(`${loc}: entrada "lang" sem uso: ${p}`);
     usedLd.add(n);
     if (L !== 'pt') {
       const ind = indentBefore(toks, ti - 1);

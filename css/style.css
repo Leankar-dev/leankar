@@ -1815,6 +1815,43 @@ a.lang-btn {
   font-weight: 700;
 }
 
+/* Faixa opcional de idioma (js/lang.js): fixa embaixo, não desloca o layout, dispensável */
+.lang-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(92vw, 560px);
+  padding: 10px 8px 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(8, 13, 26, 0.96);
+  color: var(--white);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.lang-banner a {
+  color: var(--cyan);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lang-banner button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 4px 10px;
+}
+
 .lang-sep {
   color: var(--border);
   font-size: 0.65rem;

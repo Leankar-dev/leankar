@@ -1,59 +1,59 @@
 {
   "_v": 2,
   "index.html": {
-    "hash": "42181ca95d5f9309",
+    "hash": "667ce4aed005b425",
     "lastmod": "2026-11-15"
   },
   "privacy.html": {
-    "hash": "a99d7663105487d7",
-    "lastmod": "2026-11-12"
+    "hash": "8ed0a91fde7ee708",
+    "lastmod": "2026-11-15"
   },
   "blog/reportgo-app-relatorios-fotograficos-offline-first.html": {
-    "hash": "a116fdb248cf2449",
-    "lastmod": "2026-11-12"
+    "hash": "003bfbb5c4f91e98",
+    "lastmod": "2026-11-15"
   },
   "blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html": {
-    "hash": "d602ff8744b629d0",
-    "lastmod": "2026-11-12"
+    "hash": "3e6ffecc9d8517a5",
+    "lastmod": "2026-11-15"
   },
   "blog/app-lista-compras-offline-first-flutter-drift-sqlite.html": {
-    "hash": "90369a4651d4d2e4",
-    "lastmod": "2026-11-12"
+    "hash": "81aefc5dc2acfde3",
+    "lastmod": "2026-11-15"
   },
   "blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html": {
-    "hash": "9b2dd24028dd8796",
-    "lastmod": "2026-11-12"
+    "hash": "e6dbb8fa0fe62f82",
+    "lastmod": "2026-11-15"
   },
   "apps/calculadora-leankar.html": {
-    "hash": "5c629c115a4592fb",
-    "lastmod": "2026-11-12"
+    "hash": "7cc0abda9306866f",
+    "lastmod": "2026-11-15"
   },
   "apps/buscacep.html": {
-    "hash": "86e7c31dee372bf4",
-    "lastmod": "2026-11-12"
+    "hash": "1d8aecd4227df88f",
+    "lastmod": "2026-11-15"
   },
   "apps/lista-da-casa.html": {
-    "hash": "243c7e3e2dabd7ba",
-    "lastmod": "2026-11-12"
+    "hash": "9f2730cd94b386cf",
+    "lastmod": "2026-11-15"
   },
   "apps/campo-minado-evolution.html": {
-    "hash": "0d20aba619b0b86e",
-    "lastmod": "2026-11-12"
+    "hash": "7fe9f7e1b8cc657a",
+    "lastmod": "2026-11-15"
   },
   "apps/word-evolution.html": {
-    "hash": "cee7a4503006de18",
-    "lastmod": "2026-11-12"
+    "hash": "d51a562f8904ca04",
+    "lastmod": "2026-11-15"
   },
   "apps/reportgo.html": {
-    "hash": "d870398c2db6c776",
-    "lastmod": "2026-11-12"
+    "hash": "2e6618a39193ee64",
+    "lastmod": "2026-11-15"
   },
   "apps/my-car-las.html": {
-    "hash": "f5ac57ef38cb01b8",
-    "lastmod": "2026-11-12"
+    "hash": "3a91cb25973026a0",
+    "lastmod": "2026-11-15"
   },
   "apps/damas-evolution.html": {
-    "hash": "33a04d12c60f60d9",
+    "hash": "6d7973d3312467e9",
     "lastmod": "2026-11-15"
   }
 }

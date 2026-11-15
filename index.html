@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png" />
   <link rel="preload" href="assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/space-grotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css?v=c11b879f" />
+  <link rel="stylesheet" href="css/style.css?v=4e8dfe3f" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://leankar.dev/" />
@@ -82,7 +82,7 @@
   }
   </script>
 
-  <!-- JSON-LD: SoftwareApplication (os 8 apps; url = página do app; installUrl só nos publicados) -->
+  <!-- JSON-LD: SoftwareApplication (os 9 apps; url = página do app, quando existe; installUrl só nos publicados) -->
   <script type="application/ld+json">
   [
     {
@@ -167,6 +167,14 @@
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Android, Windows",
       "url": "https://leankar.dev/apps/my-car-las.html",
+      "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Block LAS",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Android, iOS",
       "author": { "@type": "Person", "name": "Leandro", "url": "https://leankar.dev" }
     }
   ]
@@ -284,8 +292,8 @@
               em um laboratório de evolução técnica e pessoal.
             </p>
             <p data-i18n="sobre.p2">
-              Em pouco mais de 3 anos com <strong>Flutter e Dart</strong>, construí seis projetos —
-              cinco apps Android no Google Play, um site web de jogos diversos e três apps em desenvolvimento ativo.
+              Em pouco mais de 3 anos com <strong>Flutter e Dart</strong>, construí dez projetos —
+              seis apps Android no Google Play, um site web de jogos diversos e três apps em desenvolvimento ativo.
               Cada um
               nasceu de uma necessidade concreta: uma calculadora estilo neumórfico, um buscador de CEP ágil,
               um organizador de compras intuitivo, um campo minado reinventado. Problemas simples,
@@ -306,7 +314,7 @@
             </p>
             <div class="stats-row">
               <div class="stat">
-                <span class="stat-number">6</span>
+                <span class="stat-number">10</span>
                 <span class="stat-label" data-i18n="sobre.stat-projetos">Projetos</span>
               </div>
               <div class="stat">
@@ -467,390 +475,283 @@
         <div class="section-header reveal">
           <span class="section-label" data-i18n="apps.label">Apps & Web</span>
           <h2 data-i18n="apps.title">Meus <span class="gradient-text">Projetos</span></h2>
-          <p class="section-desc" data-i18n="apps.section-desc">6 apps Flutter no Google Play · 2 em desenvolvimento · 1
-            site web
-          </p>
+          <p class="section-desc" data-i18n="apps.section-desc">Apps Flutter publicados no Google Play, projetos em andamento e jogos na web.</p>
         </div>
-        <div class="apps-grid">
 
-          <!-- CALCULADORA -->
-          <article class="app-card reveal app-card--d0">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/calculadora-leankar-192.webp" alt="Calculadora Leankar" class="app-logo"
-                  width="96" height="96" loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/calculadora-leankar-poster.jpg"
-                  width="1280" height="720" data-i18n-aria="apps.calc-video-label"
-                  aria-label="Vídeo de apresentação da Calculadora Leankar">
-                  <source src="assets/videos/calculadora-leankar.mp4" type="video/mp4" />
-                  <span data-i18n="apps.calc-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
-                <h3 class="app-name">Calculadora Leankar</h3>
-                <p class="app-desc" data-i18n="apps.calc-desc">Desenvolvida com Flutter e design Neumórfico, nasceu da
-                  insatisfação com calculadoras sobrecarregadas de anúncios e funções que ninguém usa. Suporta as quatro
-                  operações básicas, porcentagem, modo científico (trigonometria, logaritmos, potências, fatorial e
-                  memória), IMC com faixa de peso ideal e histórico persistente de cálculos para consulta rápida. Temas
-                  claro, escuro e automático se adaptam ao ambiente, enquanto os botões foram dimensionados com área de
-                  toque generosa e tipografia de alto contraste para máxima legibilidade em qualquer tela. Disponível em
-                  cinco idiomas, compatível com Android 7.0+ e com um banner de anúncios opcional na versão Android.
-                  Para quem quer uma calculadora que simplesmente funciona, sem surpresas.</p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Material 3</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+        <div class="apps-group" role="group" aria-labelledby="apps-g-pub">
+          <div class="apps-group-head">
+            <h3 class="apps-group-title" id="apps-g-pub" data-i18n="apps.group-pub-title">Disponíveis no Google Play</h3>
+            <p class="apps-group-desc" data-i18n="apps.group-pub-desc">Prontos para instalar no seu Android.</p>
+          </div>
+          <ul class="apps-grid">
+
+            <!-- CALCULADORA -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/calculadora-leankar-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-produtividade">Produtividade</span>
+                    <h4 class="app-card-name"><a href="/apps/calculadora-leankar.html">Calculadora Leankar</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="calc.lead">Calculadora básica, científica e de IMC, com histórico e visual neumórfico.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="calc.trust-langs">5 idiomas</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=leankar.dev.calculator_05122025&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/calculadora-leankar.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- BUSCACEP -->
-          <article class="app-card reveal app-card--d1">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/buscacep-192.webp" alt="BuscaCep_las" class="app-logo" width="96" height="96"
-                  loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/busca-cep-las-poster.jpg" width="1280"
-                  height="720" data-i18n-aria="apps.cep-video-label" aria-label="Vídeo de apresentação do BuscaCep_las">
-                  <source src="assets/videos/busca-cep-las.mp4" type="video/mp4" />
-                  <span data-i18n="apps.cep-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-utilidades">Utilidades</span>
-                <h3 class="app-name">BuscaCep_las</h3>
-                <p class="app-desc" data-i18n="apps.cep-desc">Consultar um CEP brasileiro não deveria ser complicado. O
-                  BuscaCep integra a API pública ViaCEP para retornar logradouro, bairro, cidade, estado, DDD e
-                  complemento em segundos. Ideal para validar endereços em compras online, preencher formulários ou
-                  localizar qualquer CEP do Brasil. Oferece duas formas de busca: por CEP direto ou por endereço
-                  completo (UF, cidade e logradouro), com resultados formatados com clareza. Interface escura, limpa,
-                  intuitiva e sem poluição visual. Desenvolvido com Flutter, Riverpod e Dio, com tratamento completo de
-                  erros de conexão, timeout e CEPs inválidos. Gratuito, sem anúncios e sem coleta de dados.</p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">API REST</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            <!-- BUSCACEP -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/buscacep-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-utilidades">Utilidades</span>
+                    <h4 class="app-card-name"><a href="/apps/buscacep.html">BuscaCep_las</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="cep.lead">Consulte qualquer CEP do Brasil por código ou por endereço, em segundos.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="app.val-ads-none">Sem anúncios</li>
+                  <li data-i18n="cep.trust-source">Dados públicos do ViaCEP</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.buscaceplas&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/buscacep.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- LISTA DA CASA -->
-          <article class="app-card reveal app-card--d2">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/lista-da-casa-192.webp" alt="Lista da Casa" class="app-logo" width="96"
-                  height="96" loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/lista-da-casa-poster.jpg" width="1280"
-                  height="720" data-i18n-aria="apps.lista-video-label"
-                  aria-label="Vídeo de apresentação da Lista da Casa">
-                  <source src="assets/videos/lista-da-casa.mp4" type="video/mp4" />
-                  <span data-i18n="apps.lista-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-organizacao">Organização</span>
-                <h3 class="app-name">Lista da Casa</h3>
-                <p class="app-desc" data-i18n="apps.lista-desc">Esquecer o papel de compras ficou no passado. A Lista da
-                  Casa é um app minimalista para gerenciar listas de compras diretamente no Telefone. Adicione itens com
-                  categoria, quantidade e preço, marque o que já foi pego e acompanhe o progresso em tempo real. Suporta
-                  múltiplas listas simultâneas para organizar compras de mercado, farmácia e outros estabelecimentos. O
-                  histórico completo das compras finalizadas e os gráficos de gastos mensais por categoria ajudam a
-                  acompanhar o orçamento doméstico ao longo do tempo. Todos os dados são salvos localmente com SQLite —
-                  sem cadastro e funcionando sem internet. Interface neumórfica projetada para uso com uma mão só, ideal
-                  para o corredor do supermercado. Disponível em português, inglês e espanhol. Gratuito, com anúncios
-                  (você aceita ou recusa).</p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">SQLite</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            <!-- LISTA DA CASA -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/lista-da-casa-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-organizacao">Organização</span>
+                    <h4 class="app-card-name"><a href="/apps/lista-da-casa.html">Lista da Casa</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="lista.lead">Listas de compras por mercado, com histórico e gráficos de gastos. Sem cadastro.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="lista.trust-nosignup">Sem cadastro</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.listadacasa&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/lista-da-casa.html" class="app-detail-link" data-i18n="apps.link-details">Ver detalhes
-                    →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- CAMPO MINADO EVOLUTION -->
-          <article class="app-card reveal app-card--d3">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/campo-minado-evolution-192.webp" alt="Campo Minado Evolution" class="app-logo"
-                  width="96" height="96" loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/campo-minado-evolution-poster.jpg"
-                  width="1280" height="720" data-i18n-aria="apps.campo-video-label"
-                  aria-label="Vídeo de apresentação do Campo Minado Evolution">
-                  <source src="assets/videos/campo-minado-evolution.mp4" type="video/mp4" />
-                  <span data-i18n="apps.campo-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
-                <h3 class="app-name">Campo Minado Evolution</h3>
-                <p class="app-desc" data-i18n="apps.campo-desc">O Campo Minado clássico, reescrito do zero para mobile
-                  com Flutter. A mecânica que você já conhece — revelar células, marcar minas, raciocinar cada toque —
-                  ganhou visuais em Material Design, efeitos sonoros, vibração tátil e animações que elevam a
-                  experiência sem trair a essência do original. Três dificuldades com tabuleiros adaptativos: Fácil,
-                  Médio e Difícil, com a grade adaptada ao tamanho da tela (referência clássica: 9×9, 16×16 e 16×30) — e
-                  o primeiro toque é sempre seguro. Estatísticas por dificuldade, melhor tempo e taxa de vitória ficam
-                  salvos localmente, incentivando a superação. Tutorial interativo com tabuleiro de treino para quem
-                  está chegando agora, tema claro e escuro, jogo que funciona sem internet e suporte a seis idiomas.
-                  Gratuito, com anúncios e a opção de escolher se eles serão personalizados. Para quem cresceu jogando
-                  no Windows e quer redescobrir o clássico com qualidade moderna no Telefone.</p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Game</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            <!-- CAMPO MINADO EVOLUTION -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/campo-minado-evolution-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-jogos">Jogos</span>
+                    <h4 class="app-card-name"><a href="/apps/campo-minado-evolution.html">Campo Minado Evolution</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="campo.lead">O Campo Minado clássico no celular, com tutorial, 3 dificuldades e estatísticas.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="campo.trust-langs">6 idiomas</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=leankar.dev.campo_minado_evolution&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/campo-minado-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- WORD EVOLUTION -->
-          <article class="app-card reveal app-card--d4">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/word-evolution-192.webp" alt="Word Evolution" class="app-logo" width="96"
-                  height="96" loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/word-evolution-poster.jpg" width="1280"
-                  height="720" data-i18n-aria="apps.word-video-label"
-                  aria-label="Vídeo de apresentação do Word Evolution">
-                  <source src="assets/videos/word-evolution.mp4" type="video/mp4" />
-                  <span data-i18n="apps.word-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
-                <h3 class="app-name">Word Evolution</h3>
-                <p class="app-desc" data-i18n="apps.word-desc">Word Evolution reinventa o caça-palavras clássico: cada
-                  tabuleiro é gerado proceduralmente no momento em que você joga, garantindo partidas sempre novas e
-                  desafios que nunca se repetem. Escolha entre 10 categorias de palavras e 3 níveis de dificuldade para
-                  ajustar o ritmo ao seu gosto. Ficou sem saber uma palavra? Use uma dica. Complete partidas, ganhe
-                  moedas e acompanhe sua evolução com estatísticas detalhadas de desempenho. Disponível em português,
-                  inglês, espanhol, francês e italiano, com temas claro e escuro para jogar a qualquer hora do dia.</p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Game</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            <!-- WORD EVOLUTION -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/word-evolution-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-jogos">Jogos</span>
+                    <h4 class="app-card-name"><a href="/apps/word-evolution.html">Word Evolution</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=leankar.dev.word_evolution&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="word.lead">Caça-palavras com tabuleiros novos a cada partida, 10 categorias e dicas.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="word.trust-langs">5 idiomas</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=leankar.dev.word_evolution&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/word-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- DAMAS EVOLUTION -->
-          <article class="app-card reveal app-card--d5">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/damas-evolution-192.webp" alt="Damas Evolution" class="app-logo" width="96"
-                  height="96" loading="lazy" decoding="async" />
-              </div>
-              <div class="app-video">
-                <video controls playsinline preload="none" poster="assets/videos/damas-evolution-poster.jpg"
-                  width="1280" height="720" data-i18n-aria="apps.damas-video-label"
-                  aria-label="Vídeo de apresentação do Damas Evolution">
-                  <source src="assets/videos/damas-evolution.mp4" type="video/mp4" />
-                  <span data-i18n="apps.damas-video-fallback">Seu navegador não suporta vídeo HTML5.</span>
-                </video>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-jogos">Jogos</span>
-                <h3 class="app-name">Damas Evolution</h3>
-                <p class="app-desc" data-i18n="apps.damas-desc">
-                  DAMAS Evolution é o jogo de Damas brasileiro nas versões Mobile e Windows, construído para quem leva a
-                  estratégia a
-                  sério. Enfrente uma IA com três níveis de dificuldade — Fácil, Médio e Difícil — e sinta a diferença
-                  de cada um: do aprendizado tranquilo até o desafio real contra um adversário que pensa de verdade.
-                  Prefere jogar com um amigo? O modo Jogador vs Jogador permite disputas locais sem complicação. Cada
-                  partida registra seus movimentos e acompanha sua evolução. Interface limpa, resposta tátil e regras
-                  oficiais: capture peças, promova suas damas e vença no tabuleiro.
-                </p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Game</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
+            <!-- DAMAS EVOLUTION -->
+            <li class="reveal">
+              <article class="app-card">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/damas-evolution-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-jogos">Jogos</span>
+                    <h4 class="app-card-name"><a href="/apps/damas-evolution.html">Damas Evolution</a></h4>
+                  </div>
                 </div>
-                <div class="app-card-actions">
-                  <a href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share"
-                    class="play-btn" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt"
-                      alt="Disponível no Google Play" class="play-badge" width="149" height="44" />
+                <p class="app-card-lead" data-i18n="damas.lead">Damas brasileiras contra a IA ou um amigo, em tabuleiro 2D ou 3D.</p>
+                <ul class="app-trust">
+                  <li data-i18n="apps.badge-free">Gratuito</li>
+                  <li data-i18n="damas.trust-langs">5 idiomas</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <a class="play-btn" href="https://play.google.com/store/apps/details?id=dev.leankar.damas_evolution&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" src="assets/logos/google-play-badge.svg" data-i18n-alt="apps.play-badge-alt" alt="Disponível no Google Play" width="149" height="44" />
                   </a>
-                  <a href="/apps/damas-evolution.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
-                  <a href="https://leankar-dev.github.io/damas_evolution_site/" class="app-detail-link" target="_blank"
-                    rel="noopener noreferrer" data-i18n="apps.link-site-game">Visitar site do jogo →</a>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
+            </li>
 
-          <!-- REPORTGO (em desenvolvimento) -->
-          <article class="app-card app-card--wip reveal app-card--d6">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/reportgo-192.webp" alt="ReportGoApp" class="app-logo app-logo--light" width="96"
-                  height="96" loading="lazy" decoding="async" />
-                <span class="coming-soon-badge" data-i18n="apps.tag-wip">Em desenvolvimento</span>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-produtividade">Produtividade</span>
-                <h3 class="app-name">ReportGoApp</h3>
-                <p class="app-desc" data-i18n="apps.reportgo-desc">
-                  ReportGoApp é o app de relatórios fotográficos técnicos para quem trabalha em campo: vistoriadores,
-                  peritos, engenheiros e corretores. Fotografe com a câmera ou importe da galeria e o app registra GPS,
-                  data e hora, aplica marca d'água e organiza tudo em relatórios numerados automaticamente. Descreva
-                  cada foto com texto rico, colete a assinatura manuscrita na tela, acompanhe os locais no mapa e
-                  exporte o PDF direto do celular. Funciona offline, com seus dados guardados no próprio aparelho, em
-                  português, inglês e espanhol. Em desenvolvimento ativo — ainda não disponível nas lojas.
-                </p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Offline-first</span>
-                  <span class="tag tag--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
-                </div>
-                <div class="app-card-actions">
-                  <a href="/apps/reportgo.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
-                  <a href="/blog/reportgo-app-relatorios-fotograficos-offline-first.html" class="app-detail-link"
-                    data-i18n="apps.link-article">Ler o artigo →</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- MY CAR LAS (em desenvolvimento) -->
-          <article class="app-card app-card--wip reveal app-card--d7">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/my-car-las-192.webp" alt="MY CAR LAS" class="app-logo" width="96" height="96"
-                  loading="lazy" decoding="async" />
-                <span class="coming-soon-badge" data-i18n="apps.tag-wip">Em desenvolvimento</span>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-veiculos">Veículos</span>
-                <h3 class="app-name">MY CAR LAS</h3>
-                <p class="app-desc" data-i18n="apps.mycarlas-desc">
-                  MY CAR LAS é o app para cuidar do seu carro ou moto sem planilha: registre abastecimentos, despesas,
-                  manutenções e a quilometragem, e veja o consumo médio calculado entre tanques cheios. Crie lembretes
-                  por data ou por quilometragem — com repetição e notificações no aparelho — para nunca perder a troca
-                  de óleo, o seguro ou a vistoria. O histórico tem filtros por período, veículo e tipo, e o relatório
-                  mensal mostra quanto você gastou, por tipo e por categoria, comparado ao mês anterior. Funciona
-                  offline, sem conta e sem anúncios, com seus dados guardados no próprio aparelho, em seis idiomas,
-                  para Android e Windows. Em desenvolvimento ativo — ainda não disponível nas lojas.
-                </p>
-                <div class="app-tags">
-                  <span class="tag">Flutter</span>
-                  <span class="tag">Offline-first</span>
-                  <span class="tag tag--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
-                </div>
-                <div class="app-card-actions">
-                  <a href="/apps/my-car-las.html" class="app-detail-link" data-i18n="apps.link-details">Ver
-                    detalhes →</a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- MEMORY PLAY MENTAL -->
-          <article class="app-card app-card--web reveal app-card--d6">
-            <div class="app-card-glow"></div>
-            <div class="app-card-inner">
-              <div class="app-logo-wrapper">
-                <img src="assets/logos/memory-play-mental-192.webp" alt="Memory Play Mental" class="app-logo" width="96"
-                  height="96" loading="lazy" decoding="async" />
-                <span class="web-badge" data-i18n="apps.badge-web">Web</span>
-              </div>
-              <div class="app-info">
-                <span class="app-category" data-i18n="apps.cat-jogos-mentais">Jogos Mentais</span>
-                <h3 class="app-name">Memory Play Mental</h3>
-                <p class="app-desc" data-i18n="apps.memory-desc">
-                  Plataforma web de jogos cognitivos para exercitar memória, atenção e raciocínio de forma
-                  lúdica. Sem instalação: acesse direto pelo navegador e comece a jogar. Os desafios testam
-                  a capacidade de memorizar padrões, sequências e posições em partidas rápidas e progressivas
-                  que aumentam de dificuldade conforme você avança. Desenvolvido com foco em performance e
-                  acessibilidade mobile, funciona bem tanto no desktop quanto no celular. Ideal para pausas
-                  rápidas que valem mais do que rolar o feed de redes sociais. Gratuito e sem cadastro.
-                </p>
-                <div class="app-tags">
-                  <span class="tag">Web</span>
-                  <span class="tag" data-i18n="apps.cat-jogos">Jogos</span>
-                  <span class="tag" data-i18n="apps.badge-free">Gratuito</span>
-                </div>
-                <a href="https://www.memoryplaysmental.com" class="site-visit-btn" target="_blank"
-                  rel="noopener noreferrer">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                  </svg>
-                  <span data-i18n="apps.link-site">Visitar Site</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
+          </ul>
         </div>
+
+        <div class="apps-group" role="group" aria-labelledby="apps-g-wip">
+          <div class="apps-group-head">
+            <h3 class="apps-group-title" id="apps-g-wip" data-i18n="apps.tag-wip">Em desenvolvimento</h3>
+            <p class="apps-group-desc" data-i18n="apps.group-wip-desc">Ainda não estão nas lojas.</p>
+          </div>
+          <ul class="apps-grid">
+
+            <!-- REPORTGO (em desenvolvimento) -->
+            <li class="reveal">
+              <article class="app-card app-card--wip">
+                <div class="app-card-head">
+                  <img class="app-card-logo app-card-logo--light" src="assets/logos/reportgo-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-produtividade">Produtividade</span>
+                    <h4 class="app-card-name"><a href="/apps/reportgo.html">ReportGoApp</a></h4>
+                  </div>
+                </div>
+                <p class="app-card-lead" data-i18n="reportgo.lead">Relatórios fotográficos técnicos com GPS, assinatura e PDF, direto do celular.</p>
+                <ul class="app-trust">
+                  <li data-i18n="reportgo.trust-data">Dados no aparelho</li>
+                  <li data-i18n="reportgo.trust-offline">Funciona sem internet, exceto o mapa</li>
+                </ul>
+                <div class="app-card-foot">
+                  <span class="app-status app-status--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
+                </div>
+              </article>
+            </li>
+
+            <!-- MY CAR LAS (em desenvolvimento) -->
+            <li class="reveal">
+              <article class="app-card app-card--wip">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/my-car-las-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-veiculos">Veículos</span>
+                    <h4 class="app-card-name"><a href="/apps/my-car-las.html">MY CAR LAS</a></h4>
+                  </div>
+                </div>
+                <p class="app-card-lead" data-i18n="mycarlas.lead">Abastecimentos, despesas, manutenção e lembretes do seu veículo, tudo no aparelho.</p>
+                <ul class="app-trust">
+                  <li data-i18n="app.val-ads-none">Sem anúncios</li>
+                  <li data-i18n="mycarlas.trust-noaccount">Sem conta</li>
+                  <li data-i18n="app.val-net-none">Funciona sem internet</li>
+                </ul>
+                <div class="app-card-foot">
+                  <span class="app-status app-status--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
+                  <span class="app-card-more" aria-hidden="true" data-i18n="apps.link-details">Ver detalhes →</span>
+                </div>
+              </article>
+            </li>
+
+            <!-- BLOCK LAS (em desenvolvimento, ainda sem página de detalhe) -->
+            <li class="reveal">
+              <article class="app-card app-card--wip app-card--static">
+                <div class="app-card-head">
+                  <img class="app-card-logo" src="assets/logos/block-las-192.webp" alt="" width="64" height="64" loading="lazy" decoding="async" />
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-jogos">Jogos</span>
+                    <h4 class="app-card-name">Block LAS</h4>
+                  </div>
+                </div>
+                <p class="app-card-lead" data-i18n="blocklas.lead">Puzzle de encaixe 10×10 com gerações, genes cromáticos e mutações durante a partida.</p>
+                <ul class="app-trust">
+                  <li data-i18n="blocklas.trust-langs">5 idiomas</li>
+                  <li data-i18n="blocklas.trust-platforms">Para Android e iOS</li>
+                  <li data-i18n="blocklas.trust-data">Dados no aparelho</li>
+                </ul>
+                <div class="app-card-foot">
+                  <span class="app-status app-status--wip" data-i18n="apps.tag-wip">Em desenvolvimento</span>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="apps-group" role="group" aria-labelledby="apps-g-web">
+          <div class="apps-group-head">
+            <h3 class="apps-group-title" id="apps-g-web" data-i18n="apps.group-web-title">Na web</h3>
+            <p class="apps-group-desc" data-i18n="apps.group-web-desc">Sem instalar nada: abra no navegador.</p>
+          </div>
+          <ul class="apps-grid apps-grid--single">
+
+            <!-- MEMORY PLAYS MENTAL (web) -->
+            <li class="reveal">
+              <article class="app-card app-card--web">
+                <img class="app-card-logo" src="assets/logos/memory-play-mental-192.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+                <div class="app-card-body">
+                  <div class="app-card-id">
+                    <span class="app-card-cat" data-i18n="apps.cat-jogos-mentais">Jogos Mentais</span>
+                    <h4 class="app-card-name">Memory Plays Mental</h4>
+                  </div>
+                  <p class="app-card-lead" data-i18n="memory.lead">10 jogos para treinar memória, foco e raciocínio, direto no navegador.</p>
+                  <ul class="app-trust">
+                    <li data-i18n="apps.badge-free">Gratuito</li>
+                    <li data-i18n="memory.trust-nosignup">Sem cadastro</li>
+                    <li data-i18n="memory.trust-langs">3 idiomas</li>
+                  </ul>
+                </div>
+                <div class="app-card-foot">
+                  <a href="https://www.memoryplaysmental.com" class="site-visit-btn" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                    <span data-i18n="apps.link-site">Visitar Site</span>
+                  </a>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
     </section>
 

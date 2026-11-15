@@ -539,70 +539,189 @@ body {
   padding: 100px 0;
   background: linear-gradient(180deg, transparent, rgba(124,58,237,0.04), transparent);
 }
+
+/* ── CATÁLOGO DE APPS (home): grupos por status + cards enxutos ──
+   Só usa variáveis de :root. O link do título é esticado (::after) para o card inteiro ser clicável;
+   botões internos (Play, Visitar site) ficam acima com z-index. A entrada (.reveal) fica no <li>;
+   o hover fica no <article>, para o atraso da entrada nunca contaminar o hover. */
+/* ── Grupos (Disponíveis / Em desenvolvimento / Web) ── */
+.apps-group + .apps-group { margin-top: 64px; }
+.apps-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 16px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.apps-group-title {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.apps-group-desc { font-size: 0.9rem; color: var(--muted); }
+
+/* ── Grade: 3 colunas > 2 > 1 ── */
 .apps-grid {
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
+.apps-grid > li { display: flex; }                       /* o card ocupa a altura toda da linha */
+.apps-grid > li:nth-child(3n + 2) { transition-delay: 80ms; }   /* entrada escalonada; o delay fica no <li>, nunca no card */
+.apps-grid > li:nth-child(3n + 3) { transition-delay: 160ms; }
 
+/* ── Card ── */
 .app-card {
-  position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
-  transition-delay: var(--delay, 0ms);
-}
-.app-card:hover { transform: translateY(-6px); box-shadow: var(--glow-card); }
-.app-card--d0 { --delay: 0ms; }
-.app-card--d1 { --delay: 150ms; }
-.app-card--d2 { --delay: 300ms; }
-.app-card--d3 { --delay: 450ms; }
-.app-card--d4 { --delay: 600ms; }
-.app-card--d5 { --delay: 750ms; }
-.app-card--d6 { --delay: 900ms; }
-.app-card--d7 { --delay: 1050ms; }
-
-.app-card-glow {
-  position: absolute;
-  inset: 0;
-  background: var(--gradient);
-  opacity: 0;
-  transition: opacity var(--transition);
-  border-radius: var(--radius);
-}
-.app-card:hover .app-card-glow { opacity: 0.06; }
-
-.app-card-inner {
-  position: relative;
-  z-index: 1;
+  position: relative;                                    /* âncora do link esticado (::after) */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 24px;
+  overflow: visible;                                     /* sobrescreve o overflow:hidden antigo */
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  transition: border-color var(--transition);
+  transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
-.app-card:hover .app-card-inner { border-color: var(--border-h); }
+.app-card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-h);
+  border-color: var(--border-h);
+  box-shadow: var(--glow-card);
+}
 
-.app-logo-wrapper {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  width: fit-content;
-  margin: 0 auto;
-}
-.app-logo {
-  width: 96px; height: 96px;
-  border-radius: 22px;
+.app-card-head { display: flex; align-items: center; gap: 16px; }
+.app-card-logo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   object-fit: contain;
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.03);
-  transition: transform var(--transition);
 }
-.app-card:hover .app-logo { transform: scale(1.06) rotate(-2deg); }
+.app-card-logo--light { background: #fff; padding: 4px; }     /* logos de texto escuro (ReportGo) */
+.app-card-id { min-width: 0; }
+.app-card-cat {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.app-card-name {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.app-card-name a { color: inherit; text-decoration: none; }
+.app-card-name a::after {                                /* link esticado: o card inteiro é clicável */
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+}
+.app-card-name a:focus-visible { outline: none; }
+.app-card-name a:focus-visible::after { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.app-card-lead { font-size: 0.93rem; line-height: 1.55; color: var(--muted); }
+
+.app-card .app-trust { margin: 0; gap: 4px 16px; }       /* reaproveita .app-trust das páginas de detalhe */
+.app-card .app-trust li { font-size: 0.82rem; }
+
+.app-card-foot {
+  margin-top: auto;                                      /* cola o rodapé embaixo: alinha os cards da linha */
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 14px;
+}
+.app-card-more {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--cyan);
+  white-space: nowrap;
+  transition: transform 0.25s ease;
+}
+.app-card:hover .app-card-more { transform: translateX(3px); }
+
+.app-card .play-btn { position: relative; z-index: 1; }  /* fica ACIMA do link esticado */
+.app-card .play-badge { height: 44px; width: auto; display: block; }
+
+/* ── Estado (nunca só cor: sempre ícone + texto) ── */
+.app-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.app-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.app-status--wip {
+  color: var(--amber);
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.28);
+}
+.app-card--wip { border-color: rgba(245,158,11,0.2); }
+.app-card--wip:hover { border-color: rgba(245,158,11,0.45); box-shadow: 0 0 60px rgba(245,158,11,0.08); }
+
+/* ── Card sem destino (ex.: Block LAS enquanto não existe página): não é clicável, então não "reage" ao mouse ── */
+.app-card--static:hover {
+  transform: none;
+  background: var(--bg-card);
+  box-shadow: none;
+}
+.app-card--wip.app-card--static:hover { border-color: rgba(245,158,11,0.2); }
+
+/* ── Card web (horizontal e compacto) ── */
+.app-card--web {
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.app-card--web .app-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.app-card--web .app-card-foot { margin: 0; padding: 0; border: 0; flex-shrink: 0; }
+.app-card--web .app-card-logo { width: 72px; height: 72px; }
+.apps-grid.apps-grid--single { grid-template-columns: minmax(0, 1fr); }   /* 2 classes: vence os @media de 2 colunas, que vêm depois */
+
+.site-visit-btn { position: relative; z-index: 1; }       /* botão acima do link esticado */
+
+/* ── Responsivo ── */
+@media (max-width: 1024px) {
+  .apps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .apps-grid > li:nth-child(3n + 2),
+  .apps-grid > li:nth-child(3n + 3) { transition-delay: 0ms; }
+  .apps-grid > li:nth-child(2n) { transition-delay: 80ms; }
+}
+@media (max-width: 640px) {
+  .apps-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .apps-grid > li:nth-child(n) { transition-delay: 0ms; }
+  .app-card { padding: 20px; }
+  .app-card--web { flex-direction: column; align-items: stretch; }
+  .app-card--web .app-card-foot { flex-shrink: 1; }
+  .apps-group + .apps-group { margin-top: 48px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-card, .app-card-more { transition: none; }
+  .app-card:hover, .app-card:hover .app-card-more { transform: none; }
+}
 
 .app-video {
   border-radius: 14px;
@@ -619,7 +738,7 @@ body {
 }
 .app-video--page { margin-top: 32px; }
 
-.app-info { display: flex; flex-direction: column; flex: 1; }
+
 .app-category {
   font-size: 0.72rem;
   font-weight: 700;
@@ -628,20 +747,7 @@ body {
   color: var(--cyan);
   margin-bottom: 8px;
 }
-.app-name {
-  font-family: var(--font-head);
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-.app-desc {
-  font-size: 0.875rem;
-  color: var(--muted);
-  line-height: 1.65;
-  flex: 1;
-  margin-bottom: 18px;
-}
+
 
 .app-tags {
   display: flex;
@@ -670,32 +776,6 @@ body {
   display: block;
 }
 
-/* ── Em breve / WIP ── */
-.app-card--wip .app-card-inner {
-  border-color: rgba(245,158,11,0.18);
-}
-.app-card--wip:hover .app-card-inner {
-  border-color: rgba(245,158,11,0.4);
-}
-.app-card--wip .app-card-glow {
-  background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(124,58,237,0.08));
-}
-
-.coming-soon-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-  color: #000;
-  font-size: 0.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 9px;
-  border-radius: 100px;
-  white-space: nowrap;
-  box-shadow: 0 2px 12px rgba(245,158,11,0.4);
-}
 
 .tag--wip {
   background: rgba(245,158,11,0.1) !important;
@@ -704,7 +784,6 @@ body {
 }
 
 /* logo com fundo claro (logos transparentes de texto escuro, ex.: ReportGO) */
-.app-logo.app-logo--light,
 .app-page-logo.app-page-logo--light {
   background: #fff;
   padding: 6px;
@@ -725,31 +804,6 @@ body {
 .article-body .app-dev-notice p { margin: 0; font-size: 0.93rem; line-height: 1.7; }
 .app-dev-notice strong { color: var(--amber); }
 
-/* ── Web project card (span full grid, centrado) ── */
-.app-card--solo,
-.app-card--web {
-  grid-column: 1 / -1;
-  max-width: 520px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* ── Web badge ── */
-.web-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: var(--gradient);
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 9px;
-  border-radius: 100px;
-  white-space: nowrap;
-  box-shadow: 0 2px 12px rgba(0,198,255,0.35);
-}
 
 /* ── Visitar Site button ── */
 .site-visit-btn {
@@ -1368,7 +1422,7 @@ body {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .apps-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+
   .contato-box { padding: 48px 28px; }
   .footer-inner { justify-content: center; text-align: center; }
 }
@@ -1752,28 +1806,6 @@ body {
 .form-msg--ok  { background: rgba(0,198,255,0.08); border: 1px solid rgba(0,198,255,0.25); color: var(--cyan); }
 .form-msg--err { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);  color: #ef4444; }
 
-/* ── App card detail link ── */
-.app-card-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 4px;
-}
-.app-detail-link {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--cyan);
-  text-decoration: none;
-  opacity: 0.75;
-  transition: opacity var(--transition), letter-spacing var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-}
-.app-detail-link:hover { opacity: 1; letter-spacing: 0.01em; }
 
 /* ── Responsive app page ── */
 @media (max-width: 860px) {

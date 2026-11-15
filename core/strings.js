@@ -64,7 +64,7 @@ const TRANSLATIONS = {
     es: 'Mi misión es crear productos que la gente realmente quiera usar: sin bloatware, sin fricción innecesaria, sin interfaces confusas. Si una app necesita un tutorial para usarse, todavía no está lista. Ese compromiso con la simplicidad define cada línea de código que escribo.',
   },
   'sobre.stat-projetos':  { pt: 'Projetos',   en: 'Projects',    es: 'Proyectos' },
-  'sobre.stat-flutter':   { pt: 'Flutter',    en: 'Flutter',     es: 'Flutter' },
+  'sobre.stat-flutter':   { pt: 'Apps Flutter', en: 'Flutter apps', es: 'Apps Flutter' },
   'sobre.stat-dedicacao': { pt: 'Dedicação',  en: 'Dedication',  es: 'Dedicación' },
   'sobre.skill1-title': { pt: 'Mobile First',      en: 'Mobile First',     es: 'Mobile First' },
   'sobre.skill1-desc':  { pt: 'UI/UX pensada para telas móveis desde o início', en: 'UI/UX designed for mobile screens from the start', es: 'UI/UX pensada para pantallas móviles desde el inicio' },

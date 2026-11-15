@@ -1,59 +1,59 @@
 {
   "_v": 2,
   "index.html": {
-    "hash": "667ce4aed005b425",
+    "hash": "fffdcf24e6fbfa17",
     "lastmod": "2026-11-15"
   },
   "privacy.html": {
-    "hash": "8ed0a91fde7ee708",
+    "hash": "e7c6d71444dde960",
     "lastmod": "2026-11-15"
   },
   "blog/reportgo-app-relatorios-fotograficos-offline-first.html": {
-    "hash": "003bfbb5c4f91e98",
+    "hash": "94e34497ff8a663d",
     "lastmod": "2026-11-15"
   },
   "blog/como-publiquei-meu-primeiro-app-flutter-na-play-store.html": {
-    "hash": "3e6ffecc9d8517a5",
+    "hash": "d826bbe442a252fc",
     "lastmod": "2026-11-15"
   },
   "blog/app-lista-compras-offline-first-flutter-drift-sqlite.html": {
-    "hash": "81aefc5dc2acfde3",
+    "hash": "694ffc0c943239d7",
     "lastmod": "2026-11-15"
   },
   "blog/campo-minado-flutter-algoritmo-geracao-tabuleiro.html": {
-    "hash": "e6dbb8fa0fe62f82",
+    "hash": "f44f8505d0111576",
     "lastmod": "2026-11-15"
   },
   "apps/calculadora-leankar.html": {
-    "hash": "7cc0abda9306866f",
+    "hash": "9a7f7ca4bd8f7d18",
     "lastmod": "2026-11-15"
   },
   "apps/buscacep.html": {
-    "hash": "1d8aecd4227df88f",
+    "hash": "1e1bd0187b85c177",
     "lastmod": "2026-11-15"
   },
   "apps/lista-da-casa.html": {
-    "hash": "9f2730cd94b386cf",
+    "hash": "5e1b5ea329e23087",
     "lastmod": "2026-11-15"
   },
   "apps/campo-minado-evolution.html": {
-    "hash": "7fe9f7e1b8cc657a",
+    "hash": "9d84f0b4e3efe7d9",
     "lastmod": "2026-11-15"
   },
   "apps/word-evolution.html": {
-    "hash": "d51a562f8904ca04",
+    "hash": "72c2f27331fc0d3d",
     "lastmod": "2026-11-15"
   },
   "apps/reportgo.html": {
-    "hash": "2e6618a39193ee64",
+    "hash": "61fbba53d1c2e794",
     "lastmod": "2026-11-15"
   },
   "apps/my-car-las.html": {
-    "hash": "3a91cb25973026a0",
+    "hash": "fd236702d8448258",
     "lastmod": "2026-11-15"
   },
   "apps/damas-evolution.html": {
-    "hash": "6d7973d3312467e9",
+    "hash": "a54f6e6b31fb1d99",
     "lastmod": "2026-11-15"
   }
 }

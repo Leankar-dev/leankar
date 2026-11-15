@@ -158,7 +158,6 @@ const TRANSLATIONS = {
   },
   'memory.trust-nosignup': { pt: 'Sem cadastro', en: 'No sign-up', es: 'Sin registro' },
   'memory.trust-langs': { pt: '3 idiomas', en: '3 languages', es: '3 idiomas' },
-  'apps.link-article': { pt: 'Ler o artigo →', en: 'Read the article →', es: 'Leer el artículo →' },
   'apps.cat-veiculos':       { pt: 'Veículos',       en: 'Vehicles',     es: 'Vehículos' },
   'apps.cat-produtividade':  { pt: 'Produtividade', en: 'Productivity', es: 'Productividad' },
   'apps.cat-utilidades':     { pt: 'Utilidades',     en: 'Utilities',    es: 'Utilidades' },
@@ -166,7 +165,6 @@ const TRANSLATIONS = {
   'apps.cat-jogos':          { pt: 'Jogos',          en: 'Games',        es: 'Juegos' },
   'apps.cat-jogos-mentais':  { pt: 'Jogos Mentais',  en: 'Brain Games',  es: 'Juegos Mentales' },
   'apps.badge-free':  { pt: 'Gratuito',   en: 'Free',         es: 'Gratis' },
-  'apps.badge-wip':   { pt: 'Em breve',   en: 'Coming soon',  es: 'Próximamente' },
   'apps.tag-wip':     { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
   'apps.link-site-game': { pt: 'Visitar site do jogo →', en: 'Visit the game website →', es: 'Visitar el sitio del juego →' },
   'apps.link-details': { pt: 'Ver detalhes →', en: 'See details →', es: 'Ver detalles →' },
@@ -276,8 +274,6 @@ const TRANSLATIONS = {
   'app.about-title':    { pt: 'Sobre o aplicativo', en: 'About the app', es: 'Sobre la app' },
   'app.faq-title':      { pt: 'Perguntas frequentes', en: 'FAQ', es: 'Preguntas frecuentes' },
   'app.cta-btn':        { pt: 'Baixar no Google Play', en: 'Download on Google Play', es: 'Descargar en Google Play' },
-  'app.badge-free':     { pt: 'Gratuito', en: 'Free', es: 'Gratis' },
-  'app.badge-offline':  { pt: 'Offline',  en: 'Offline', es: 'Sin conexión' },
 
   // ── PÁGINA DE APP: seções e requisitos genéricos (landing) ──
   'app.benefits-title': { pt: 'Por que usar', en: 'Why use it', es: 'Por qué usarla' },
@@ -297,7 +293,6 @@ const TRANSLATIONS = {
   'app.spec-perms': { pt: 'Permissões', en: 'Permissions', es: 'Permisos' },
   'app.spec-privacy': { pt: 'Política de privacidade', en: 'Privacy policy', es: 'Política de privacidad' },
   'app.privacy-link': { pt: 'Ver política do app', en: 'View the app policy', es: 'Ver la política de la app' },
-  'app.status-dev': { pt: 'Em desenvolvimento', en: 'In development', es: 'En desarrollo' },
   'app.val-android': { pt: 'Android', en: 'Android', es: 'Android' },
   'app.val-price-free': { pt: "Gratuito, sem compras dentro do app", en: "Free, with no in-app purchases", es: "Gratis, sin compras dentro de la app" },
   'app.val-net-ads': { pt: "Funciona sem internet; só os anúncios usam conexão", en: "Works without internet; only the ads use a connection", es: "Funciona sin internet; solo los anuncios usan conexión" },
@@ -305,7 +300,6 @@ const TRANSLATIONS = {
   'app.tag-neumorphic': { pt: "Neumórfico", en: "Neumorphic", es: "Neumórfico" },
   'app.val-android-7': { pt: 'Android 7.0 ou superior', en: 'Android 7.0 or later', es: 'Android 7.0 o superior' },
   'app.val-net-none': { pt: 'Funciona sem internet', en: 'Works without internet', es: 'Funciona sin internet' },
-  'app.val-net-required': { pt: 'Requer internet', en: 'Requires internet', es: 'Requiere internet' },
   'app.val-ads-none': { pt: 'Sem anúncios', en: 'No ads', es: 'Sin anuncios' },
   'app.val-perms-internet': { pt: 'Somente acesso à internet', en: 'Internet access only', es: 'Solo acceso a internet' },
 
@@ -1165,7 +1159,4 @@ const TRANSLATIONS = {
 
   // ── SELETOR DE IDIOMA (UI) ────────────────────────────────
   'lang.label':   { pt: 'Idioma', en: 'Language', es: 'Idioma' },
-  'lang.pt':      { pt: 'Português', en: 'Portuguese', es: 'Portugués' },
-  'lang.en':      { pt: 'Inglês',    en: 'English',    es: 'Inglés' },
-  'lang.es':      { pt: 'Espanhol',  en: 'Spanish',    es: 'Español' },
 };

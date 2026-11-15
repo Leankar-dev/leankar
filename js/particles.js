@@ -2,7 +2,7 @@
    Custo controlado: menos partículas e 30 quadros/s em telas pequenas, comparação de distância sem raiz quadrada,
    pausa com a aba oculta e redimensionamento só quando a LARGURA muda (no celular, a barra de endereço
    mudava a altura a cada rolagem e recriava o canvas). */
-(function () {
+function iniciarParticulas() {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -118,4 +118,15 @@
   reducedMotion.addEventListener('change', applyMotionPreference);
   document.addEventListener('visibilitychange', applyMotionPreference);
   applyMotionPreference();
+}
+
+/* O fundo é decorativo: só começa depois do evento load, com o navegador ocioso, para não disputar CPU com a
+   renderização inicial (era ≈ 1,1 s de CPU no celular durante o carregamento). */
+(function () {
+  function agendar() {
+    if ('requestIdleCallback' in window) requestIdleCallback(iniciarParticulas, { timeout: 2500 });
+    else setTimeout(iniciarParticulas, 600);
+  }
+  if (document.readyState === 'complete') agendar();
+  else window.addEventListener('load', agendar, { once: true });
 })();
